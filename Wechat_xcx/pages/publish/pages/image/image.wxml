@@ -1,0 +1,22 @@
+<view class="publish">
+    <input-text bindreturnResult="getInputText"></input-text>
+    <location bindreturnResult="getLocation"></location>
+    <and-friends bindreturnResult="getAndFriends" groupId="{{groupId}}" selectedFriends="{{selectedFriends}}" wx:if="{{jurisdiction.andFriends}}"></and-friends>
+    <date-and-time bindreturnResult="getDatetime" wx:if="{{jurisdiction.publishedTime}}"></date-and-time>
+    <view class="publish-line"></view>
+    <sync-to-other-albums bindreturnResult="getSelectedSyncAlbums" groupId="{{groupId}}" selectedSyncAlbums="{{selectedSyncAlbums}}"></sync-to-other-albums>
+    <view class="publish-select">
+        <view class="ps-item" wx:if="{{images.length<27}}">
+            <image catch:tap="selectImages" class="ps-item-img" mode="aspectFill" src="{{ICON.ADD_PHOTO}}"></image>
+        </view>
+        <view class="ps-item {{index%3===0?'ps-item-gap':''}}" wx:for="{{images}}" wx:key="key">
+            <image class="ps-item-img" mode="aspectFill" src="{{item}}"></image>
+            <image catchtap="deleteImage" class="ps-close" data-index="{{index}}" mode="aspectFill" src="{{ICON.CLOSE_SOLID}}"></image>
+        </view>
+    </view>
+    <view class="publish-submit">
+        <form bindsubmit="formSubmit" class="publish-submit-form" reportSubmit="{{true}}">
+            <button class="publish-btn  {{images.length===0?'publish-btn-disabled':''}}" formType="submit">立即上传</button>
+        </form>
+    </view>
+</view>

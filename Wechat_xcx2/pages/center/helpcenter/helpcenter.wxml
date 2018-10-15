@@ -1,0 +1,44 @@
+<view class="help-container">
+    <view class="bgline"></view>
+    <view class="onLineService">
+        <view class="headerTitle">
+            <view></view>
+            <text>在线客服</text>
+        </view>
+        <view class="textIntroduce">
+            <text>在使用童忆过程中出现各种疑问</text>
+            <text>请咨询客服</text>
+        </view>
+        <view class="contactWay">
+            <view class="itemWayBox">
+                <text class="textName">活动策划  渠道合作\n异业推广  运营推广\n品牌合作  广告合作</text>
+                <text class="textContent">QQ 133229</text>
+                <view catchtap="copytext" data-name="wx">点击复制</view>
+            </view>
+        </view>
+    </view>
+    <view class="bgline"></view>
+    <view class="commonProblems">
+        <view class="headerTitle">
+            <view></view>
+            <text>常见问题</text>
+        </view>
+        <view class="allProblemsBox">
+            <view class="itemProblemBox {{item.isActive?'isActive':''}}" wx:for="{{problemArr}}" wx:key="{{index}}">
+                <view catchtap="expand" class="itemProblem" data-sel="{{index}}">
+                    <view class="problemTextBox">
+                        <text>{{item.problem}}</text>
+                    </view>
+                    <image src="/images/icon/return.png" wx:if="{{item.isActive}}"></image>
+                    <image src="/images/icon/more.png" wx:else></image>
+                </view>
+                <view class="itemAnswer" wx:if="{{item.isActive}}">
+                    <text>{{item.answer}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="customerService">
+        <button openType="contact">联系在线客服</button>
+    </view>
+</view>

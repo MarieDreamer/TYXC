@@ -1,0 +1,388 @@
+.search-bg {
+    width: 100%;
+    height: 70rpx;
+    background: rgba(255,255,255,1);
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.search {
+    position: fixed;
+    left: 6%;
+    top: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 650rpx;
+    height: 55rpx;
+    background: #f5f5f5;
+    border-radius: 30rpx;
+    font-size: 26rpx;
+}
+
+.search-lt {
+    display: flex;
+    align-items: center;
+    border-right: 1px solid #BBBBBB;
+}
+
+.search-lt image {
+    width: 40rpx;
+    height: 40rpx;
+    margin: 0 20rpx;
+}
+
+.search-rt {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.search-rt image {
+    width: 40rpx;
+    height: 40rpx;
+    margin-left: 20rpx;
+}
+
+.banner {
+    width: 100%;
+    position: relative;
+}
+
+.banner-img {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper {
+    height: 360rpx;
+    width: 100%;
+    margin-top: 60rpx;
+}
+
+.swiper image {
+    height: 100%;
+    width: 100%;
+}
+
+.weui-grids {
+    width: 100%;
+    border: none;
+    background: #fff;
+    padding: 20rpx 0;
+}
+
+.weui-grid {
+    width: 25%;
+    padding: 10rpx 0;
+    border: none;
+}
+
+.weui-grid__icon {
+    width: 80rpx;
+    height: 80rpx;
+}
+
+.weui-grid__label {
+    color: #666;
+}
+
+.news {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 26rpx;
+    width: 80%;
+    height: 60rpx;
+    border-radius: 30rpx;
+    position: absolute;
+    top: 20%;
+    left: 1%;
+}
+
+.news-lt {
+    padding: 0 20rpx;
+    color: #666;
+    width: 20%;
+}
+
+.news-rt {
+    color: #666;
+    display: flex;
+    justify-content: space-between;
+    width: 71%;
+}
+
+.bg-red {
+    background: #F02B2E;
+    color: #fff;
+    padding: 2rpx 8rpx;
+    border-radius: 4rpx;
+    margin-left: 5rpx;
+}
+
+.news-rt-r {
+    padding-right: 20rpx;
+    display: flex;
+    align-items: center;
+}
+
+.marquee {
+    width: 500%;
+    height: 60rpx;
+    line-height: 60rpx;
+    background: rgba(0,0,0,0.5);
+    border: none;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: clip;
+    position: relative;
+    font-size: 26rpx;
+    border-radius: 30rpx;
+    color: #fff;
+}
+
+.marquee .content {
+    display: inline-block;
+    position: relative;
+    padding-right: 0px;
+    animation: kf-marque-animation 11.3s linear infinite;
+    white-space: nowrap;
+}
+
+.content .user-tx {
+    width: 45rpx;
+    height: 45rpx;
+    border-radius: 50%;
+    margin-right: 8rpx;
+}
+
+.content-list {
+    display: flex;
+    height: 60rpx;
+    line-height: 60rpx;
+    animation: kf-marque-animation 11.3s linear infinite;
+    white-space: nowrap;
+    margin-left: 10rpx;
+    align-items: center;
+}
+
+.pro-1 {
+    width: 100%;
+}
+
+.pro-1 .title {
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36rpx;
+    color: #222222;
+    line-height: 100rpx;
+}
+
+.title-lt {
+    display: flex;
+    align-items: center;
+}
+
+.title-lt image {
+    width: 40rpx;
+    height: 40rpx;
+    margin: 0 10rpx;
+}
+
+.title-rt {
+    display: flex;
+    align-items: center;
+}
+
+.title-rt image {
+    width: 40rpx;
+    height: 40rpx;
+    margin: 0 10rpx;
+}
+
+.title text {
+    font-family: 'ping fang';
+}
+
+.pro-1 .pro-con {
+    display: flex;
+    margin: 2rpx 0;
+}
+
+.pro-1 .list {
+    background: #fff;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 26rpx;
+    align-items: center;
+    margin: 0 2rpx;
+    width: 220rpx;
+    flex-wrap: wrap;
+}
+
+.list-lt {
+    display: flex;
+    align-items: center;
+}
+
+.list-lt image {
+    width: 200rpx;
+    height: 200rpx;
+    margin: 10rpx;
+}
+
+.list-r {
+    margin: 0 10rpx;
+    width: 200rpx;
+}
+
+.list-r-t {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-wrap: wrap;
+    color: #333;
+    height: 88rpx;
+}
+
+.list-r-t text {
+    display: -webkit-box;
+    font-size: 30rpx;
+    color: #222222;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.list-r-price {
+    color: #ed2323;
+    font-size: 30rpx;
+    padding: 20rpx 0;
+}
+
+.fh {
+    color: #010101;
+}
+
+.banner-gg {
+    width: 100%;
+    margin-top: 30rpx;
+    display: flex;
+}
+
+.banner-gg image {
+    width: 100%;
+    height: 200rpx;
+}
+
+.pro-2 {
+    width: 100%;
+}
+
+.pro-2 .title {
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36rpx;
+    color: #222222;
+    line-height: 100rpx;
+    margin-top: 30rpx;
+}
+
+.title-lt image {
+    width: 40rpx;
+    height: 40rpx;
+    margin: 0 10rpx;
+}
+
+.pro-2 .pro-con {
+    width: 100%;
+    margin-top: 1rpx;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.pro-2 .list {
+    width: 49.4%;
+    background: #fff;
+}
+
+.lt {
+    margin: 1rpx 0.5rpx 1rpx 1rpx;
+}
+
+.rt {
+    margin: 1rpx 1rpx 1rpx 0.5rpx;
+}
+
+.pro-2 .list image {
+    width: 368rpx;
+    height: 368rpx;
+}
+
+.pro-2 .list-t {
+    font-size: 30rpx;
+    color: #222222;
+    line-height: 38rpx;
+    display: block;
+    padding: 0 15rpx;
+    height: 70rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.pro-2 .list-d {
+    padding: 0 15rpx 15rpx 15rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pro-2 .price {
+    color: #ed2323;
+    font-size: 32rpx;
+}
+
+.price .fh {
+    color: #010101;
+    padding: 0 5rpx;
+}
+
+.pro-2 .list-d button {
+    width: 110rpx;
+    height: 40rpx;
+    font-size: 22rpx;
+    margin: 0;
+    padding: 0;
+    line-height: 40rpx;
+    border: 1px solid #F02B2E;
+    background-color: #fff;
+    color: #F02B2E;
+}
+
+button::after {
+    border: none;
+}
+
+.mdj {
+    padding: 0 15rpx 15rpx 15rpx;
+    color: #666;
+    font-size: 24rpx;
+}
+
+.mdj text {
+    color: #ed2323;
+}

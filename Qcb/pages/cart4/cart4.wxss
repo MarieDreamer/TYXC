@@ -1,0 +1,53 @@
+.paysuccess-main {
+    padding: 128rpx 140rpx 0 140rpx;
+    text-align: center;
+}
+
+.paysuc-tit {
+    line-height: 106rpx;
+    font-size: 37rpx;
+    color: #ee3939;
+}
+
+.paysuc-order {
+    margin-top: 16rpx;
+    font-size: 27rpx;
+    line-height: 40rpx;
+    color: #888;
+}
+
+.paysuc-orderinfo {
+    margin-top: 22rpx;
+    border-top: 1rpx solid #e5e5e5;
+    padding: 15rpx 0 15rpx 0;
+    color: #151515;
+    line-height: 40rpx;
+    font-size: 27rpx;
+}
+
+.pay-red {
+    color: #ee3939;
+}
+
+.pay-btn {
+    margin-top: 25rpx;
+    height: 78rpx;
+    line-height: 78rpx;
+    border: 1rpx solid #ee3939;
+    border-radius: 5rpx;
+    font-size: 30rpx;
+}
+
+.pay-back {
+    background: #ee3939;
+    color: #fff;
+}
+
+.pay-order {
+    background: #fff;
+    color: #ee3939;
+}
+
+.paysuc-orderinfo view {
+    line-height: 50rpx;
+}

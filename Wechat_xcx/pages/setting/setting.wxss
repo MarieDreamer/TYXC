@@ -1,0 +1,210 @@
+.album_setting {
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    padding: 0 30rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+
+.album_setting form {
+    width: 100%;
+    height: 100%;
+}
+
+.as-option_list {
+    width: 100%;
+}
+
+.as-ol-item {
+    display: flex;
+    align-items: center;
+    padding: 27rpx 0;
+}
+
+.as-ol-item-divide {
+    margin-bottom: 15rpx;
+    padding-bottom: 40rpx;
+    border-bottom: 1px solid #eee;
+}
+
+.as-option_list .as-ol-item-large {
+    padding: 42rpx 0;
+}
+
+.as-ol-item-icon {
+    width: 37rpx;
+    height: 37rpx;
+}
+
+.as-ol-item-name {
+    padding: 0 20rpx;
+    color: #333;
+    font-size: 28rpx;
+}
+
+.as-ol-item-custom {
+    flex: auto;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 20rpx;
+}
+
+.as-ol-item-ipt {
+    display: flex;
+    align-items: center;
+    height: 30rpx;
+    min-height: 30rpx;
+    text-align: right;
+    font-size: 28rpx;
+    color: #333;
+}
+
+.al-ol-im-avatar {
+    position: relative;
+    margin-right: 28rpx;
+    width: 55rpx;
+    height: 55rpx;
+    border-radius: 50%;
+}
+
+.al-ol-im-avatar>image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.al-ol-im-avatar>text {
+    position: absolute;
+    left: 6rpx;
+    bottom: -13rpx;
+    border-radius: 13rpx;
+    background-color: #fae100;
+    width: 74rpx;
+    height: 26rpx;
+    line-height: 26rpx;
+    color: #333;
+    font-size: 18rpx;
+    text-align: center;
+}
+
+.as-ol-item-more {
+    display: flex;
+    justify-content: flex-end;
+    width: 14rpx;
+    height: 24rpx;
+}
+
+.as-operate {
+    text-align: center;
+}
+
+.iponexPadd {
+    padding-bottom: 68rpx;
+}
+
+.as-operate-tip {
+    font-size: 24rpx;
+    color: #999;
+}
+
+.btn-defalut {
+    margin: 30rpx 0;
+    width: 100%;
+    height: 88rpx;
+    line-height: 88rpx;
+    text-align: center;
+    font-size: 32rpx;
+    color: #333;
+    border-radius: 44rpx;
+    background-color: #fae100;
+}
+
+.btn-disabled {
+    background-color: #999;
+    color: #fff;
+}
+
+.modal {
+    background-color: rgba(0,0,0,.57);
+    position: fixed;
+    top: 0;
+    left: 0;
+    index: 10;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.modal-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    border-radius: 20rpx;
+    margin-top: 266rpx;
+    padding: 40rpx 60rpx;
+    width: 600rpx;
+    height: 370rpx;
+    background-color: #fff;
+}
+
+.mb-title {
+    color: #333;
+    font-size: 36rpx;
+    font-weight: bold;
+}
+
+.mb-content {
+    display: flex;
+    align-items: center;
+    margin: 67rpx 0 40rpx;
+    padding: 0 0 14rpx;
+    width: 100%;
+    height: 54rpx;
+    border-bottom: 1px solid #cecece;
+}
+
+.mb-content-ipt {
+    flex: auto;
+    font-size: 28rpx;
+    color: rgba(51,51,51,1);
+}
+
+.mb-content-txt {
+    color: #cecece;
+    font-size: 28rpx;
+}
+
+.mb-btns {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 66rpx;
+}
+
+.mb-btn {
+    width: 200rpx;
+    height: 66rpx;
+    line-height: 66rpx;
+    text-align: center;
+    border-radius: 33rpx;
+    font-size: 28rpx;
+    color: #333;
+    background-color: #fae100;
+}
+
+.mb-btn-cancle {
+    background-color: #cecece;
+    color: #fefefe;
+}
+
+.as-yiniankefu {
+    text-align: center;
+    margin-top: 50rpx;
+}

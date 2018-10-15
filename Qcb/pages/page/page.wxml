@@ -1,0 +1,10 @@
+<import src="../../js/wxParse/wxParse.wxml"></import>
+<view class="container">
+    <view class="page-con" style="background:url(\"https://cc.hohiw.com/xcximg/wf-bg.png\");-webkit-background-size:100% 100%;">
+        <view class="page-con-c">
+            <scroll-view scrollY="true" style="height: 760rpx">
+                <template is="wxParse" data="{{wxParseData:content.nodes}}"></template>
+            </scroll-view>
+        </view>
+    </view>
+</view>

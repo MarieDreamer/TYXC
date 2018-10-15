@@ -1,0 +1,12 @@
+<form bindsubmit="formSubmit">
+    <view class="regi-list">
+        <input focus bindinput="MobileInput" class="regi-inpt" placeholder="手机号" placeholderStyle="color:#9e9e9e" type="number" value="{{submitData.mobile}}"></input>
+    </view>
+    <view class="regi-list">
+        <input focus bindinput="MobileCodeInput" class="regi-inpt yzm" placeholder="请输入验证码" placeholderStyle="color:#9e9e9e" type="text"></input>
+        <button bindtap="Sendsms" class="regi-yzm">{{send_code}}</button>
+    </view>
+    <view class="regi-bottom">
+        <button class="regi-btn" formType="submit">绑  定</button>
+    </view>
+</form>

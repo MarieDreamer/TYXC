@@ -1,0 +1,6 @@
+/* pages/shop/shop.wxss */
+.text_center{
+  text-align: center;
+  width: 100%;
+  line-height: 500rpx;
+}

@@ -1,0 +1,113 @@
+<view class="container">
+    <view class="search-bg">
+        <view class="search">
+            <view class="search-rt">
+                <image src="https://cc.hohiw.com/xcximg/search.png"></image>
+                <input bindconfirm="SearchInput" placeholder="请输入关键词查询" placeholderStyle="font-size:24rpx;color:#ccc" type="text"></input>
+            </view>
+        </view>
+    </view>
+    <view class="banner">
+        <swiper autoplay="true" class="swiper" duration="1000" indicatorActiveColor="#fff" indicatorDots="true" interval="5000">
+            <navigator hoverClass="none" openType="{{ad.target==0?'redirect':''}}" url="{{ad.ad_link}}" wx:for="{{adv}}" wx:for-item="ad" wx:key="key">
+                <swiper-item>
+                    <image class="slide-image" mode="aspectFill" src="{{ad.ad_code}}"></image>
+                </swiper-item>
+            </navigator>
+        </swiper>
+        <view class="news" style="display:{{bshow}}">
+            <view class="marquee">
+                <view class="content">
+                    <view class="content-list" style="display:{{v.show}}" wx:for="{{prize}}" wx:for-item="v" wx:key="k">
+                        <image class="user-tx" src="{{v.head_pic}}"></image>
+                        <text>{{v.title}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="weui-grids">
+        <block wx:for="{{nav}}" wx:for-item="list" wx:key="key">
+            <navigator class="weui-grid" hoverClass="none" openType="{{list.is_new==0?'redirect':'navigate'}}" url="{{list.url}}" wx:if="{{list.id!=3}}">
+                <image class="weui-grid__icon" src="{{list.ico}}"></image>
+                <view class="weui-grid__label">{{list.name}}</view>
+            </navigator>
+            <view bindtap="openAlert" class="weui-grid" hoverClass="none" openType="{{list.is_new==0?'redirect':'navigate'}}" wx:if="{{list.id==3}}">
+                <image class="weui-grid__icon" src="{{list.ico}}"></image>
+                <view class="weui-grid__label">{{list.name}}</view>
+            </view>
+        </block>
+    </view>
+    <view class="pro-1">
+        <view class="title">
+            <view class="title-lt">
+                <image src="https://cc.hohiw.com/xcximg/idx-ico1.png"></image>
+                <text>小姐姐推荐</text>
+            </view>
+        </view>
+        <scroll-view scrollX="true" style="display: flex">
+            <view class="pro-con">
+                <view wx:for="{{bests}}" wx:for-item="list" wx:key="key">
+                    <view class="list">
+                        <navigator hoverClass="none" url="/pages/goods/goods?id={{list.goods_id}}">
+                            <view class="list-lt">
+                                <image src="{{list.goods_img}}"></image>
+                            </view>
+                        </navigator>
+                        <view class="list-r">
+                            <navigator hoverClass="none" url="/pages/goods/goods?id={{list.goods_id}}">
+                                <view class="list-r-t">
+                                    <text>{{list.goods_name}}</text>
+                                </view>
+                            </navigator>
+                            <navigator hoverClass="none" url="/pages/goods/goods?id={{list.goods_id}}">
+                                <view class="list-r-price">
+                                    <view>￥{{list.shop_price}}<text class="fh">或</text>¥{{list.last_price}}</view>
+                                </view>
+                            </navigator>
+                            <view class="mdj"> 已售{{list.sales_sum}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="banner-gg" wx:for="{{adv1}}" wx:for-item="ad" wx:key="key">
+        <image src="{{ad.ad_code}}"></image>
+    </view>
+    <view class="pro-2">
+        <view class="title">
+            <view class="title-lt">
+                <image src="https://cc.hohiw.com/xcximg/idx-ico2.png"></image>
+                <text>贵圈热卖</text>
+            </view>
+        </view>
+        <view class="pro-con">
+            <view class="list {{key%2==0?'lt':'rt'}}" wx:for="{{lists}}" wx:for-item="list" wx:key="key">
+                <navigator hoverClass="none" url="/pages/goods/goods?id={{list.goods_id}}">
+                    <image src="{{list.goods_img}}"></image>
+                </navigator>
+                <navigator hoverClass="none" url="/pages/goods/goods?id={{list.goods_id}}">
+                    <text class="list-t">{{list.goods_name}}</text>
+                </navigator>
+                <view class="list-d">
+                    <navigator hoverClass="none" url="/pages/goods/goods?id={{list.goods_id}}">
+                        <text class="price">¥{{list.shop_price}}<text class="fh">或</text>¥{{list.last_price}}</text>
+                    </navigator>
+                    <navigator hoverClass="none" url="/pages/goods/goods?id={{list.goods_id}}"></navigator>
+                </view>
+                <view class="mdj"> 已售{{list.sales_sum}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="weui-loadmore" style="display:{{more}}">
+        <view class="weui-loading"></view>
+        <view class="weui-loadmore__tips">正在加载</view>
+    </view>
+    <view class="weui-loadmore weui-loadmore_line" wx:if="{{listend==1}}">
+        <view class="weui-loadmore__tips weui-loadmore__tips_in-line">我是有底线滴</view>
+    </view>
+    <view class="occupy"></view>
+</view>
+<import src="/pages/template/tabbar.wxml"></import>
+<template is="tabBar" data="{{tabBar:bindData.tabBar}}"></template>

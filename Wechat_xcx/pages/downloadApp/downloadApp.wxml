@@ -1,0 +1,19 @@
+<view class="download_app flex-column">
+    <view class="flex-column flex-center da-header">
+        <text class="da-header-title">您可以通过在忆年APP中快速导入照片</text>
+        <text class="da-header-desc">在各大应用商城中搜索“忆年”即可下载APP</text>
+    </view>
+    <view class="flex-column flex-center da-main">
+        <text class="da-main-desc">扫描下方二维码，下载APP（本页面不可识别）</text>
+        <image class="da-main-qrcode" src="{{QRCodeUrl}}"></image>
+        <view catchtap="saveQRCode" class="da-main-save flex-column flex-center">保存二维码</view>
+    </view>
+    <view class="flex-column flex-center da-footer">
+        <text class="da-footer-desc">上传照片可支持小程序、APP、官网三端同步。</text>
+        <view class="da-footer-website flex-row">
+            <text>官网：</text>
+            <text class="da-fw-path">www.zhuiyinanian.com</text>
+            <view catchtap="copyWebsite" class="da-fw-copy flex-row flex-center">复制</view>
+        </view>
+    </view>
+</view>

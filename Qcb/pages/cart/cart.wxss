@@ -1,0 +1,185 @@
+page {
+    background: #fff;
+}
+
+.gwc {
+    background: #fff;
+    width: 100%;
+}
+
+.gwc-list {
+    display: flex;
+    height: 174rpx;
+    border-bottom: 1px solid #e8e8e8;
+    margin: 17rpx 20rpx;
+}
+
+.gwc-lt {
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.gwc-lt radio {
+    -webkit-transform: scale(.8);
+    -moz-transform: scale(.8);
+}
+
+.gwc-lt image {
+    width: 179rpx;
+    height: 172rpx;
+}
+
+.gwc-rt {
+    padding-left: 25rpx;
+    width: 60%;
+}
+
+.gwc-rt-t {
+    font-size: 28rpx;
+    color: #000;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tt {
+    width: 100%;
+    height: 80rpx;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.jg {
+    color: #ee3939;
+}
+
+.gwc-rt-c {
+    display: block;
+    padding-bottom: 18rpx;
+    line-height: 20rpx;
+}
+
+.gwc-rt-c text {
+    font-size: 24rpx;
+    color: #9597a1;
+}
+
+.gwc-rt-d {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    padding: 10rpx 0;
+}
+
+.stepper {
+    width: 160rpx;
+    height: 50rpx;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.stepper text {
+    width: 38rpx;
+    line-height: 46rpx;
+    text-align: center;
+    float: left;
+}
+
+.stepper input {
+    width: 80rpx;
+    height: 50rpx;
+    min-height: 42rpx;
+    float: left;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 12px;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+
+.stepper .normal {
+    color: black;
+}
+
+.stepper .disabled {
+    color: #ccc;
+}
+
+.gwc-rt-d .del {
+    width: 36rpx;
+    height: 38rpx;
+}
+
+.hj {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 85rpx;
+    background: #fff;
+    position: fixed;
+    bottom: 108rpx;
+    border-top: 1px solid #e6e6e6;
+    font-size: 30rpx;
+}
+
+.hj-lt {
+    padding-left: 20rpx;
+}
+
+.hj-lt radio {
+    -webkit-transform: scale(.8);
+    -moz-transform: scale(.8);
+}
+
+.hj-rt {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 65%;
+}
+
+.hj-rt-qjs {
+    background: #fe6702;
+    height: 85rpx;
+    width: 205rpx;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 16rpx;
+}
+
+.hj-rt-num .money {
+    color: #fe6702;
+    padding-left: 20rpx;
+}
+
+.gwc-k {
+    background: #fff;
+    width: 100%;
+    text-align: center;
+    font-size: 28rpx;
+}
+
+.gwc-k image {
+    padding: 265rpx 0 30rpx 0;
+    width: 259rpx;
+    height: 288rpx;
+}
+
+.ts text {
+}
+
+.ts button {
+    margin-top: 50rpx;
+    width: 245rpx;
+    height: 72rpx;
+    background: #fe6702;
+    color: #fff;
+    font-size: 28rpx;
+}

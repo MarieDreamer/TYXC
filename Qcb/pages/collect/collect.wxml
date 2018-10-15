@@ -1,0 +1,15 @@
+<view class="sc-list" wx:if="{{goods_list.length>0}}" wx:for="{{goods_list}}" wx:for-item="goods" wx:key="key">
+    <navigator class="sc-lt" url="/pages/goods/goods?id={{goods.goods_id}}">
+        <image mode="aspectFill" src="{{goods.original_img}}"></image>
+    </navigator>
+    <view class="sc-rt">
+        <navigator class="sc-tit" url="/pages/goods/goods?id={{goods.goods_id}}">{{goods.goods_name}}</navigator>
+        <view class="sc-price">
+            <label class="sc-coin">￥</label>{{goods.shop_price}}
+	</view>
+        <view bindtap="DelGoods" class="edtor-listbtn" data-index="{{index}}">
+            <image class="edtor-iconleft" src="https://cc.hohiw.com/xcximg/del2.png"></image>
+            <text class="edtor-text">删除</text>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,81 @@
+.list-con {
+    width: 100%;
+}
+
+.list {
+    margin-bottom: 20rpx;
+    background: #fff;
+    padding: 0 25rpx;
+}
+
+.list-t {
+    display: flex;
+    justify-content: space-between;
+    font-size: 28rpx;
+    padding: 30rpx 0 28rpx 0;
+}
+
+.list-c {
+    display: flex;
+    justify-content: space-between;
+    font-size: 26rpx;
+    color: #969595;
+    padding-bottom: 25rpx;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.list-d {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 26rpx;
+    padding: 25rpx 0;
+}
+
+.list-d-lt {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.list-d-lt image {
+    width: 29rpx;
+    height: 29rpx;
+    margin-right: 10rpx;
+}
+
+.list-d-rt {
+    display: flex;
+    justify-content: space-around;
+}
+
+.list-d-rt-l image {
+    width: 26rpx;
+    height: 26rpx;
+    margin: 0 15rpx 0 25rpx;
+}
+
+.active {
+    color: #fe6702;
+}
+
+.navbut {
+    position: absolute;
+    bottom: 31rpx;
+}
+
+.but button {
+    width: 704rpx;
+    height: 85rpx;
+    background-color: #fe6702;
+    color: #fff;
+    font-size: 32rpx;
+    margin-top: 70rpx;
+}
+
+.no-data-tip {
+    padding: 150rpx 0;
+    text-align: center;
+    color: #888;
+    font-size: 30rpx;
+}

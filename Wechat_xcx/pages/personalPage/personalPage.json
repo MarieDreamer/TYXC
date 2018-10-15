@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "个人主页",
+    "usingComponents": {
+        "menu-modal": "/pages/components/menuModal/menuModal"
+    }
+}

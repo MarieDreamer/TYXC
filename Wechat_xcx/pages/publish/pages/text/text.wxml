@@ -1,0 +1,26 @@
+<view class="publish">
+    <view class="publish-section">
+        <view class="publish-section-title" wx:if="{{false}}">
+            <view class="publish-list">
+                <image class="pl-icon" mode="aspectFill" src="{{ICON.PAGE}}"></image>
+                <view class="pl-text">
+                    <text class="pl-title">输入标题（可选）</text>
+                </view>
+            </view>
+        </view>
+        <view class="publish-section-content">
+            <input bindinput="inputTitle" class="publish-input" maxlength="24" placeholder="输入标题（可选）" placeholderClass="publish-placeholder">
+                <image class="publish-input-icon" mode="aspectFit" src="{{ICON.PAGE_GRAY}}"></image>
+                <text class="publish-input-count">{{title.length}}/24</text>
+            </input>
+        </view>
+    </view>
+    <input-text bindreturnResult="getInputText" maxLength="500"></input-text>
+    <location bindreturnResult="getLocation"></location>
+    <and-friends bindreturnResult="getAndFriends" groupId="{{groupId}}" selectedFriends="{{selectedFriends}}" wx:if="{{albumType==2}}"></and-friends>
+    <view class="publish-submit">
+        <form bindsubmit="formSubmit" class="publish-submit-form" reportSubmit="{{true}}">
+            <button class="publish-btn  {{text.length===0?'publish-btn-disabled':''}}" formType="submit">立即上传</button>
+        </form>
+    </view>
+</view>

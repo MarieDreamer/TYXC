@@ -1,0 +1,9 @@
+<view class="au-container">
+    <view class="au-section">
+        <image class="au-section-yinian" mode="aspectFill" src="{{startAuthPicYinian}}"></image>
+        <view class="au-section-center">
+            <image src="http://oibl5dyji.bkt.clouddn.com/allactivecorn.png"></image>
+        </view>
+        <button bindgetuserinfo="userInfoHandler" class="au-section-login" openType="getUserInfo">登录</button>
+    </view>
+</view>

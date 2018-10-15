@@ -1,0 +1,194 @@
+page {
+    font-size: 30rpx;
+}
+
+.navbar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    background: #fff;
+    border-top: 2rpx solid #f5f5f5;
+    width: 100%;
+}
+
+.navbar .item {
+    position: relative;
+    -webkit-box-flex: 1;
+    flex: 1;
+    text-align: center;
+    line-height: 80rpx;
+    font-size: 30rpx;
+}
+
+.navbar .item.active {
+    color: #E51C23;
+}
+
+.navbar .item.active:after {
+    width: 120rpx;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -60rpx;
+    height: 4rpx;
+    background: #E51C23;
+}
+
+.agent-item {
+    padding: 20rpx 0;
+    margin: 0 26rpx;
+    border-bottom: 1px solid #f5f5f5;
+    background: #fff;
+}
+
+.agent-item:last-child {
+    border-bottom: none;
+}
+
+.withdraw {
+    padding: 100rpx 0 60rpx;
+    margin-top: 18rpx;
+    background: #fff;
+    flex-direction: column;
+}
+
+.jinbi {
+    width: 100rpx;
+    height: 100rpx;
+    margin-bottom: 20rpx;
+}
+
+.keti-money {
+    font-size: 96rpx;
+    color: #E51C23;
+}
+
+.go {
+    width: 80rpx;
+    height: 80rpx;
+    vertical-align: top;
+    margin-top: 38rpx;
+}
+
+.n-container {
+    background: #fff;
+    margin-top: 20rpx;
+}
+
+.had-money {
+    font-size: 32rpx;
+    color: #999;
+}
+
+.had-money-num {
+    -webkit-box-flex: 1;
+    flex: 1;
+    font-size: 32rpx;
+    text-align: right;
+}
+
+.go-arrow {
+    width: 12rpx;
+    height: 24rpx;
+    margin-left: 10rpx;
+}
+
+.tixian {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 90rpx;
+    line-height: 90rpx;
+    border-radius: 0;
+    border: none;
+    background: #E51C23;
+    color: #fff;
+    font-size: 32rpx;
+    text-align: center;
+}
+
+.flexed {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: space-between;
+    -ms-flex-pack: space-between;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.flexed-2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: flex-start;
+    -ms-flex-pack: flex-start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.flexed-3 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.f1 {
+    color: #666;
+}
+
+.f2 {
+    color: #999;
+}
+
+.f3 {
+    color: #fff;
+}
+
+.f4 {
+    color: #e51c23;
+}
+
+.f12 {
+    font-size: 24rpx;
+}
+
+.f16 {
+    font-size: 26rpx;
+}
+
+.f14 {
+    font-size: 28rpx;
+}
+
+.f16 {
+    font-size: 32rpx;
+}
+
+.bk {
+    display: block;
+}
+
+.center {
+    text-align: center;
+}
+
+image {
+    vertical-align: middle;
+}

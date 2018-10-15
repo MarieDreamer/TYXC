@@ -1,0 +1,9 @@
+<import src="../../js/wxParse/wxParse.wxml"></import>
+<view class="helpshow_con">
+    <view class="helpshow_title">{{title}}</view>
+    <view class="helpshow_content">
+        <template is="wxParse" data="{{wxParseData:content.nodes}}"></template>
+    </view>
+</view>
+<view class="occupy"></view>
+<view class="button-group {{isIphoneX?'fix-iphonex-button':''}}"></view>

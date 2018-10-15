@@ -1,0 +1,16 @@
+<view class="publish-option">
+    <view class="publish-list">
+        <image class="pl-icon" mode="aspectFill" src="{{ICON.AND}}"></image>
+        <view class="pl-text">
+            <text catchtap="toSelectMember" class="pl-title {{andFriends.result.length>0?'pl-title-disabled':''}}">{{andFriends.title}}</text>
+            <view catchtap="toSelectMember" class="pl-result text-overflow">
+                <view class="pl-resut-item" wx:for="{{andFriends.result}}" wx:key="{{index}}">
+          {{item.unickname}}
+          <text wx:if="{{index!=andFriends.result.length-1}}">、</text>
+                </view>
+            </view>
+            <image catch:tap="clearAndFriends" class="pl-icon" mode="aspectFill" src="{{ICON.CLOSE}}" wx:if="{{andFriends.result.length>0}}"></image>
+        </view>
+        <image catchtap="toSelectMember" class="pl-arrow" mode="aspectFill" src="{{ICON.ARROW}}"></image>
+    </view>
+</view>

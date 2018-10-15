@@ -1,0 +1,7 @@
+<template name="tempic">
+    <view class="beforeAuth">
+        <view class="beforeAuth-pic-box">
+            <image mode="aspectFill" src="{{belowImgUrl}}"></image>
+        </view>
+    </view>
+</template>

@@ -1,0 +1,70 @@
+<view class="album_setting">
+    <view class="as-option_list">
+        <navigator hoverClass="none" url="/pages/others/albumMembers/albumMembers?groupId={{groupid}}" wx:if="{{albumType!=='loversalbum'&&albumType!=='personalalbum'}}">
+            <view class="as-ol-item as-ol-item-divide as-ol-item-large">
+                <image class="as-ol-item-icon" src="http://oibl5dyji.bkt.clouddn.com/albumSet_members@3x.png"></image>
+                <text class="as-ol-item-name">相册成员</text>
+                <view class="as-ol-item-custom">
+                    <view class="al-ol-im-avatar" wx:for="{{userlist}}" wx:key="{{index}}">
+                        <image mode="aspectFill" src="{{item.user.upic}}"></image>
+                        <text wx:if="{{item.isAdmin===1}}">管理员</text>
+                    </view>
+                </view>
+                <image class="as-ol-item-more" src="http://oibl5dyji.bkt.clouddn.com/albumSet_arrow@3x.png"></image>
+            </view>
+        </navigator>
+        <view catchtap="openModal" class="as-ol-item">
+            <image class="as-ol-item-icon" src="http://oibl5dyji.bkt.clouddn.com/albumSet_name@3x.png"></image>
+            <text class="as-ol-item-name">相册名称</text>
+            <view class="as-ol-item-custom"></view>
+            <image class="as-ol-item-more" src="http://oibl5dyji.bkt.clouddn.com/albumSet_arrow@3x.png"></image>
+        </view>
+        <view catchtap="openAlbumCover" class="as-ol-item">
+            <image class="as-ol-item-icon" src="http://oibl5dyji.bkt.clouddn.com/albumSet_cover@3x.png"></image>
+            <text class="as-ol-item-name">相册封面</text>
+            <view class="as-ol-item-custom"></view>
+            <image class="as-ol-item-more" src="http://oibl5dyji.bkt.clouddn.com/albumSet_arrow@3x.png"></image>
+        </view>
+        <view catchtap="showcode" class="as-ol-item" id="generatecode" wx:if="{{codeAuth.groupQrCodeAuth==1&&albumType!='personalalbum'}}">
+            <image class="as-ol-item-icon" src="http://oibl5dyji.bkt.clouddn.com/albumSet_QRCode@3x.png"></image>
+            <text class="as-ol-item-name">相册二维码</text>
+            <view class="as-ol-item-custom"></view>
+            <image class="as-ol-item-more" src="http://oibl5dyji.bkt.clouddn.com/albumSet_arrow@3x.png"></image>
+        </view>
+        <view catchtap="toAddSet" class="as-ol-item as-ol-item-divide" wx:if="{{showIt&&!isSpecialAlbum}}">
+            <image class="as-ol-item-icon" src="http://oibl5dyji.bkt.clouddn.com/albumSet_person@3x.png"></image>
+            <text class="as-ol-item-name">谁可以添加照片</text>
+            <view class="as-ol-item-custom"></view>
+            <image class="as-ol-item-more" src="http://oibl5dyji.bkt.clouddn.com/albumSet_arrow@3x.png"></image>
+        </view>
+        <navigator hoverClass="none" url="/pages/others/helpcenter/helpcenter">
+            <view class="as-ol-item">
+                <image class="as-ol-item-icon" src="http://oibl5dyji.bkt.clouddn.com/albumSet_service@3x.png"></image>
+                <text class="as-ol-item-name">在线客服</text>
+                <view class="as-ol-item-custom"></view>
+                <image class="as-ol-item-more" src="http://oibl5dyji.bkt.clouddn.com/albumSet_arrow@3x.png"></image>
+            </view>
+        </navigator>
+        <view class="as-yiniankefu">
+            <text class="as-operate-tip">忆年用户反馈客服QQ：1522207067</text>
+        </view>
+    </view>
+    <view class="as-operate {{isIphonex?'iponexPadd':''}}">
+        <text class="as-operate-tip" wx:if="{{canNotExit==0}}">长按首页相册封面也可以退出相册</text>
+        <button bindtap="leavegroup" class="btn-defalut btn-disabled" wx:if="{{(!userid||userid!=createrid)&&canNotExit==0}}">退出相册</button>
+        <button bindtap="deletegroup" class="btn-defalut btn-disabled" wx:if="{{userid==createrid}}">解散相册</button>
+    </view>
+    <view class="modal" wx:if="{{modal===1}}">
+        <view class="modal-box">
+            <text class="mb-title">修改相册名称</text>
+            <view class="mb-content">
+                <input focus bindinput="modifyAlbumNameInput" class="mb-content-ipt" maxlength="16" placeholder="{{ganme}}" placeholderStyle="color:#999" value="{{ganme}}"></input>
+                <text class="mb-content-txt">{{albumNameLength}}/16</text>
+            </view>
+            <view class="mb-btns">
+                <view catchtap="cancleModal" class="mb-btn mb-btn-cancle">取消</view>
+                <view catchtap="submitfun" class="mb-btn">确定</view>
+            </view>
+        </view>
+    </view>
+</view>

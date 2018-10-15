@@ -1,0 +1,560 @@
+.bg {
+    background: #f5f5f5;
+}
+
+.banner {
+    width: 100%;
+}
+
+.banner image {
+    width: 100%;
+    height: 480rpx;
+}
+
+.pro-c {
+    padding: 25rpx 0 0 0;
+    background: #fff;
+    width: 100%;
+}
+
+.pro-c-t {
+    font-size: 34rpx;
+    height: 80rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #222222;
+    padding: 0 25rpx;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 10rpx;
+}
+
+.good-name {
+    display: block;
+    line-height: 40rpx;
+    width: 85%;
+}
+
+.pro-c-t-rt {
+    font-size: 20rpx;
+    color: #999;
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-left: 12rpx;
+    border-left: 1rpx solid #ccc;
+}
+
+.pro-c-t-rt text {
+    display: block;
+}
+
+.pro-c-t-rt button {
+    padding: 0;
+    margin: 0;
+    background-size: 50rpx 50rpx;
+    background-repeat: no-repeat;
+    border: none;
+    font-size: 24rpx;
+    width: 50rpx;
+    height: 50rpx;
+}
+
+button::after {
+    border: none;
+}
+
+.pro-c-st {
+    font-size: 30rpx;
+    color: #666;
+    padding: 0 25rpx;
+}
+
+.pro-c-d {
+    color: #ed2323;
+    padding: 0 25rpx;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.pro-c-d-r {
+    color: #666;
+    font-size: 30rpx;
+    padding-left: 20rpx;
+}
+
+.pro-c-d-r text {
+    color: #ed2323;
+}
+
+.pro-c-d-lt {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.pro-c-d-rt {
+    width: 50rpx;
+    height: 50rpx;
+    position: relative;
+}
+
+.pro-c-d-rt image {
+    width: 100%;
+    height: 100%;
+}
+
+.pro-c-d .fh {
+    font-size: 30rpx;
+    color: #010101;
+    padding: 0 5rpx;
+}
+
+.pro-c-d .je {
+    font-size: 42rpx;
+}
+
+.bq {
+    display: flex;
+    justify-content: space-between;
+    height: 90rpx;
+    border-top: 1rpx solid #eeeeee;
+    margin-top: 20rpx;
+}
+
+.pro-list {
+    display: flex;
+    align-items: center;
+    font-size: 26rpx;
+    color: #666666;
+}
+
+.pro-list image {
+    width: 30rpx;
+    height: 30rpx;
+    padding-right: 10rpx;
+}
+
+.sppj {
+    margin-top: 20rpx;
+    background: #fff;
+    width: 100%;
+}
+
+.sppj-t {
+    display: flex;
+    justify-content: space-between;
+    padding: 20rpx;
+    color: #fe6702;
+}
+
+.sppj-t .sppj-t-lt-icon {
+    width: 27rpx;
+    height: 28rpx;
+    padding-right: 10rpx;
+}
+
+.sppj-t-lt {
+    font-size: 32rpx;
+    color: #333333;
+    display: flex;
+    align-items: center;
+}
+
+.sppj-t-rt text {
+    font-size: 24rpx;
+    color: #8c8c8c;
+}
+
+.sppj-t .sppj-t-rt-icon {
+    width: 10rpx;
+    height: 19rpx;
+    padding-left: 10rpx;
+}
+
+.sppj-c {
+    padding: 0 25rpx;
+}
+
+.sppj-c-t {
+    padding: 25rpx 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.sppj-c-t image {
+    width: 82rpx;
+    height: 82rpx;
+    border-radius: 50%;
+    margin-right: 15rpx;
+}
+
+.sppj-c-t .pj {
+    margin-left: 45rpx;
+}
+
+.sppj-c-t .pj image {
+    width: 250rpx;
+    height: 40rpx;
+    border-radius: 0;
+}
+
+.sppj-c-c text {
+    font-size: 26rpx;
+    color: #333;
+}
+
+.sppj-c-i {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.sppj-c-i image {
+    width: 90rpx;
+    margin: 10rpx;
+}
+
+.sppj-c-d {
+    font-size: 24rpx;
+    color: #8c8c8c;
+    padding: 30rpx 0;
+}
+
+.spxq {
+    margin-top: 20rpx;
+    background: #fff;
+    width: 100%;
+}
+
+.spxq-t {
+    display: flex;
+    justify-content: space-between;
+    padding: 25rpx;
+    color: #fe6702;
+}
+
+.spxq-t .spxq-t-lt-icon {
+    width: 27rpx;
+    height: 28rpx;
+    padding-right: 10rpx;
+}
+
+.spxq-t-lt {
+    font-size: 32rpx;
+    color: #333333;
+    display: flex;
+    align-items: center;
+}
+
+.spxq-t-rt text {
+    font-size: 24rpx;
+    color: #8c8c8c;
+}
+
+.spxq-t .spxq-t-rt-icon {
+    width: 10rpx;
+    height: 19rpx;
+    padding-left: 10rpx;
+}
+
+.spxq-c {
+    padding: 25rpx;
+}
+
+.spxq-c image {
+    width: 100%;
+    height: 767rpx;
+}
+
+.rmtj {
+    margin-top: 20rpx;
+    background: #fff;
+    width: 100%;
+}
+
+.rmtj-t {
+    display: flex;
+    justify-content: space-between;
+    padding: 25rpx;
+    color: #fe6702;
+}
+
+.rmtj-t .rmtj-t-lt-icon {
+    width: 27rpx;
+    height: 28rpx;
+    padding-right: 10rpx;
+}
+
+.rmtj-t-lt {
+    font-size: 30rpx;
+}
+
+.rmtj-t-rt text {
+    font-size: 24rpx;
+    color: #8c8c8c;
+}
+
+.rmtj-t .rmtj-t-rt-icon {
+    width: 10rpx;
+    height: 19rpx;
+    padding-left: 10rpx;
+}
+
+.rmtj-con {
+    width: 96%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 20rpx 25rpx;
+}
+
+.rmtj-con-list {
+    width: 49%;
+    background: #fff;
+    margin-bottom: 12rpx;
+}
+
+.rmtj-con-list image {
+    width: 100%;
+}
+
+.rmtj-con-list-t {
+    font-size: 26rpx;
+    color: #1a1a1a;
+    padding: 0 12rpx;
+    display: block;
+}
+
+.rmtj-con-list-d {
+    padding: 12rpx;
+    display: flex;
+    justify-content: space-between;
+}
+
+.rmtj-con-list-d-lf {
+    display: flex;
+    font-weight: bold;
+    color: #fe6702;
+}
+
+.rmtj-con-list-d-lf .fh {
+    font-size: 20rpx;
+}
+
+.rmtj-con-list-d-lf .jg {
+    font-size: 26rpx;
+}
+
+.rmtj-con-list-d image {
+    width: 36rpx;
+    height: 34rpx;
+}
+
+.foot {
+    display: flex;
+    background: #fff;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+.foot-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.foot-list text {
+    display: block;
+}
+
+.foot-list image {
+    width: 50rpx;
+    height: 50rpx;
+}
+
+.lt {
+    width: 15%;
+    height: 88rpx;
+    font-size: 18rpx;
+}
+
+.lt-con {
+    text-align: center;
+    display: block;
+}
+
+.rt {
+    width: 35%;
+    height: 88rpx;
+    font-size: 30rpx;
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.red {
+    background: #ff9600;
+}
+
+.org {
+    background: #e93b3d;
+}
+
+.tc-bg {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.4);
+}
+
+.tc-bg .tc {
+    position: fixed;
+    bottom: 0;
+    background: #fff;
+    padding: 0 2%;
+    width: 96%;
+}
+
+.close {
+    width: 50rpx;
+    height: 50rpx;
+    position: absolute;
+    right: 0;
+}
+
+.close image {
+    width: 100%;
+    height: 100%;
+}
+
+.tc-t {
+    display: flex;
+}
+
+.tc-t image {
+    width: 305rpx;
+    height: 239rpx;
+    position: relative;
+    top: -30rpx;
+}
+
+.tc-t-rt {
+    display: flex;
+    flex-wrap: wrap;
+    height: 60rpx;
+    padding: 25rpx;
+}
+
+.tc-t-rt .jg {
+    color: #fe6702;
+    font-size: 38rpx;
+    height: 80rpx;
+    width: 100%;
+}
+
+.tc-t-rt .kc {
+    color: #4c4c4c;
+    font-size: 28rpx;
+    width: 100%;
+    height: 60rpx;
+}
+
+.tc-t-rt .kw {
+    color: #4c4c4c;
+    font-size: 28rpx;
+    width: 100%;
+}
+
+.tc-c {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.tc-c-t {
+    width: 100%;
+    font-size: 30rpx;
+    color: #1a1a1a;
+    margin-bottom: 28rpx;
+}
+
+.tc-c button {
+    background: #f5f5f5;
+    margin: 0 0 20rpx 0;
+    padding: 20rpx 90rpx;
+    font-size: 24rpx;
+    line-height: 24rpx;
+    margin-left: 10rpx;
+}
+
+.tc-c .active {
+    background: #fe6702;
+    color: #fff;
+}
+
+.tc-c2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #f5f5f5;
+    border-bottom: 1xp solid #f5f5f5;
+    padding: 25rpx;
+}
+
+.gmsl {
+    font-size: 30rpx;
+    color: #1a1a1a;
+}
+
+.stepper {
+    width: 160rpx;
+    height: 52rpx;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.stepper text {
+    width: 38rpx;
+    line-height: 52rpx;
+    text-align: center;
+    float: left;
+}
+
+.stepper input {
+    width: 80rpx;
+    height: 52rpx;
+    min-height: 52rpx;
+    float: left;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 12px;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+
+.stepper .normal {
+    color: black;
+}
+
+.stepper .disabled {
+    color: #ccc;
+}
+
+.submit {
+    background: #fe6702;
+    color: #fff;
+    margin: 0 0 20rpx 0;
+    padding: 25rpx 90rpx;
+    font-size: 30rpx;
+    line-height: 30rpx;
+}

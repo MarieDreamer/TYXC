@@ -1,0 +1,11 @@
+<view class="paysuccess-main">
+    <image mode="widthFix" src="https://cc.hohiw.com/xcximg/paysuccess-icon.png" style="width:180rpx; height:180rpx;"></image>
+    <view class="paysuc-tit">确认收货成功</view>
+    <view class="paysuc-order">
+        <view>订单已经确认收货成功，</view>
+        <view wx:if="{{is_comment==1}}">立即发表评价晒图！</view>
+    </view>
+    <view class="paysuc-orderinfo"></view>
+    <navigator class="pay-btn pay-back" openType="redirect" url="/pages/comment_list/comment_list?order_id={{order_id}}&status=0" wx:if="{{is_comment==1}}">立即评价</navigator>
+    <navigator class="pay-btn pay-order" url="/pages/orderlist/orderlist">查看订单</navigator>
+</view>

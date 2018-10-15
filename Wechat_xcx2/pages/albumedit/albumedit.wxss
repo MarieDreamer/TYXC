@@ -1,0 +1,72 @@
+/* pages/albumedit/albumedit.wxss */
+.change_album_name{
+  width: 700rpx;
+  margin: 25rpx;
+  height: 60rpx;
+}
+.change_album_name view{
+  width: 200rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  float: left;
+  text-align: center;
+}
+.change_album_name input{
+  width: 470rpx;
+  height: 60rpx;
+  border-radius: 30rpx;
+  background-color: #eee;
+  float: left;
+  padding-left: 30rpx;
+}
+.change_album_user{
+  width: 700rpx;
+  margin: 25rpx;
+  height: 60rpx;
+}
+.change_album_user_title{
+  width: 200rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  float: left;
+  text-align: center;
+}
+.change_album_user_name{
+  width: 500rpx;
+  height: 60rpx;
+  border-radius: 30rpx;
+  background-color: #eee;
+  float: left;
+  text-align: center;
+}
+
+.change_album_url{
+  width: 700rpx;
+  margin: 25rpx;
+  height: 60rpx;
+}
+.change_album_url_title{
+  width: 200rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  float: left;
+  text-align: center;
+}
+.change_album_url_name{
+  width: 500rpx;
+  height: 60rpx;
+  border-radius: 30rpx;
+  background-color: #eee;
+  float: left;
+  text-align: center;
+}
+
+.album_exit{
+  width: 600rpx;
+  margin: 75rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #ddd;
+  border-radius: 40rpx;
+  text-align: center;
+}

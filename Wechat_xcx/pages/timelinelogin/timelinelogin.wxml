@@ -1,0 +1,20 @@
+<view class="au-container">
+    <view class="au-section">
+        <image class="au-section-yinian" mode="aspectFill" src="{{upic}}"></image>
+        <view class="info-section">
+            <text>你的好友</text>
+            <text class="minetext_one">{{userName}}</text>
+        </view>
+        <view class="info-section">
+            <text>邀请你加入</text>
+            <text class="minetext_two">《{{groupName}}》</text>
+            <text>相册</text>
+        </view>
+        <view class="au-section-center">
+            <view class="yellowline"></view>
+            <text class="minetext_one">这里是仅限相册成员之间的私密“朋友圈”，</text>
+            <text class="minetext_two">在这里你可以和他们共享生活中的照片和故事，照片将永久保存，会议永不过期！</text>
+        </view>
+        <button bindgetuserinfo="userInfoHandler" class="au-section-login" openType="getUserInfo">加入相册</button>
+    </view>
+</view>

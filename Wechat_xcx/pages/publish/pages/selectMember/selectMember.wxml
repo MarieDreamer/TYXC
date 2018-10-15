@@ -1,0 +1,20 @@
+<view class="select_member">
+    <view class="sm-header">
+        <text>相册成员</text>
+        <text>{{memberNumber}}人</text>
+    </view>
+    <view class="sm-list">
+        <view catch:tap="selectMember" class="sm-list-item" data-selected="{{item.selected}}" data-userid="{{item.user.userid}}" wx:if="{{item.user.userid!=userId}}" wx:for="{{memberList}}" wx:key="key">
+            <image class="sm-li-avatar" src="{{item.user.upic}}"></image>
+            <text class="sm-li-nick">{{item.user.unickname}}</text>
+            <text class="sm-li-role" wx:if="{{item.isAdmin===1}}">管理员</text>
+            <image class="sm-li-select" src="{{item.selected?ICON.SELECTED:ICON.UNSELECTED}}"></image>
+        </view>
+    </view>
+    <view class="sm-loading" wx:if="{{loading===0}}">
+        <image class="sm-loading-img" src="{{ICON.LOADING}}"></image>
+    </view>
+    <view class="sm-confirm">
+        <button catch:tap="saveSelected" class="sm-confirm-btn">确认</button>
+    </view>
+</view>

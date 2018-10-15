@@ -1,0 +1,161 @@
+<scroll-view bindscrolltolower="pullUpLoad" class="personal_page" lowerThreshold="500" scrollY="{{true}}">
+    <view class="pp-user">
+        <image class="pp-user-bg" mode="aspectFill" src="{{user.cover}}"></image>
+        <view class="pp-user-main">
+            <image class="pp-user-avatar" src="{{user.avatar}}"></image>
+            <view class="pp-user-nick">{{user.nick}}</view>
+            <view class="pp-user-point" wx:if="{{userId==pageUserId}}">
+                <text>积分 </text>
+                <text class="pp-up-number"> {{user.point}} </text>
+                <text catchtap="toIntegral" class="pp-up-jump"> 查看积分</text>
+            </view>
+            <view class="pp-user-sum">
+        在《{{user.albumName}}》相册发布动态{{user.eventNumber}}组，照片{{user.photoNumber}}张
+      </view>
+        </view>
+    </view>
+    <view class="pp-event">
+        <view class="pp-event-item {{eIndex>0?'pp-event-item-bt':''}}" wx:if="{{!( (e.eMain==0||e.eMain==4)&&e.photos.length==0 )}}" wx:for="{{events}}" wx:for-index="eIndex" wx:for-item="e" wx:key="e.level">
+            <view class="pp-ei-header">
+                <image class="pp-ei-header-avatar" src="{{e.avatar}}"></image>
+                <view class="pp-ei-header-content">
+                    <view class="pp-ei-hc-main">
+                        <text class="pp-ei-hc-nick">{{e.nick}}</text>
+                        <text class="pp-ei-hc-stick" wx:if="{{e.stickStatus==1}}">置顶</text>
+                    </view>
+                    <view class="pp-ei-hc-other">
+                        <text class="pp-ei-hc-time">{{e.time}}</text>
+                        <text class="pp-ei-hc-location" space="nbsp">    {{e.location}}</text>
+                    </view>
+                </view>
+                <view catchtap="openEventDetail" class="pp-ei-placeholder" data-eid="{{e.eid}}"></view>
+                <view catchtap="openMore" class="pp-ei-header-more" data-eid="{{e.eid}}" data-emain="{{e.eMain}}" data-piclist="{{e.photos}}" data-stickstatus="{{e.stickStatus}}" wx:if="{{deletePermission===1}}">
+                    <image class="pp-ei-hm-icon" src="http://oibl5dyji.bkt.clouddn.com/0504_moreFun.png"></image>
+                </view>
+            </view>
+            <view catchtap="openEventDetail" class="pp-ei-desc" data-eid="{{e.eid}}" wx:if="{{e.desc.length>0&&e.eMain!=1}}">{{e.desc}}</view>
+            <view catchtap="openEventDetail" class="pp-ei-text" data-eid="{{e.eid}}" wx:if="{{e.desc.length>0&&e.eMain==1}}">
+                <view class="pp-ei-text-left">
+                    <image class="pp-ei-tl-avatar" src="{{e.avatar}}"></image>
+                    <view class="pp-ei-tl-t">
+                        <image class="pp-ei-tl-t-img" src="http://oibl5dyji.bkt.clouddn.com/0506_text_logo.png"></image>
+                    </view>
+                </view>
+                <view class="pp-ei-text-right">
+                    <text class="pp-ei-tr-title" wx:if="{{e.textTitle.length>0}}">{{e.textTitle}}</text>
+                    <text class="pp-ei-tr-content {{e.textTitle.length<1?'pp-ei-tr-content-large':''}}">这是一香槟酒，测试专用。这是一香槟酒，测试专用。这是一香槟酒，测试专用。这是一香槟酒，测试专用。</text>
+                </view>
+            </view>
+            <view class="pp-ei-and" wx:if="{{e.jurisdiction.andFriends&&e.andFriends.length>0}}">
+                <text class="pp-ei-and-icon">@</text>
+                <view class="pp-ei-and-items">
+                    <view class="pp-ei-and-item" wx:for="{{e.andFriends}}">
+            {{item.unickname}}
+            <text wx:if="{{e.andFriends.length-1!=index}}">，</text>
+                    </view>
+                </view>
+            </view>
+            <view class="pp-ei-photos {{e.photos.length==1?'pp-ei-photos-single':''}} {{e.photos.length==2||e.photos.length==4?'pp-ei-photos-double':''}}" wx:if="{{e.eMain==0||e.eMain==4}}">
+                <view class="pp-ei-photo {{(e.photos.length==2||e.photos.length==4)&&(pIndex+1)%2==0?'pp-ei-photos-gap':''}} {{(e.photos.length==3||e.photos.length>4)&&(pIndex-1)%3==0?'pp-ei-photos-gap':''}}" wx:if="{{e.eMain!=4&&pIndex<9}}" wx:for="{{e.photos}}" wx:for-index="pIndex" wx:for-item="p" wx:key="pIndex">
+                    <image catchtap="openImagePreview" data-current_index="{{pIndex}}" data-piclist="{{e.photos}}" mode="aspectFill" src="{{p.thumbnail}}"></image>
+                    <view catchtap="openEventDetail" class="pp-ei-photo-float" data-eid="{{e.eid}}" wx:if="{{pIndex==8&&e.photos.length>9}}">{{e.photos.length}}</view>
+                </view>
+                <view catchtap="seeBigVideo" class="pp-ei-video" data-cover="{{e.photos[0].pcover}}" data-eid="{{e.eid}}" data-url="{{e.photos[0].poriginal}}" wx:if="{{e.eMain==4}}">
+                    <image class="pp-ei-play_btn" src="http://oibl5dyji.bkt.clouddn.com/20170914191849.png" wx:if="{{e.photos[0].pcover}}"></image>
+                    <image mode="aspectFill" src="{{e.photos[0].pcover}}"></image>
+                </view>
+            </view>
+            <view class="pp-ei-audio" wx:if="{{e.eMain==2}}">
+                <view class="pp-ei-audio-left">
+                    <image class="pp-ei-al-avatar" src="{{e.avatar}}"></image>
+                    <view class="pp-ei-al-t">
+                        <image catchtap="playAudio" class="pp-ei-al-t-img" data-audio_duration="{{e.audioDuration}}" data-audio_src="{{e.audio}}" data-e_index="{{eIndex}}" src="http://oibl5dyji.bkt.clouddn.com/0506_voice_start.png" wx:if="{{e.audioPlayStatus=='ready'}}"></image>
+                        <image catchtap="stopAudio" class="pp-ei-al-t-img" data-audio_duration="{{e.audioDuration}}" data-audio_src="{{e.audio}}" data-e_index="{{eIndex}}" src="http://oibl5dyji.bkt.clouddn.com/0506_voice_stop.png" wx:if="{{e.audioPlayStatus=='play'}}"></image>
+                    </view>
+                </view>
+                <view class="pp-ei-audio-right">
+                    <view class="pp-ei-ar-img">
+                        <image class="pp-ei-ar-icon" src="http://oibl5dyji.bkt.clouddn.com/0506_voice_logo.png" wx:if="{{e.audioPlayStatus=='ready'}}"></image>
+                        <image class="pp-ei-ar-icon" src="http://oibl5dyji.bkt.clouddn.com/0506_voice_logo.gif" wx:if="{{e.audioPlayStatus=='play'}}"></image>
+                    </view>
+                    <text class="pp-ei-ar-duration" wx:if="{{e.audioPlayStatus=='ready'}}">{{e.audioDuration}}s</text>
+                    <text class="pp-ei-ar-duration" wx:if="{{e.audioPlayStatus=='play'}}">{{playTime}}s</text>
+                </view>
+            </view>
+            <view class="pp-ei-comment" wx:if="{{e.jurisdiction.comment}}">
+                <view class="pp-ei-comment-main">
+                    <view catch:longpress="deleteComment" class="pp-ei-cm-list" data-cid="{{c.cid}}" data-cuserid="{{c.commentUser.userid}}" data-eid="{{e.eid}}" wx:if="{{cIndex<3}}" wx:for="{{e.comments}}" wx:for-index="cIndex" wx:for-item="c" wx:key="cIndex">
+                        <text catchtap="openReply" class="pp-ei-cm-list-name" data-cid="{{c.cid}}" data-cuserid="{{c.commentUser.userid}}" data-eid="{{e.eid}}" data-nick="{{c.commentUser.unickname}}">{{c.commentUser.unickname}}</text>
+                        <text wx:if="{{c.commentedUser.userid!=10}}"> 回复 </text>
+                        <text class="pp-ei-cm-list-name" wx:if="{{c.commentedUser.userid!=10}}">{{c.commentedUser.unickname}}</text>
+                        <text catchtap="openReply" class="pp-ei-cm-list-content" data-cid="{{c.cid}}" data-cuserid="{{c.commentUser.userid}}" data-eid="{{e.eid}}" data-nick="{{c.commentUser.unickname}}">：{{c.ccontent}}</text>
+                    </view>
+                </view>
+                <view catchtap="openEventDetail" class="pp-ei-comment-more" data-eid="{{e.eid}}" wx:if="{{e.commentCount>3}}">查看所有{{e.commentCount}}条评论 -></view>
+            </view>
+            <view class="pp-ei-operate">
+                <form reportSubmit bindsubmit="like" class="pp-ei-operate-like" data-eid="{{e.eid}}" data-like_status="{{e.isLike}}" wx:if="{{e.jurisdiction.like}}">
+                    <button class="pp-ei-ol-btn {{e.isLike==1?'pp-ei-ol-active':''}}" formType="submit">
+                        <text>{{e.likeCount}}</text>
+                        <image class="pp-ei-o-icon" src="http://oibl5dyji.bkt.clouddn.com/201712151643liked.png"></image>
+                    </button>
+                </form>
+                <image catchtap="openComment" class="pp-ei-operate-comment pp-ei-o-icon" data-eid="{{e.eid}}" src="http://oibl5dyji.bkt.clouddn.com/0504_commit_pic.png"></image>
+                <view catchtap="openEventDetail" class="pp-ei-placeholder" data-eid="{{e.eid}}"></view>
+                <image catchtap="openShare" class="pp-ei-operate-share pp-ei-o-icon" data-eid="{{e.eid}}" data-emain="{{e.eMain}}" data-piclist="{{e.photos}}" src="http://oibl5dyji.bkt.clouddn.com/0504_share_pic.png" wx:if="{{true}}"></image>
+                <image class="pp-ei-operate-share pp-ei-o-icon" src="http://oibl5dyji.bkt.clouddn.com/0416_share.png" wx:if="{{false}}"></image>
+            </view>
+        </view>
+    </view>
+    <view class="pp-nomore" wx:if="{{eventLoadComplete===1&&events.length>0}}">
+    已加载全部动态
+  </view>
+    <view class="pp-loading" wx:if="{{loading===0}}">
+        <image src="http://oibl5dyji.bkt.clouddn.com/loading_gray.gif"></image>
+    </view>
+    <view class="pp-empty" wx:if="{{events.length===0&&loading==1}}">
+        <image mode="aspectFill" src="http://oibl5dyji.bkt.clouddn.com/homepage_empty@3x.png"></image>
+        <text class="pp-empty-content">暂无照片</text>
+        <text class="pp-empty-tip">还未在该相册上传图片和视频哦~</text>
+        <view bind:tap="openUpload" class="upload-button" wx:if="{{false}}">
+      去上传
+    </view>
+    </view>
+    <view class="pp-footer {{loading===0?'pp-footer-pt':''}}">
+        <image modal="aspectFill" src="http://oibl5dyji.bkt.clouddn.com/20171227133021.png"></image>
+    </view>
+    <view catch:touchmove="preventTouchMove" class="pp-modal" wx:if="{{isShowPlayer}}">
+        <view catchtap="closeVideoPlayer" class="pp-modal-close">X</view>
+        <view catch:touchmove="preventTouchMove" class="pp-player">
+            <video catch:touchmove="preventTouchMove" class="pp-player-video" poster="{{videoCoverUrl}}" src="{{videoUrl}}"></video>
+        </view>
+    </view>
+</scroll-view>
+<view catchtap="hiddenWrite" class="commentInputModelBox_timeLine" wx:if="{{showComInput}}">
+    <view catchtap="stop" class="commentInputBox_timeLine">
+        <form bindsubmit="sendcomment" reportSubmit="true">
+            <input bindinput="checkchange" class="commentinput_timeLine" cursorSpacing="8" focus="{{inputfocus}}" name="content" placeholder="{{placehold}}" placeholderClass="holderIpt_timeLine" value="{{value}}"></input>
+            <button class="sub_timeLine {{contentCurrent?'subActive_timeLine':''}}" formType="submit">发送</button>
+        </form>
+    </view>
+</view>
+<menu-modal modalShow="{{menuModalShow}}">
+    <view class="more">
+        <view catchtap="openDownload" class="more-item" wx:if="{{more.download}}">
+            <text class="more-item-name">原图下载</text>
+            <image class="more-item-icon" src="http://oibl5dyji.bkt.clouddn.com/0506_evetnItem_right.png"></image>
+        </view>
+        <view catchtap="openSyncEvent" class="more-item" wx:if="{{more.sync}}">
+            <text class="more-item-name">同步到其它相册</text>
+            <image class="more-item-icon" src="http://oibl5dyji.bkt.clouddn.com/0506_evetnItem_right.png"></image>
+        </view>
+        <view catchtap="deleteEvent" class="more-item" wx:if="{{more.del}}">
+            <text class="more-item-name">删除</text>
+            <image class="more-item-icon" src="http://oibl5dyji.bkt.clouddn.com/0506_evetnItem_right.png"></image>
+        </view>
+        <view catchtap="stickEvent" class="more-item" wx:if="{{more.stick}}">
+            <text class="more-item-name">{{currentE.currentTarget.dataset.stickstatus==0?'置顶':'取消置顶'}}</text>
+            <image class="more-item-icon" src="http://oibl5dyji.bkt.clouddn.com/0506_evetnItem_right.png"></image>
+        </view>
+    </view>
+</menu-modal>

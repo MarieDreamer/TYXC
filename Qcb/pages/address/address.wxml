@@ -1,0 +1,57 @@
+<form bindsubmit="formSubmit">
+    <view class="container">
+        <view class="list-con">
+            <view class="list">
+                <text>收  货  人 ：</text>
+                <input bindinput="InputChanged" data-name="consignee" value="{{consignee}}"></input>
+            </view>
+            <view class="list">
+                <text>手机号码：</text>
+                <input bindinput="InputChanged" data-name="mobile" value="{{mobile}}"></input>
+            </view>
+            <view class="list">
+                <text>所在地区：</text>
+                <input bindtap="translate" disabled="true" value="{{region}}"></input>
+                <image src="https://cc.hohiw.com/xcximg/right.png"></image>
+            </view>
+            <view class="list">
+                <text>详细地址：</text>
+                <input bindinput="InputChanged" data-name="address" value="{{address}}"></input>
+            </view>
+        </view>
+        <view class="list-d">
+            <view bindtap="SelectChange" class="list-d-lt ">
+                <image src="https://cc.hohiw.com/xcximg/xz.png" wx:if="{{is_default==1}}"></image>
+                <image src="https://cc.hohiw.com/xcximg/wxz.png" wx:if="{{is_default==0}}"></image>
+                <text>默认地址</text>
+            </view>
+        </view>
+        <view class="but">
+            <button formType="submit">{{btnName}}</button>
+        </view>
+    </view>
+</form>
+<view animation="{{animation}}" bindtap="hiddenFloatView" class="animation-element-wrapper" data-id="444" style="visibility:{{show?'visible':'hidden'}}">
+    <view class="animation-element">
+        <text catchtap="hiddenFloatView" class="left-bt">取消</text>
+        <text catchtap="hiddenFloatView" class="right-bt" data-act="confirm">确定</text>
+        <view class="line"></view>
+        <picker-view bindchange="bindChange" indicatorStyle="height: 50rpx;" value="{{value}}">
+            <picker-view-column>
+                <view wx:for="{{provinces}}">
+		 {{item.name}}
+	  </view>
+            </picker-view-column>
+            <picker-view-column>
+                <view wx:for="{{citys}}">
+		{{item.name}}
+	  </view>
+            </picker-view-column>
+            <picker-view-column>
+                <view wx:for="{{districts}}">
+		{{item.name}}
+	  </view>
+            </picker-view-column>
+        </picker-view>
+    </view>
+</view>

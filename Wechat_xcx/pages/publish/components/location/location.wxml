@@ -1,0 +1,11 @@
+<view class="publish-option">
+    <view class="publish-list">
+        <image class="pl-icon" mode="aspectFill" src="{{ICON.POSITION}}"></image>
+        <view class="pl-text">
+            <text catch:tap="openChooseLocation" class="pl-title {{location.result.length>0&&location.result!='正在获取当前位置...'?'pl-title-disabled':''}}">{{location.title}}</text>
+            <view catchtap="openChooseLocation" class="pl-result text-overflow">{{location.result}}</view>
+            <image catch:tap="deleteLocation" class="pl-icon" mode="aspectFill" src="{{ICON.CLOSE}}" wx:if="{{location.result.length>0&&location.result!='正在获取当前位置...'}}"></image>
+        </view>
+        <image catchtap="openChooseLocation" class="pl-arrow" mode="aspectFill" src="{{ICON.ARROW}}"></image>
+    </view>
+</view>

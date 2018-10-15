@@ -1,0 +1,6 @@
+{
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "send-blessing": "../../components/sendBlessing/sendBlessing"
+    }
+}

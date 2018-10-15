@@ -1,0 +1,54 @@
+<view class="aIndex-container">
+    <view class="activity-section">
+        <view class="title" wx:if="{{false}}">
+      花式玩图
+    </view>
+        <view class="conatainer" wx:if="{{false}}">
+            <scroll-view class="scrollNav" scrollX="true">
+                <view catchtap="gotoStory" data-open="{{groItem.openUrl}}" wx:for="{{clickGroups}}" wx:for-index="idx" wx:for-item="groItem" wx:key="idx">
+                    <image src="{{groItem.imgUrl}}"></image>{{groItem.title}}</view>
+            </scroll-view>
+        </view>
+        <view class="title">
+      热门活动
+    </view>
+        <view class="special-list">
+            <view class="special-list-item" wx:for="{{specialList}}" wx:key="{{index}}">
+                <image catchtap="toSpecailActivity" data-status="{{item.status}}" data-url="{{item.jumpUrl}}" mode="aspectFill" src="{{item.coverUrl}}"></image>
+            </view>
+        </view>
+        <view class="activity-group-list">
+            <block >
+                <view catchtap="toGroupScoll" class="activity-group-item" data-groupid="{{item.groupid}}" data-grouptype="{{item.groupNewType}}" wx:for="{{allActivityGroup}}" wx:key="{{item.groupid}}">
+                    <view class="activity-item-data">
+                        <view class="data-text">
+                            <text class="text-name">1</text>
+                            <text class="text-date">1000 — 2000</text>
+                        </view>
+                        <image class="data-img" mode="aspectFill" src="http://oibl5dyji.bkt.clouddn.com/0309-going.png" ></image>
+                        <image class="data-img" mode="aspectFill" src="http://oibl5dyji.bkt.clouddn.com/0309-end.png" ></image>
+                    </view>
+                </view>
+            </block>
+        </view>
+        <view class="activity-group-list"  > 
+            <block wx:for="{{activity}}" wx:for-item="i" wx:key="{(sudo)}" >
+                <view catchtap="toGroupScoll" class="activity-group-item" data-groupid="" data-grouptype="">
+                     <image class="activity-item-bgPic" mode="aspectFill" src="https://photo.toyshare.cn/{{i.index_photo}}"></image> 
+                    <view class="activity-item-data">
+                        <view class="data-text">
+                            <text class="text-name">{{i.name}}</text>
+                            <text class="text-date">{{i.create_time}}</text>
+                        </view>
+                        
+                        <image wx:if="{{i.is_activities==2}}" class="data-img" mode="aspectFill" src="http://oibl5dyji.bkt.clouddn.com/0309-going.png" ></image>
+                        <image wx:else="{{i.is_activities==1}}" class="data-img" mode="aspectFill" src="http://oibl5dyji.bkt.clouddn.com/0309-end.png" ></image>
+                    </view>
+                </view>
+            </block>
+        </view>
+        
+        
+
+    </view>
+</view>

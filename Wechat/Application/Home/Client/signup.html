@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>注册</title>
+	<link rel="stylesheet" type="text/css" href="/Css/common.css">
+	<link rel="stylesheet" type="text/css" href="/Css/login.css">
+	<!-- <link rel="stylesheet" type="text/css" href="/Css/style.css"> -->
+</head>
+<body>
+	<!--头部引入-->
+	<?php include(C('VIEW_DIR').'/header.html'); ?>
+
+	<!--主体部分-->
+	<div class="regBoxbg">
+		<div class="main">
+			<div class="regInput">
+				<div class="regBox">
+					<div class="regname">
+						<input  type="text" placeholder="姓名" id="name">
+						<div id="sexchoice">
+							<label><span class="choiced"><em></em></span>先生</label>
+							<label><span><em></em></span>女士</label>
+						</div>
+					</div>
+					<span class="name_error"></span>
+				    <input type="tel" placeholder="手机" name="account" class="loginTel" id="regTel">
+					<span class="tel_error"></span>
+					<input type="password" placeholder="密码" class="loginPass" id="pass">
+					<span class="error"></span>
+					<input type="password" placeholder="确认密码" class="loginPass" id="surePass">
+					<span class="pass_error"></span>
+					<div class="passCord">
+						<div class="inputCord">
+							<span>验证码</span>
+							<input type="text" placeholder="输入验证码" id="getCode">
+						</div>
+				 
+						<div class="cordBtn"><button type="button" id="code_btn">发送验证码</button></div>
+					</div>
+					<span class="cord_error"></span>
+				</div>
+				<div class="agreement">
+					<div class="agreeChoice"><input type="checkbox" checked="checked" />
+					已阅读并同意《湖州金店用户服务协议》</div>
+					<button type="button" id="regBtn">注&nbsp;&nbsp;册</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--底部引入-->
+	<?php include(C('VIEW_DIR').'/footer.html'); ?>
+	
+	<script src="/Js/signup.js"></script>
+	
+</body>
+</html>

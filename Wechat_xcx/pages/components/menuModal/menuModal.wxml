@@ -1,0 +1,11 @@
+<view catchtouchmove="preventTouchMove" class="menu_modal {{modalAnimation?'menu_modal-show':''}}" wx:if="{{modalShow}}">
+    <view class="mm-body {{modalBodyAnimation?'mm-body-show':''}}">
+        <view class="mm-close">
+            <image catchtap="closeModalBody" class="mm-close-icon" src="http://oibl5dyji.bkt.clouddn.com/menu_modal_close@2x.png"></image>
+        </view>
+        <view class="mm-main">
+            <view class="mm-main-title">{{title}}</view>
+            <slot></slot>
+        </view>
+    </view>
+</view>

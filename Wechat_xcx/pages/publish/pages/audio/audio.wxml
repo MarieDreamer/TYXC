@@ -1,0 +1,56 @@
+<view class="publish">
+    <view class="publish-section">
+        <view class="publish-section-title">
+            <view class="publish-list">
+                <image class="pl-icon" mode="aspectFill" src="{{ICON.MIKE}}"></image>
+                <view class="pl-text">
+                    <text class="pl-title">录制语音</text>
+                </view>
+            </view>
+        </view>
+        <view class="publish-section-content">
+            <view class="publish-record">
+                <view class="pr-content pr-ready" wx:if="{{recordStatus==='ready'}}">
+                    <image catch:tap="startRecord" class="pr-ready-mike" mode="aspectFill" src="{{ICON.RECORD_MIKE_PLUS_MULTICOLOR}}"></image>
+                    <text catch:tap="startRecord" class="pr-ready-text">点击开始录音</text>
+                </view>
+                <view class="pr-content pr-recording" wx:if="{{recordStatus==='recording'}}">
+                    <view class="pr-process">
+                        <slider activeColor="#ffe500" backgroundColor="#666" blockColor="#ffe500" blockSize="28rpx" class="pr-process-bar" max="{{recordMax}}" min="0" value="{{recordStep}}"></slider>
+                        <view class="pr-process-time">
+                            <text class="pr-process-text">{{recordTiming}}</text>
+                            <text class="pr-process-text">{{recordMaxTiming}}</text>
+                        </view>
+                    </view>
+                    <view class="pr-option">
+                        <image class="pr-option-icon pr-option-icon-gap" mode="aspectFill" src="{{ICON.RECORD_PAUSE}}" wx:if="{{false}}"></image>
+                        <image catch:tap="stopRecord" class="pr-option-icon" mode="aspectFill" src="{{ICON.RECORD_STOP}}"></image>
+                    </view>
+                </view>
+                <view class="pr-content pr-preview" wx:if="{{recordStatus==='completed'}}">
+                    <view class="pr-process">
+                        <slider activeColor="#ffe500" backgroundColor="#666" blockColor="#ffe500" blockSize="28rpx" class="pr-process-bar" max="{{playMax}}" min="0" value="{{playStep}}"></slider>
+                        <view class="pr-process-time">
+                            <text class="pr-process-text">{{playTiming}}</text>
+                            <text class="pr-process-text">{{playMaxTiming}}</text>
+                        </view>
+                    </view>
+                    <view class="pr-completed" wx:if="{{playStatus==='ready'}}">
+                        <view catch:tap="reRecord" class="pr-btn">重录</view>
+                        <view catch:tap="startPlay" class="pr-btn pr-btn-active">试听</view>
+                    </view>
+                    <view class="pr-option" wx:if="{{playStatus==='playing'}}">
+                        <image catchtap="stopPlay" class="pr-option-icon" mode="aspectFill" src="{{ICON.RECORD_STOP}}"></image>
+                    </view>
+                </view>
+                <view class="pr-tip">最长可录音1分钟</view>
+            </view>
+        </view>
+    </view>
+    <location bindreturnResult="getLocation"></location>
+    <view class="publish-submit">
+        <form bindsubmit="formSubmit" class="publish-submit-form" reportSubmit="{{true}}">
+            <button class="publish-btn {{audio.tempFilePath.length===0?'publish-btn-disabled':''}}" formType="submit">立即上传</button>
+        </form>
+    </view>
+</view>

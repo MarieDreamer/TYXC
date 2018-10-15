@@ -1,0 +1,37 @@
+<view class="container">
+    <view class="top">
+        <image class="icon" src="https://cc.hohiw.com/xcximg/pay-success.png"></image>
+        <view class="top-con">
+            <text class="zt">支付完成</text>
+            <text class="price">¥{{total_amount}}</text>
+        </view>
+    </view>
+    <view class="down">
+        <view class="list">
+            <view class="list-lt">商品名称</view>
+            <view class="list-rt">{{goods.goods_name}}</view>
+        </view>
+        <view class="list">
+            <view class="list-lt">支付时间</view>
+            <view class="list-rt">{{format_pay_time}}</view>
+        </view>
+        <view class="list">
+            <view class="list-lt">订单总额</view>
+            <view class="list-rt">￥{{total_amount}}</view>
+        </view>
+        <view class="list">
+            <view class="list-lt">支付交易号</view>
+            <view class="list-rt">{{order_sn}}</view>
+        </view>
+    </view>
+    <button bindtap="GoUrl" class="btn" data-url="/pages/orderlist/orderlist">完成</button>
+    <view class="tc" style="display:{{show}}; background:url(\"https://cc.hohiw.com/xcximg/cjjg-bg.png\");-webkit-background-size:cover;">
+        <view class="tc-bg">
+            <image class="tc-bg-img" src="https://cc.hohiw.com/xcximg/cjjg.png"></image>
+            <view class="tc-con">
+                <button bindtap="GoUrl" class="cc-btn" data-nav="nav" data-url="/pages/guess/guess?id={{order_id}}" style="background:url(\"https://cc.hohiw.com/xcximg/wymd.png\");-webkit-background-size:cover;"></button>
+            </view>
+            <image bindtap="CloseShow" class="close" src="https://cc.hohiw.com/xcximg/tc-close.png"></image>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,5 @@
+<view class="au-container">
+    <view class="section">
+        <image catchtap="resetau" class="iconPic" mode="aspectFill" src="{{resetPic}}"></image>
+    </view>
+</view>

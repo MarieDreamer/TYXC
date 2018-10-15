@@ -1,0 +1,5 @@
+{
+    "navigationBarTitleText": "时刻",
+    "enablePullDownRefresh": true,
+    "onReachBottomDistance": 1000
+}

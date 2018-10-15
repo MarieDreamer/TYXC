@@ -1,0 +1,216 @@
+<import src="/pages/template/beforeauthpic/beforeauthpic.wxml"></import>
+<import src="../template/beforeauthpic/uppicnum.wxml"></import>
+<view class="transition {{publishMenu?'gaussian_blur':''}}">
+    <include src="/pages/template/friendsalbum/friendsalbum.wxml" wx:if="{{ablumInfo.groupNewType==2}}"></include>
+    <include src="/pages/template/personalalbum/personalalbum.wxml" wx:elif="{{ablumInfo.groupNewType==3}}"></include>
+    <include src="/pages/template/babyalbum/babyalbum.wxml" wx:elif="{{ablumInfo.groupNewType==5}}"></include>
+    <include src="/pages/template/loversalbum/loversalbum.wxml" wx:elif="{{ablumInfo.groupNewType==11}}"></include>
+    <template is="tempic" data="{{...authpic}}" wx:if="{{showAuthPic&&authpic.belowImgUrl}}"></template>
+    <view class="loadingImg" hidden="{{loadImgState}}">
+        <image src="http://oibl5dyji.bkt.clouddn.com/loading-2.gif"></image>
+        <text>{{textArr[promptText]?textArr[promptText]:'精彩内容正在赶来...'}}</text>
+    </view>
+    <view class="waitingBox" hidden="{{waitingState}}">
+        <image src="http://oibl5dyji.bkt.clouddn.com/20171102164521.png"></image>
+        <view class="waitingText">
+            <text class="waitingIntro">亲~ 老司机已发车，等下一辆吧！</text>
+            <text class="bigNum" wx:if="{{secondEnd}}">请在<text>{{secondNum}}</text>秒后重试</text>
+        </view>
+        <view catchtap="{{secondEnd?'stop':'refresh'}}" class="refresh {{secondEnd?'':'refreshed'}}">呼叫老司机</view>
+    </view>
+    <view class="aladingModel" wx:if="{{alading&&aladingTwo}}">
+        <view class="aladingImgBox">
+            <image src="http://oibl5dyji.bkt.clouddn.com/alading2017112015.png"></image>
+        </view>
+    </view>
+    <view class="upModel" wx:if="{{showProgress}}">
+        <view class="progressModelBox" wx:if="{{upSteps==1}}">
+            <view class="progressText">
+                <text>正在上传{{progress?progress:0}}%</text>
+                <text class="shareText">上传中请勿退出</text>
+            </view>
+            <view class="progressBox">
+                <progress activeColor="#66cc00" backgroundColor="#d7d7d7" percent="{{progress}}"></progress>
+            </view>
+        </view>
+        <view class="successModelBox" wx:elif="{{upSteps==2}}">
+            <image catchtap="closeProgress" class="closeProgress" src="http://oibl5dyji.bkt.clouddn.com/20171201101323.png"></image>
+            <view class="successText">
+                <image src="http://oibl5dyji.bkt.clouddn.com/20171201101321.png"></image>
+                <text wx:if="{{upViderOrPic=='pic'}}">成功上传{{totalnum}}张照片</text>
+                <text wx:elif="{{upViderOrPic=='video'}}">视频上传成功</text>
+                <text wx:elif="{{upViderOrPic=='audio'}}">语音上传成功</text>
+            </view>
+        </view>
+        <view class="failModelBox" wx:elif="{{upSteps==3}}">
+            <image catchtap="closeProgress" class="closeProgress" src="http://oibl5dyji.bkt.clouddn.com/20171201101323.png"></image>
+            <image class="upFailImg" src="http://oibl5dyji.bkt.clouddn.com/20171201101322.png"></image>
+            <text class="upFailText">亲~{{upViderOrPic=='pic'?'照片':upViderOrPic=='video'?'视频':'语音'}}上传失败！</text>
+            <view catchtap="uploadAgain" class="upAgain">重新上传</view>
+        </view>
+        <view class="filterModelBox" wx:elif="{{upSteps==4}}">
+            <image catchtap="closeProgress" class="closeProgress" src="http://oibl5dyji.bkt.clouddn.com/20171121170422.png"></image>
+            <image class="filterImg" src="http://oibl5dyji.bkt.clouddn.com/20171201101322.png"></image>
+            <view class="filterText">
+                <block wx:if="{{upViderOrPic=='pic'}}">
+                    <text wx:if="{{sucImgNum==0}}">上传{{fitImgNum}}张照片可能涉及不健康信息或因GIF格式被过滤！</text>
+                    <text wx:else>成功上传{{sucImgNum}}张照片，其中{{fitImgNum}}张照片可能涉及不健康信息或因GIF格式被过滤！</text>
+                </block>
+                <text wx:elif="{{upViderOrPic=='video'}}">上传的视频可能涉及不健康信息或非法内容被过滤！</text>
+                <text wx:elif="{{upViderOrPic=='audio'}}">上传的语音可能涉及不健康信息或非法内容被过滤！</text>
+            </view>
+        </view>
+    </view>
+    <view class="Mengcen" wx:if="{{Mengcen}}">
+        <view class="change">
+            <view class="tip">修改相册名称</view>
+            <form bindsubmit="submitfun" reportSubmit="true">
+                <view class="input_section">
+                    <input bindinput="setcolor" class="inputerea" fixed="true" focus="true" maxlength="16" name="groupname" placeholder="请输入新的相册名称" placeholderStyle="color:#999" value="{{value}}"></input>
+                    <text>{{textNum}}/16</text>
+                </view>
+                <view class="cancel_confirm">
+                    <view class="btn-area">
+                        <button catchtap="Mengcen_cancel" class="Mengcen_cancel">取消</button>
+                    </view>
+                    <view class="btn-area">
+                        <button class="Mengcen_submit" formType="submit">确认</button>
+                    </view>
+                </view>
+            </form>
+        </view>
+    </view>
+    <view class="fasttoknowModel" wx:if="{{showDisposeModel}}">
+        <view class="threepictop">
+            <text class="threepictext">三步了解忆年共享相册</text>
+            <button bindtap="closeModel" class="threeCloseModel" plain="true"></button>
+        </view>
+        <view class="threepicturesBox">
+            <view bindtouchend="changend" bindtouchstart="changestart" catchtouchmove="changemove" class="threepictures threeone {{classArr[0]}}">
+                <text>{{usernumber}}位用户</text>
+                <text>正在使用忆年共享相册</text>
+                <text>照片、短视频一键储存</text>
+                <text>安全保障、原图保存、永不过期</text>
+                <image class="three-picsone" mode="aspectFit" src="http://oibl5dyji.bkt.clouddn.com/firstimage.png"></image>
+                <view class="indexBlock">
+                    <view class="yellowBlock"></view>
+                    <view class="grayBlock"></view>
+                    <view class="grayBlock"></view>
+                </view>
+                <view catchtap="addgroup" class="creatmyalbum"></view>
+            </view>
+            <view bindtouchend="changend" bindtouchstart="changestart" catchtouchmove="changemove" class="threepictures threetwo {{classArr[1]}}">
+                <image mode="aspectFit" src="http://oibl5dyji.bkt.clouddn.com/page02text.png">
+                    <text class="threetwo-text">您可以创建这些相册</text>
+                </image>
+                <image mode="aspectFit" src="http://oibl5dyji.bkt.clouddn.com/page02pic.png"></image>
+                <view class="indexBlock">
+                    <view class="grayBlock"></view>
+                    <view class="yellowBlock"></view>
+                    <view class="grayBlock"></view>
+                </view>
+                <view catchtap="addgroup" class="creatmyalbum"></view>
+            </view>
+            <view bindtouchend="changend" bindtouchstart="changestart" catchtouchmove="changemove" class="threepictures threethree {{classArr[2]}}">
+                <text>还有精彩礼品相送哦!</text>
+                <image mode="aspectFit" src="http://oibl5dyji.bkt.clouddn.com/page03pic.png"></image>
+                <view class="indexBlock">
+                    <view class="grayBlock"></view>
+                    <view class="grayBlock"></view>
+                    <view class="yellowBlock"></view>
+                </view>
+                <view catchtap="addgroup" class="creatmyalbum"></view>
+            </view>
+        </view>
+    </view>
+    <view catchtap="hiddenWrite" class="commentInputModelBox_timeLine" wx:if="{{showComInput}}">
+        <view catchtap="stop" class="commentInputBox_timeLine">
+            <form bindsubmit="sendcomment" reportSubmit="true">
+                <input bindinput="checkchange" class="commentinput_timeLine" cursorSpacing="8" focus="{{inputfocus}}" name="content" placeholder="{{placehold}}" placeholderClass="holderIpt_timeLine" value="{{value}}"></input>
+                <button class="sub_timeLine {{contentCurrent?'subActive_timeLine':''}}" formType="submit">发送</button>
+            </form>
+        </view>
+    </view>
+    <view class="showDisposeModel" wx:if="{{showcomeuserModel}}">
+        <view class="disposeBox_self">
+            <button bindtap="closeDispose" class="CloseModel" plain="true"></button>
+            <view class="disposeTitle_self">
+                <text>已加入相册</text>
+            </view>
+            <view class="disposeScetion_self">
+                <text>{{inventPerson}}已经发布了动态,快去上传吧</text>
+            </view>
+            <view catchtap="hurryupload" class="closeDispose_self">立即上传</view>
+        </view>
+    </view>
+    <block wx:if="{{!activitySwitchhot}}">
+        <view class="showDisposeModel" wx:if="{{showfirstuploadModel}}">
+            <view class="firstUpBox">
+                <image catchtap="closefirstuploadDispose" class="closeUpBox" src="http://oibl5dyji.bkt.clouddn.com/20171111094622.png"></image>
+                <image catchtap="firstuploadshare" class="upBoxPic" id="firstUpLoad" mode="aspectFill" src="{{alertHidePic}}"></image>
+                <image catchtap="addmember" class="hot_invite" data-invite="invite" src="{{alertButtonOne}}" wx:if="{{isgcreator}}"></image>
+                <view class="hot_invite_box" wx:else>
+                    <image catchtap="addmember" class="otherbtn first01" src="{{alertButtonTwo01}}"></image>
+                    <image catchtap="tocreateAlbum" class="otherbtn" src="{{alertButtonTwo02}}"></image>
+                </view>
+            </view>
+        </view>
+    </block>
+    <block wx:else>
+        <view catchtap="closefirstuploadDispose" class="showDisposeModel" wx:if="{{showfirstuploadModel}}">
+            <view catchtap="stop" class="firstUpBox" wx:if="{{isFirstUpload=='isFirst'}}">
+                <image catchtap="closefirstuploadDispose" class="closeUpBox" src="http://oibl5dyji.bkt.clouddn.com/0509_close_first.png"></image>
+                <view class="firstUpBoxTitle">
+                    <image src="http://oibl5dyji.bkt.clouddn.com/0509_firstup_suc.png"></image>
+                    <text>上传成功</text>
+                </view>
+                <view class="firstUpBoxLogo">
+                    <image mode="aspectFill" src="{{firstUpPic}}"></image>
+                </view>
+                <view class="firstUpBoxText">
+                    <text>你在忆年存储了第一个故事</text>
+                    <text>去和你的好友一起分享吧</text>
+                </view>
+                <button catchtap="toStories" class="firstUpBoxToShare" data-flag="first">查看故事集</button>
+            </view>
+            <view catchtap="stop" class="firstUpBox" wx:elif="{{isFirstUpload=='isSecond'}}">
+                <image catchtap="closefirstuploadDispose" class="closeUpBox" src="http://oibl5dyji.bkt.clouddn.com/0509_close_first.png"></image>
+                <view class="firstUpBoxTitle">
+                    <image src="http://oibl5dyji.bkt.clouddn.com/0509_firstup_suc.png"></image>
+                    <text>上传成功</text>
+                </view>
+                <view class="firstUpBoxLogo">
+                    <image mode="aspectFill" src="{{firstUpPic}}"></image>
+                </view>
+                <view class="secondUpBoxText">
+                    <text>因为你，</text>
+                    <text>忆年有了更多美好故事。</text>
+                    <text>去和好友一起分享吧！</text>
+                </view>
+                <button catchtap="toStories" class="secondUpBoxToShare" data-flag="again">查看故事集</button>
+                <button catchtap="noLongerPrompt" class="secondNoPrompt">不在提示</button>
+            </view>
+        </view>
+    </block>
+    <view catchtap="stopreset" class="lianxikefu" wx:if="{{ablumInfo.dialogShow==1}}">
+        <button openType="contact"></button>
+    </view>
+    <view class="audioModel" wx:if="{{showAudioModelBox}}">
+        <view class="audioMainBox">
+            <image class="audioIntroPic" src="http://oibl5dyji.bkt.clouddn.com/201706291327212.png"></image>
+            <image catchtap="closeAudioBox" class="closeAudioBox" src="http://oibl5dyji.bkt.clouddn.com/20170629132721.png"></image>
+        </view>
+    </view>
+    <template is="uppicnum" data="{{...contentText}}" wx:if="{{showMayDayActivity}}"></template>
+</view>
+<publish-menu bindClose="publishMenuClosed" menuNames="{{menuNames}}" on="{{publishMenu}}"></publish-menu>
+<menu-modal modalShow="{{playPhoto}}" title="制作图片">
+    <view class="modal-flexed">
+        <view class="modal-flex">
+            <view catchtap="makeStory">
+                <image src="http://oibl5dyji.bkt.clouddn.com/stories_cup_plus@2x.png"></image>
+                <text>故事集</text>
+            </view>
+        </view>
+    </view>
+</menu-modal>

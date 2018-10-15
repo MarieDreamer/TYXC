@@ -1,0 +1,2 @@
+<text>{{testtext}}</text>
+<button bindtap="changetext">更换</button>

@@ -1,0 +1,90 @@
+.invit-container {
+    width: 100%;
+}
+
+.invitTop {
+    width: 750rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background: #efeff5;
+}
+
+.invit-prize {
+    margin-top: 126rpx;
+    display: flex;
+}
+
+.invit-prize image {
+    width: 481rpx;
+    height: 138rpx;
+}
+
+.invit-text1 {
+    margin-top: 110rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #999;
+    font-size: 36rpx;
+}
+
+.invit-text1 image {
+    width: 10rpx;
+    height: 43rpx;
+    margin-right: 14rpx;
+}
+
+.invit-text2 {
+    margin-top: 30rpx;
+    color: #999;
+    font-size: 36rpx;
+    margin-bottom: 110rpx;
+}
+
+.invitBottom {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.invitCount {
+    width: 706rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.invitCount text {
+    margin-top: 60rpx;
+    font-size: 34rpx;
+    color: #666;
+}
+
+.goToShare {
+    margin: 40rpx 0 60rpx;
+    width: 288rpx;
+    height: 60rpx;
+}
+
+.invitCode {
+    margin-top: 56rpx;
+}
+
+.invitCode image {
+    width: 370rpx;
+    height: 193rpx;
+}
+
+.goShareBtn {
+    margin: 40rpx 0 60rpx;
+    width: 288rpx;
+    height: 60rpx;
+    border-radius: 6rpx;
+    background: url('http://oibl5dyji.bkt.clouddn.com/20170629093334.png') no-repeat;
+    background-size: 288rpx 60rpx;
+}

@@ -1,0 +1,131 @@
+.template {
+}
+
+.topline {
+    width: 100%;
+    height: 20rpx;
+    background: #f8f8f8;
+}
+
+.textinfo {
+    display: flex;
+    padding: 20rpx 0 0rpx 30rpx;
+    position: relative;
+}
+
+.textinfo image:nth-child(1) {
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 100%;
+}
+
+.textinfo text:nth-child(2) {
+    font-family: PingFangSC-Regular;
+    font-size: 20px;
+    color: #333333;
+    letter-spacing: 0;
+    vertical-align: middle;
+    margin-left: 30rpx;
+    margin-top: 22rpx;
+}
+
+.textinfo image:nth-child(3) {
+    width: 38rpx;
+    height: 40rpx;
+    float: right;
+    position: absolute;
+    right: 34rpx;
+    top: 50rpx;
+}
+
+.textinfo text:nth-child(4) {
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+    color: #999999;
+    letter-spacing: 0;
+    position: absolute;
+    right: 80rpx;
+    top: 58rpx;
+}
+
+.imginfo {
+    display: flex;
+    padding: 0rpx 0 30rpx 50rpx;
+    position: relative;
+}
+
+.imginfo .order image:nth-child(1) {
+    width: 52rpx;
+    height: 72rpx;
+    margin-top: 34rpx;
+}
+
+.content {
+    margin-left: 52rpx;
+    margin-top: 10rpx;
+    position: relative;
+}
+
+.content .box {
+    float: left;
+}
+
+.content .box image {
+    display: inline-block;
+}
+
+.imgMengCen {
+    background-color: rgba(0,0,0,0.6);
+    position: absolute;
+    width: 88rpx;
+    height: 88rpx;
+    right: 35rpx;
+    top: 16rpx;
+    text-align: center;
+    border-radius: 100%;
+}
+
+.imgMengCen text {
+    line-height: 88rpx;
+    font-family: PingFang-SC-Medium;
+    font-size: 36rpx;
+    color: #ffffff;
+    letter-spacing: 0;
+}
+
+.content image {
+    width: 122rpx;
+    height: 120rpx;
+    margin-right: 18rpx;
+    position: relative;
+}
+
+.order view {
+    display: flex;
+    flex-direction: column;
+    margin-top: 22rpx;
+    text-align: center;
+}
+
+.order view text:nth-child(1) {
+    font-family: PingFang-SC-Medium;
+    font-size: 24rpx;
+    color: #999999;
+    letter-spacing: 0;
+}
+
+.order view text:nth-child(2) {
+    font-family: PingFang-SC-Medium;
+    font-size: 40rpx;
+    color: #444444;
+    letter-spacing: 0;
+}
+
+.myname {
+    display: inline-block;
+    width: 300rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+}

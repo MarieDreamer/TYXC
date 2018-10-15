@@ -1,0 +1,48 @@
+<view class="container">
+    <view class="list-con">
+        <view class="list h140">
+            <text>头像</text>
+            <view class="list-rt">
+                <image class="tx" src="{{head_pic}}"></image>
+            </view>
+        </view>
+        <view class="list">
+            <text>姓名</text>
+            <view class="list-rt">
+                <input bindinput="InputKey" data-name="realname" value="{{realname}}"></input>
+                <image src="https://cc.hohiw.com/xcximg/right.png" style="opacity:0"></image>
+            </view>
+        </view>
+        <view class="list">
+            <text>性别</text>
+            <view class="list-rt">
+                <view bindtap="showSex" class="sex" data-name="sex">{{sex==1?'男':'女'}}</view>
+                <image src="https://cc.hohiw.com/xcximg/right.png" style="opacity:0"></image>
+            </view>
+        </view>
+        <view class="list">
+            <text>手机号码</text>
+            <view class="list-rt">
+                <input bindtap="GoUrl" data-url="/pages/mobile/mobile" disabled="false" value="{{mobile}}"></input>
+                <image src="https://cc.hohiw.com/xcximg/right.png"></image>
+            </view>
+        </view>
+        <view class="list">
+            <text>提现账户</text>
+            <view class="list-rt">
+                <input bindtap="GoUrl" data-url="/pages/bankinfo/bankinfo" disabled="false" value="{{bankinfo}}"></input>
+                <image src="https://cc.hohiw.com/xcximg/right.png"></image>
+            </view>
+        </view>
+        <view class="list">
+            <text>联系地址</text>
+            <view class="list-rt">
+                <input bindinput="InputKey" data-name="address" value="{{address}}"></input>
+                <image src="https://cc.hohiw.com/xcximg/right.png" style="opacity:0"></image>
+            </view>
+        </view>
+    </view>
+    <view class="but">
+        <button bindtap="Submit">确认修改</button>
+    </view>
+</view>

@@ -1,0 +1,18 @@
+.container {
+    width: 750rpx;
+}
+
+.aboutYiNian image {
+    width: 750rpx;
+    height: 1888rpx;
+}
+
+.synchronous image {
+    width: 750rpx;
+    height: 3380rpx;
+}
+
+.security image {
+    width: 750rpx;
+    height: 2195rpx;
+}

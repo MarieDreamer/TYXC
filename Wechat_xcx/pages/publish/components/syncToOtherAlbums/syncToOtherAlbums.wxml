@@ -1,0 +1,11 @@
+<view class="publish-option">
+    <view class="publish-list">
+        <image class="pl-icon" mode="aspectFill" src="{{ICON.SYNC}}"></image>
+        <view class="pl-text">
+            <text catch:tap="toSyncPage" class="pl-title {{sync.result.length>0?'pl-title-disabled':''}}">{{sync.title}}</text>
+            <text catch:tap="toSyncPage" class="pl-result text-overflow">{{sync.result}}</text>
+            <image catch:tap="clearSyncResult" class="pl-icon" mode="aspectFill" src="{{ICON.CLOSE}}" wx:if="{{sync.result.length>0}}"></image>
+        </view>
+        <image catch:tap="toSyncPage" class="pl-arrow" mode="aspectFill" src="{{ICON.ARROW}}"></image>
+    </view>
+</view>

@@ -1,0 +1,104 @@
+<view class="container">
+    <view class="jbxx">
+        <navigator url="/pages/addresslist/addresslist?source=cart2" wx:if="{{address.address_id>0}}">
+            <view class="jbxx-t">
+                <text>收货人：{{address.consignee}}</text>
+                <text>{{address.mobile}}</text>
+            </view>
+            <view class="jbxx-c">
+                <image class="dz" src="https://cc.hohiw.com/xcximg/dz2.png"></image>
+                <text>收货地址：{{address.p}}{{address.c}}{{address.d}}{{address.address}}</text>
+                <image class="rt" src="https://cc.hohiw.com/xcximg/right.png"></image>
+            </view>
+            <view class="jbxx-d">
+                <text>(收货不便时，请指定代收人携带证件认领)</text>
+            </view>
+        </navigator>
+        <navigator url="/pages/addresslist/addresslist?source=cart2" wx:if="{{address.address_id==0}}">
+            <view class="jbxx-c">
+                <image class="dz" src="https://cc.hohiw.com/xcximg/dz2.png"></image>
+                <text>暂无收货地址</text>
+                <image class="rt" src="https://cc.hohiw.com/xcximg/right.png"></image>
+            </view>
+        </navigator>
+    </view>
+    <view class="ddxx">
+        <view class="list">
+            <view class="list-t">
+                <text>商品信息</text>
+            </view>
+            <navigator url="/pages/goods/goods?id={{v.goods_id}}" wx:if="{{v.selected==1}}" wx:for="{{cartList}}" wx:for-item="v" wx:key="k">
+                <view class="list-c">
+                    <image src="{{v.goods_img}}"></image>
+                    <view class="list-c-rt">
+                        <text class="title">{{v.goods_name}}</text>
+                        <text class="describe">{{v.spec_key_name}}</text>
+                        <view class="list-c-rt-d">
+                            <text class="price">¥{{v.member_goods_price}}</text>
+                            <text class="num">x{{v.goods_num}}</text>
+                        </view>
+                    </view>
+                </view>
+            </navigator>
+            <view class="list-c2">
+                <view bindtap="ChangeShipping" class="list-c2-lst">
+                    <text>配送方式</text>
+			{{Shipping_Name}}
+        </view>
+                <view bindtap="showBonus" class="list-c2-lst" wx:if="{{bonus_num>0}}">
+                    <text>使用消费券</text>
+                    <view class="jbxx-c">
+                        <span class="money_points">{{bonus_num}}张可用消费券</span>
+                        <image class="rt" src="https://cc.hohiw.com/xcximg/right.png"></image>
+                    </view>
+                </view>
+                <view class="my-cobox" style="display:{{showbonus}}" wx:if="{{bonus_num>0}}">
+                    <view bindtap="SelectCoupon" class="my-coli" data-index="{{index}}" wx:for="{{sharebonus}}" wx:for-item="v" wx:key="k">
+                        <view class="my-coup {{v.selected}}">
+                            <view class="my-c-tit">￥</view>
+                            <view class="my-c-pri">
+                                <label class="my-c-23"></label>{{v.bonus}}</view>
+                            <image class="my-c-cho" src="https://cc.hohiw.com/xcximg/cho_cou.png" wx:if="{{sid==v.id}}"></image>
+                        </view>
+                    </view>
+                </view>
+                <view class="list-c2-lst" wx:if="{{user.user_money>0}}">
+                    <text>使用余额</text>
+                    <view>
+                        <span class="money_points">可用余额{{use_balance}}元抵扣</span>
+                        <checkbox bindtap="CheckBalance" checked="{{is_balace}}"></checkbox>
+                    </view>
+                </view>
+                <view class="list-c2-lst">
+                    <text>买家留言</text>
+                    <input bindinput="InputUserNote" placeholder="选填：对本次交易的说明" style="width:500rpx;text-align:right;" value="{{user_note}}"></input>
+                </view>
+            </view>
+            <view class="skb">
+                <view class="list-sfk">
+                    <text>共{{total_price.num}}件商品 商品总价：</text>
+                    <text class="jg">￥{{total_price.total_fee}}</text>
+                </view>
+                <view class="list-sfk" wx:if="{{postFee>0}}">
+                    <text>配送费用：</text>
+                    <text class="jg"> + ￥{{postFee}}</text>
+                </view>
+                <view class="list-sfk" wx:if="{{bonus_price>0}}">
+                    <text>使用消费券：</text>
+                    <text class="jg"> - ￥{{bonus_price}}</text>
+                </view>
+                <view class="list-sfk" wx:if="{{balance>0}}">
+                    <text>使用余额：</text>
+                    <text class="jg"> - ￥{{balance}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="tjdd">
+        <text>合计：</text>
+        <text class="jg">¥{{payables}}</text>
+        <form bindsubmit="SubmitOrder" catchsubmit="SubmitOrder" reportSubmit="true">
+            <button formType="submit">提交订单</button>
+        </form>
+    </view>
+</view>

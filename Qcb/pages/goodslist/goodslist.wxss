@@ -1,0 +1,248 @@
+.weui-search-bar {
+    width: 100%;
+    border: 0;
+    background-color: #fff;
+    margin: 0 0 4rpx 0;
+}
+
+.weui-search-bar__form {
+    background: #efeff4;
+    border-radius: 30rpx;
+    border: 0;
+}
+
+.weui-search-bar__label {
+    background: #efeff4;
+    border-radius: 30rpx;
+    border: 0;
+}
+
+.screen {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    font-size: 26rpx;
+    height: 88rpx;
+    background: #fff;
+}
+
+.screen .list {
+    display: flex;
+    align-items: center;
+}
+
+.list-icon {
+    display: flex;
+    align-items: center;
+    margin-left: 10rpx;
+}
+
+.list-icon image {
+    width: 20rpx;
+    height: 25rpx;
+}
+
+.pro-con {
+    width: 100%;
+    margin-top: 1rpx;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pro-con .list {
+    width: 49.4%;
+    background: #fff;
+}
+
+.lt {
+    margin: 1rpx 0.5rpx;
+}
+
+.rt {
+    margin: 1rpx 0.5rpx;
+}
+
+.pro-con .list image {
+    width: 368rpx;
+    height: 368rpx;
+}
+
+.pro-con .list-t {
+    font-size: 26rpx;
+    color: #333;
+    line-height: 38rpx;
+    display: block;
+    padding: 0 15rpx;
+    height: 70rpx;
+}
+
+.pro-con .list-d {
+    padding: 15rpx;
+    display: flex;
+    align-items: center;
+    font-size: 24rpx;
+    color: #999;
+}
+
+.pro-con .list-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    font-size: 28rpx;
+}
+
+.pro-con .price {
+    color: #F02B2E;
+    font-size: 28rpx;
+}
+
+.pro-con .gm-btn {
+    font-size: 22rpx;
+    padding: 0 10rpx;
+    margin: 0;
+    background: #F02B2E;
+    color: #fff;
+    height: 45rpx;
+    line-height: 45rpx;
+}
+
+button::after {
+    border: none;
+}
+
+.pro-con .list-d text {
+    padding-right: 10rpx;
+}
+
+.fh {
+    color: #010101;
+}
+
+.new_header_2 {
+    position: relative;
+    z-index: 8888;
+    height: 44px;
+    background: #fff;
+    border-bottom: 1px solid #dcdcdc;
+    padding: 0;
+}
+
+.new_header_2 .back {
+    position: absolute;
+    top: 8px;
+    left: 17px;
+    width: 30px;
+    height: 32px;
+}
+
+.new_header_2 .back view {
+    display: inline-block;
+    width: 11px;
+    height: 18px;
+    text-indent: -9999px;
+    margin-top: 6px;
+}
+
+.new_header_2 .sx {
+    width: 100%;
+    height: 44px;
+    line-height: 44px;
+    background: #fff;
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+    font-family: 'Microsoft Yahei';
+    font-weight: normal;
+}
+
+#filter_content {
+    padding-bottom: 67px;
+}
+
+.filtrate_category {
+    height: 46px;
+}
+
+.filtrate_category {
+    font-size: 30rpx;
+    color: #333;
+}
+
+.filtrate_category_a {
+    display: block;
+    height: 45px;
+    line-height: 45px;
+    padding: 0 15px;
+    color: #646464;
+    border-bottom: 1px solid #dcdcdc;
+    background-size: 25px 193px;
+    background: #FFF;
+}
+
+.filtrate_category_show {
+    background: url(../../search_sprite.png-do-not-use-local-path-./pages/goodslist/goodslist.wxss&140&38) right -51px no-repeat #fff;
+    background-size: 25px 193px;
+}
+
+.filtrate_category .filtrate_category_a .up_down {
+    float: right;
+    margin-right: 20px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 60%;
+    overflow: hidden;
+    font-size: 12px;
+    color: #666;
+}
+
+.filtrate_category .filtrate_category_a .c_yellow {
+    color: #f88b39;
+    height: 45px;
+}
+
+.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.filtrate_list {
+    background: #fff;
+    padding: 0 10px;
+}
+
+.filtrate_list .filtrate_list_li .nav {
+    font-size: 14px;
+    color: #666;
+    display: block;
+    height: 45px;
+    line-height: 45px;
+    border-bottom: 1px solid #dcdcdc;
+}
+
+.filtrate_list .on {
+    color: #dd272c;
+}
+
+.weui-search-bar {
+    width: 100%;
+    border: 0;
+    background-color: #fff;
+    margin: 0 0 4rpx 0;
+}
+
+.weui-search-bar__form {
+    background: #efeff4;
+    border-radius: 30rpx;
+    border: 0;
+}
+
+.weui-search-bar__label {
+    background: #efeff4;
+    border-radius: 30rpx;
+    border: 0;
+}

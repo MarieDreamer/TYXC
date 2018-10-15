@@ -1,0 +1,50 @@
+<view class="container">
+    <view class="section">
+        <form bindsubmit="formSubmit">
+            <view class="main-section">
+                <view class="textIcon">
+                    <image src="http://oibl5dyji.bkt.clouddn.com/20170913111425.png" style="margin-top:{{sys=='iOS'?16:0}}rpx;"></image>
+                </view>
+                <textarea name="text" placeholder="留下美好回忆" placeholderStyle="color:#999;"></textarea>
+            </view>
+            <view class="subPlace">
+                <navigator class="eplacecontainer" url="../selectplace/selectplace">
+                    <icon class="icon_place"></icon>
+                    <text class="text-place">{{place}}</text>
+                    <icon class="icon_arr"></icon>
+                </navigator>
+            </view>
+            <view catchtap="toUploadSync" class="syncPic">
+                <image class="syncLogo" src="http://oibl5dyji.bkt.clouddn.com/20170913111426.png"></image>
+                <view class="picName">
+                    <text>{{nameString?nameString:'同步到其它相册'}}</text>
+                </view>
+                <image class="syncDir" src="http://oibl5dyji.bkt.clouddn.com/20170913111421.png"></image>
+            </view>
+            <view class="subbtn {{isIphonex?'padIphoneX':''}}">
+                <button class="{{choosevideo.length>0?'hasPic':''}}" formType="submit">开始上传</button>
+            </view>
+        </form>
+    </view>
+    <view class="videoBox">
+        <view class="subvideo">
+            <view class="videoitem">
+                <block wx:if="{{choosevideo}}">
+                    <image class="videoStart" src="http://oibl5dyji.bkt.clouddn.com/20170913175022.png"></image>
+                    <image catchtap="deletVideo" class="deletVideo" src="http://oibl5dyji.bkt.clouddn.com/20170913175021.png"></image>
+                </block>
+                <image catchtap="uploadvideo" class="videoChoose" src="http://oibl5dyji.bkt.clouddn.com/20170913175024.png" wx:else></image>
+            </view>
+            <view class="videoPoster">
+                <block wx:if="{{videoPosterImg}}">
+                    <image class="choosePic" mode="aspectFill" src="{{videoPosterImg}}"></image>
+                    <image catchtap="deletPic" class="deletPic" src="http://oibl5dyji.bkt.clouddn.com/20170913175021.png"></image>
+                </block>
+                <block wx:else>
+                    <image catchtap="uploadpic" src="http://oibl5dyji.bkt.clouddn.com/20170913175023.png"></image>
+                    <text>点击添加视频封面</text>
+                </block>
+            </view>
+        </view>
+    </view>
+</view>

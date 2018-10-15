@@ -1,0 +1,52 @@
+<view class="fare-container">
+    <view class="smalltip">
+        <image class="redtip" src="http://oibl5dyji.bkt.clouddn.com/0227icon_redtip.png"></image>
+        <text class="righttextarea">[扩容奖励]活动截止时间2018年12月14日24点整。兑换奖品截止时间2018年12月21日24点整，过期作废！本活动最终解释权归童忆小程序所有。</text>
+    </view>
+    <view class="func-detail">
+        <view class="sign">
+            <image class="func-pic" src="http://oibl5dyji.bkt.clouddn.com/20170611105825ed.png" wx:if="{{userinfoDetail.isTodaySign}}"></image>
+            <image catchtap="signBtn" class="func-pic" src="http://oibl5dyji.bkt.clouddn.com/20170611105825.png" wx:else></image>
+            <view class="func-text">
+                <text>{{userinfoDetail.isTodaySign?'已签到':'签到'}}</text>
+                <image class="xianshi" hidden="{{userinfoDetail.isTodaySign}}" src="http://oibl5dyji.bkt.clouddn.com/hongdian.png"></image>
+            </view>
+            <text class="func-num">获得100M</text>
+            <text class="func-kongjian">空间奖励</text>
+            <navigator url="/pages/detail/sign/sign?days={{userinfoDetail.signDay}}&total={{userinfoDetail.totalStorage}}&signcount={{userinfoDetail.signCount}}">
+                <image class="func-lookdetail" src="http://oibl5dyji.bkt.clouddn.com/20170611105822detail.png"></image>
+            </navigator>
+            <text class="func-price">连续签到送iPhone7</text>
+        </view>
+        <view class="invitation">
+            <image catchtap="invitFriend" class="func-pic" src="http://oibl5dyji.bkt.clouddn.com/20170611105827.png"></image>
+            <view class="func-text">
+                <text>邀请好友</text>
+                <image class="xianshi" src="http://oibl5dyji.bkt.clouddn.com/hongdian.png" wx:if="{{userinfoDetail.inviteNum==0}}"></image>
+            </view>
+            <text class="func-num">成功邀请后获得</text>
+            <text class="func-kongjian">0.5G空间奖励</text>
+            <navigator url="/pages/detail/invited/invited?inviteNum={{userinfoDetail.inviteNum}}">
+                <image class="func-lookdetail" src="http://oibl5dyji.bkt.clouddn.com/20170611105822detail.png"></image>
+            </navigator>
+            <text class="func-price">邀请好友送礼品</text>
+        </view>
+        <view class="uppic">
+            <image class="func-pic" src="http://oibl5dyji.bkt.clouddn.com/20170611105826.png"></image>
+            <view class="func-text">
+                <text>上传照片</text>
+            </view>
+            <text class="func-num">已累计上传</text>
+            <text class="func-kongjian">{{userinfoDetail.picNum}}张照片</text>
+            <navigator url="/pages/detail/photodetail/photodetail?picNum={{userinfoDetail.picNum}}">
+                <image class="func-lookdetail" src="http://oibl5dyji.bkt.clouddn.com/20170611105822detail.png"></image>
+            </navigator>
+            <text class="func-price">累计传图送好礼</text>
+        </view>
+    </view>
+</view>
+<view class="welSignModel" hidden="{{showWelSignModel}}">
+    <view class="signModelDialog">
+        <image catchtap="dialogImg" class="dialogImg" src="http://oibl5dyji.bkt.clouddn.com/20170623153030.png"></image>
+    </view>
+</view>

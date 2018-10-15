@@ -1,0 +1,264 @@
+<view class="v-container">
+    <view class="mm-header">
+        <image class="mm-bgPic" mode="aspectFill" src="http://oibl5dyji.bkt.clouddn.com/0207personBg.png"></image>
+        <view class="mm-data">
+            <image class="mm-data-userPic" mode="aspectFill" src="{{userData.upic}}"></image>
+            <view class="mm-data-userName">
+                <text>{{userData.unickname}}</text>
+            </view>
+            <view class="mm-data-integralDetal">
+                <view class="mm-integral">
+                    <text>积分</text>
+                    <text>{{userData.useablePoints?userData.useablePoints:0}}</text>
+                </view>
+                <view catchtap="lookmine" class="lookIntegral">
+                    <text>查看积分</text>
+                </view>
+            </view>
+            <view class="mm-data-num">
+                <text>共发布动态{{userData.eventCnt}}组，照片{{userData.picCnt}}张</text>
+            </view>
+        </view>
+    </view>
+    <view class="timeline" wx:if="{{eventlist.length>0}}">
+        <view catchtap="toEventDetail" class="list-item" data-datas="{{listitem.eid}},{{Aindex}},{{listitem.isDefault}}" wx:for="{{eventlist}}" wx:for-index="Aindex" wx:for-item="listitem" wx:key="{{listitem.eid}}">
+            <block wx:if="{{(listitem.eMain==0||listitem.eMain==4)&&listitem.picList.length>0||listitem.eMain==1||listitem.eMain==2}}">
+                <view class="list-item-child">
+                    <view class="childTop">
+                        <image class="item_headerpic" mode="aspectFill" src="{{listitem.publishUser.upic}}"></image>
+                        <view class="item_userDate">
+                            <view class="item_userleft">
+                                <view class="item_userName">
+                                    <text>{{listitem.publishUser.unickname}}</text>
+                                </view>
+                                <view class="uptimebox">
+                                    <text class="uptime" decode="{{true}}" space="{{true}}">{{listitem.time?listitem.time:''}}&nbsp;&nbsp;&nbsp;&nbsp;{{listitem.eplace?'在'+listitem.eplace:''}}</text>
+                                </view>
+                            </view>
+                            <view class="item_userright">
+                                <view class="moreFun">
+                                    <image catchtap="showlike" class="clickImg" data-eid="{{listitem.eid}}" data-parentindex="{{Aindex}}" src="http://oibl5dyji.bkt.clouddn.com/0504_moreFun.png"></image>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <block wx:if="{{listitem.eMain==0||listitem.eMain==2||listitem.eMain==4}}">
+                        <view class="context" wx:if="{{listitem.etext}}">
+                            <text>{{listitem.etext==null?'':listitem.etext}}</text>
+                        </view>
+                        <block wx:if="{{!(listitem.groupNewType==3||listitem.groupNewType==11||listitem.groupNewType==2&&listitem.eMain==2)}}">
+                            <view class="text-type-aite" wx:if="{{listitem.attentionMember.length>0}}">
+                                <text class="aite-logo">@</text>
+                                <text class="aite-name" wx:if="{{index<5}}" wx:for="{{listitem.attentionMember}}" wx:key="{{index}}">{{index>0?'，':''}}{{item.unickname}}</text>
+                            </view>
+                        </block>
+                        <view catchtap="seeBigVideo" class="mainImg h-box" data-pcover="{{listitem.picList[0].pcover}}" data-url="{{listitem.picList[0].poriginal}}" wx:if="{{listitem.eMain==4}}">
+                            <image class="posterStart" src="http://oibl5dyji.bkt.clouddn.com/20170914191849.png" wx:if="{{listitem.picList[0].pcover}}"></image>
+                            <image class="iosImg" mode="aspectFill" src="{{listitem.picList[0].pcover?listitem.picList[0].pcover:'http://oibl5dyji.bkt.clouddn.com/20170731133839.png'}}"></image>
+                        </view>
+                        <view class="mainImg" wx:elif="{{listitem.eMain==0}}">
+                            <view class="subimg {{listitem.picList.length==1?'onesubimg':''}} {{listitem.picList.length==2?'twosubimg':''}} {{listitem.picList.length==4?'twosubimg':''}} {{listitem.picList.length==2&&picindex==1?'marginRight':''}}{{listitem.picList.length==4&&(picindex==1||picindex==3)?'marginRight':''}}{{listitem.picList.length>=3&&listitem.picList.length!=4&&(picindex==2||picindex==5||picindex==8)?'marginRight':''}}" style="" wx:if="{{picindex<9}}" wx:for="{{listitem.picList}}" wx:for-index="picindex" wx:for-item="picitem" wx:key="{{picindex}}">
+                                <image catchtap="enterpreview" data-parentindex="{{Aindex}}" data-sel="{{picindex}}" mode="aspectFill" src="{{picitem.thumbnail}}"></image>
+                                <view catchtap="toEventDetail" class="imgMengCen" data-datas="{{listitem.eid}},{{Aindex}},{{listitem.isDefault}}" wx:if="{{picindex==8&&listitem.picList.length>9}}">
+                                    <text class="{{listitem.picList.length>99?'bai':''}}">{{listitem.picList.length}}</text>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="voiceTypeEvetn" wx:elif="{{listitem.eMain==2}}">
+                            <view class="voice-type-box">
+                                <image mode="aspectFill" src="{{listitem.publishUser.upic}}"></image>
+                                <view catchtap="audioPlay" class="voice-box-zhezao" data-audiourl="{{listitem.eaudio}}" hidden="{{listitem.isAudioPlay}}">
+                                    <image src="http://oibl5dyji.bkt.clouddn.com/0506_voice_start.png"></image>
+                                </view>
+                                <view catchtap="audioPause" class="voice-box-zhezao" data-audiourl="{{listitem.eaudio}}" hidden="{{!listitem.isAudioPlay}}">
+                                    <image src="http://oibl5dyji.bkt.clouddn.com/0506_voice_stop.png"></image>
+                                </view>
+                            </view>
+                            <view class="audio-box">
+                                <image hidden="{{listitem.isAudioPlay}}" src="http://oibl5dyji.bkt.clouddn.com/0506_voice_logo.png"></image>
+                                <image hidden="{{!listitem.isAudioPlay}}" src="http://oibl5dyji.bkt.clouddn.com/0506_voice_logo.gif"></image>
+                                <text wx:if="{{listitem.eaudioDuration}}">{{listitem.eaudioDuration?listitem.eaudioDuration:''}}s</text>
+                            </view>
+                        </view>
+                    </block>
+                    <block wx:if="{{listitem.eMain==1}}">
+                        <block wx:if="{{!(listitem.groupNewType==3||listitem.groupNewType==11||listitem.groupNewType==2&&listitem.eMain==2)}}">
+                            <view class="text-type-aite" wx:if="{{listitem.attentionMember.length>0}}">
+                                <text class="aite-logo">@</text>
+                                <text class="aite-name" wx:if="{{index<5}}" wx:for="{{listitem.attentionMember}}" wx:key="{{index}}">{{index>0?'，':''}}{{item.unickname}}</text>
+                            </view>
+                        </block>
+                        <view class="textTypeEvent" wx:if="{{listitem.eMain==1}}">
+                            <view class="text-type-box">
+                                <image mode="aspectFill" src="{{listitem.publishUser.upic}}"></image>
+                                <view class="text-type-zhezao">
+                                    <image src="http://oibl5dyji.bkt.clouddn.com/0506_text_logo.png"></image>
+                                </view>
+                            </view>
+                            <view class="text-type-main">
+                                <text class="text-type-main-title" wx:if="{{listitem.textTitle}}">{{listitem.textTitle?listitem.textTitle:''}}</text>
+                                <text class="text-type-main-content {{listitem.textTitle?'':'noTextTitle'}}">{{listitem.etext?listitem.etext:''}}</text>
+                            </view>
+                        </view>
+                    </block>
+                </view>
+                <view class="listDetailBox">
+                    <view class="groupSource">
+                        <text>来源相册</text>
+                        <view catchtap="toGroup" data-id="{{listitem.egroupid}},{{listitem.groupNewType}}">{{listitem.gname}}</view>
+                    </view>
+                    <block wx:if="{{listitem.groupNewType!=3}}">
+                        <view catchtap="recomment" class="talkbox" data-dataindex="{{Aindex}}" data-eid="{{listitem.eid}}" wx:if="{{listitem.commentCnt>0}}">
+                            <view catchlongpress="{{ablumInfo.gcreator==userid&&(ablumInfo.gtype==11||ablumInfo.gOrigin==1)?'longPressDelete':'stop'}}" class="comment" data-longcid="{{item.cid}}" data-longeid="{{listitem.eid}}" data-longindex="{{index}}" wx:if="{{index<3}}" wx:for="{{listitem.comments}}" wx:key="{{index}}">
+                                <block wx:if="{{item.commentedUser.userid==10}}">
+                                    <text class="commentuser" data-commentindex="{{index}}">{{item.commentUser.unickname}}：</text>
+                                    <text class="commentcontent" data-commentindex="{{index}}">{{item.ccontent}}</text>
+                                </block>
+                                <block wx:else>
+                                    <text class="commentuser" data-commentindex="{{index}}">{{item.commentUser.unickname}}</text>
+                                    <text class="reply" data-commentindex="{{index}}">回复</text>
+                                    <text class="commentuser" data-commentindex="{{index}}">{{item.commentedUser.unickname}}：</text>
+                                    <text class="commentcontent" data-commentindex="{{index}}">{{item.ccontent}}</text>
+                                </block>
+                            </view>
+                            <view catchtap="toEventDetail" class="gtThree" data-datas="{{listitem.eid}},{{Aindex}},{{listitem.isDefault}}" wx:if="{{listitem.commentCnt>3}}">
+                                <text>查看所有{{listitem.commentCnt}}条评论</text>
+                                <image src="http://oibl5dyji.bkt.clouddn.com/20170925144222.png"></image>
+                            </view>
+                        </view>
+                    </block>
+                    <view class="editPhotosBtnBox">
+                        <view class="editBtnRight" wx:if="{{listitem.groupNewType!=3}}">
+                            <view catchtap="stop" class="likeTotalNum {{listitem.likeUser==1?'liked':''}}">
+                                <text>{{listitem.likeCnt}}</text>
+                                <view catchtap="stop" class="likeImg" wx:if="{{listitem.likeUser==1}}">
+                                    <image src="http://oibl5dyji.bkt.clouddn.com/201712151643liked.png"></image>
+                                </view>
+                                <form bindsubmit="like" catchtap="stop" data-likecatagry="like" data-parentindex="{{Aindex}}" reportSubmit="true" wx:else>
+                                    <button formType="submit"></button>
+                                </form>
+                            </view>
+                            <view catchtap="comment" class="icon_commit" data-eid="{{listitem.eid}}" data-parentindex="{{Aindex}}">
+                                <image src="http://oibl5dyji.bkt.clouddn.com/0504_commit_pic.png"></image>
+                            </view>
+                        </view>
+                        <view class="editBtnLeft">
+                            <view catchtap="toSharePage" class="editBtnLeftItem" data-index="{{Aindex}}" data-isdefault="{{listitem.isDefault}}">
+                                <image src="http://oibl5dyji.bkt.clouddn.com/0504_share_pic.png"></image>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </view>
+        <view class="viewscollPageLoading">
+            <block wx:if="{{showLoadingImg}}">
+                <image src="http://oibl5dyji.bkt.clouddn.com/loading_gray.gif" wx:if="{{loadingImgOrText}}"></image>
+                <text wx:else>到底了，亲~</text>
+            </block>
+        </view>
+    </view>
+    <view class="noitem" wx:else>
+        <view class="mymemoryEmptyPages">
+            <image mode="aspectFill" src="http://oibl5dyji.bkt.clouddn.com/homepage_empty@3x.png"></image>
+            <text>还未上传图片和视频哦~</text>
+        </view>
+    </view>
+    <block wx:if="{{eventlist.length>0}}">
+        <view class="newperson">
+            <text>忆年共享相册</text>
+            <text>我们自己的相册</text>
+            <view catchtap="fasttoknow" class="fasttoknow-hasalbum"></view>
+        </view>
+        <view class="btmPrompt">
+            <image src="http://oibl5dyji.bkt.clouddn.com/0504_bottom_pic.png"></image>
+        </view>
+    </block>
+</view>
+<view class="funModel" hidden="{{!showFunModel}}">
+    <view catchtap="closeFunModel" class="funModel-box">
+        <view class="funModel-main">
+            <view class="closeList">
+                <image src="http://oibl5dyji.bkt.clouddn.com/0506_closeEvent.png"></image>
+            </view>
+            <view class="mainListTitle">
+                <text>更多功能</text>
+            </view>
+            <view catchtap="stop" class="mainList">
+                <form bindsubmit="toEditPhotosDelete" class="funMainItem" data-photosource="download" reportSubmit="true" wx:if="{{eventlist[selNumA].eMain==0||eventlist[selNumA].eMain==4}}">
+                    <button class="funMainItem_btn" formType="submit">
+                        <text>原图下载</text>
+                        <image src="http://oibl5dyji.bkt.clouddn.com/0506_evetnItem_right.png"></image>
+                    </button>
+                </form>
+                <form bindsubmit="toEditPhotosDelete" class="funMainItem" data-photosource="photosync" reportSubmit="true" wx:if="{{eventlist[selNumA].eMain==0}}">
+                    <button class="funMainItem_btn" formType="submit">
+                        <text>同步到其他相册</text>
+                        <image src="http://oibl5dyji.bkt.clouddn.com/0506_evetnItem_right.png"></image>
+                    </button>
+                </form>
+                <form bindsubmit="toEditPhotosDelete" class="funMainItem" data-photosource="delete" reportSubmit="true" wx:if="{{ablumInfo.gcreator==userid||userid==eventlist[selNumA].list[0].publishUser.userid||ablumInfo.canDelete}}">
+                    <button class="funMainItem_btn" formType="submit">
+                        <text>删除</text>
+                        <image src="http://oibl5dyji.bkt.clouddn.com/0506_evetnItem_right.png"></image>
+                    </button>
+                </form>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="loadingImg" hidden="{{loadImgState}}">
+    <image src="http://oibl5dyji.bkt.clouddn.com/loading-2.gif"></image>
+    <text>{{textArr[promptText]?textArr[promptText]:'精彩内容正在赶来...'}}</text>
+</view>
+<view class="fasttoknowModel" wx:if="{{showDisposeModel}}">
+    <view class="threepictop">
+        <text class="threepictext">三步了解忆年共享相册</text>
+        <button bindtap="closeModel" class="threeCloseModel" plain="true"></button>
+    </view>
+    <view class="threepicturesBox">
+        <view bindtouchend="changend" bindtouchstart="changestart" catchtouchmove="changemove" class="threepictures threeone {{classArr[0]}}">
+            <text>{{usernumber}}位用户</text>
+            <text>正在使用忆年共享相册</text>
+            <text>照片、短视频一键储存</text>
+            <text>安全保障、原图保存、永不过期</text>
+            <image class="three-picsone" mode="aspectFit" src="http://oibl5dyji.bkt.clouddn.com/firstimage.png"></image>
+            <view class="indexBlock">
+                <view class="yellowBlock"></view>
+                <view class="grayBlock"></view>
+                <view class="grayBlock"></view>
+            </view>
+            <view catchtap="addgroup" class="creatmyalbum"></view>
+        </view>
+        <view bindtouchend="changend" bindtouchstart="changestart" catchtouchmove="changemove" class="threepictures threetwo {{classArr[1]}}">
+            <image mode="aspectFit" src="http://oibl5dyji.bkt.clouddn.com/page02text.png">
+                <text class="threetwo-text">您可以创建这些相册</text>
+            </image>
+            <image mode="aspectFit" src="http://oibl5dyji.bkt.clouddn.com/page02pic.png"></image>
+            <view class="indexBlock">
+                <view class="grayBlock"></view>
+                <view class="yellowBlock"></view>
+                <view class="grayBlock"></view>
+            </view>
+            <view catchtap="addgroup" class="creatmyalbum"></view>
+        </view>
+        <view bindtouchend="changend" bindtouchstart="changestart" catchtouchmove="changemove" class="threepictures threethree {{classArr[2]}}">
+            <text>还有精彩礼品相送哦!</text>
+            <image mode="aspectFit" src="http://oibl5dyji.bkt.clouddn.com/page03pic.png"></image>
+            <view class="indexBlock">
+                <view class="grayBlock"></view>
+                <view class="grayBlock"></view>
+                <view class="yellowBlock"></view>
+            </view>
+            <view catchtap="addgroup" class="creatmyalbum"></view>
+        </view>
+    </view>
+</view>
+<view catchtap="hiddenWrite" class="commentInputModelBox_timeLine" wx:if="{{showComInput}}">
+    <view catchtap="stop" class="commentInputBox_timeLine">
+        <form bindsubmit="sendcomment" reportSubmit="true">
+            <input bindinput="checkchange" class="commentinput_timeLine" cursorSpacing="8" focus="{{inputfocus}}" name="content" placeholder="{{placehold}}" placeholderClass="holderIpt_timeLine" value="{{value}}"></input>
+            <button class="sub_timeLine {{contentCurrent?'subActive_timeLine':''}}" formType="submit">发送</button>
+        </form>
+    </view>
+</view>

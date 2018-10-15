@@ -1,0 +1,216 @@
+.pld-container {
+    width: 750rpx;
+    margin-bottom: 90rpx;
+}
+
+.main {
+    background: rgb(239,239,245);
+    padding: 0 28rpx 28rpx;
+}
+
+.main-top {
+    width: 694rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 18rpx 0;
+}
+
+.top-left {
+    width: 100%;
+}
+
+.top-left image {
+    width: 390rpx;
+    height: 50rpx;
+    vertical-align: bottom;
+}
+
+.top-right {
+    margin-top: 14rpx;
+    width: 100%;
+    text-align: right;
+    font-size: 0;
+}
+
+.top-right image {
+    width: 370rpx;
+    height: 28rpx;
+    vertical-align: middle;
+}
+
+.main-img {
+    width: 694rpx;
+    height: 694rpx;
+    position: relative;
+}
+
+.mainBigImg {
+    width: 694rpx;
+    height: 694rpx;
+}
+
+.positionBox {
+    position: absolute;
+    top: 85rpx;
+    left: -12rpx;
+    z-index: 20;
+}
+
+.positionText,.positionLuy,.positionPic,.positionPack {
+    width: 694rpx;
+    height: 63rpx;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 38rpx;
+}
+
+.ellipseImg {
+    width: 118rpx;
+    height: 63rpx;
+}
+
+.lgPic {
+    width: 47rpx;
+    height: 61rpx;
+    margin-left: -60rpx;
+}
+
+.positionText .introText {
+    max-width: 496rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.introText {
+    color: #999;
+    font-size: 24rpx;
+    height: 63rpx;
+    line-height: 63rpx;
+    background: #fff;
+    padding-left: 15rpx;
+    padding-right: 19rpx;
+    margin-left: -2rpx;
+    border-bottom-right-radius: 20rpx;
+    border-top-right-radius: 20rpx;
+}
+
+.positionPic .introText {
+    line-height: 56rpx;
+}
+
+.positionPic .introText text {
+    color: #999;
+    font-size: 36rpx;
+    font-weight: 500;
+}
+
+.takePic {
+    width: 167rpx;
+    height: 167rpx;
+    position: absolute;
+    left: 50%;
+    bottom: 55rpx;
+    transform: translateX(-50%);
+    z-index: 30;
+}
+
+.funcIntro {
+    position: relative;
+}
+
+.positionImg {
+    width: 85rpx;
+    height: 50rpx;
+    position: absolute;
+    top: -48rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 40;
+}
+
+.introContent {
+    width: 694rpx;
+    height: 86rpx;
+    line-height: 86rpx;
+    text-align: center;
+    border-bottom: 1rpx solid #cecece;
+    margin-left: 28rpx;
+}
+
+.introContent image {
+    width: 488rpx;
+    height: 37rpx;
+    vertical-align: top;
+    margin-top: 21rpx;
+}
+
+.introPlay {
+    line-height: 100rpx;
+    margin: 46rpx 0;
+}
+
+.introPlay image {
+    width: 503rpx;
+    height: 125rpx;
+    vertical-align: top;
+    margin-left: 95rpx;
+}
+
+.downLoadYN {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 90rpx;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.downLoadYN image {
+    width: 508rpx;
+    height: 64rpx;
+}
+
+.audioModel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9995;
+    background: rgba(0,0,0,0.5);
+}
+
+.audioMainBox {
+    width: 617rpx;
+    height: 930rpx;
+    background: #fff;
+    border-radius: 12rpx;
+    margin: 50rpx auto 0;
+    position: relative;
+}
+
+.audioIntroPic {
+    width: 617rpx;
+    height: 930rpx;
+}
+
+.closeAudioBox {
+    width: 51rpx;
+    height: 51rpx;
+    border-radius: 50%;
+    position: absolute;
+    top: 27rpx;
+    right: 28rpx;
+}

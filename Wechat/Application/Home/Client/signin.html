@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>登录</title>
+	<link rel="stylesheet" type="text/css" href="/Css/common.css">
+	<link rel="stylesheet" type="text/css" href="/Css/login.css">
+	<!-- <link rel="stylesheet" type="text/css" href="/Css/style.css"> -->
+</head>
+<body>
+	<!--头部引入-->
+	<?php include(C('VIEW_DIR').'/header.html'); ?>
+
+	<!--主体部分-->
+	<div class="loginBox">
+		<div class="main">
+			<div class="loginInput">
+				<div class="titleLogin"><img src="/Images/title.png"></div>
+				<div class="inputBox">
+					<input type="tel" placeholder="手机" class="loginTel">
+					<span class="error"></span>
+					<input type="password" placeholder="密码" class="loginPass">
+					<span class="pass_error"></span>
+				</div>
+				<div class="inputBtn">
+					<div class="textBtn">
+						<a href="/Client/password_reset_step0">忘记密码</a> |
+						<a href="/Client/signup">免费注册</a>
+					</div>
+					<button type="button" id="loginbtn">登&nbsp;&nbsp;录</button>
+				</div>
+			<!--
+				<div class="thirdParty">
+					<span>第三方登录</span>
+					<div class="partyList">
+						<a href="#"><img src="/Images/bo.png"></a>
+						<a href="#"><img src="/Images/qq.png"></a>
+						<a href="#"><img src="/Images/wei.png"></a>
+					</div>
+				</div>
+			-->
+			</div>
+		</div>
+	</div>
+
+	<!--底部引入-->
+	<?php include(C('VIEW_DIR').'/footer.html'); ?>
+
+	<script src="/Js/signin.js"></script>
+	
+</body>
+</html>

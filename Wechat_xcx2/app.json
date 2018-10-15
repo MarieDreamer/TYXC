@@ -1,0 +1,74 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/makegroup/makegroup",
+    "pages/text/text",
+    "pages/activityindex/activityindex",
+    "pages/moment/moment",
+    
+    "pages/login/login",
+    
+    
+    "pages/myself/myself",
+    "pages/mymemory/mymemory",
+    
+    "pages/photo_view/index",
+    
+    "pages/albumedit/albumedit",
+    "pages/password/password",
+    "pages/uploadpic/uploadpic",
+    
+    "pages/eventdetail/eventdetail",
+    "pages/logs/logs",
+    
+    "pages/addgroup/addgroup",
+    
+    
+    "pages/photoalbum/photoalbum",
+    "pages/creatlogin/creatlogin",
+    "pages/viewscoll/viewscoll",
+    
+    "pages/center/aboutyinian/aboutyinian",
+    "pages/center/helpcenter/helpcenter",
+    "pages/shop/shop"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "童忆共享相册",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "相册",
+        "iconPath": "images/icon/xiangce_no.png",
+        "selectedIconPath": "images/icon/xiangce.png"
+      },
+      {
+        "pagePath": "pages/moment/moment",
+        "text": "时刻",
+        "iconPath": "images/icon/shike_no.png",
+        "selectedIconPath": "images/icon/shike.png"
+      },
+      {
+        "pagePath": "pages/activityindex/activityindex",
+        "text": "活动",
+        "iconPath": "images/icon/huodong_no.png",
+        "selectedIconPath": "images/icon/huodong.png"
+      },
+      {
+        "pagePath": "pages/myself/myself",
+        "text": "我的",
+        "iconPath": "images/icon/wode_no.png",
+        "selectedIconPath": "images/icon/wode.png"
+      }
+    ],
+    "borderStyle": "white",
+    "color": "#999999",
+    "selectedColor": "#333333",
+    "backgroundColor": "#ffffff"
+  },
+  "debug": false
+}

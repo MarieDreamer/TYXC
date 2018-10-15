@@ -1,0 +1,21 @@
+<view class="add-container">
+    <view catchtap="changeAll" class="addAll">
+        <text>所有人</text>
+        <image src="http://oibl5dyji.bkt.clouddn.com/20170916215932ed.png" wx:if="{{allState&&state}}"></image>
+        <image src="http://oibl5dyji.bkt.clouddn.com/20170916215932.png" wx:else></image>
+    </view>
+    <view catchtap="changeCreator" class="addAll">
+        <text>管理员</text>
+        <image src="http://oibl5dyji.bkt.clouddn.com/20170916215932ed.png" wx:if="{{onlyCreator&&state}}"></image>
+        <image src="http://oibl5dyji.bkt.clouddn.com/20170916215932.png" wx:else></image>
+    </view>
+    <navigator hoverClass="none" openType="redirect" url="/pages/setting/addmember/addmember">
+        <view class="addAll" style="margin-top:0">
+            <text>指定可添加的人</text>
+            <image class="addmember" src="http://oibl5dyji.bkt.clouddn.com/20170916215931.png"></image>
+        </view>
+    </navigator>
+    <view class="confirmBtn">
+        <view catchtap="release">确认</view>
+    </view>
+</view>

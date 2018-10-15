@@ -1,0 +1,38 @@
+<view class="container">
+    <view class="top-tab">
+        <view bindtap="GoUrl" class="{{type==''?'active':''}}" data-type="">全部</view>
+        <view bindtap="GoUrl" class="{{type=='ing'?'active':''}}" data-type="ing">进行中</view>
+        <view bindtap="GoUrl" class="{{type=='success'?'active':''}}" data-type="success">已免单</view>
+        <view bindtap="GoUrl" class="{{type=='fail'?'active':''}}" data-type="fail">未免单</view>
+    </view>
+    <view class="query-con">
+        <view class="query-con-list" wx:for="{{lists}}" wx:for-item="list" wx:key="key">
+            <view class="query-con-list-t">
+                <text>第三方数据期数：{{list.expect}}</text>
+                <text class="zt jxz" wx:if="{{list.get_status==0}}">进行中</text>
+                <text class="zt jz" wx:if="{{list.get_status==1}}">恭喜免单</text>
+                <text class="zt wjz" wx:if="{{list.get_status==2}}">未免单</text>
+            </view>
+            <view class="query-con-list-c">
+                <view class="query-con-list-c-lt">
+                    <view class="kjtime" wx:if="{{list.get_status==0}}">距离免单时间:00:05:20</view>
+                    <view class="kjtime" wx:if="{{list.get_status!=0}}">免单号码:{{list.opencode}}</view>
+                    <view class="select" wx:if="{{list.get_status!=0}}">免单尾数:<text>{{list.key}}</text>
+                    </view>
+                    <view class="select">你的选择:<text>{{list.cqssc}}</text>
+                    </view>
+                </view>
+                <view class="query-con-list-c-rt">
+                    <image mode="widthFix" src="https://cc.hohiw.com/xcximg/zjts.png" wx:if="{{list.get_status==1}}"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="weui-loadmore" style="display:{{more}}">
+    <view class="weui-loading"></view>
+    <view class="weui-loadmore__tips">正在加载</view>
+</view>
+<view class="weui-loadmore weui-loadmore_line" wx:if="{{listend==1}}">
+    <view class="weui-loadmore__tips weui-loadmore__tips_in-line">我是有底线滴</view>
+</view>

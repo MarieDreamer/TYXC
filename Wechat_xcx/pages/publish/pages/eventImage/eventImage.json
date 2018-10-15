@@ -1,0 +1,10 @@
+{
+    "navigationBarTitleText": "上传图片",
+    "usingComponents": {
+        "input-text": "../../components/inputText/inputText",
+        "location": "../../components/location/location",
+        "date-and-time": "../../components/dateAndTime/dateAndTime",
+        "sync-to-other-albums": "../../components/syncToOtherAlbums/syncToOtherAlbums",
+        "and-friends": "../../components/andFriends/andFriends"
+    }
+}

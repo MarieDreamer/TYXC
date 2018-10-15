@@ -1,0 +1,21 @@
+<view class="invit-container">
+    <view class="invitTop">
+        <view class="invit-prize">
+            <image src="http://oibl5dyji.bkt.clouddn.com/20170629093333.png"></image>
+        </view>
+        <view class="invit-text1">
+            <image src="http://oibl5dyji.bkt.clouddn.com/20170629093331.png"></image>
+            <text>{{userName}}邀请你加入</text>
+        </view>
+        <view class="invit-text2">
+            <text>忆年共享相册</text>
+        </view>
+    </view>
+    <view class="invitBottom">
+        <view class="invitCount">
+            <text>分享本页面即可获得奖励</text>
+            <button class="goShareBtn" openType="share" wx:if="{{canIUse}}"></button>
+            <image catchtap="showIntro" class="goToShare" src="http://oibl5dyji.bkt.clouddn.com/20170629093334.png" wx:else></image>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,22 @@
+page {
+    width: 100%;
+    height: 100%;
+}
+
+.au-container {
+    width: 100%;
+    height: 100%;
+}
+
+.section {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: center;
+    align-items: center;
+}
+
+.iconPic {
+    width: 100%;
+    height: 100%;
+}

@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "上传音频",
+    "usingComponents": {
+        "location": "../../components/location/location",
+        "date-and-time": "../../components/dateAndTime/dateAndTime"
+    }
+}

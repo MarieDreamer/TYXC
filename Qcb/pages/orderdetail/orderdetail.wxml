@@ -1,0 +1,101 @@
+<view class="container">
+    <view class="top">
+        <image src="https://cc.hohiw.com/xcximg/ddxq-bg.png"></image>
+        <view class="top-c">
+            <view class="top-c-lt">
+                <image src="https://cc.hohiw.com/xcximg/time.png"></image>
+                <text>{{order_info.order_status_desc}}</text>
+            </view>
+            <view class="top-c-rt">
+                <text></text>
+            </view>
+        </view>
+        <view class="top-d">
+            <text></text>
+        </view>
+    </view>
+    <view class="jbxx">
+        <view class="jbxx-lst lxr">
+            <image class="dz" src="https://cc.hohiw.com/xcximg/dz2.png"></image>
+            <text>{{order_info.consignee}} </text>
+            <text>{{order_info.mobile}}</text>
+        </view>
+        <view class="jbxx-lst xxdz">
+            <text>地址：{{order_info.p}}{{order_info.c}}{{order_info.d}} {{order_info.address}}</text>
+        </view>
+    </view>
+</view>
+<view class="ddxx">
+    <view class="list">
+        <view class="list-t">
+            <text>商品明细</text>
+        </view>
+        <navigator openType="reLaunch" url="/pages/goods/goods?id={{goods.goods_id}}" wx:for="{{order_info.goods_list}}" wx:for-item="goods" wx:key="k">
+            <view class="list-c">
+                <image mode="widthFix" src="{{goods.goods_img}}"></image>
+                <view class="list-c-rt">
+                    <text class="title">{{goods.goods_name}}</text>
+                    <text class="describe">{{goods.spec_key_name}}</text>
+                    <view class="list-c-rt-d">
+                        <label class="price">￥{{goods.member_goods_price}} </label>
+                        <label class="num">x{{goods.goods_num}}</label>
+                    </view>
+                </view>
+            </view>
+        </navigator>
+        <view class="list-t">
+            <view class="list-t-lst">
+                <text>配送方式：{{order_info.shipping_name}}</text>
+            </view>
+        </view>
+        <view class="list-t" wx:if="{{order_info.invoice_no!=''}}">
+            <view class="list-t-lst">
+                <text>物流编号：{{order_info.invoice_no}}</text>
+            </view>
+        </view>
+        <view class="list-t" wx:if="{{order_info.user_note}}">
+            <view class="list-t-lst">
+                <text>留言备注：{{order_info.user_note}}</text>
+            </view>
+        </view>
+        <view class="list-xfk">
+            <text>商品总额</text>
+            <text class="jg">￥{{order_info.goods_price}}</text>
+        </view>
+        <view class="list-xfk" wx:if="{{order_info.shipping_price>0}}">
+            <text>配送费用</text>
+            <text class="jg"> + ￥{{order_info.shipping_price}}</text>
+        </view>
+        <view class="list-xfk" wx:if="{{order_info.bonus_price>0}}">
+            <text>使用消费券</text>
+            <text class="jg"> - ￥{{order_info.bonus_price}}</text>
+        </view>
+        <view class="list-xfk" wx:if="{{order_info.user_money>0}}">
+            <text>使用余额</text>
+            <text class="jg"> - ￥{{order_info.user_money}}</text>
+        </view>
+        <view class="list-xfk">
+            <text>应付款</text>
+            <text class="jg">￥{{order_info.order_amount}}</text>
+        </view>
+    </view>
+</view>
+<view class="ddxx2">
+    <view class="ddxx2-con">
+        <text>订单编号：{{order_info.order_sn}}</text>
+        <text>创建时间：{{order_info.add_time}}</text>
+        <text wx:if="{{order_info.transaction_id!=null}}">微信交易号：{{order_info.transaction_id}}</text>
+        <text wx:if="{{order_info.pay_time!=0}}">付款时间：{{order_info.pay_time}}</text>
+        <text wx:if="{{order_info.shipping_time!=0}}">发货时间：{{order_info.shipping_time}}</text>
+        <text wx:if="{{order_info.confirm_time!=0}}">成交时间：{{order_info.confirm_time}}</text>
+    </view>
+</view>
+<view class="list-d">
+    <button bindtap="GoUrl" class="active" data-url="/pages/guess/guess?id={{order_info.order_id}}" wx:if="{{order_info.guess_btn==1}}">去猜奖</button>
+    <button bindtap="GoUrl" class="active" data-url="/pages/cue/cue?id={{order_info.order_id}}" wx:if="{{order_info.guess_btn==2}}">免单查询</button>
+    <button bindtap="GoUrl" class="active" data-url="/pages/guess/guess?id={{order_info.order_id}}" wx:if="{{order_info.guess_btn==3}}">免单查询</button>
+    <button bindtap="CancelOrder" wx:if="{{order_info.cancel_btn==1}}">取消订单</button>
+    <button bindtap="PayOrder" class="active" wx:if="{{order_info.pay_btn==1}}">立即付款</button>
+    <button bindtap="ReciveOrder" class="active" wx:if="{{order_info.receive_btn==1}}">收货确认</button>
+    <button bindtap="HandleOrder" class="active" data-url="/pages/comment_list/comment_list?status=0&order_id={{list.order_id}}" wx:if="{{order_info.comment_btn==1}}">评价</button>
+</view>

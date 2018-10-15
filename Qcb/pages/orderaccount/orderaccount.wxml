@@ -1,0 +1,30 @@
+<view class="container">
+    <view style="width:100%">
+        <view class="withdraw flexed">
+            <text class="keti">累计佣金（元）</text>
+            <navigator class="">
+                <text class="keti-money">{{distribut_money}}</text>
+            </navigator>
+        </view>
+        <view class="flexed order-detail-title">
+            <text>订单明细</text>
+            <text>获得佣金（元）</text>
+        </view>
+        <view class="n-container">
+            <view class="flexed menber-item" wx:for="{{lists}}" wx:for-item="list" wx:key="key">
+                <view class="daili">
+                    <view class="subordinate ellipsis">{{list.order_sn}}</view>
+                    <text class="time">{{list.create_time}}</text>
+                </view>
+                <text class="money">{{list.money}}</text>
+            </view>
+            <view class="weui-loadmore" style="display:{{more}}">
+                <view class="weui-loading"></view>
+                <view class="weui-loadmore__tips">正在加载</view>
+            </view>
+            <view class="weui-loadmore weui-loadmore_line" wx:if="{{listend==1}}">
+                <view class="weui-loadmore__tips weui-loadmore__tips_in-line">我是有底线滴</view>
+            </view>
+        </view>
+    </view>
+</view>

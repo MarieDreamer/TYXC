@@ -1,0 +1,480 @@
+<view class="transition {{publishMenu?'gaussian_blur':''}}">
+    <view class="v-container">
+        <view class="header">
+            <view catchtap="stop" class="viewFunBtnbox" >
+                <view catchtap="goHome" class="toGoHome">
+                    <image src="http://oibl5dyji.bkt.clouddn.com/0504_leftDir.png"></image>
+                    <text >创建相册</text>
+                    <block >
+                        <!-- <text >返回首页</text> -->
+                        <!-- <text >创建相册</text> -->
+                    </block>
+                </view>
+                <view class="viewMemberList">
+                    <view class="meblistItem" >
+                        <image mode="aspectFill" src="{{item.upic}}"></image>
+                    </view>
+                </view>
+                <form bindsubmit="addmember" class="invite" reportSubmit="true" >
+                    <button open-type="share" class="addmember_btn" >
+                        <image src="http://oibl5dyji.bkt.clouddn.com/0504_add.png"></image>
+                        <text>邀请</text>
+                    </button>
+                    <!-- <image class="inviteMember invitePic" src="http://oibl5dyji.bkt.clouddn.com/inventgetprize.png" ></image> -->
+                </form>
+                <form bindsubmit="toSettingPage" class="setting" data-albumtype="familyalbum" reportSubmit="true">
+                    <button catchtap='add_activity' class="addmember_btn" formType="submit">
+                        <image src="http://oibl5dyji.bkt.clouddn.com/0504_add.png"></image>
+                        <text>加入活动</text>
+                    </button>
+                </form>
+            </view>
+            <image catchtap="toChaneBgPic" class="viewScollBgImg" mode="aspectFill" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528432781711&di=00b9bf7ea757e745559bbe6896b21543&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F5%2F532931489604e.jpg"></image>
+            <view class="selfgroupName">
+                <text catchtap="edit" class="scollGroupName_self">风景摄影分享</text>
+                <!-- <view catchtap="edit" class="edit"></view> -->
+            </view>
+            <view catchtap="stop" class="more-member">
+                <text>{{ablumInfo.gnum?ablumInfo.gnum:0}}人</text>
+                <view class="gnum-picnum-line"></view>
+                <text>{{ablumInfo.picnum?ablumInfo.picnum:0}}张</text>
+            </view>
+            <form bindsubmit="useablePointsclick" catchtap="donothing" class="group_userIntegral_self" reportSubmit="true">
+                <button class="group_userIntegral_btn" formType="submit">
+                    <image mode="aspectFill" src="{{ablumInfo.upic}}"></image>
+                    <view class="integral_detail">
+                        <image src="http://oibl5dyji.bkt.clouddn.com/0122icon_toself.png"></image>
+                    </view>
+                </button>
+            </form>
+        </view>
+        <view class="timeline_nav nav_posi" >
+            <view catchtap="showTimeAxis" class="nav-item">
+                <view class="textBox">
+                    <image class="eventicon" mode="aspectFill" src="http://oibl5dyji.bkt.clouddn.com/0504_tiemline.png" ></image>
+          时间轴
+        </view>
+            </view>
+            <view class="time-photo-line"></view>
+            <view catchtap="toEventAxis" class="nav-item">
+                <view class="textBox active">
+                    
+                    <image class="eventicon" mode="aspectFill" src="http://oibl5dyji.bkt.clouddn.com/0504_event_pic.png" ></image>
+          事件
+        </view>
+            </view>
+            <view class="time-photo-line"></view>
+            <view catchtap="toSport" class="nav-item">
+                
+            </view>
+            <image catchtap="goPic" class="goPic" mode="aspectFill" src="http://oibl5dyji.bkt.clouddn.com/goPic.png"></image>
+        </view>
+        <view class="timeline">
+            <view catchtap="loadmore" class="list-item">
+                <block>
+                    <view class="listDetailBox">
+                        <view catchtap="recomment" class="talkbox" data-dataindex="{{Aindex}},{{Bindex}}" data-eid="{{listitem.eid}}" >
+                            <view catchlongpress="{{ablumInfo.gcreator==userid&&(ablumInfo.gtype==11||ablumInfo.gOrigin==1)?'longPressDelete':'stop'}}" class="comment" data-longcid="{{item.cid}}" data-longeid="{{listitem.eid}}" data-longindex="{{index}}" >
+                                
+                                <block >
+                                    <!-- <text class="commentuser" data-commentindex="{{index}}">{{item.commentUser.unickname}}</text> -->
+                                    
+                                    
+                                </block>
+                            </view>
+                            <navigator catchtap="preReset" url="{{'/pages/eventdetail/eventdetail?lastPage=albumDetail&dateindex='+Aindex+'&rowindex='+Bindex+'&eid='+listitem.eid+'&efrom=grouptypescoll'}}">
+                                
+                            </navigator>
+                        </view>
+                        <view class="editPhotosBtnBox">
+                            <!-- <view class="editBtnRight">
+                                <view catchtap="stop" class="likeTotalNum {{listitem.likeUser==1?'liked':''}}">
+                                    <text>{{listitem.likeCnt}}</text>
+                                    <view catchtap="stop" class="likeImg" >
+                                        <image src="http://oibl5dyji.bkt.clouddn.com/201712151643liked.png"></image>
+                                    </view>
+                                    <form bindsubmit="like" catchtap="stop" data-childindex="{{Bindex}}" data-eMain="{{listitem.eMain}}" data-eid="{{listitem.eid}}" data-likecatagry="like" data-parentindex="{{Aindex}}" data-type="time" reportSubmit="true" >
+                                        <button formType="submit"></button>
+                                    </form>
+                                </view>
+                                <view catchtap="comment" class="icon_commit" data-childindex="{{Bindex}}" data-eid="{{listitem.eid}}" data-parentindex="{{Aindex}}">
+                                    <image src="http://oibl5dyji.bkt.clouddn.com/0504_commit_pic.png"></image>
+                                </view>
+                            </view> -->
+                            <!-- <view class="editBtnLeft">
+                                <button catchtap="playPhoto" class="play-photo" data-eid="{{listitem.eid}}" data-grouptype="{{listitem.groupNewType}}" >制作图片</button>
+                                <form bindsubmit="toStories" catchtap="donothing" class="editBtnLeftItem viewscoll_share_eid" data-eid="{{listitem.eid}}" data-flag="share" data-index="{{Aindex}}" reportSubmit="true">
+                                    <button class="editBtnLeftItem_btn" formType="submit">
+                                        <image src="http://oibl5dyji.bkt.clouddn.com/0504_share_pic.png"></image>
+                                    </button>
+                                </form>
+                            </view> -->
+                        </view>
+                    </view>
+                </block>
+            </view>
+            
+        </view>
+        
+        <block>
+            <view class="defaultEmptyPages" >
+                  <view catchtap="return_index" class="emptyItem lightUp">
+                      <image mode="aspectFill" src="http://oibl5dyji.bkt.clouddn.com/0328_photo.png"></image>
+                      <text>返回首页</text>
+                      <image class="emptyMayDayAcTips" src="http://oibl5dyji.bkt.clouddn.com/656133948188678681.png" wx:if="{{isActivitySwitch.isDelete==0}}"></image>
+                  </view>
+                  <button catchtap="showPvModel"  class="emptyItem" id="emptyListShare">
+                      <image mode="aspectFill" src="http://oibl5dyji.bkt.clouddn.com/0328_person.png"></image>
+                      <text>上传图片</text>
+                  </button> 
+              </view>
+        </block>
+        
+    </view>
+    
+    <block>
+        
+        <!-- <view class="footer {{isIphonex?'footerPadBtm':''}}">
+            <view catchtap="openPublishMenu" class="upLoad {{isIphonex?'upLoadBtm':''}}" >
+                <image mode="aspectFill" src="http://oibl5dyji.bkt.clouddn.com/201712151643up.png"></image>
+            </view>
+            <navigator hoverClass="none" openType="switchTab" url="{{'/pages/index/index'}}">
+                <view class="footerItem">
+                    <text>返回首页</text>
+                </view>
+            </navigator>
+            <navigator catchtap="stopreset" hoverClass="none" url="/pages/find/findindex/findindex">
+                <view class="footerItem">
+                    <text>排行</text>
+                </view>
+            </navigator>
+        </view> -->
+        <!-- <view class="footer2" >
+            <view class="footerIntro" >
+                <view class="footerIntroBox1" >
+                    <image src="http://oibl5dyji.bkt.clouddn.com/20171109110225.png"></image>
+                    <image catchtap="closeIntroUpload" class="closeIntro" src="http://oibl5dyji.bkt.clouddn.com/20171109110224.png"></image>
+                </view>
+                <view class="footerIntroBox2" >
+                    <image src="http://oibl5dyji.bkt.clouddn.com/20171109110226.png"></image>
+                    <image catchtap="closeIntroCreate" class="closeIntro" src="http://oibl5dyji.bkt.clouddn.com/20171109110224.png"></image>
+                </view>
+            </view>
+            <view catchtap="openPublishMenu" class="itemBox">
+                <image src="http://oibl5dyji.bkt.clouddn.com/201712151643up.png"></image>
+            </view>
+            <view class="fengexian"></view>
+            <view catchtap="toMakeGroup" class="itemBox">
+                <image src="http://oibl5dyji.bkt.clouddn.com/20171109110222.png"></image>
+            </view>
+        </view> -->
+        <!-- <view class="footer3" >
+            <view catchtap="openPublishMenu" class="upLoadOld {{isIphonex?'upLoadBtm':''}} {{activitySwitchhot?'':'activitySwitchhot'}}" >
+                <image src="http://oibl5dyji.bkt.clouddn.com/201712151643up.png"></image>
+            </view>
+        </view> -->
+    </block>
+    <image catchtap="hotactiveNavgite" class="normalAlbumTohot" src="{{bottomUrl}}" ></image>
+    <!-- <view class="activity-rules-modal" hidden="{{showActivityRules}}">
+        <view class="activity-rules">
+            <view class="rule-title">
+                <text>{{ablumInfo.arTitle?ablumInfo.arTitle:'活动规则'}}</text>
+            </view>
+            <view class="rule-list">
+                <text>{{item}}</text>
+            </view>
+            <image catchtap="closeActivityRules" class="close-rules" src="http://oibl5dyji.bkt.clouddn.com/0129_close.png"></image>
+        </view>
+    </view> -->
+    <!-- <view catch:tap="closeModal" catch:touchmove="preventTouchMove" class="party-modal {{addModalAnimation?'party-modal-on':''}}"> -->
+        <!-- <view class="party-modal-warp {{addEventModalAnimation?'party-modal-warp-on':''}}" >
+            <view catchtap="closeAddEventModal" class="party-modal-close">
+                <image src="{{icon.close_l}}"></image>
+            </view>
+            <view class="party-modal-title">发布动态</view>
+            <view class="party-modal-content">
+                <view class="party-add_event">
+                    <view catchtap="openAddPhotoModal" class="party-add_event-item" data-type="photo">
+                        <image class="party-aei-icon" mode="aspectFit" src="{{icon.photo_l}}"></image>
+                        <text class="party-aei-text">照片</text>
+                    </view>
+                    <view catchtap="openAddPhotoModal" class="party-add_event-item" data-type="video">
+                        <image class="party-aei-icon" mode="aspectFit" src="{{icon.camera_l}}"></image>
+                        <text class="party-aei-text">视频</text>
+                    </view>
+                </view>
+            </view>
+        </view> -->
+        <!-- <view class="party-modal-warp {{addPhotoModalAnimation?'party-modal-warp-on':''}}" >
+            <view catchtap="closeAddPhotoModal" class="party-modal-close">
+                <image src="{{icon.close_l}}"></image>
+            </view>
+            <view class="party-modal-title" >发布{{modalTitle}}</view>
+            <view class="party-modal-content">
+                <view class="party-add_photo">
+                    <view catchtap="uploadpic" class="party-add_photo-item" data-eventEid="{{eventEid}}" data-eventOmain="{{eventOmain}}" data-events="{{eventModel}}" data-pic="phone" >
+                        <text class="party-api-text">系统相册选择</text>
+                        <image class="party-api-icon" mode="aspectFit" src="{{icon.arrow}}"></image>
+                    </view>
+                    <view catchtap="uploadpic" class="party-add_photo-item" data-events="{{eventModel}}" data-pic="pai">
+                        <text class="party-api-text">拍照</text>
+                        <image class="party-api-icon" mode="aspectFit" src="{{icon.arrow}}"></image>
+                    </view>
+                    <view catchtap="uploadvideo" class="party-add_photo-item" data-video="phone" >
+                        <text class="party-api-text">系统相册选择</text>
+                        <image class="party-api-icon" mode="aspectFit" src="{{icon.arrow}}"></image>
+                    </view>
+                    <view catchtap="uploadvideo" class="party-add_photo-item" data-video="pai" >
+                        <text class="party-api-text">拍摄</text>
+                        <image class="party-api-icon" mode="aspectFit" src="{{icon.arrow}}"></image>
+                    </view>
+                </view>
+            </view>
+        </view> -->
+    <!-- </view> -->
+    <view class="funModel" hidden="{{!showFunModel}}">
+        <view catchtap="closeFunModel" class="funModel-box">
+            <view class="funModel-main">
+                <view class="closeList">
+                    <image src="http://oibl5dyji.bkt.clouddn.com/0506_closeEvent.png"></image>
+                </view>
+                <view class="mainListTitle">
+                    <text>更多功能</text>
+                </view>
+                <view catchtap="stop" class="mainList">
+                    <form bindsubmit="toEditPhotosDelete" class="funMainItem" data-photosource="download" reportSubmit="true" >
+                        <button class="funMainItem_btn" formType="submit">
+                            <text>{{eventlist[selNumA].list[0].eMain!=4?'原图下载':'视频下载'}}</text>
+                            <image src="http://oibl5dyji.bkt.clouddn.com/0506_evetnItem_right.png"></image>
+                        </button>
+                    </form>
+                    <form bindsubmit="toEditPhotosDelete" class="funMainItem" data-photosource="photosync" reportSubmit="true" >
+                        <button class="funMainItem_btn" formType="submit">
+                            <text>同步到其他相册</text>
+                            <image src="http://oibl5dyji.bkt.clouddn.com/0506_evetnItem_right.png"></image>
+                        </button>
+                    </form>
+                    <form bindsubmit="maketop" class="funMainItem" reportSubmit="true" >
+                        <button class="funMainItem_btn" formType="submit">
+                            <text>{{eventlist[selNumA].list[0].elevel==0?'置顶':'取消置顶'}}</text>
+                            <image src="http://oibl5dyji.bkt.clouddn.com/0506_evetnItem_right.png"></image>
+                        </button>
+                    </form>
+                    <form bindsubmit="toEditPhotosDelete" class="funMainItem" data-photosource="delete" reportSubmit="true" >
+                        <button class="funMainItem_btn" formType="submit">
+                            <text>删除</text>
+                            <image src="http://oibl5dyji.bkt.clouddn.com/0506_evetnItem_right.png"></image>
+                        </button>
+                    </form>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<!-- <import src="/pages/template/beforeauthpic/beforeauthpic.wxml"></import> -->
+<!-- <template is="tempic" data="{{...authpic}}" ></template> -->
+<!-- <view class="loadingImg" hidden="{{loadImgState}}">
+    <image src="http://oibl5dyji.bkt.clouddn.com/loading-2.gif"></image>
+    <text>{{textArr[promptText]?textArr[promptText]:'精彩内容正在赶来...'}}</text>
+</view> -->
+<!-- <view class="waitingBox" hidden="{{waitingState}}">
+    <image src="http://oibl5dyji.bkt.clouddn.com/20171102164521.png"></image>
+    <view class="waitingText">
+        <text class="waitingIntro">亲~ 老司机已发车，等下一辆吧！</text>
+        <text class="bigNum" >请在<text>{{secondNum}}</text>秒后重试</text>
+    </view>
+    <view catchtap="{{secondEnd?'stop':'refresh'}}" class="refresh {{secondEnd?'':'refreshed'}}">呼叫老司机</view>
+</view> -->
+<!-- <view class="aladingModel" >
+    <view class="aladingImgBox">
+        <image src="http://oibl5dyji.bkt.clouddn.com/alading2017112015.png"></image>
+    </view>
+</view> -->
+<!-- <view class="upModel" >
+    <view class="progressModelBox" >
+        <view class="progressText">
+            <text>正在上传{{progress?progress:0}}%</text>
+            <text class="shareText">上传中请勿退出</text>
+        </view>
+        <view class="progressBox">
+            <progress activeColor="#66cc00" backgroundColor="#d7d7d7" percent="{{progress}}"></progress>
+        </view>
+    </view>
+    <view class="successModelBox">
+        <image catchtap="closeProgress" class="closeProgress" src="http://oibl5dyji.bkt.clouddn.com/20171201101323.png"></image>
+        <view class="successText">
+            <image src="http://oibl5dyji.bkt.clouddn.com/20171201101321.png"></image>
+            <text >成功上传{{totalnum}}张照片</text>
+            <text>视频上传成功</text>
+            <text >事件上传成功</text>
+            <text>事件图片增加成功</text>
+        </view>
+    </view>
+    <view class="failModelBox" >
+        <image catchtap="closeProgress" class="closeProgress" src="http://oibl5dyji.bkt.clouddn.com/20171201101323.png"></image>
+        <image class="upFailImg" src="http://oibl5dyji.bkt.clouddn.com/20171201101322.png"></image>
+        <text class="upFailText">亲~{{upViderOrPic=='pic'?'照片':upViderOrPic=='video'?'视频':'事件'}}上传失败！</text>
+        <view catchtap="uploadAgain" class="upAgain">重新上传</view>
+    </view>
+    <view class="filterModelBox">
+        <image catchtap="closeProgress" class="closeProgress" src="http://oibl5dyji.bkt.clouddn.com/20171121170422.png"></image>
+        <image class="filterImg" src="http://oibl5dyji.bkt.clouddn.com/20171201101322.png"></image>
+        <view class="filterText">
+            <block >
+                <text >上传{{fitImgNum}}张照片可能涉及不健康信息或因GIF格式被过滤！</text>
+                <text >成功上传{{sucImgNum}}张照片，其中{{fitImgNum}}张照片可能涉及不健康信息或因GIF格式被过滤！</text>
+            </block>
+            <text >上传的视频可能涉及不健康信息或非法内容被过滤！</text>
+            <text >上传的事件可能涉及不健康信息或非法内容被过滤！</text>
+        </view>
+    </view>
+</view> -->
+<!-- <view class="Mengcen" >
+    <view class="change">
+        <view class="tip">修改相册名称</view>
+        <form bindsubmit="submitfun" reportSubmit="true">
+            <view class="input_section">
+                <input bindinput="setcolor" class="inputerea" fixed="true" focus="true" maxlength="16" name="groupname" placeholder="请输入新的相册名称" placeholderStyle="color:#999" value="{{value}}"></input>
+                <text>{{textNum}}/16</text>
+            </view>
+            <view class="cancel_confirm">
+                <view class="btn-area">
+                    <button catchtap="Mengcen_cancel" class="Mengcen_cancel">取消</button>
+                </view>
+                <view class="btn-area">
+                    <button class="Mengcen_submit" formType="submit">确认</button>
+                </view>
+            </view>
+        </form>
+    </view>
+</view> -->
+<!-- <view class="fasttoknowModel" >
+    <view class="threepictop">
+        <text class="threepictext">三步了解童忆共享相册</text>
+        <button bindtap="closeModel" class="threeCloseModel" plain="true"></button>
+    </view>
+    <view class="threepicturesBox">
+        <view bindtouchend="changend" bindtouchstart="changestart" catchtouchmove="changemove" class="threepictures threeone {{classArr[0]}}">
+            <text>{{usernumber}}位用户</text>
+            <text>正在使用童忆共享相册</text>
+            <text>照片、短视频一键储存</text>
+            <text>安全保障、原图保存、永不过期</text>
+            <image class="three-picsone" mode="aspectFit" src="http://oibl5dyji.bkt.clouddn.com/firstimage.png"></image>
+            <view class="indexBlock">
+                <view class="yellowBlock"></view>
+                <view class="grayBlock"></view>
+                <view class="grayBlock"></view>
+            </view>
+            <view catchtap="addgroup" class="creatmyalbum"></view>
+        </view>
+        <view bindtouchend="changend" bindtouchstart="changestart" catchtouchmove="changemove" class="threepictures threetwo {{classArr[1]}}">
+            <image mode="aspectFit" src="http://oibl5dyji.bkt.clouddn.com/page02text.png">
+                <text class="threetwo-text">您可以创建这些相册</text>
+            </image>
+            <image mode="aspectFit" src="http://oibl5dyji.bkt.clouddn.com/page02pic.png"></image>
+            <view class="indexBlock">
+                <view class="grayBlock"></view>
+                <view class="yellowBlock"></view>
+                <view class="grayBlock"></view>
+            </view>
+            <view catchtap="addgroup" class="creatmyalbum"></view>
+        </view>
+        <view bindtouchend="changend" bindtouchstart="changestart" catchtouchmove="changemove" class="threepictures threethree {{classArr[2]}}">
+            <text>还有精彩礼品相送哦!</text>
+            <image mode="aspectFit" src="http://oibl5dyji.bkt.clouddn.com/page03pic.png"></image>
+            <view class="indexBlock">
+                <view class="grayBlock"></view>
+                <view class="grayBlock"></view>
+                <view class="yellowBlock"></view>
+            </view>
+            <view catchtap="addgroup" class="creatmyalbum"></view>
+        </view>
+    </view>
+</view> -->
+<!-- <view catchtap="hiddenWrite" class="commentInputModelBox_timeLine" >
+    <view catchtap="stop" class="commentInputBox_timeLine">
+        <form bindsubmit="sendcomment" reportSubmit="true">
+            <input bindinput="checkchange" class="commentinput_timeLine" cursorSpacing="8" focus="{{inputfocus}}" name="content" placeholder="{{placehold}}" placeholderClass="holderIpt_timeLine" value="{{value}}"></input>
+            <button class="sub_timeLine {{contentCurrent?'subActive_timeLine':''}}" formType="submit">发送</button>
+        </form>
+    </view>
+</view> -->
+<!-- <view class="showDisposeModel" >
+    <view class="disposeBox_self">
+        <button bindtap="closeDispose" class="CloseModel" plain="true"></button>
+        <view class="disposeTitle_self">
+            <text>已加入相册</text>
+        </view>
+        <view class="disposeScetion_self">
+            <text>{{inventPerson}}已经发布了动态,快去上传吧</text>
+        </view>
+        <view catchtap="hurryupload" class="closeDispose_self">立即上传</view>
+    </view>
+</view> -->
+<!-- <block>
+    <view class="showDisposeModel" >
+        <view class="firstUpBox">
+            <image catchtap="closefirstuploadDispose" class="closeUpBox" src="http://oibl5dyji.bkt.clouddn.com/20171111094622.png"></image>
+            <image catchtap="firstuploadshare" class="upBoxPic" id="firstUpLoad" mode="aspectFill" src="{{alertHidePic}}"></image>
+            <image catchtap="addmember" class="hot_invite" data-invite="invite" src="{{alertButtonOne}}" ></image>
+            <view class="hot_invite_box" >
+                <image catchtap="addmember" class="otherbtn first01" src="{{alertButtonTwo01}}"></image>
+                <image catchtap="tocreateAlbum" class="otherbtn" src="{{alertButtonTwo02}}"></image>
+            </view>
+        </view>
+    </view>
+</block> -->
+<!-- <block >
+    <view catchtap="closefirstuploadDispose" class="showDisposeModel" >
+        <view catchtap="stop" class="firstUpBox" >
+            <image catchtap="closefirstuploadDispose" class="closeUpBox" src="http://oibl5dyji.bkt.clouddn.com/0509_close_first.png"></image>
+            <view class="firstUpBoxTitle">
+                <image src="http://oibl5dyji.bkt.clouddn.com/0509_firstup_suc.png"></image>
+                <text>上传成功</text>
+            </view>
+            <view class="firstUpBoxLogo">
+                <image mode="aspectFill" src="{{firstUpPic}}"></image>
+            </view>
+            <view class="firstUpBoxText">
+                <text>你在童忆存储了第一个故事</text>
+                <text>去和你的好友一起分享吧</text>
+            </view>
+        </view>
+        <view catchtap="stop" class="firstUpBox" >
+            <image catchtap="closefirstuploadDispose" class="closeUpBox" src="http://oibl5dyji.bkt.clouddn.com/0509_close_first.png"></image>
+            <view class="firstUpBoxTitle">
+                <image src="http://oibl5dyji.bkt.clouddn.com/0509_firstup_suc.png"></image>
+                <text>上传成功</text>
+            </view>
+            <view class="firstUpBoxLogo">
+                <image mode="aspectFill" src="{{firstUpPic}}"></image>
+            </view>
+            <view class="secondUpBoxText">
+                <text>因为你，</text>
+                <text>童忆有了更多美好故事。</text>
+                <text>去和好友一起分享吧！</text>
+            </view>
+            <button catchtap="noLongerPrompt" class="secondNoPrompt">不在提示</button>
+        </view>
+    </view>
+</block> -->
+<!-- <view catchtap="stopreset" class="lianxikefu" >
+    <button openType="contact"></button>
+</view> -->
+<!-- <view class="audioModel" >
+    <view class="audioMainBox">
+        <image class="audioIntroPic" src="http://oibl5dyji.bkt.clouddn.com/201706291327212.png"></image>
+        <image catchtap="closeAudioBox" class="closeAudioBox" src="http://oibl5dyji.bkt.clouddn.com/20170629132721.png"></image>
+    </view>
+</view> -->
+<!-- <publish-menu bindClose="publishMenuClosed" menuNames="{{menuNames}}" on="{{publishMenu}}"></publish-menu> -->
+<!-- <menu-modal modalShow="{{playPhoto}}" title="制作图片">
+    <view class="modal-flexed">
+        <view class="modal-flex">
+            <view catchtap="makeStory">
+                <image src="http://oibl5dyji.bkt.clouddn.com/stories_cup_plus@2x.png"></image>
+                <text>故事集</text>
+            </view>
+        </view>
+    </view>
+</menu-modal> -->

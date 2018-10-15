@@ -1,0 +1,637 @@
+.timeline {
+    position: relative;
+    box-sizing: border-box;
+    padding: 0 30rpx;
+}
+
+.list-item {
+    box-sizing: border-box;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 20rpx;
+    padding-top: 32rpx;
+    margin-bottom: 26rpx;
+    overflow: hidden;
+}
+
+.list-item-child {
+    width: 100%;
+}
+
+.childTop {
+    width: 100%;
+    height: 70rpx;
+    box-sizing: border-box;
+    padding: 0 0 0 32rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-bottom: 34rpx;
+}
+
+.item_headerpic {
+    width: 70rpx;
+    height: 70rpx;
+    border-radius: 50%;
+}
+
+.item_userDate {
+    width: 564rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70rpx;
+}
+
+.item_userleft {
+    width: 486rpx;
+    height: 70rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.item_userName {
+    display: flex;
+    align-items: center;
+}
+
+.item_userName text {
+    display: block;
+    max-width: 300rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 40rpx;
+    color: #333;
+    font-size: 28rpx;
+    font-weight: 700;
+}
+
+.top {
+    margin-left: 22rpx;
+    width: 70rpx;
+    height: 30rpx;
+    background: url('http://oibl5dyji.bkt.clouddn.com/0504_top.png') no-repeat;
+    background-size: 70rpx 30rpx;
+}
+
+.uptimebox {
+    display: flex;
+    align-items: center;
+    width: 480rpx;
+}
+
+.uptime {
+    font-size: 24rpx;
+    color: #999;
+    line-height: 30rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.item_userright {
+    width: 78rpx;
+    height: 70rpx;
+    display: flex;
+    align-items: center;
+}
+
+.moreFun {
+    width: 78rpx;
+    height: 70rpx;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.clickImg {
+    width: 44rpx;
+    height: 44rpx;
+}
+
+.context {
+    padding: 0 26rpx;
+    width: 100%;
+    box-sizing: border-box;
+    word-break: break-all;
+    display: flex;
+    margin-top: 13rpx;
+}
+
+.context text {
+    font-size: 28rpx;
+    color: #333;
+    line-height: 42rpx;
+}
+
+.mainImg {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 34rpx;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    padding: 0 26rpx;
+    margin-top: 13rpx;
+}
+
+.mainImg .posterStart {
+    width: 82rpx;
+    height: 82rpx;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.mainImg .marginRight {
+    margin-right: 0;
+}
+
+.subimg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 210rpx;
+    margin-right: 4rpx;
+    margin-bottom: 4rpx;
+    height: 210rpx;
+    position: relative;
+}
+
+.subimg image {
+    width: 100%;
+    height: 100%;
+    vertical-align: bottom;
+}
+
+.onesubimg {
+    width: 638rpx;
+    height: 638rpx;
+    margin-right: 0;
+}
+
+.twosubimg {
+    width: 316rpx;
+    height: 316rpx;
+    margin-right: 6rpx;
+    margin-bottom: 6rpx;
+}
+
+.h-box {
+    height: 480rpx;
+    position: relative;
+}
+
+.listDetailBox {
+    width: 100%;
+    background: #fff;
+    position: relative;
+}
+
+.talkbox {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 26rpx 0;
+    margin-bottom: 34rpx;
+}
+
+.comment {
+    width: 100%;
+}
+
+.commentuser {
+    font-size: 26rpx;
+    line-height: 42rpx;
+    color: #333;
+    font-weight: 800;
+    word-break: break-all;
+}
+
+.commentcontent {
+    font-size: 26rpx;
+    color: #333;
+    line-height: 42rpx;
+    word-break: break-all;
+}
+
+.reply {
+    color: #333;
+    font-size: 26rpx;
+    line-height: 42rpx;
+}
+
+.gtThree {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 18rpx;
+}
+
+.gtThree text {
+    color: #999;
+    font-size: 26rpx;
+}
+
+.gtThree image {
+    width: 19rpx;
+    height: 21rpx;
+    margin-left: 14rpx;
+}
+
+.editPhotosBtnBox {
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 26rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28rpx;
+}
+
+.editBtnRight {
+    display: flex;
+    align-items: center;
+}
+
+.likeTotalNum {
+    height: 58rpx;
+    padding: 0 0 0 20rpx;
+    display: flex;
+    justify-content: center;
+    border: 1px solid #cecece;
+    border-radius: 30rpx;
+}
+
+.likeTotalNum text {
+    color: #666;
+    font-size: 29rpx;
+    line-height: 29rpx;
+    margin-top: 18rpx;
+}
+
+.likeTotalNum form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.likeTotalNum button {
+    width: 70rpx;
+    height: 58rpx;
+    background: url(http://oibl5dyji.bkt.clouddn.com/201712151643like.png) no-repeat 18rpx 10rpx;
+    background-size: 32rpx 32rpx;
+    padding: 0;
+    border-radius: 0;
+}
+
+.liked {
+    border-color: #ffe500;
+    background-color: #ffe500;
+}
+
+.liked text {
+    color: #333;
+}
+
+.likeImg {
+    width: 70rpx;
+    height: 58rpx;
+    display: flex;
+}
+
+.likeImg image {
+    width: 32rpx;
+    height: 32rpx;
+    margin-top: 10rpx;
+    margin-left: 18rpx;
+}
+
+.icon_commit {
+    width: 100rpx;
+    height: 70rpx;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 16rpx;
+}
+
+.icon_commit image {
+    width: 44rpx;
+    height: 44rpx;
+}
+
+.editBtnLeft {
+    display: flex;
+    align-items: center;
+}
+
+.editBtnLeftItem {
+    width: 112rpx;
+}
+
+.editBtnLeftItem_btn {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.editBtnLeftItem image {
+    width: 44rpx;
+    height: 44rpx;
+}
+
+.voiceTypeEvetn {
+    width: 638rpx;
+    margin: 0 auto;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 40rpx;
+    background-color: #f6f6f6;
+    overflow: hidden;
+    margin-top: 20rpx;
+    margin-bottom: 40rpx;
+}
+
+.voice-type-box {
+    position: relative;
+    width: 174rpx;
+    height: 174rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.voice-type-box>image {
+    width: 100%;
+    height: 100%;
+}
+
+.voice-box-zhezao {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 174rpx;
+    height: 174rpx;
+    background-color: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.voice-box-zhezao image {
+    width: 62rpx;
+    height: 62rpx;
+}
+
+.audio-box {
+    width: 440rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.audio-box image {
+    width: 270rpx;
+    height: 103rpx;
+}
+
+.audio-box text {
+    color: #333;
+    font-size: 30rpx;
+    margin-right: 54rpx;
+}
+
+.textTypeEvent {
+    width: 638rpx;
+    margin: 0 auto;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 40rpx;
+    background-color: #f6f6f6;
+    overflow: hidden;
+    margin-top: 20rpx;
+    margin-bottom: 40rpx;
+}
+
+.text-type-box {
+    position: relative;
+    width: 174rpx;
+    height: 174rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-type-box>image {
+    width: 100%;
+    height: 100%;
+}
+
+.text-type-zhezao {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 174rpx;
+    height: 174rpx;
+    background-color: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-type-zhezao image {
+    width: 51rpx;
+    height: 60rpx;
+}
+
+.text-type-main {
+    width: 430rpx;
+    box-sizing: border-box;
+    padding-right: 50rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text-type-main-title {
+    color: #333;
+    font-size: 28rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.text-type-main-content {
+    color: #999;
+    font-size: 24rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.noTextTitle {
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.text-type-aite {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 26rpx;
+    font-size: 0;
+    margin-top: 6rpx;
+}
+
+.aite-logo {
+    color: #999;
+    font-size: 26rpx;
+    line-height: 38rpx;
+}
+
+.aite-name {
+    color: #999;
+    font-size: 26rpx;
+    line-height: 38rpx;
+}
+
+.funModel-main {
+    width: 750rpx;
+    background: #fff;
+    animation: pvBottom 0.3s ease;
+    position: relative;
+    border-top-left-radius: 40rpx;
+    border-top-right-radius: 40rpx;
+    box-sizing: border-box;
+    padding: 0 58rpx;
+}
+
+.closeList {
+    position: absolute;
+    top: -127rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 77rpx;
+    height: 77rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.closeList image {
+    width: 100%;
+    height: 100%;
+}
+
+.mainListTitle {
+    width: 100%;
+    display: flex;
+    margin-top: 90rpx;
+}
+
+.mainListTitle text {
+    color: #333;
+    font-size: 48rpx;
+    line-height: 60rpx;
+    font-weight: bold;
+}
+
+.mainList {
+    width: 100%;
+    padding: 60rpx 0;
+}
+
+.funMainItem {
+    width: 100%;
+    height: 112rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.funMainItem_btn {
+    width: 634rpx;
+    height: 112rpx;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    background-color: #fff;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.funMainItem image {
+    width: 14rpx;
+    height: 24rpx;
+}
+
+.funMainItem text {
+    color: #333;
+    font-size: 30rpx;
+    line-height: 30rpx;
+}
+
+.funMainItem .detailShare {
+    width: 56rpx;
+    height: 56rpx;
+    padding: 0;
+    margin: 0;
+    background: url(http://oibl5dyji.bkt.clouddn.com/20171027151722.png) no-repeat;
+    background-size: 56rpx 56rpx;
+    border: none;
+    border-radius: none;
+}
+
+.play-photo {
+    width: 136rpx;
+    height: 51rpx;
+    border-radius: 25rpx;
+    padding: 0;
+    font-size: 24rpx;
+    color: #666;
+    border: 1px solid #666;
+    line-height: 51rpx;
+    background: #fff;
+    display: block;
+}
+
+.modal-flexed {
+    display: flex;
+    margin-bottom: 80rpx;
+}
+
+.modal-flex {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    text-align: center;
+}
+
+.modal-flex image {
+    width: 101rpx;
+    height: 101rpx;
+    display: block;
+}
+
+.modal-flex text {
+    font-size: 26rpx;
+    color: #999;
+}

@@ -1,0 +1,28 @@
+<view class="container" style="display:{{show}}">
+    <view class="cue-con" wx:if="{{get_status==1}}">
+        <image class="cue-bg" src="{{bgimg}}"></image>
+        <view readonly class="cue-text">
+            <text>{{expect}}</text>期开奖结果为<text>{{opencode}}</text>，尾数为{{key}}数，您猜的是{{cqssc}}数，恭喜您猜对结果，您的订单号为<text>{{order_sn}}</text>的订单获得<text>免单</text>机会！</view>
+        <button class="cue-btn" openType="share" style="background:url(\"https://cc.hohiw.com/xcximg/fxmd.png\");-webkit-background-size:cover;" wx:if="{{is_back==0}}"></button>
+        <button bindtap="GoUrl" class="cue-btn" data-url="/pages/index/index" style="background:url(\"https://cc.hohiw.com/xcximg/fxan.png\");-webkit-background-size:cover;" wx:if="{{is_back==2}}"></button>
+        <button bindtap="GoUrl" class="cue-btn" data-url="/pages/user/user" style="background:url(\"https://cc.hohiw.com/xcximg/fmoney.png\");-webkit-background-size:cover;" wx:if="{{is_back==1}}"></button>
+    </view>
+    <view class="tc" style="background:url(\"https://cc.hohiw.com/xcximg/fx-bg.png\");-webkit-background-size:cover;z-index:99;display:{{Tshow}}">
+        <view class="tc-bg">
+            <image class="tc-bg-img" src="https://cc.hohiw.com/xcximg/fxtc.png"></image>
+            <view class="qian">
+                <text class="fh">￥</text>
+                <text class="mey">{{back_money}}</text>
+            </view>
+            <view bindtap="GoUrl" class="tc-con" data-nav="nav" data-url="/pages/wallet/wallet">
+                <text>查看余额</text>
+            </view>
+            <image bindtap="CloseShow" class="close" src="https://cc.hohiw.com/xcximg/tc-close.png"></image>
+        </view>
+    </view>
+    <view class="cue-con" wx:if="{{get_status==2}}">
+        <image class="cue-bg" src="{{bgimg}}"></image>
+        <view readonly class="cue-text wzj">{{expect}}期开奖结果为{{opencode}}，尾数为{{key}}数，您猜的是{{cqssc}}数，很抱歉您没有猜对结果，您的订单号为{{order_sn}}的订单未获得免单机会！</view>
+        <button bindtap="GoUrl" class="cue-btn" data-url="/pages/orderdetail/orderdetail?id={{order_id}}" style="background:url(\"https://cc.hohiw.com/xcximg/ckan.png\");-webkit-background-size:cover;"></button>
+    </view>
+</view>

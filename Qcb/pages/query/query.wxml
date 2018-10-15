@@ -1,0 +1,28 @@
+<view class="container">
+    <view class="query-con">
+        <view class="query-con-list" wx:for="{{lists}}" wx:for-item="list" wx:key="key">
+            <view class="query-con-list-t">
+                <text>{{list.expect}}期</text>
+            </view>
+            <view class="query-con-list-c">
+                <view class="query-con-list-c-lt">
+                    <text class="query-num">{{list.opencode}}</text>
+                    <view class="query-bg"></view>
+                </view>
+                <view class="query-con-list-c-rt">
+                    <text>免单尾数为</text>
+                    <text class="resul">{{list.key}}</text>
+                </view>
+            </view>
+            <view class="query-con-list-d" wx:if="{{list.get_status==1}}">
+        您的猜彩选择为{{list.cqssc}}，恭喜您中奖啦！立即查看中奖订单
+      </view>
+            <view class="query-con-list-d defult" wx:if="{{list.get_status==2}}">
+        您的猜彩选择为{{list.cqssc}}，很遗憾，您没有中奖！
+      </view>
+        </view>
+    </view>
+</view>
+<view class="load" style="display:none">
+    <text>滑动加载更多</text>
+</view>

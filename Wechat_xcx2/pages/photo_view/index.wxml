@@ -1,0 +1,48 @@
+<!--pages/photo_view/index.wxml-->
+<view class='album_user'>
+     <view class='album_user_title'>管理员：</view>   
+  <image catchtap="authority_select" class='album_user_image red_borade' src="{{user.imageurl}}"></image>
+</view>
+<view class='kuang'>
+  <!-- <view class='album_user'>
+    <view class='album_user_title'> 
+        <view style='width:140rpx;'>修改：</view>   
+    </view> 
+
+    <view style='display:flex;flex-wrap:wrap'>
+      <view   wx:for="{{users2}}" wx:key="{{index}}" data-user_id="{{item.id}}" class='album_user_image_view'>
+        <image class="album_user_image {{item.is_select?'ye_borade':''}}" src="{{item.imageurl}}"></image>
+      </view>
+    </view>
+  </view> -->
+  <view catchtap="modifyfun" class='album_move' wx:if="{{is_show}}" >修改封面</view>
+</view>
+<view class='kuang'>
+  <view class='album_user'>
+    <view class='album_user_title'> 
+        <view style='width:140rpx;'>成员：</view>   
+    </view> 
+
+    <view style='display:flex;flex-wrap:wrap'>
+      <view catchtap="authority_select"  wx:for="{{users2}}" wx:key="{{index}}" data-user_id="{{item.id}}" class='album_user_image_view'>
+        <image class="album_user_image  {{item.is_selects?'ye_borade':''}}" src="{{item.imageurl}}"></image>
+      </view>
+    </view>
+  </view>
+  <view class='album_move' wx:if="{{is_show}}" catchtap="authority">上传权限</view>
+</view>
+<view class='kuang'>
+  <view class='album_user'>
+    <view class='album_user_title'> 
+        <view style='width:140rpx;'>成员：</view>   
+    </view> 
+
+    <view style='display:flex;flex-wrap:wrap'>
+      <view catchtap="stopreset"  wx:for="{{users}}" wx:key="{{index}}" data-user_id="{{item.id}}" class='album_user_image_view'>
+        <image class="album_user_image {{item.is_select?'ye_borade':''}}" src="{{item.imageurl}}"></image>
+      </view>
+    </view>
+  </view>
+  <view class='album_move' wx:if="{{is_show}}" catchtap="move_user">移交管理员</view>
+</view>
+<view class='album_over' wx:if="{{is_show}}" catchtap="album_over">解散相册</view>

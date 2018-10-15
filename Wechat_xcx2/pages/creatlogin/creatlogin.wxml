@@ -1,0 +1,10 @@
+<view class="au-container">
+    <view class="au-section">
+        <image class="au-section-yinian" mode="aspectFill" src="{{startAuthPicYinian}}"></image>
+        <view class="au-section-center">
+            <view class="yellowline"></view>
+            <text class="minetext">登录后将创建共享相册，邀请好友一起分享生活中的照片和故事，照片将永久保存，回忆永不过期！</text>
+        </view>
+        <button bindgetuserinfo="userInfoHandler" class="au-section-login" openType="getUserInfo">登陆</button>
+    </view>
+</view>

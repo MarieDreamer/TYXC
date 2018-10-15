@@ -1,0 +1,11 @@
+<view class="topbanner">
+    <image mode="aspectFill" src="{{activeList.gpic}}"></image>
+    <view>{{activeList.gname}}</view>
+    <view class="mask"></view>
+</view>
+<view class="menu">
+    <view catchtap="gotourl" class="template" data-url="{{item.url}}" wx:for="{{activeList.menu}}">
+        <image src="{{item.icon}}"></image>
+        <image src="{{item.title}}"></image>
+    </view>
+</view>

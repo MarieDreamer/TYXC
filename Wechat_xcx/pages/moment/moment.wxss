@@ -1,0 +1,465 @@
+.hotActivity {
+    width: 100%;
+}
+
+.activityTop {
+    width: 710rpx;
+    height: 52rpx;
+    padding: 0 20rpx;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.activityLogo {
+    width: 31rpx;
+    height: 31rpx;
+}
+
+.introCont {
+    color: rgb(153,153,153);
+    font-size: 26rpx;
+    margin-left: 5rpx;
+}
+
+.lookAll {
+    width: 149rpx;
+    height: 43rpx;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.downnolikepic {
+    width: 247rpx;
+    height: 161rpx;
+    position: absolute;
+    bottom: 10rpx;
+    right: 20rpx;
+}
+
+.uplovepic {
+    width: 247rpx;
+    height: 161rpx;
+    position: absolute;
+    top: -20rpx;
+    right: 20rpx;
+}
+
+.swiperBox {
+    width: 750rpx;
+    height: 316rpx;
+}
+
+.swiperBox swiper {
+    width: 750rpx;
+    height: 316rpx;
+}
+
+.slideImg {
+    width: 750rpx;
+    height: 316rpx;
+    vertical-align: bottom;
+}
+
+.photoStream {
+    padding-top: 14rpx;
+}
+
+.streamBox {
+    width: 710rpx;
+    padding: 0 20rpx;
+    column-count: 2;
+    column-width: 345rpx;
+    column-gap: 20rpx;
+}
+
+.boxLeft {
+    width: 345rpx;
+}
+
+.itemImgBox {
+    width: 345rpx;
+    border-radius: 8rpx;
+    margin-bottom: 30rpx;
+    position: relative;
+}
+
+.itemImgBox image {
+    width: 345rpx;
+    border-radius: 8rpx;
+    vertical-align: bottom;
+}
+
+.picnumbertext {
+    position: absolute;
+    top: 20rpx;
+    left: 20rpx;
+    width: 57rpx;
+    height: 57rpx;
+    background: rgba(0,0,0,0.4);
+    border-radius: 50%;
+    line-height: 57rpx;
+    text-align: center;
+    color: #fff;
+    font-size: 23rpx;
+}
+
+.gnametext {
+    display: inline-block;
+    width: 345rpx;
+    height: 42rpx;
+    font-size: 28rpx;
+    color: #999;
+    text-align: center;
+    margin-top: 8rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+}
+
+.itemImgBox .videoLogo {
+    width: 94rpx;
+    height: 60rpx;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.streamLeftAndRight {
+    width: 710rpx;
+    padding: 0 20rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.streamLeft,.streamRight {
+    width: 345rpx;
+}
+
+.skLoading {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40rpx;
+}
+
+.skLoading image {
+    width: 68rpx;
+    height: 152rpx;
+}
+
+.skLoading text {
+    color: #999;
+    font-size: 28rpx;
+    margin-left: 20rpx;
+}
+
+.discover_nav {
+    width: 750rpx;
+    display: flex;
+    height: 67rpx;
+    background: #fff;
+    z-index: 9991;
+}
+
+.discover-top {
+    height: 80rpx;
+    position: fixed;
+    top: 0rpx;
+    z-index: 100;
+    background-color: #fff;
+}
+
+.discover-bottom {
+    position: relative;
+    border-top: 0.1rpx solid transparent;
+}
+
+.heartyellowview {
+    width: 151rpx;
+    height: 133rpx;
+    margin: 0 auto;
+}
+
+.grayheartview {
+    width: 112rpx;
+    height: 99rpx;
+    margin: 0 auto;
+    margin-top: 66rpx;
+    margin-bottom: 50rpx;
+}
+
+.heartyellowview>image {
+    width: 151rpx;
+    height: 133rpx;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+
+.grayheartview>image {
+    width: 112rpx;
+    height: 99rpx;
+    position: relative;
+    z-index: 10;
+}
+
+.discover-bottom>image:nth-of-type(1) {
+    width: 247rpx;
+    height: 161rpx;
+    position: absolute;
+    top: 0;
+    right: 20rpx;
+}
+
+.discover-bottom>image:nth-of-type(2) {
+    width: 247rpx;
+    height: 161rpx;
+    float: right;
+    margin-top: -114rpx;
+    margin-right: 20rpx;
+}
+
+.newest-tip {
+    display: inline-block;
+    font-size: 26rpx;
+    color: #666;
+    width: 100%;
+    text-align: center;
+}
+
+.nav-item .textBox {
+    font-size: 32rpx;
+}
+
+.newest_nocontent {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.image_nocontent {
+    width: 220rpx;
+    height: 165rpx;
+    margin-top: 163rpx;
+}
+
+.iamge_createbtn {
+    width: 412rpx;
+    height: 132rpx;
+    margin-top: 44rpx;
+}
+
+.nocontent_text01 {
+    font-size: 38rpx;
+    color: #333;
+    margin-top: 66rpx;
+}
+
+.nocontent_text02 {
+    font-size: 28rpx;
+    color: #999;
+    margin-top: 38rpx;
+    line-height: 42rpx;
+}
+
+.nocontent_text03 {
+    font-size: 28rpx;
+    color: #999;
+    line-height: 42rpx;
+}
+
+.normal icon {
+    width: 48rpx;
+    height: 7rpx;
+    background: transparent;
+    position: absolute;
+    left: 50%;
+    bottom: -1rpx;
+    transform: translateX(-50%);
+    z-index: 99;
+}
+
+.fasttoknowModel {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.threepicturesBox {
+    width: 100%;
+    height: 600rpx;
+    margin-top: 28rpx;
+    position: relative;
+}
+
+.threepictures {
+    background-color: #fff;
+    width: 600rpx;
+    height: 600rpx;
+    border-radius: 20rpx;
+    position: absolute;
+    transition: all 0.3s ease-out;
+    overflow: hidden;
+}
+
+.posterStart {
+    width: 82rpx;
+    height: 82rpx;
+    border-radius: 50%;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.discoverImg {
+    width: 100%;
+    height: 80%;
+}
+
+.threepictures-bottom {
+    height: 15%;
+}
+
+.bottom-left {
+    float: left;
+    padding-left: 28rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+}
+
+.bottom-left-top {
+    font-size: 27rpx;
+    font-weight: bold;
+    color: #333;
+    max-width: 350rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+}
+
+.bottom-left-bottom {
+    display: flex;
+    align-items: center;
+}
+
+.bottom-left-bottom>image {
+    width: 21rpx;
+    height: 29rpx;
+}
+
+.bottom-left-bottom>text {
+    font-size: 23rpx;
+    color: #999;
+    margin-left: 20rpx;
+}
+
+.bottom-right {
+    float: right;
+    width: 182rpx;
+    height: 58rpx;
+    background-color: #ffe500;
+    border-radius: 29rpx;
+    font-size: 24rpx;
+    color: #333;
+    margin-top: 19rpx;
+    margin-right: 28rpx;
+}
+
+.pic1 {
+    width: 600rpx;
+    height: 600rpx;
+    top: 0;
+    left: 75rpx;
+    z-index: 5;
+    box-shadow: 5rpx 5rpx 16rpx 0rpx rgba(0,0,0,.15);
+}
+
+.pic2 {
+    width: 550rpx;
+    height: 600rpx;
+    top: 32rpx;
+    left: 100rpx;
+    opacity: 1;
+    z-index: 4;
+    box-shadow: 5rpx 5rpx 16rpx 0rpx rgba(0,0,0,.15);
+}
+
+.pic3 {
+    width: 550rpx;
+    height: 600rpx;
+    top: 32rpx;
+    left: 100rpx;
+    opacity: 0;
+    z-index: 3;
+}
+
+.shang {
+    width: 100rpx;
+    height: 100rpx;
+    top: -200rpx;
+    left: 325rpx;
+    opacity: 0;
+}
+
+.xia {
+    width: 100rpx;
+    height: 100rpx;
+    bottom: -200rpx;
+    left: 325rpx;
+    opacity: 0;
+}
+
+.playVideoModal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9997;
+    background-color: rgba(0,0,0,0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.playVideoBox {
+    width: 100%;
+    height: 560rpx;
+}
+
+.playVideoBox video {
+    width: 100%;
+    height: 100%;
+}
+
+.closePlayVideoModal {
+    width: 60rpx;
+    height: 60rpx;
+    border-radius: 50%;
+    position: absolute;
+    top: 20rpx;
+    right: 20rpx;
+}
+
+.lianxikefu {
+    bottom: 110rpx;
+}

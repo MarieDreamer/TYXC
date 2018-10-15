@@ -1,0 +1,170 @@
+<view class="sign-container">
+    <view class="signDay">
+        <view class="signDay-day">您已成功邀请好友<text>{{inviteNum}}</text>人
+    </view>
+        <view class="signDay-kongjian">
+            <view></view>
+            <text>已获得{{rewardSpace}}G的上传空间</text>
+        </view>
+        <block wx:if="{{inviteNum>1000}}">
+            <view class="signDay-rest">再邀请 <text>0</text> 位好友就可以获得</view>
+            <image class="signDay-price" src="http://oibl5dyji.bkt.clouddn.com/20170611105835pic.png"></image>
+        </block>
+        <block wx:else>
+            <block wx:if="{{inviteNum>=item.personMin&&inviteNum<item.personMax}}" wx:for="{{prizeDetail}}" wx:key="{{index}}">
+                <view class="signDay-rest">再邀请 <text>{{item.personMax-inviteNum}}</text> 位好友就可以获得:</view>
+                <image class="signDay-price" src="{{item.img}}"></image>
+            </block>
+        </block>
+        <view class="signDay-bottom">
+            <view></view>
+            <text>邀请好友奖励</text>
+            <view></view>
+        </view>
+    </view>
+    <view class="prize-detail">
+        <view class="detail-left">
+            <view class="left-pic1">
+                <image src="http://oibl5dyji.bkt.clouddn.com/{{inviteNum>=20?'20170611105837ed':'20170611105837'}}.png"></image>
+            </view>
+            <view class="left-pic2">
+                <image src="http://oibl5dyji.bkt.clouddn.com/{{inviteNum>=88?'20170611105837ed':'20170611105837'}}.png"></image>
+            </view>
+            <view class="left-pic3">
+                <image src="http://oibl5dyji.bkt.clouddn.com/{{inviteNum>=200?'20170611105837ed':'20170611105837'}}.png"></image>
+            </view>
+            <image class="huidian" src="http://oibl5dyji.bkt.clouddn.com/{{inviteNum>=1000?'20170612110403':'huidian'}}.png"></image>
+        </view>
+        <view class="detail-right">
+            <view class="prize-seven">
+                <view class="prize-pic">
+                    <image src="http://oibl5dyji.bkt.clouddn.com/20171013165321.png"></image>
+                </view>
+                <view class="prize-pic-right">
+                    <text class="left-top">邀请</text>
+                    <text class="left-center-day">20<text class="left-center-daytext">人</text>
+                    </text>
+                    <block wx:if="{{prizeState.inviteLevelOne==0}}">
+                        <button catchtap="getPrize" class="gettypebtn btn_level00" data-level="One" plain="true" type="default" wx:if="{{inviteNum>=20}}"> 领取 </button>
+                        <button class="gettypebtn btn_level01" data-level="One" disabled="true" plain="true" type="default" wx:elif="{{inviteNum<20}}"> 领取 </button>
+                    </block>
+                    <button catchtap="showDispose" class="gettypebtn btn_level1" data-level="One" plain="true" type="default" wx:elif="{{prizeState.inviteLevelOne==1}}"> 处理中 </button>
+                    <button class="gettypebtn btn_level2" data-level="One" disabled="true" plain="true" type="default" wx:elif="{{prizeState.inviteLevelOne==2}}"> 已发货 </button>
+                    <button class="gettypebtn btn_level3" data-level="One" disabled="true" plain="true" type="default" wx:else> 已领取 </button>
+                </view>
+            </view>
+            <view class="prize-fourteen">
+                <view class="prize-pic">
+                    <image src="http://oibl5dyji.bkt.clouddn.com/zipaigan3.png"></image>
+                </view>
+                <view class="prize-pic-right">
+                    <text class="left-top">邀请</text>
+                    <text class="left-center-day">88<text class="left-center-daytext">人</text>
+                    </text>
+                    <block wx:if="{{prizeState.inviteLevelTwo==0}}">
+                        <button catchtap="getPrize" class="gettypebtn btn_level00" data-level="Two" plain="true" type="default" wx:if="{{inviteNum>=88}}"> 领取 </button>
+                        <button class="gettypebtn btn_level01" data-level="Two" disabled="true" plain="true" type="default" wx:elif="{{inviteNum<88}}"> 领取 </button>
+                    </block>
+                    <button catchtap="showDispose" class="gettypebtn btn_level1" data-level="Two" plain="true" type="default" wx:elif="{{prizeState.inviteLevelTwo==1}}"> 处理中 </button>
+                    <button class="gettypebtn btn_level2" data-level="Two" disabled="true" plain="true" type="default" wx:elif="{{prizeState.inviteLevelTwo==2}}"> 已发货 </button>
+                    <button class="gettypebtn btn_level3" data-level="Two" disabled="true" plain="true" type="default" wx:else> 已领取 </button>
+                </view>
+            </view>
+            <view class="prize-month">
+                <view class="prize-pic">
+                    <image src="http://oibl5dyji.bkt.clouddn.com/20170611105835pt.png"></image>
+                </view>
+                <view class="prize-pic-right">
+                    <text class="left-top">邀请</text>
+                    <text class="left-center-day">200<text class="left-center-daytext">人</text>
+                    </text>
+                    <block wx:if="{{prizeState.inviteLevelThree==0}}">
+                        <button catchtap="getPrize" class="gettypebtn btn_level00" data-level="Three" plain="true" type="default" wx:if="{{inviteNum>=200}}"> 领取 </button>
+                        <button class="gettypebtn btn_level01" data-level="Three" disabled="true" plain="true" type="default" wx:elif="{{inviteNum<200}}"> 领取 </button>
+                    </block>
+                    <button catchtap="showDispose" class="gettypebtn btn_level1" data-level="Three" plain="true" type="default" wx:elif="{{prizeState.inviteLevelThree==1}}"> 处理中 </button>
+                    <button class="gettypebtn btn_level2" data-level="Three" disabled="true" plain="true" type="default" wx:elif="{{prizeState.inviteLevelThree==2}}"> 已发货 </button>
+                    <button class="gettypebtn btn_level3" data-level="Three" disabled="true" plain="true" type="default" wx:else> 已领取 </button>
+                </view>
+            </view>
+            <view class="prize-hundred">
+                <view class="prize-pic">
+                    <image src="http://oibl5dyji.bkt.clouddn.com/20170611105835pic.png"></image>
+                </view>
+                <view class="prize-pic-right">
+                    <text class="left-top">邀请</text>
+                    <text class="left-center-day">1000<text class="left-center-daytext">人</text>
+                    </text>
+                    <block wx:if="{{prizeState.inviteLevelFour==0}}">
+                        <button catchtap="getPrize" class="gettypebtn btn_level00" data-level="Four" plain="true" type="default" wx:if="{{inviteNum>=1000}}"> 领取 </button>
+                        <button class="gettypebtn btn_level01" data-level="Four" disabled="true" plain="true" type="default" wx:elif="{{inviteNum<1000}}"> 领取 </button>
+                    </block>
+                    <button catchtap="showDispose" class="gettypebtn btn_level1" data-level="Four" plain="true" type="default" wx:elif="{{prizeState.inviteLevelFour==1}}"> 处理中 </button>
+                    <button class="gettypebtn btn_level2" data-level="Four" disabled="true" plain="true" type="default" wx:elif="{{prizeState.inviteLevelFour==2}}"> 已发货 </button>
+                    <button class="gettypebtn btn_level3" data-level="Four" disabled="true" plain="true" type="default" wx:else> 已领取 </button>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view catchtap="preventScoll" class="getPrizeModel" wx:if="{{showGetPrizeModel}}">
+    <view class="prizeModel">
+        <view class="modelPriceTop">
+            <view class="priceTextPrompt">
+                <view></view>
+                <text>为了便于奖励发放</text>
+            </view>
+            <view class="remindWirter">
+                <text>请填写以下信息</text>
+            </view>
+        </view>
+        <form bindsubmit="submitUserInfo">
+            <view class="priceSection">
+                <view class="form-group">
+                    <text>姓名:</text>
+                    <input bindblur="nextone" bindconfirm="nextone" confirmHold="true" confirmType="next" focus="{{usernamefocus}}" name="userName" type="text"></input>
+                </view>
+                <view class="form-group">
+                    <text>手机号:</text>
+                    <input bindblur="nextwo" confirmHold="true" focus="{{userphonefocus}}" name="userPhone" type="number"></input>
+                </view>
+                <view class="form-group form-textarea">
+                    <text>收获地址:</text>
+                    <textarea fixed="true" focus="{{useraddressfocus}}" name="userAddr" showConfirmBar="true"></textarea>
+                </view>
+                <view class="formText">
+                    <text>*请认真填写,信息缺失视为无效兑换。如有疑问，可联系微信：yiniankefu</text>
+                </view>
+                <view class="priceSubmitBtn">
+                    <button formType="submit">提交</button>
+                </view>
+            </view>
+        </form>
+        <image catchtap="closePrizeModel" class="closePrizeModel" src="http://oibl5dyji.bkt.clouddn.com/20170623092721.png"></image>
+    </view>
+</view>
+<view class="priceSubmitSuccess" wx:if="{{submitSuccess}}">
+    <view class="subSuccessBox">
+        <image src="http://oibl5dyji.bkt.clouddn.com/20171213171621.png"></image>
+        <text class="">信息已提交</text>
+        <text>奖励将在1-3个工作日内发放</text>
+        <view class="copyYiNian">
+            <text>如有疑问可联系微信客服: yiniankefu</text>
+            <view catchtap="copytext">复制</view>
+        </view>
+        <view catchtap="closeSubmitSuccess" class="successConfirm">确定</view>
+    </view>
+</view>
+<view class="showDisposeModel" wx:if="{{showDisposeModel}}">
+    <view class="disposeBox">
+        <view class="disposeTitle">
+            <view></view>
+            <text>客服小忆正在处理中哦...</text>
+        </view>
+        <view class="disposeScetion">
+            <text>也可联系微信客服：yiniankefu</text>
+            <view catchtap="copytext">复制</view>
+        </view>
+        <view catchtap="closeDispose" class="closeDispose">确定</view>
+    </view>
+</view>

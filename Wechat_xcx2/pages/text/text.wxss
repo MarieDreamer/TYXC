@@ -1,0 +1,108 @@
+/* pages/text/text.wxss */
+.scroll-view{
+  white-space: nowrap; 
+  display: flex;
+}
+.ttle{
+  text-align: center;
+}
+.vw{
+  width: 100%; 
+  display: inline-block
+}
+.vw_1{
+  margin-top: 50rpx; 
+  text-align: center;
+  width: 100%;
+  height: 20%;
+}
+.vw_2{
+  margin-top: 20rpx;
+  text-align: center;
+  width: 100%;
+}
+.vw_3{
+  margin-top: 20rpx;
+  text-align: center;
+  width: 100%;
+}
+.vw_top{
+  width: 100%;
+  height: 40%;
+}
+.vw_image{
+  margin-top: 50rpx;
+  width: 100%;
+  height: 40%;
+}
+.vw_top>text:nth-of-type(1){
+  font-size:50rpx;
+  font-weight:bold;
+  color:#333;
+  margin-top:45rpx; 
+}
+.vw_top>text:nth-of-type(2){
+  font-size:30rpx;
+  color:#333;
+  margin-top:6rpx; 
+}
+.vw_top>text:nth-of-type(3){
+  font-size:26rpx;
+  color:#999;
+  margin-top:20rpx; 
+}
+.vw_top>text:nth-of-type(4){
+  font-size:26rpx;
+  color:#999;
+  margin-top:20rpx; 
+}
+.add_photo{
+  width: 40%;
+  height: 80rpx;
+  background-color: #ff6b01;
+  text-align: center;
+  border-radius: 40rpx;
+  line-height: 80rpx;
+}
+.vw_btn{
+  margin-top:20rpx; 
+}
+.threetwo-text {
+  font-size: 54rpx;
+  font-weight: bold;
+  color: #333;
+}
+.indexBlock {
+  display: flex;
+  margin-bottom: 24rpx;
+  margin-left: 42%;
+  margin-top:100rpx; 
+}
+
+.yellowBlock {
+  width: 39rpx;
+  height: 14rpx;
+  border-radius: 7rpx;
+  background-color: #fae100;
+  margin-left: 17rpx;
+}
+
+.grayBlock {
+  width: 14rpx;
+  height: 14rpx;
+  border-radius: 7rpx;
+  background-color: gray;
+  margin-left: 17rpx;
+}
+
+.vw_3_font{
+  text-align: center;
+  font-size:50rpx;
+  color:#333;
+}
+.c2_img{
+  width: 750rpx;
+  height:200rpx;
+  background-size:100% 100%;
+  background-image: url('http://oibl5dyji.bkt.clouddn.com/page02text.png');
+}

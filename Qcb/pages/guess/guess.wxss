@@ -1,0 +1,294 @@
+page {
+    height: 100%;
+    font-family: 'ping fang';
+}
+
+.myguess-con {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.con-top {
+    width: 100%;
+    height: 465rpx;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.lb {
+    position: absolute;
+    top: 0;
+    width: 180rpx;
+    height: 170rpx;
+}
+
+.lf {
+    left: 0;
+}
+
+.rf {
+    right: 0;
+}
+
+.bt {
+    width: 618rpx;
+    height: 105rpx;
+    position: absolute;
+    top: 18%;
+    display: flex;
+    justify-content: center;
+}
+
+.bg {
+    width: 579rpx;
+    height: 311rpx;
+    position: absolute;
+    top: 36%;
+}
+
+.money1 {
+    width: 74rpx;
+    height: 40rpx;
+    position: absolute;
+    bottom: 27%;
+    right: 10%;
+}
+
+.money2 {
+    width: 51rpx;
+    height: 39rpx;
+    position: absolute;
+    bottom: 50%;
+    left: 15%;
+}
+
+.money3 {
+    width: 60rpx;
+    height: 63rpx;
+    position: absolute;
+    top: 10%;
+    left: 25%;
+}
+
+.rule {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    z-index: 3;
+    width: 172rpx;
+    height: 71rpx;
+}
+
+.rule image {
+    width: 100%;
+    height: 100%;
+}
+
+.wq {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 3;
+    width: 172rpx;
+    height: 71rpx;
+}
+
+.con-c {
+    width: 100%;
+    height: 718rpx;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.opentime {
+    position: absolute;
+    top: 10%;
+    width: 594rpx;
+    height: 91rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40rpx;
+}
+
+.opentime label {
+    border-radius: 10px;
+}
+
+.ddkj {
+    width: 156rpx;
+    height: 38rpx;
+    padding-bottom: 5rpx;
+}
+
+.phase {
+    position: absolute;
+    width: 100%;
+    top: 28%;
+    z-index: 3;
+}
+
+.phase-t {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40rpx;
+    font-size: 28rpx;
+    color: #fff;
+    position: absolute;
+    top: -38%;
+    width: 100%;
+}
+
+.kj {
+    position: absolute;
+    top: -61%;
+    right: 5%;
+}
+
+.kj button {
+    width: 120rpx;
+    height: 45rpx;
+    line-height: 45rpx;
+    font-size: 22rpx;
+    padding: 0;
+    margin: 0;
+}
+
+.phase-t button {
+    width: 160rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    font-size: 24rpx;
+    padding: 0;
+    border: 1rpx solid #F23030;
+    color: #F23030;
+}
+
+button::after {
+    border: none;
+}
+
+.phase-c {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    width: 678rpx;
+    height: 395rpx;
+    margin: 0 auto;
+}
+
+.ts {
+    display: flex;
+    justify-content: center;
+    height: 100rpx;
+    align-items: center;
+    font-size: 26rpx;
+    color: #666;
+    margin-top: 15rpx;
+}
+
+.ts-con {
+    display: flex;
+    justify-content: center;
+    height: 100rpx;
+    align-items: center;
+}
+
+.dd {
+    color: red;
+    font-size: 45rpx;
+}
+
+.dd image {
+    width: 351rpx;
+    height: 68rpx;
+}
+
+.fix-iphonex-ts {
+    display: flex;
+    justify-content: center;
+    height: 100rpx;
+    align-items: center;
+    font-size: 26rpx;
+    color: #666;
+    margin-top: 18%;
+}
+
+.gz {
+    color: #F23030;
+}
+
+.single,.double {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 265rpx;
+    height: 328rpx;
+}
+
+.single image,.double image {
+    width: 265rpx;
+    height: 328rpx;
+}
+
+.sub-btn {
+    width: 90%;
+    height: 90rpx;
+    line-height: 90rpx;
+    background: none;
+    font-size: 28rpx;
+    color: #fff;
+}
+
+.sub_gray_btn {
+    z-index: 99;
+}
+
+.tc {
+    position: absolute;
+    top: 0;
+    z-index: 9;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.con {
+    position: relative;
+    top: 10%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.close {
+    width: 60rpx;
+    height: 60rpx;
+    position: absolute;
+    top: -6%;
+    right: -5%;
+}
+
+.cj-ts {
+    width: 391rpx;
+    height: 625rpx;
+    display: block;
+}
+
+.btn {
+    width: 402rpx;
+    height: 95rpx;
+    margin: 10% auto;
+    padding: 0;
+    line-height: 95rpx;
+    border-radius: 0;
+    background-color: rgba(0,0,0,0);
+    background-size: cover;
+}

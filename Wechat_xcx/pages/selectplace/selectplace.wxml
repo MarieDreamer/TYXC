@@ -1,0 +1,13 @@
+<view class="container">
+    <navigator class="list-item creatplace" url="../editplace/editplace">
+        <icon class="icon_create"></icon>
+        <text>创建您的位置</text>
+    </navigator>
+    <view catchtap="donshowplace" class="list-item donshow">
+        <text>不显示位置</text>
+    </view>
+    <view catchtap="selectplace" class="list-item placelist" data-placeid="{{index}}" wx:for="{{posi}}" wx:key="{{index}}">
+        <text class="place">{{item.name}}</text>
+        <text class="placedetail">{{item.cityname+item.adname+item.address}}</text>
+    </view>
+</view>

@@ -1,0 +1,208 @@
+<view class="bless">
+    <view class="bless-info">
+        <view class="bi-banner">
+            <image class="bi-banner-img" mode="scaleToFill" src="{{bannerImage}}"></image>
+            <view catchtap="toIndex" class="bi-banner-back">返回首页</view>
+            <view catch:tap="switchActivityRules" class="bi-banner-btn" data-switch="{{true}}">
+                <image class="bl-banner-btn-icon" mode="scaleToFill" src="{{ICON.RULES}}"></image>
+                <text>活动规则</text>
+            </view>
+        </view>
+        <view class="bi-rolling">
+            <image class="bi-rolling-icon" mode="aspectFit" src="{{ICON.SPEAKER}}"></image>
+            <view class="mayDay-voice-box">
+                <text>{{contentText}}</text>
+            </view>
+        </view>
+        <view class="bi-involvement">
+      共有
+      <text>{{totalMember}}</text>个小伙伴参与活动
+    </view>
+        <view class="bi-mine">
+            <image class="bi-mine-avatar" mode="aspectFit" src="{{avatar}}"></image>
+            <view class="bi-mine-number">
+        我已收到
+        <text>{{myBlessCount}}</text>个
+        <image class="bi-love bi-mine-love" mode="aspectFit" src="{{ICON.LOVE}}"></image>小心心
+      </view>
+            <button class="bi-mine-btn" id="shareAlbum" openType="share">分享活动</button>
+        </view>
+    </view>
+    <view class="bless-main">
+        <view class="bm-tabs-placeholder">
+            <view class="bm-tabs {{tabsFix?'bm-tabs-fixed':''}}">
+                <view catch:tap="switchTab" class="bm-tab {{currentTab==='events'?'bm-tab-active':''}}" data-tab="events">
+                    <text>所有</text>
+                    <view class="bm-tab-underline" wx:if="{{currentTab==='events'}}"></view>
+                </view>
+                <view catch:tap="switchTab" class="bm-tab {{currentTab==='ranking'?'bm-tab-active':''}}" data-tab="ranking">
+                    <text>排行</text>
+                    <view class="bm-tab-underline" wx:if="{{currentTab==='ranking'}}"></view>
+                </view>
+            </view>
+        </view>
+        <view class="bm-content">
+            <view class="bm-events" wx:if="{{currentTab==='events'}}">
+                <view class="bm-events-col bm-events-col-left" wx:if="{{colLeft.length!=0||colRight.length!=0}}">
+                    <view class="bm-events-item" style="{{index===0?'margin-top:0':''}}" wx:for="{{colLeft}}">
+                        <view class="bm-ei-thumb">
+                            <image catchtap="toDetail" class="bm-ei-thumb-img" data-eid="{{item.event_id}}" data-uid="{{item.userid}}" mode="widthFix" src="{{item.midThumbnail}}" style="width:100%;"></image>
+                            <view class="bm-ei-thumb-mine bm-ei-thumb-mine-l" wx:if="{{item.userid==userId}}">我的</view>
+                            <view class="bm-ei-thumb-mine bm-ei-thumb-number" wx:if="{{item.userid==userId}}">{{item.picCount}}</view>
+                            <view class="bm-ei-thumb-tag">
+                                <image class="bm-ei-tt-bgc" mode="aspectFill" src="{{ICON.TAG}}"></image>
+                                <view class="bm-ei-tt-text">
+                                    <text class="bm-ei-tt-name text-overflow">{{item.unickname}}</text>
+                                    <text class="bm-ei-tt-desc">祝大家六一快乐</text>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="bm-ei-board">
+                            <view class="bm-ei-borad-options">
+                                <view>
+                                    <button class="bm-ei-bo-share" data-eid="{{item.event_id}}" data-image="{{item.midThumbnail}}" data-uid="{{item.userid}}" id="shareDetail" openType="share" wx:if="{{item.userid==userId}}">
+                    分享集小心心
+                  </button>
+                                </view>
+                                <view class="bm-ei-bo-like">
+                                    <text class="bm-ei-bo-like-number">{{item.bless_count}}</text>
+                                    <image class="bi-love bm-ei-bo-like-icon" mode="aspectFit" src="{{ICON.LOVE}}" wx:if="{{item.myBlessCountAtThisUser==1}}"></image>
+                                    <image catchtap="openSendBlessing" class="bi-love bm-ei-bo-like-icon" data-eid="{{item.event_id}}" data-uid="{{item.userid}}" mode="aspectFit" src="{{ICON.LOVE_GRAY}}" wx:if="{{item.myBlessCountAtThisUser==0}}"></image>
+                                </view>
+                            </view>
+                            <view class="bm-ei-borad-title text-overflow" wx:if="{{item.blesses.length>0}}">
+                                <text class="bm-ei-bt-bless" wx:for="{{item.blesses}}" wx:for-item="blesses">{{blesses}}</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="bm-events-col bm-events-col-right" wx:if="{{colLeft.length!=0||colRight.length!=0}}">
+                    <view class="bm-events-item " style="{{index===0?'margin-top:0':''}}" wx:for="{{colRight}}">
+                        <view class="bm-ei-thumb">
+                            <image catchtap="toDetail" class="bm-ei-thumb-img" data-eid="{{item.event_id}}" data-uid="{{item.userid}}" mode="widthFix" src="{{item.midThumbnail}}" style="width:100%;"></image>
+                            <view class="bm-ei-thumb-mine bm-ei-thumb-mine-l" wx:if="{{item.userid==userId}}">我的</view>
+                            <view class="bm-ei-thumb-mine bm-ei-thumb-number" wx:if="{{item.userid==userId}}">{{item.picCount}}</view>
+                            <view class="bm-ei-thumb-tag">
+                                <image class="bm-ei-tt-bgc" mode="aspectFill" src="{{ICON.TAG}}"></image>
+                                <view class="bm-ei-tt-text">
+                                    <text class="bm-ei-tt-name text-overflow">{{item.unickname}}</text>
+                                    <text class="bm-ei-tt-desc">祝大家六一快乐</text>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="bm-ei-board">
+                            <view class="bm-ei-borad-options">
+                                <view>
+                                    <button class="bm-ei-bo-share" data-eid="{{item.event_id}}" data-image="{{item.midThumbnail}}" data-uid="{{item.userid}}" id="shareDetail" openType="share" wx:if="{{item.userid==userId}}">
+                    分享集小心心
+                  </button>
+                                </view>
+                                <view class="bm-ei-bo-like">
+                                    <text class="bm-ei-bo-like-number">{{item.bless_count}}</text>
+                                    <image class="bi-love bm-ei-bo-like-icon" mode="aspectFit" src="{{ICON.LOVE}}" wx:if="{{item.myBlessCountAtThisUser==1}}"></image>
+                                    <image catchtap="openSendBlessing" class="bi-love bm-ei-bo-like-icon" data-eid="{{item.event_id}}" data-uid="{{item.userid}}" mode="aspectFit" src="{{ICON.LOVE_GRAY}}" wx:if="{{item.myBlessCountAtThisUser==0}}"></image>
+                                </view>
+                            </view>
+                            <view class="bm-ei-borad-title text-overflow" wx:if="{{item.blesses.length>0}}">
+                                <text class="bm-ei-bt-bless" wx:for="{{item.blesses}}" wx:for-item="blesses">{{blesses}}</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="bm-events-empty" wx:if="{{colLeft.length===0&&colRight.length===0}}">无数据</view>
+                <view class="bless-upload">
+                    <view catchtap="openUpload" class="bless-upload-btn">
+                        <image class="bless-upload-btn-icon" mode="aspectFit" src="{{ICON.PLUS}}"></image>
+                        <text>上传得小心心</text>
+                    </view>
+                </view>
+            </view>
+            <view class="bm-ranking" wx:if="{{currentTab==='ranking'}}">
+                <view class="bm-ranking-header">
+                    <view class="bm-rh-title">小心心排行榜</view>
+                    <view class="bm-rh-desc">
+                        <text>如有疑问，请联系客服：yiniankefu领取奖励</text>
+                        <view catchtap="copy" class="bm-rh-copy">复制号码</view>
+                    </view>
+                </view>
+                <view class="bm-ranking-list">
+                    <view class="bm-rl-item" wx:for="{{ranking}}">
+                        <text class="bm-rl-item-index {{index>8?'bm-rl-item-index-double':''}}">{{index+1}}</text>
+                        <view class="bm-rl-item-user">
+                            <image class="bm-rl-iu-avatar" mode="aspectFit" src="{{item.upic}}"></image>
+                            <text class="bm-rl-iu-name text-overflow">{{item.unickname}}</text>
+                        </view>
+                        <view class="bm-rl-item-like">
+                            <image class="bm-rl-il-icon" mode="aspectFit" src="{{ICON.LOVE}}"></image>
+                            <text class="bm-rl-il-number text-overflow">{{item.bless_count}}</text>
+                        </view>
+                        <view class="bm-rl-item-bonus">
+                            <text class="bm-rl-ib-unit">{{item.myReward}}</text>
+                        </view>
+                    </view>
+                    <view class="bm-events-empty" wx:if="{{ranking.length===0}}">无排行数据</view>
+                </view>
+                <view class="bm-rank-myself">
+                    <view class="bm-rl-item bm-rank-myself-bouns">
+                        <view class="bm-rl-item-index bm-rl-item-no_index" wx:if="{{myRanking.mySelfOrder<0}}">
+                            <text>暂无</text>
+                            <text>排名</text>
+                        </view>
+                        <text class="bm-rl-item-index" wx:if="{{myRanking.mySelfOrder>0}}">{{myRanking.mySelfOrder}}</text>
+                        <view class="bm-rl-item-user">
+                            <image class="bm-rl-iu-avatar" mode="aspectFit" src="{{myRanking.upic}}"></image>
+                            <text class="bm-rl-iu-name text-overflow">{{myRanking.unickname}}</text>
+                        </view>
+                        <view class="bm-rl-item-like">
+                            <image class="bm-rl-il-icon" mode="aspectFit" src="{{ICON.LOVE}}"></image>
+                            <text class="bm-rl-il-number text-overflow">{{myRanking.bless_count}}</text>
+                        </view>
+                        <view class="bm-rl-item-mybonus" wx:if="{{myRanking.mySelfOrder>0}}">
+                            <text class="bm-rl-ib-number">{{myRanking.myReward}}</text>
+                            <text class="bm-rl-ib-unit">元</text>
+                        </view>
+                        <view class="bm-rl-item-bonus bm-rl-item-no_bonus" wx:if="{{myRanking.mySelfOrder<0}}">
+              暂无
+            </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view catchtouchmove="preventScroll" class="bless-activity_rules" wx:if="{{activityRules}}">
+        <view class="bar-main">
+            <view class="bar-content">
+                <view class="bar-h1">"最萌宝宝吃相"活动规则</view>
+                <view class="bar-h3">活动时间：2018.6.1-2018.6.3 18:00</view>
+                <view class="bar-section">
+                    <view class="bar-h2">
+                        <image class="bar-icon" src="{{ICON.RULES}}"></image>
+            活动规则
+          </view>
+                    <view class="bar-h3">1.在本活动专题页上传宝宝吃相照片</view>
+                    <view class="bar-h3">2.分享给您的好友收集小心心</view>
+                    <view class="bar-h3">3.根据小心心的排名发放相关礼品</view>
+                </view>
+                <view class="bar-section">
+                    <view class="bar-h2">
+                        <image class="bar-icon" src="{{ICON.GIFT}}"></image>
+            活动奖励
+          </view>
+                    <view class="bar-h3">第1名：奔驰儿童遥控四轮电动车</view>
+                    <view class="bar-h3">第2名：会说话的汤姆猫故事机</view>
+                    <view class="bar-h3">第3名：儿童蒙纸临摹涂色画册</view>
+                    <view class="bar-h3">第4-10名：澳贝AUBY益智小推车</view>
+                    <view class="bar-h3">第11-50名：6.1元现金红包</view>
+                </view>
+                <view class="bar-section bar-tip">
+                    <image class="bar-icon" src="{{ICON.POINT}}"></image>
+                    <view class="bar-h4">活动结束后，第1-10名获奖者添加忆年客服领取奖品，客服微信：yiniankefu</view>
+                    <view class="bar-h4 bar-gap">本活动最终解释权归忆年所有</view>
+                </view>
+            </view>
+            <view catch:tap="switchActivityRules" class="bar-close" data-switch="{{false}}">
+                <image class="bar-close-icon" src="{{ICON.CLOSE}}"></image>
+            </view>
+        </view>
+    </view>
+</view>

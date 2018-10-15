@@ -1,0 +1,27 @@
+<view catchtouchmove="preventScroll" class="datetime" wx:if="{{show}}">
+    <view class="datetime-background {{datetimeBackgroundShow?'datetime-background-show':''}}">
+        <view class="datetime-picker {{datetimePickerShow?'datetime-picker-show':''}}">
+            <view class="dp-header">
+                <text catchtap="cancleSelected" class="dp-header-cancle">取消</text>
+                <text catchtap="saveSelected" class="dp-header-save">确认</text>
+            </view>
+            <picker-view bindchange="bindChange" class="dp-main" indicatorStyle="height: 50px;" value="{{value}}">
+                <picker-view-column class="dp-main-left">
+                    <view class="dp-main-cell" wx:for="{{years}}" wx:key="key">{{item}}年</view>
+                </picker-view-column>
+                <picker-view-column>
+                    <view class="dp-main-cell" wx:for="{{months}}" wx:key="key">{{item}}月</view>
+                </picker-view-column>
+                <picker-view-column>
+                    <view class="dp-main-cell" wx:for="{{days}}" wx:key="key">{{item}}日</view>
+                </picker-view-column>
+                <picker-view-column>
+                    <view class="dp-main-cell" wx:for="{{hours}}" wx:key="key">{{item}}时</view>
+                </picker-view-column>
+                <picker-view-column class="dp-main-right">
+                    <view class="dp-main-cell" wx:for="{{minutes}}" wx:key="key">{{item}}分</view>
+                </picker-view-column>
+            </picker-view>
+        </view>
+    </view>
+</view>

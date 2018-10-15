@@ -1,0 +1,2138 @@
+@import "../../../__wuBaseWxss__/1.wxss";
+
+.discover_nav {
+    width: 750rpx;
+    display: flex;
+    flex-wrap: wrap;
+    height: 67rpx;
+    border-bottom: 1rpx solid #cecece;
+    background: #fff;
+    z-index: 9991;
+}
+
+text {
+    word-break: break-all;
+}
+
+page {
+    height: 100%;
+    background-color: #f1f1f1;
+}
+
+.v-container {
+    overflow: hidden;
+}
+
+.preScoll {
+    overflow: hidden;
+    height: 100%;
+    padding: 0;
+}
+
+.scollTop {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1001;
+}
+
+.firstListItem {
+    border-top: 0;
+}
+
+.paddingTop {
+    padding: 6rpx 20rpx 20rpx 20rpx;
+}
+
+.funBox {
+    width: 750rpx;
+    padding: 14rpx 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 4rpx;
+}
+
+.funItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 40rpx;
+    position: relative;
+}
+
+.funItem image {
+    width: 56rpx;
+    height: 56rpx;
+}
+
+.likeFunBox {
+    width: 486rpx;
+    height: 142rpx;
+    background: url('http://oibl5dyji.bkt.clouddn.com/20170920133422.png') no-repeat;
+    background-size: 486rpx 142rpx;
+    position: absolute;
+    top: -43rpx;
+    left: -476rpx;
+    z-index: 99;
+}
+
+.fiveLikeBox {
+    width: 370rpx;
+    height: 58rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 42rpx 0 0 46rpx;
+}
+
+.icon-like {
+    width: 58rpx;
+    height: 58rpx;
+}
+
+.first {
+    background: url('http://oibl5dyji.bkt.clouddn.com/20170731like1.png') no-repeat;
+    background-size: 58rpx 58rpx;
+}
+
+.second {
+    background: url('http://oibl5dyji.bkt.clouddn.com/20170731like2.png') no-repeat;
+    background-size: 58rpx 58rpx;
+}
+
+.three {
+    background: url('http://oibl5dyji.bkt.clouddn.com/20170731like3.png') no-repeat;
+    background-size: 58rpx 58rpx;
+}
+
+.four {
+    background: url('http://oibl5dyji.bkt.clouddn.com/20170731like4.png') no-repeat;
+    background-size: 58rpx 58rpx;
+}
+
+.five {
+    background: url('http://oibl5dyji.bkt.clouddn.com/20170731like5.png') no-repeat;
+    background-size: 58rpx 58rpx;
+}
+
+.bgImg {
+    width: 18rpx;
+    height: 18rpx;
+    border-radius: 50%;
+    background: rgb(206,206,206);
+    position: absolute;
+    left: -27rpx;
+    transform: translateX(-50%);
+    bottom: 0;
+    z-index: 1001;
+}
+
+.rightlike {
+    height: 52rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    border-radius: 26rpx;
+    position: relative;
+}
+
+.likeState {
+    width: 30rpx;
+    height: 30rpx;
+    margin: 0 18rpx 0 24rpx;
+}
+
+.normal {
+    background: url(http://oibl5dyji.bkt.clouddn.com/20170809104817.png) no-repeat;
+    background-size: 30rpx 30rpx;
+}
+
+.rightlike image {
+    width: 30rpx;
+    height: 30rpx;
+    vertical-align: bottom;
+    margin: 0 18rpx 0 24rpx;
+}
+
+.rightlike text {
+    color: rgb(102,102,102);
+    font-size: 28rpx;
+    line-height: 28rpx;
+    margin-right: 26rpx;
+}
+
+.onepicbox {
+    height: 710rpx;
+}
+
+.iosImg {
+    width: 100%;
+    height: 100%;
+}
+
+.twopicbox {
+    height: 352rpx;
+}
+
+.imgMengCen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(255,255,255,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgMengCen text {
+    display: block;
+    width: 102rpx;
+    height: 102rpx;
+    line-height: 103rpx;
+    text-align: center;
+    color: rgb(102,102,102);
+    font-size: 68rpx;
+    font-weight: bold;
+    border-radius: 50%;
+    background: #fff;
+}
+
+.imgMengCen .bai {
+    font-size: 50rpx;
+}
+
+.eplace {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 20rpx 14rpx;
+    color: #666;
+    font-size: 26rpx;
+    display: flex;
+    justify-content: space-between;
+}
+
+.eplaceImg {
+    width: 22rpx;
+    height: 26rpx;
+    position: relative;
+    bottom: -2rpx;
+}
+
+.eplaceText {
+    width: 646rpx;
+    line-height: 34rpx;
+    word-break: break-all;
+}
+
+.funLikeBox {
+    width: 260rpx;
+    height: 70rpx;
+    background: url(http://oibl5dyji.bkt.clouddn.com/20171011140622.png);
+    background-size: 260rpx 70rpx;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.funClickBox {
+    height: 70rpx;
+    padding: 0 18rpx;
+    position: absolute;
+    top: 0;
+    left: 6rpx;
+    z-index: 102;
+    transform: translateX(-100%);
+    display: flex;
+    align-items: center;
+    background: #999;
+    border-radius: 4rpx;
+}
+
+.funClickItem {
+    min-width: 90rpx;
+    height: 70rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bigWid {
+    width: 150rpx;
+}
+
+.funClickItem text {
+    font-size: 28rpx;
+    color: #fff;
+}
+
+.likebox {
+    width: 710rpx;
+    box-sizing: border-box;
+    display: flex;
+    margin: 0 0 20rpx 20rpx;
+    padding-bottom: 14rpx;
+}
+
+.hasMarginBottom {
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.noMarginBottom {
+    margin-bottom: 6rpx;
+}
+
+.likeBoxLogo {
+    width: 26rpx;
+    height: 25rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 7rpx;
+    margin-top: 10rpx;
+}
+
+.likeBoxLogo image {
+    width: 100%;
+    height: 100%;
+    vertical-align: bottom;
+}
+
+.likeUserName {
+    width: 660rpx;
+    margin-left: 17rpx;
+}
+
+.likeUserName text {
+    color: #cecece;
+    font-size: 26rpx;
+    line-height: 44rpx;
+}
+
+.likeUserName .itemName {
+    color: #333;
+    font-weight: 800;
+}
+
+.likeScoll {
+    width: 482rpx;
+    height: 72rpx;
+    margin-left: 35rpx;
+}
+
+.likeListBox {
+    height: 72rpx;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.totalLike {
+    width: 72rpx;
+    height: 72rpx;
+    line-height: 72rpx;
+    text-align: center;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 1rpx solid #999;
+    color: #333;
+    font-size: 28rpx;
+    background: #fff;
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    left: 20rpx;
+}
+
+.totalZero {
+    color: #cecece;
+}
+
+.likelist_item {
+    width: 52rpx;
+    height: 52rpx;
+    position: relative;
+    margin-right: 18rpx;
+    display: inline-block;
+}
+
+.likelist_item image {
+    width: 52rpx;
+    height: 52rpx;
+    border-radius: 100%;
+    vertical-align: bottom;
+}
+
+.like_cat {
+    position: absolute;
+    bottom: -8rpx;
+    right: -7rpx;
+    width: 30rpx;
+    height: 30rpx;
+    border-radius: 50%;
+    background: url('http://oibl5dyji.bkt.clouddn.com/20170920145221.png') no-repeat;
+    background-size: 30rpx 30rpx;
+}
+
+.happy {
+    background: url('http://oibl5dyji.bkt.clouddn.com/20170731165051.png') no-repeat;
+    background-size: 30rpx 30rpx;
+}
+
+.mad {
+    background: url('http://oibl5dyji.bkt.clouddn.com/20170731165052.png') no-repeat;
+    background-size: 30rpx 30rpx;
+}
+
+.surprise {
+    background: url('http://oibl5dyji.bkt.clouddn.com/20170731165053.png') no-repeat;
+    background-size: 30rpx 30rpx;
+}
+
+.sad {
+    background: url('http://oibl5dyji.bkt.clouddn.com/20170731165054.png') no-repeat;
+    background-size: 30rpx 30rpx;
+}
+
+.like {
+    background: url('http://oibl5dyji.bkt.clouddn.com/20170731165055.png') no-repeat;
+    background-size: 30rpx 30rpx;
+}
+
+.nextnum {
+    width: 64rpx;
+    height: 64rpx;
+    border-radius: 32rpx;
+    background: rgba(136,136,136,0.5);
+}
+
+.toAppBox {
+    width: 574rpx;
+    height: 154rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.textImg {
+    width: 262rpx;
+    height: 58rpx;
+    margin-right: 58rpx;
+}
+
+.centerLine {
+    width: 2rpx;
+    height: 106rpx;
+    background: #cecece;
+    margin-right: 21rpx;
+}
+
+.luyinImg {
+    width: 147rpx;
+    height: 120rpx;
+    margin-right: 18rpx;
+}
+
+.place {
+    display: block;
+    width: 450rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.commentPic {
+    width: 46rpx;
+    height: 46rpx;
+    border-radius: 4rpx;
+    margin-right: 10rpx;
+}
+
+.contentDetail {
+    width: 654rpx;
+    display: flex;
+    flex-direction: column;
+}
+
+.userTime {
+    width: 654rpx;
+    height: 24rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14rpx;
+}
+
+.commentuserBox {
+    display: flex;
+    align-items: center;
+}
+
+.comTime {
+    color: #999;
+    font-size: 22rpx;
+}
+
+.icon_funBox {
+    width: 100%;
+    height: 68rpx;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.showTOApp {
+    background: #fff;
+    width: 574rpx;
+    margin: 50rpx auto 30rpx;
+}
+
+.likenav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 64rpx;
+    height: 64rpx;
+    color: #888;
+    text-align: center;
+}
+
+.btmPrompt {
+    width: 750rpx;
+    height: 332rpx;
+    position: relative;
+}
+
+.btmPrompt image {
+    width: 750rpx;
+    height: 332rpx;
+    vertical-align: bottom;
+}
+
+.btmPrompt text {
+    color: #999;
+    font-size: 28rpx;
+    position: absolute;
+    left: 50%;
+    top: 44rpx;
+    z-index: 100;
+    transform: translateX(-50%);
+}
+
+.returnbtn {
+    position: fixed;
+    bottom: 218rpx;
+    right: 0;
+    width: 173rpx;
+    height: 112rpx;
+    z-index: 999;
+    opacity: 0.8;
+}
+
+.returnbtn image {
+    width: 173rpx;
+    height: 112rpx;
+}
+
+.goHome {
+    position: fixed;
+    bottom: 128rpx;
+    right: 0;
+    z-index: 999;
+    width: 202rpx;
+    height: 70rpx;
+    background-color: #fff;
+    border-top-left-radius: 36rpx;
+    border-bottom-left-radius: 36rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.goHomeBtm {
+    bottom: 196rpx;
+}
+
+.goHome image {
+    width: 26rpx;
+    height: 28rpx;
+    margin-right: 14rpx;
+}
+
+.goHome text {
+    color: #333;
+    font-size: 28rpx;
+}
+
+.gengduo {
+    width: 160rpx;
+    height: 160rpx;
+    vertical-align: bottom;
+}
+
+.clikeMe {
+    width: 68rpx;
+    height: 44rpx;
+    background: url('http://oibl5dyji.bkt.clouddn.com/20170914red.png') no-repeat;
+    background-size: 68rpx 44rpx;
+    position: absolute;
+    top: -6rpx;
+    right: -10rpx;
+    animation: changed 0.3s ease-in infinite;
+}
+
+@-webkit-keyframes changed {
+    0% {
+        background: url('http://oibl5dyji.bkt.clouddn.com/20170914204613.png') no-repeat;
+        background-size: 68rpx 44rpx;
+    }
+
+    50% {
+        background: url('http://oibl5dyji.bkt.clouddn.com/20170914204608.png') no-repeat;
+        background-size: 68rpx 44rpx;
+    }
+
+    100% {
+        background: url('http://oibl5dyji.bkt.clouddn.com/20170914204613.png') no-repeat;
+        background-size: 68rpx 44rpx;
+    }
+}
+
+@keyframes changed {
+    0% {
+        background: url('http://oibl5dyji.bkt.clouddn.com/20170914204613.png') no-repeat;
+        background-size: 68rpx 44rpx;
+    }
+
+    50% {
+        background: url('http://oibl5dyji.bkt.clouddn.com/20170914204608.png') no-repeat;
+        background-size: 68rpx 44rpx;
+    }
+
+    100% {
+        background: url('http://oibl5dyji.bkt.clouddn.com/20170914204613.png') no-repeat;
+        background-size: 68rpx 44rpx;
+    }
+}
+
+.pvModel,.funModel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+.pvModel-box,.funModel-box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    animation: bgColor 0.5s ease;
+    background: rgba(0,0,0,0.8);
+}
+
+.pvModel-main {
+    width: 750rpx;
+    background: #efeff5;
+    animation: pvBottom 0.3s ease;
+    position: relative;
+}
+
+.mainItem {
+    width: 100%;
+    height: 80rpx;
+    border-bottom: 1rpx solid #efeff5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+}
+
+.mainItem .detailShare {
+    width: 100%;
+    height: 78rpx;
+    line-height: 78rpx;
+    padding: 0;
+    margin: 0;
+    background: #fff;
+    border: none;
+    border-radius: none;
+    color: #333;
+    font-size: 30rpx;
+}
+
+.mainItem text {
+    color: #333;
+    font-size: 30rpx;
+}
+
+.mainItem image {
+    width: 30rpx;
+    height: 30rpx;
+}
+
+@-webkit-keyframes bgColor {
+    0% {
+        background: rgba(0,0,0,0);
+    }
+
+    100% {
+        background: rgba(0,0,0,0.8);
+    }
+}
+
+@keyframes bgColor {
+    0% {
+        background: rgba(0,0,0,0);
+    }
+
+    100% {
+        background: rgba(0,0,0,0.8);
+    }
+}
+
+@-webkit-keyframes pvBottom {
+    0% {
+        bottom: -310rpx;
+    }
+
+    100% {
+        bottom: 0rpx;
+    }
+}
+
+@keyframes pvBottom {
+    0% {
+        bottom: -310rpx;
+    }
+
+    100% {
+        bottom: 0rpx;
+    }
+}
+
+@-webkit-keyframes pvTop {
+    0% {
+        margin-top: 90rpx;
+    }
+
+    50% {
+        margin-top: 135rpx;
+    }
+
+    100% {
+        margin-top: 112rpx;
+    }
+}
+
+@keyframes pvTop {
+    0% {
+        margin-top: 90rpx;
+    }
+
+    50% {
+        margin-top: 135rpx;
+    }
+
+    100% {
+        margin-top: 112rpx;
+    }
+}
+
+@-webkit-keyframes pvOpacity {
+    0% {
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes pvOpacity {
+    0% {
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.audioModel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9995;
+    background: rgba(0,0,0,0.5);
+}
+
+.audioMainBox {
+    width: 617rpx;
+    height: 930rpx;
+    background: #fff;
+    border-radius: 12rpx;
+    margin: 50rpx auto 0;
+    position: relative;
+}
+
+.audioIntroPic {
+    width: 617rpx;
+    height: 930rpx;
+}
+
+.closeAudioBox {
+    width: 51rpx;
+    height: 51rpx;
+    border-radius: 50%;
+    position: absolute;
+    top: 27rpx;
+    right: 28rpx;
+}
+
+.imgBgBox {
+    width: 750rpx;
+    height: 344rpx;
+    background: url(http://oibl5dyji.bkt.clouddn.com/20170917213222.png) no-repeat;
+    background-size: 750rpx 344rpx;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.imgBgBox image {
+    width: 254rpx;
+    height: 56rpx;
+}
+
+.ear {
+    width: 77rpx;
+    height: 36rpx;
+    background: url('http://oibl5dyji.bkt.clouddn.com/zqonpic.png') no-repeat;
+    background-size: 77rpx 36rpx;
+    position: absolute;
+    top: 8rpx;
+    left: 2rpx;
+}
+
+.newUserModelBox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    background: rgba(0,0,0,0.8);
+}
+
+.newUserImg1 {
+    width: 550rpx;
+    height: 43rpx;
+    position: absolute;
+    top: 321rpx;
+    left: 99rpx;
+}
+
+.newUserImg2 {
+    width: 423rpx;
+    height: 201rpx;
+    position: absolute;
+    top: 372rpx;
+    right: 10rpx;
+}
+
+.newUserImg3 {
+    width: 214rpx;
+    height: 309rpx;
+    position: absolute;
+    bottom: 0;
+    left: 250rpx;
+}
+
+.newperson {
+    width: 750rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.newperson image {
+    width: 58rpx;
+    height: 58rpx;
+    margin-top: 52rpx;
+    margin-bottom: 12rpx;
+    vertical-align: bottom;
+}
+
+.newperson text:nth-child(1) {
+    color: #999;
+    font-size: 22rpx;
+    line-height: 28rpx;
+}
+
+.newperson text:nth-child(2) {
+    color: #333;
+    font-size: 26rpx;
+    line-height: 30rpx;
+}
+
+.newperson text:nth-child(4) {
+    color: #999;
+    font-size: 22rpx;
+    line-height: 26rpx;
+}
+
+.longTap {
+    background-color: #efeff5;
+}
+
+.viewscollPageLoading {
+    width: 100%;
+    padding-top: 14rpx;
+    height: 88rpx;
+    display: flex;
+    justify-content: center;
+}
+
+.viewscollPageLoading image {
+    width: 170rpx;
+    height: 88rpx;
+}
+
+.viewscollPageLoading text {
+    color: #999;
+    font-size: 24rpx;
+}
+
+.noitem {
+    position: relative;
+    border-top: 1rpx solid transparent;
+}
+
+.loverNoitem {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+}
+
+.loverEmptyPages {
+    width: 384rpx;
+    height: 384rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 290rpx auto 0;
+}
+
+.loverEmptyPages image {
+    width: 100%;
+    height: 100%;
+}
+
+.defaultEmptyPages {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.emptyIntroPic {
+    width: 520rpx;
+    height: 250rpx;
+    margin-top: 44rpx;
+}
+
+.emptyItem {
+    position: relative;
+    width: 400rpx;
+    height: 80rpx;
+    border-radius: 40rpx;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1rpx solid #666;
+    margin-top: 20rpx;
+}
+
+.lightUp {
+    background-color: #ffe500;
+    border: 0;
+    margin-top: 44rpx;
+}
+
+.emptyItem image {
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 10rpx;
+}
+
+.emptyItem text {
+    color: #666;
+    font-size: 30rpx;
+}
+
+.lightUp text {
+    color: #333;
+}
+
+.Mengcen {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: rgba(0,0,0,0.4);
+    top: 0;
+    z-index: 1999;
+}
+
+.change {
+    width: 596rpx;
+    height: 360rpx;
+    background-color: white;
+    margin: 0 auto;
+    margin-top: 130rpx;
+    padding-top: 32rpx;
+    box-sizing: border-box;
+    border-radius: 12px;
+}
+
+.tip {
+    color: #333;
+    font-size: 36rpx;
+    text-align: center;
+}
+
+.input_section {
+    width: 520rpx;
+    margin: 0 auto;
+    font-size: 26rpx;
+    height: 64rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: #333;
+    margin-top: 55rpx;
+    border-bottom: 1px solid #eee;
+}
+
+.input_section text {
+    font-size: 24rpx;
+    color: #999;
+}
+
+.inputerea {
+    width: 450rpx;
+    height: 64rpx;
+    line-height: 64rpx;
+    font-size: 26rpx;
+    color: #333;
+}
+
+.placeholder-class {
+    height: 64rpx;
+    line-height: 64rpx;
+    color: #999;
+    padding-top: 25rpx;
+}
+
+.example-text-erea {
+    height: 74rpx;
+    line-height: 74rpx;
+    font-size: 24rpx;
+    color: #b2b2b2;
+    padding: 0 25rpx;
+}
+
+.Mengcen_cancel {
+    width: 206rpx;
+    height: 72rpx;
+    line-height: 72rpx;
+    color: #fff;
+    font-size: 30rpx;
+    background-color: #999;
+    border-radius: 50rpx;
+    text-align: center;
+}
+
+.cancel_confirm {
+    padding: 0 41rpx;
+    margin-top: 50rpx;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.Mengcen_submit {
+    width: 206rpx;
+    height: 72rpx;
+    line-height: 72rpx;
+    font-size: 30rpx;
+    background-color: #fff04a;
+    border-radius: 50rpx;
+    color: #333;
+    text-align: center;
+}
+
+.disabled {
+    background: #cecece;
+    color: #fff;
+}
+
+button::after {
+    border: 0;
+}
+
+.fasttoknow-hasalbum {
+    width: 482rpx;
+    height: 66rpx;
+    background: url('http://oibl5dyji.bkt.clouddn.com/fasttoknow.png') no-repeat center;
+    background-size: 482rpx 66rpx;
+    margin-top: 37rpx;
+    margin-bottom: 32rpx;
+}
+
+.fasttoknowModel {
+    position: fixed;
+    z-index: 1999;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.threepictext {
+    font-size: 36rpx;
+    color: #fff;
+}
+
+button.threeCloseModel {
+    display: inline-block;
+    border: 0px solid #353535;
+    width: 40rpx;
+    height: 41rpx;
+    background: url('http://oibl5dyji.bkt.clouddn.com/closemodel.png') no-repeat center;
+    background-size: 40rpx 41rpx;
+    margin-bottom: -3rpx;
+    margin-left: 58rpx;
+}
+
+.threepicturesBox {
+    width: 100%;
+    height: 900rpx;
+    margin-top: 28rpx;
+    position: relative;
+}
+
+.threepictures {
+    background-color: #fff;
+    width: 600rpx;
+    height: 900rpx;
+    border-radius: 20rpx;
+    position: absolute;
+    transition: all 0.3s ease-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.indexBlock {
+    display: flex;
+    margin-bottom: 24rpx;
+}
+
+.yellowBlock {
+    width: 39rpx;
+    height: 14rpx;
+    border-radius: 7rpx;
+    background-color: #fae100;
+    margin-left: 17rpx;
+}
+
+.grayBlock {
+    width: 14rpx;
+    height: 14rpx;
+    border-radius: 7rpx;
+    background-color: gray;
+    margin-left: 17rpx;
+}
+
+.threeone>text:nth-of-type(1) {
+    font-size: 50rpx;
+    font-weight: bold;
+    color: #333;
+    margin-top: 45rpx;
+}
+
+.threeone>text:nth-of-type(2) {
+    font-size: 30rpx;
+    color: #333;
+    margin-top: 6rpx;
+}
+
+.threeone>text:nth-of-type(3) {
+    font-size: 26rpx;
+    color: #999;
+    margin-top: 20rpx;
+}
+
+.threeone>text:nth-of-type(4) {
+    font-size: 26rpx;
+    color: #999;
+    margin-top: 6rpx;
+}
+
+.threetwo>image:nth-of-type(1) {
+    width: 517rpx;
+    height: 220rpx;
+    margin-top: 38rpx;
+    position: relative;
+}
+
+.threetwo>image:nth-of-type(2) {
+    width: 540rpx;
+    height: 495rpx;
+}
+
+.threetwo-text {
+    font-size: 54rpx;
+    font-weight: bold;
+    color: #333;
+    position: absolute;
+    top: 60rpx;
+    left: 12rpx;
+}
+
+.threethree>text {
+    font-size: 50rpx;
+    color: #333;
+    font-weight: bold;
+    margin-top: 105rpx;
+}
+
+.threethree>image {
+    width: 540rpx;
+    height: 531rpx;
+    margin-top: 46rpx;
+}
+
+.pic1 {
+    width: 600rpx;
+    height: 900rpx;
+    top: 0;
+    left: 50rpx;
+    opacity: 1;
+    z-index: 5;
+}
+
+.pic2 {
+    width: 600rpx;
+    height: 836rpx;
+    top: 32rpx;
+    left: 85rpx;
+    opacity: 0.6;
+    z-index: 4;
+}
+
+.pic3 {
+    width: 600rpx;
+    height: 790rpx;
+    top: 55rpx;
+    left: 110rpx;
+    opacity: 0.2;
+    z-index: 3;
+}
+
+.three-picsone {
+    width: 540rpx;
+    height: 495rpx;
+}
+
+.creatmyalbum {
+    width: 482rpx;
+    height: 66rpx;
+    background: url('http://oibl5dyji.bkt.clouddn.com/creatmyalbum.png') no-repeat center;
+    background-size: 482rpx 66rpx;
+    margin-bottom: 52rpx;
+}
+
+button.CloseModel {
+    display: inline-block;
+    border: 0px solid #353535;
+    width: 40rpx;
+    height: 41rpx;
+    background: url('http://oibl5dyji.bkt.clouddn.com/20170623092721.png') no-repeat center;
+    background-size: 40rpx 41rpx;
+    position: absolute;
+    top: 10rox;
+    right: 10rpx;
+}
+
+.showDisposeModel {
+    z-index: 1999;
+    background: rgba(0,0,0,0.7);
+}
+
+.disposeBox_self {
+    border: 0.1rpx solid transparent;
+    position: relative;
+    padding-top: 10rpx;
+    width: 540rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 20rpx;
+}
+
+.disposeTitle_self {
+    display: flex;
+    align-items: center;
+    margin: 20rpx 0 20rpx 0;
+    font-size: 40rpx;
+}
+
+.closeDispose_self {
+    width: 448rpx;
+    height: 66rpx;
+    line-height: 66rpx;
+    text-align: center;
+    border-radius: 33rpx;
+    background-color: #ffe500;
+    color: #333;
+    font-size: 28rpx;
+    margin: 56rpx 0 20rpx;
+}
+
+.disposeScetion_self {
+    display: flex;
+    align-items: center;
+    color: #333;
+    font-size: 28rpx;
+}
+
+.upBoxPic {
+    width: 100%;
+    height: 100%;
+    border-radius: 16rpx;
+}
+
+.firstUpBox {
+    width: 622rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    background: #fff;
+    border-radius: 40rpx;
+}
+
+.firstUpBoxTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 38rpx;
+}
+
+.firstUpBoxTitle image {
+    width: 56rpx;
+    height: 47rpx;
+    margin-right: 16rpx;
+}
+
+.firstUpBoxTitle text {
+    color: #333;
+    font-size: 40rpx;
+    line-height: 46rpx;
+}
+
+.firstUpBoxLogo {
+    width: 562rpx;
+    height: 376rpx;
+    margin-top: 26rpx;
+}
+
+.firstUpBoxLogo image {
+    width: 100%;
+    height: 100%;
+    vertical-align: bottom;
+    border-radius: 20rpx;
+}
+
+.firstUpBoxText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 14rpx;
+}
+
+.firstUpBoxText text:nth-child(1) {
+    color: #666;
+    font-size: 30rpx;
+    line-height: 42rpx;
+}
+
+.firstUpBoxText text:nth-child(2) {
+    color: #333;
+    font-size: 36rpx;
+    line-height: 54rpx;
+    margin-top: 4rpx;
+}
+
+.firstUpBoxToShare,.secondUpBoxToShare {
+    width: 336rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    border-radius: 40rpx;
+    color: #333;
+    font-size: 30rpx;
+    background-color: #ffe500;
+    margin: 88rpx 0 60rpx;
+}
+
+.secondUpBoxText {
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 50rpx;
+    display: flex;
+    flex-direction: column;
+    color: #333;
+    font-size: 30rpx;
+    line-height: 60rpx;
+    margin-top: 6rpx;
+}
+
+.upNumColor {
+    color: #ff6b69;
+    font-size: 48rpx;
+}
+
+.secondUpBoxToShare {
+    margin: 16rpx 0 0;
+}
+
+.secondNoPrompt {
+    width: 336rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    border-radius: 40rpx;
+    color: #333;
+    font-size: 30rpx;
+    background-color: #fff;
+    margin: 30rpx 0;
+}
+
+.closeUpBox {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -116rpx;
+    right: 270rpx;
+}
+
+.activity-rules-modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9995;
+    background-color: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.activity-rules {
+    position: relative;
+    width: 646rpx;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20rpx;
+}
+
+.rule-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 44rpx;
+}
+
+.rule-title text {
+    color: #333;
+    font-size: 36rpx;
+    line-height: 40rpx;
+    font-weight: bold;
+}
+
+.rule-list {
+    width: 566rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 48rpx;
+    margin-bottom: 46rpx;
+}
+
+.rule-list text {
+    color: #333;
+    font-size: 24rpx;
+    line-height: 36rpx;
+    word-break: break-all;
+}
+
+.close-rules {
+    position: absolute;
+    top: 40rpx;
+    right: 40rpx;
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.loversGroupEmpty {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loverEmptyIntroPic {
+    width: 520rpx;
+    height: 250rpx;
+    margin-top: 40rpx;
+}
+
+.loversEmptyUp {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400rpx;
+    height: 80rpx;
+    border-radius: 40rpx;
+    background-color: #ffe500;
+    margin-top: 80rpx;
+}
+
+.loversEmptyUp image {
+    width: 42rpx;
+    height: 38rpx;
+    margin-top: 15rpx;
+}
+
+.loversEmptyUp text {
+    font-size: 30rpx;
+    color: #333;
+    margin-left: 10rpx;
+}
+
+.loversEmptyUp .loversEmptyTips {
+    position: absolute;
+    left: 62rpx;
+    top: -70rpx;
+    width: 276rpx;
+    height: 68rpx;
+    animation: loversTop 1s ease-in-out infinite;
+}
+
+.upLoadOld .loversEmptyTips {
+    position: absolute;
+    left: -50rpx;
+    top: -30rpx;
+    width: 276rpx;
+    height: 68rpx;
+    animation: loversTopUp 1s ease-in-out infinite;
+}
+
+@-webkit-keyframes loversTopUp {
+    0% {
+        top: -30rpx;
+    }
+
+    65% {
+        top: -50rpx;
+    }
+
+    100% {
+        top: -30rpx;
+    }
+}
+
+@keyframes loversTopUp {
+    0% {
+        top: -30rpx;
+    }
+
+    65% {
+        top: -50rpx;
+    }
+
+    100% {
+        top: -30rpx;
+    }
+}
+
+@-webkit-keyframes loversTop {
+    0% {
+        top: -70rpx;
+    }
+
+    65% {
+        top: -90rpx;
+    }
+
+    100% {
+        top: -70rpx;
+    }
+}
+
+@keyframes loversTop {
+    0% {
+        top: -70rpx;
+    }
+
+    65% {
+        top: -90rpx;
+    }
+
+    100% {
+        top: -70rpx;
+    }
+}
+
+.loversBanner {
+    width: 690rpx;
+    height: 100rpx;
+    padding: 0 30rpx;
+    margin-top: 26rpx;
+}
+
+.loversBanner image {
+    width: 100%;
+    height: 100%;
+    border-radius: 20rpx;
+}
+
+.loversModalBox,.loversFirstUpModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1999;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loversIntro,.loversFirstUp {
+    position: relative;
+    border-radius: 20rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loversIntroPic {
+    width: 622rpx;
+    height: 850rpx;
+    border-radius: 20rpx;
+}
+
+.closeLoversBox,.closeLoversFisrtUp {
+    width: 42rpx;
+    height: 42rpx;
+    position: absolute;
+    top: -62rpx;
+    right: 0;
+}
+
+.loversFirstUpPic {
+    width: 622rpx;
+    height: 850rpx;
+    border-radius: 20rpx;
+}
+
+.loversBtnBox {
+    position: absolute;
+    left: 66rpx;
+    bottom: 40rpx;
+}
+
+.loversBtnBox view {
+    width: 490rpx;
+    height: 112rpx;
+    line-height: 112rpx;
+    text-align: center;
+    border-radius: 60rpx;
+    background-color: #f65050;
+    margin: 0;
+    padding: 0;
+    font-size: 54rpx;
+    color: #fff;
+}
+
+.party-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: rgba(0,0,0,0);
+    z-index: 9999;
+    transition: all 0.2s linear;
+}
+
+.party-modal-on {
+    background-color: rgba(0,0,0,0.8);
+}
+
+.party-modal-warp {
+    position: absolute;
+    bottom: -600rpx;
+    left: 0;
+    box-sizing: border-box;
+    padding-top: 86rpx;
+    padding-bottom: 66rpx;
+    width: 100%;
+    border-radius: 40rpx 40rpx 0 0;
+    background-color: #fff;
+    transition: all 0.2s linear;
+}
+
+.party-modal-warp-on {
+    bottom: 0;
+}
+
+.party-modal-title {
+    padding-left: 58rpx;
+    padding-right: 58rpx;
+    padding-bottom: 35rpx;
+    font-size: 48rpx;
+    font-weight: bolder;
+    color: #333;
+}
+
+.party-modal-content {
+}
+
+.party-modal-close {
+    position: absolute;
+    top: -124rpx;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.party-modal-close image {
+    width: 74rpx;
+    height: 74rpx;
+}
+
+.party-add_photo {
+    padding-left: 58rpx;
+    padding-right: 58rpx;
+}
+
+.party-add_photo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 112rpx;
+}
+
+.party-api-text {
+    font-size: 30rpx;
+    color: #333;
+}
+
+.party-api-icon {
+    width: 14rpx;
+    height: 24rpx;
+}
+
+.party-add_event {
+    padding-top: 35rpx;
+    padding-bottom: 60rpx;
+    display: flex;
+    justify-content: space-around;
+}
+
+.party-add_event-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.party-aei-icon {
+    width: 68rpx;
+    height: 68rpx;
+}
+
+.party-aei-text {
+    padding-top: 28rpx;
+    font-size: 26rpx;
+    color: #999;
+}
+
+.hot_invite {
+    position: absolute;
+    top: 628rpx;
+    width: 424rpx;
+    height: 80rpx;
+    left: 50%;
+    border-radius: 40rpx;
+    line-height: 70rpx;
+    color: #333;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    margin-left: -212rpx;
+    font-size: 34rpx;
+}
+
+.hot_invite_box {
+    position: absolute;
+    width: 750rpx;
+    bottom: 70rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.upLoadOld .mayDayAcTips {
+    position: absolute;
+    left: -24rpx;
+    top: -30rpx;
+    width: 230rpx;
+    height: 70rpx;
+    animation: loversTopUp 1s ease-in-out infinite;
+}
+
+.hot_invite {
+    position: absolute;
+    top: 628rpx;
+    width: 424rpx;
+    height: 80rpx;
+    background-size: 100%;
+    left: 50%;
+    border-radius: 40rpx;
+    line-height: 70rpx;
+    color: #333;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    margin-left: -212rpx;
+    font-size: 34rpx;
+}
+
+.hot_invite_box {
+    position: absolute;
+    width: 750rpx;
+    bottom: 70rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.otherbtn {
+    margin: 0;
+    padding: 0;
+    width: 424rpx;
+    height: 80rpx;
+    line-height: 70rpx;
+    border-radius: 40rpx;
+    font-size: 34rpx;
+    color: #333;
+}
+
+.otherbtn.first01 {
+    margin-bottom: 35rpx;
+}
+
+.emptyItem .emptyMayDayAcTips {
+    position: absolute;
+    left: 90rpx;
+    top: -80rpx;
+    width: 230rpx;
+    height: 70rpx;
+    animation: emptyMayDayAcTips 1s ease-in-out infinite;
+}
+
+@-webkit-keyframes emptyMayDayAcTips {
+    0% {
+        top: -50rpx;
+    }
+
+    65% {
+        top: -70rpx;
+    }
+
+    100% {
+        top: -50rpx;
+    }
+}
+
+@keyframes emptyMayDayAcTips {
+    0% {
+        top: -50rpx;
+    }
+
+    65% {
+        top: -70rpx;
+    }
+
+    100% {
+        top: -50rpx;
+    }
+}
+
+.item_event_touxiang {
+    width: 70rpx;
+    height: 70rpx;
+    border-radius: 50%;
+    font-size: 24rpx;
+    line-height: 70rpx;
+    text-align: center;
+    background-color: #cecece;
+    color: #fff;
+    font-weight: 900;
+}
+
+.item_userName_title {
+    font-size: 26rpx!important;
+    color: #333;
+    max-width: 280rpx!important;
+}
+
+.item_userName_num {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    border: 1rpx solid #fb5353;
+    border-radius: 30rpx;
+    margin-left: 14rpx;
+    font-size: 20rpx!important;
+    color: #fb5353!important;
+    padding: 0 14rpx;
+}
+
+.event_box {
+}
+
+.event_img {
+    width: 159rpx;
+    height: 159rpx;
+    display: inline-block;
+    position: relative;
+}
+
+.event_img>image {
+    width: 100%;
+    height: 100%;
+}
+
+.event_modelGd {
+    width: 159rpx;
+    height: 159rpx;
+    background-color: rgba(0,0,0,0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.event_modelGd_num {
+    font-size: 60rpx;
+    color: #fff;
+    display: block;
+    text-align: center;
+    margin-top: 20rpx;
+}
+
+.event_modelGd_Gd {
+    font-size: 22rpx;
+    color: #fff;
+    display: block;
+    text-align: center;
+}
+
+.nav_posi {
+    position: relative;
+}
+
+.goPic {
+    width: 44rpx;
+    height: 44rpx;
+    position: absolute;
+    z-index: 100;
+    right: 40rpx;
+    top: 24rpx;
+}
+
+.nav-item .active {
+    color: #999;
+}
+
+.eventicon {
+    width: 44rpx;
+    height: 44rpx;
+}
+
+.sixteen {
+    margin-top: 13rpx;
+    margin-bottom: 36rpx;
+    box-sizing: border-box;
+    padding-left: 26rpx;
+    padding-right: 26rpx;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.sixteen-item {
+    position: relative;
+}
+
+.sixteen-image {
+    width: 100%;
+    height: 100%;
+}
+
+.sixteen-single {
+    width: 638rpx;
+    height: 638rpx;
+}
+
+.sixteen-double {
+    margin-top: 8rpx;
+    width: 315rpx;
+    height: 315rpx;
+}
+
+.sixteen-double-gap {
+    margin-left: 8rpx;
+}
+
+.sixteen-triple {
+    margin-top: 8rpx;
+    width: 207rpx;
+    height: 207rpx;
+}
+
+.sixteen-triple-gap {
+    margin-left: 8rpx;
+    margin-right: 8rpx;
+}
+
+.sixteen-gt9 {
+    margin-top: 2rpx;
+    width: 158rpx;
+    height: 158rpx;
+}
+
+.sixteen-gt9-gap {
+    margin-left: 2rpx;
+}
+
+.sixteen-gt9-image {
+    width: 100%;
+    height: 100%;
+}
+
+.sixteen-gt9-last {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.sixteen-gt9-length {
+    font-size: 60rpx;
+}
+
+.sixteen-gt9-length-small {
+    font-size: 40rpx;
+}
+
+.sixteen-gt9-more {
+    font-size: 22rpx;
+}
+
+.play-photo {
+    width: 136rpx;
+    height: 51rpx;
+    border-radius: 25rpx;
+    padding: 0;
+    font-size: 24rpx;
+    color: #666;
+    border: 1px solid #666;
+    line-height: 51rpx;
+    background: #fff;
+    display: block;
+}
+
+.modal-flexed {
+    display: flex;
+    margin-bottom: 80rpx;
+}
+
+.modal-flex {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    text-align: center;
+}
+
+.modal-flex image {
+    width: 101rpx;
+    height: 101rpx;
+    display: block;
+}
+
+.modal-flex text {
+    font-size: 26rpx;
+    color: #999;
+}

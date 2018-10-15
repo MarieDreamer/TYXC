@@ -1,0 +1,5 @@
+<view class="v-container">
+    <view class="videoMainBox">
+        <video autoplay src="{{videourl}}"></video>
+    </view>
+</view>

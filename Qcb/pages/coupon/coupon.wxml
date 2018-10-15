@@ -1,0 +1,31 @@
+<view class="topnavbox">
+    <navigator class="topnav-list" openType="redirect" url="/pages/coupon/coupon?type=0">
+        <label class="{{show.type0}}">未使用</label>
+    </navigator>
+    <navigator class="topnav-list" openType="redirect" url="/pages/coupon/coupon?type=1">
+        <label class="{{show.type1}}">已使用</label>
+    </navigator>
+    <navigator class="topnav-list" openType="redirect" url="/pages/coupon/coupon?type=2">
+        <label class="{{show.type2}}">已过期</label>
+    </navigator>
+</view>
+<view class="coup-box">
+    <view class="coup-li coup{{coupon.status}}" wx:for="{{coupon_list}}" wx:for-item="coupon" wx:key="k">
+        <view class="coup-lt">{{coupon.bonus}}</view>
+        <view class="coup-rt">
+            <view class="co-r-name">消费券</view>
+            <view class="co-r-day">有效期：{{coupon.end_time}}</view>
+        </view>
+        <view class="c-l-dw">￥</view>
+        <image class="c-l-rou" src="https://cc.hohiw.com/xcximg/rou-lt{{coupon.status}}.png"></image>
+        <image class="c-r-rou" src="https://cc.hohiw.com/xcximg/rou-rt{{coupon.status}}.png"></image>
+    </view>
+    <view class="weui-loadmore" style="display:{{more}}">
+        <view class="weui-loading"></view>
+        <view class="weui-loadmore__tips">正在加载</view>
+    </view>
+    <view class="weui-loadmore weui-loadmore_line" wx:if="{{listend==1}}">
+        <view class="weui-loadmore__tips weui-loadmore__tips_in-line">我是有底线滴</view>
+    </view>
+    <view class="occupy"></view>
+</view>

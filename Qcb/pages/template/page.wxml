@@ -1,0 +1,12 @@
+<view class="container">
+    <view class="container">
+        <view class="page-con">
+            <view class="page-con-t">
+                <text>玩法介绍</text>
+            </view>
+            <view class="page-con-c">
+                <text>玩法介绍</text>
+            </view>
+        </view>
+    </view>
+</view>

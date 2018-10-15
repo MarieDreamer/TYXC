@@ -1,0 +1,79 @@
+.datetime {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+
+.datetime-background {
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    transition: all .2s ease;
+}
+
+.datetime-background-show {
+    opacity: 1;
+}
+
+.datetime-picker {
+    position: absolute;
+    left: 0;
+    bottom: -600rpx;
+    width: 100%;
+    background-color: #fff;
+    transition: all .2s ease;
+}
+
+.datetime-picker-show {
+    bottom: 0rpx;
+}
+
+.dp-header {
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80rpx;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.dp-header-cancle {
+    color: #888;
+    font-size: 36rpx;
+}
+
+.dp-header-save {
+    color: #333;
+    font-size: 36rpx;
+}
+
+.dp-main {
+    width: 100%;
+    height: 440rpx;
+}
+
+.dp-main-row {
+    box-sizing: border-box;
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+}
+
+.dp-main-cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dp-main-left {
+    padding-left: 30rpx;
+}
+
+.dp-main-right {
+    padding-right: 30rpx;
+}

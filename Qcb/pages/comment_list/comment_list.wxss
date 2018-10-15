@@ -1,0 +1,242 @@
+.order-page {
+    width: 100%;
+    padding-bottom: 200rpx;
+}
+
+.topnavbox {
+    position: fixed;
+    width: 100%;
+    height: 80rpx;
+    background: #fff;
+    border: 1px solid #ddd;
+}
+
+.topnav-list {
+    width: 50%;
+    float: left;
+    height: 80rpx;
+    line-height: 80rpx;
+    color: #131313;
+    text-align: center;
+    font-size: 27rpx;
+}
+
+.topanv-this {
+    color: #fb9005;
+    border-bottom: 2rpx solid #fb9005;
+    height: 78rpx;
+    display: inline-block;
+    width: 100%;
+}
+
+.order-listmain {
+    padding-top: 80rpx;
+}
+
+.order-listbox {
+    margin-top: 5rpx;
+    background: #fff;
+}
+
+.order-topbox {
+    height: 80rpx;
+    line-height: 80rpx;
+    border-bottom: 1rpx solid #eee;
+    padding: 0 30rpx;
+}
+
+.order-topbox2 {
+    line-height: 60rpx;
+    border-top: 1rpx solid #eee;
+    padding: 0;
+}
+
+.order-topleft {
+    color: #101010;
+    font-size: 25rpx;
+    float: left;
+}
+
+.edtor-iconleft {
+    width: 32rpx;
+    height: 32rpx;
+    vertical-align: middle;
+    margin-left: 10rpx;
+}
+
+.order-toprt {
+    float: right;
+    color: #999;
+    font-size: 25rpx;
+}
+
+.order-toprt2 {
+    float: left;
+    color: #999;
+    font-size: 25rpx;
+}
+
+.order-prodbox {
+    padding: 0 5rpx 0 5rpx;
+}
+
+.order-prodlist {
+    padding: 15rpx;
+    overflow: hidden;
+    border-bottom: 1rpx solid #f4f4f4;
+    clear: both;
+}
+
+.order-prodimg {
+    width: 138rpx;
+    height: 138rpx;
+    float: left;
+    border: 1rpx solid #eee;
+    border-radius: 5rpx;
+}
+
+.order-prodpic {
+    width: 138rpx;
+    height: 138rpx;
+}
+
+.order-prodrt {
+    margin-left: 15rpx;
+    overflow: hidden;
+    width: 56%;
+    float: left;
+}
+
+.order-prodname {
+    font-size: 25rpx;
+    color: #1a1a1a;
+    line-height: 30rpx;
+    overflow: hidden;
+}
+
+.order-prodinfo {
+    height: 42rpx;
+    line-height: 42rpx;
+    color: #9e9e9e;
+    font-size: 25rpx;
+}
+
+.order-price {
+    color: #fb9005;
+    font-size: 30rpx;
+}
+
+.order-prodsubto {
+    height: 50rpx;
+    line-height: 50rpx;
+    color: #1c1c1c;
+    font-size: 22rpx;
+}
+
+.order-comment {
+    width: 20%;
+    float: left;
+    margin-top: 40rpx;
+}
+
+.order-comment button {
+    padding: 0;
+    width: 100%;
+}
+
+.ord-rt-pri {
+    float: right;
+    font-size: 26rpx;
+    color: #333;
+}
+
+.ord-rt-num {
+    float: right;
+    font-size: 26rpx;
+    color: #ddd;
+}
+
+.pl-150 {
+    margin-left: 150rpx;
+}
+
+.order-price {
+    color: #fb9005;
+}
+
+.order-p2 {
+    font-size: 27rpx;
+}
+
+.order-btnbox {
+    padding: 20rpx 0;
+    text-align: right;
+}
+
+.order-btn {
+    display: inline-block;
+    height: 46rpx;
+    line-height: 46rpx;
+    font-size: 25rpx;
+    border-radius: 5rpx;
+    width: 128rpx;
+    padding: 0;
+    margin: 0 10rpx;
+    background: #fff;
+}
+
+.btn-logis {
+    border-color: #a0a0a0;
+    color: #a0a0a0;
+}
+
+.btn-confirm {
+    color: #fb9005;
+    border-color: #fb9005;
+}
+
+.tx-rt {
+    text-align: right;
+}
+
+.big-price {
+    font-size: 27rpx;
+}
+
+.u-set-rt {
+    width: 12rpx;
+    height: 62rpx;
+    float: right;
+    margin-top: 9rpx;
+    margin-left: 15rpx;
+}
+
+.desc-start {
+    width: 190rpx;
+    height: 34rpx;
+    margin-top: 10rpx;
+    vertical-align: top;
+}
+
+.order-goods {
+    margin-bottom: 10rpx;
+}
+
+.clear {
+    clear: both;
+}
+
+.plcon {
+    font-size: 27rpx;
+    color: #999;
+}
+
+.sppj-c-i {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.sppj-c-i image {
+    width: 90rpx;
+    margin: 10rpx;
+}

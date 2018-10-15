@@ -1,0 +1,186 @@
+page {
+    font-size: 28rpx;
+    color: #333;
+    background: #f5f5f5;
+}
+
+.flexed {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: space-between;
+    -ms-flex-pack: space-between;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.flexed-2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: flex-start;
+    -ms-flex-pack: flex-start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.flexed-3 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.f1 {
+    color: #666;
+}
+
+.f2 {
+    color: #999;
+}
+
+.f3 {
+    color: #fff;
+}
+
+.f4 {
+    color: #e51c23;
+}
+
+.f12 {
+    font-size: 24rpx;
+}
+
+.f14 {
+    font-size: 28rpx;
+}
+
+.f16 {
+    font-size: 32rpx;
+}
+
+.bk {
+    display: block;
+}
+
+.center {
+    text-align: center;
+}
+
+image {
+    vertical-align: middle;
+}
+
+.no-border-b {
+    border-bottom: none!important;
+}
+
+.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.withdraw-container {
+    width: 700rpx;
+    margin: 20rpx auto;
+    padding: 20rpx;
+    background: #fff;
+    font-size: 32rpx;
+    box-sizing: border-box;
+}
+
+.account {
+    padding-bottom: 20rpx;
+    margin-bottom: 30rpx;
+    border-bottom: 2rpx solid #f5f5f5;
+}
+
+.account-name {
+    color: #e51c23;
+}
+
+.account-money {
+    display: block;
+    margin-bottom: 20rpx;
+    font-size: 32rpx;
+}
+
+.withdraw-number {
+    width: 100%;
+    overflow: hidden;
+    padding-bottom: 30rpx;
+    margin-bottom: 20rpx;
+    border-bottom: 2rpx solid #f5f5f5;
+}
+
+.symbol {
+    font-size: 90rpx;
+    font-weight: 500;
+}
+
+.input-money {
+    -webkit-box-flex: 1;
+    flex: 1;
+    height: 100rpx;
+    line-height: 100rpx;
+    font-size: 90rpx;
+    font-weight: 500;
+    width: 100%;
+    color: #666;
+}
+
+.question-mark {
+    width: 34rpx;
+    height: 34rpx;
+}
+
+.all-withdraw-number {
+    line-height: 50rpx;
+}
+
+.all-money {
+    color: #999;
+    margin-right: 40rpx;
+}
+
+.all-ti {
+    color: #e51c23;
+}
+
+.withdraw-intro {
+    padding-left: 25rpx;
+}
+
+.tixian {
+    width: 700rpx;
+    height: 90rpx;
+    margin: 0 auto;
+    margin-top: 100rpx;
+    font-size: 32rpx;
+    background: #e51c23;
+    border: none;
+    color: #fff;
+}

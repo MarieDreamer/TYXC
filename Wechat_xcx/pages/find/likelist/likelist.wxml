@@ -1,0 +1,29 @@
+<view class="template" wx:for="{{likelist}}" wx:for-index="Aindex" wx:key="{{Aindex}}">
+    <view class="topline"></view>
+    <view class="textinfo">
+        <image mode="aspectFill" src="{{item.upic}}"></image>
+        <text class="myname">{{item.unickname}}</text>
+        <image catchtap="like" data-childindex="{{Aindex}}" data-likecatagry="like" src="http://oibl5dyji.bkt.clouddn.com/WechatIMG69.png" wx:if="{{item.like==null}}"></image>
+        <image src="http://oibl5dyji.bkt.clouddn.com/WechatIMG68.png" wx:else></image>
+        <text>{{item.cnt}}</text>
+    </view>
+    <view class="imginfo">
+        <view class="order">
+            <image src="http://oibl5dyji.bkt.clouddn.com/20170926202900.png" wx:if="{{Aindex==0}}"></image>
+            <image src="http://oibl5dyji.bkt.clouddn.com/20170926202904.png" wx:elif="{{Aindex==1}}"></image>
+            <image src="http://oibl5dyji.bkt.clouddn.com/20170926202901.png" wx:elif="{{Aindex==2}}"></image>
+            <view wx:else>
+                <text>No.</text>
+                <text>{{Aindex+1}}</text>
+            </view>
+        </view>
+        <view class="content">
+            <view catchtap="seebigpic" class="box" data-a="{{Aindex}}" data-b="{{index}}" wx:if="{{index<4}}" wx:for="{{item.pictures}}" wx:for-item="picitem" wx:key="{{index}}">
+                <image mode="aspectFill" src="{{picitem.thumbnail}}"></image>
+                <view class="imgMengCen" wx:if="{{item.pictures.length>4}}">
+                    <text>+{{item.pictures.length}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

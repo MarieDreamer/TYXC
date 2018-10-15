@@ -1,0 +1,16 @@
+<view class="publish-section">
+    <view class="publish-section-title" wx:if="{{false}}">
+        <view class="publish-list">
+            <image class="pl-icon" mode="aspectFill" src="{{ICON.WRITE}}"></image>
+            <view class="pl-text">
+                <text class="pl-title">留下美好回忆</text>
+            </view>
+        </view>
+    </view>
+    <view class="publish-section-content">
+        <textarea bindinput="inputText" class="publish-textarea" maxlength="{{maxLength}}" placeholder="{{placeholder}}" placeholderClass="publish-placeholder">
+            <image class="publish-textarea-icon {{IOSHack?'ioshack':''}}" mode="aspectFit" src="{{ICON.WRITE_GRAY}}"></image>
+            <text class="publish-textarea-count">{{text.length}}/{{maxLength}}</text>
+        </textarea>
+    </view>
+</view>

@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "忆年共享相册",
+    "usingComponents": {
+        "content": "../../components/content/content"
+    }
+}

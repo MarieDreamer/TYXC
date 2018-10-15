@@ -1,0 +1,15 @@
+<view class="make-container">
+    <view class="pingtu-pic">
+        <image class="showPic" mode="aspectFill" src="{{imgPath}}" wx:if="{{imgPath.length>0}}"></image>
+        <image catchtap="chooseImg" class="addPic" src="http://oibl5dyji.bkt.clouddn.com/20170704103223.png" wx:else></image>
+    </view>
+    <view class="inputsection">
+        <form bindsubmit="modifypuzz">
+            <view class="inputBox">
+                <input class="inputPmt" name="text" placeholder="叫上亲朋好友来比比手速！" placeholderClass="p-holder" type="text"></input>
+                <image class="writePic" src="http://oibl5dyji.bkt.clouddn.com/20170704103222.png"></image>
+            </view>
+            <button class="submit" disabled="{{puzzid==0}}" formType="submit" style="background:{{puzzid!=0?'#333':'#cecece'}};">完成</button>
+        </form>
+    </view>
+</view>

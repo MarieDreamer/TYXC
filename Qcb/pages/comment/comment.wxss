@@ -1,0 +1,115 @@
+.pl-t {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background: #fff;
+    height: 115rpx;
+}
+
+.pl-t-l {
+    display: flex;
+    align-items: center;
+    padding-left: 25rpx;
+    font-size: 26rpx;
+}
+
+.pl-t image {
+    width: 70rpx;
+    height: 70rpx;
+    margin-right: 10rpx;
+}
+
+.ts {
+    font-size: 24rpx;
+    color: #cecece;
+    height: 80rpx;
+    border-top: 1px solid #cecece;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img {
+    width: 100%;
+    background: #fff;
+    padding: 50rpx 0 50rpx 50rpx;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.img-bg {
+    width: 160rpx;
+    height: 160rpx;
+    border: 1px solid #cecece;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;
+    margin: 0 .5%;
+}
+
+.img-bg image {
+    width: 100%;
+    height: 100%;
+}
+
+.ms {
+    width: 100%;
+    background: #fff;
+    border-top: 1px solid #cecece;
+    border-bottom: 1px solid #cecece;
+    height: 105rpx;
+}
+
+.ms-con {
+    padding: 0 25rpx;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 105rpx;
+    font-size: 26rpx;
+}
+
+.pj image {
+    width: 35rpx;
+    height: 35rpx;
+    margin-left: 10rpx;
+}
+
+.texta {
+    background: #fff;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.texta textarea {
+    width: 96%;
+    height: 200rpx;
+    padding: 20rpx 0;
+    font-size: 30rpx;
+}
+
+.foot {
+    background: #fff;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    bottom: 0;
+}
+
+.foot button {
+    background: #fe6702;
+    color: #fff;
+    width: 215rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    font-size: 30rpx;
+}

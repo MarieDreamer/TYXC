@@ -1,0 +1,97 @@
+.pl-t {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background: #fff;
+    height: 115rpx;
+}
+
+.pl-t-l {
+    display: flex;
+    align-items: center;
+    padding-left: 25rpx;
+    font-size: 26rpx;
+}
+
+.pl-t image {
+    width: 70rpx;
+    height: 70rpx;
+    border-radius: 50%;
+    margin-right: 10rpx;
+}
+
+.pl-t button {
+    height: 46rpx;
+    font-size: 24rpx;
+    line-height: 46rpx;
+    color: #fe6702;
+    border: 1px solid #fe6702;
+    background: none;
+    margin-right: 10px;
+}
+
+.pl-con {
+    background: #fff;
+    margin-top: 20rpx;
+    width: 100%;
+}
+
+.sppj-c {
+    padding: 0 25rpx;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.sppj-c-t {
+    padding: 25rpx 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.sppj-c-t image {
+    width: 70rpx;
+    height: 70rpx;
+    border-radius: 50%;
+    margin-right: 15rpx;
+}
+
+.sppj-c-t .pj {
+    margin-left: 45rpx;
+}
+
+.sppj-c-t .pj image {
+    width: 245rpx;
+    height: 45rpx;
+    border-radius: 0;
+}
+
+.sppj-c-t text {
+    font-size: 26rpx;
+}
+
+.sppj-c-c text {
+    font-size: 26rpx;
+    color: #333;
+}
+
+.sppj-c-i {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.sppj-c-i image {
+    width: 159rpx;
+    margin: 0 10rpx;
+}
+
+.sppj-c-d {
+    font-size: 24rpx;
+    color: #8c8c8c;
+    padding: 30rpx 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.sppj-c-d:last-child {
+    border-bottom: 0px;
+}

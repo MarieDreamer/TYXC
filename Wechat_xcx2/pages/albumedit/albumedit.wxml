@@ -1,0 +1,20 @@
+<!--pages/albumedit/albumedit.wxml-->
+<view>
+  <view class='change_album_name'>
+    <view>修改名称</view>
+    <input bindinput="change_album_name"></input>
+  </view>
+  <!-- <view class='change_album_user'>
+    <view class='change_album_user_title'>移交群主</view>
+    <picker bindchange="change_album_user_name" value="{{index}}" range="{{users_array}}">
+      <view class='change_album_user_name'>
+        {{users_array[index]}}
+      </view>
+    </picker>
+  </view>
+  <view class='change_album_url'>
+    <view class='change_album_url_title'>修改封面</view>
+    <view catchtap="change_album_url_name" class='change_album_url_name'>点击上传封面图片</view>
+  </view> -->
+  <view catchtap="album_exit" class='album_exit'>确认提交</view>
+</view>

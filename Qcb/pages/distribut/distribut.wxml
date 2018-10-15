@@ -1,0 +1,48 @@
+<view class="container">
+    <view style="width:100%">
+        <view class="member-intro">
+            <view class="flexed team-top">
+                <view class="team-top-lt">
+                    <image class="touxiang" src="{{head_pic}}"></image>
+                    <view class="user-name">{{nickname}}</view>
+                </view>
+                <view class="team-top-rt">
+                    <view class="team-number-title">粉丝总数：<text class="tps">{{allfans}}</text>人</view>
+                    <view bindtap="Assgn" class="team-assign" wx:if="{{is_distribut==0}}">申请成为个人合伙人</view>
+                </view>
+            </view>
+        </view>
+        <view class="flexed-3 jibie">
+            <text bindtap="onTap" class="different-identity {{onTab==index?'active':''}}" data-idx="{{index}}" wx:for="{{onbar}}">{{item}}</text>
+        </view>
+        <view class="navbar">
+            <navigator class="item {{type==1?'active':''}}" hoverClass="none" openType="redirect" url="/pages/distribut/distribut?type=1">直推粉丝</navigator>
+            <navigator class="item {{type==2?'active':''}}" hoverClass="none" openType="redirect" url="/pages/distribut/distribut?type=2">间推粉丝</navigator>
+        </view>
+        <view>
+            <view class="agent">
+                <view class="agent-item flexed" hoverClass="none" wx:for="{{lists}}" wx:for-item="list" wx:key="key">
+                    <view class="agent-item-lt">
+                        <image class="first-img" src="{{list.head_pic}}"></image>
+                        <image class="second-img" src="https://cc.hohiw.com/xcximg/daili.png" wx:if="{{level>1}}"></image>
+                    </view>
+                    <view class="agent-item-mid">
+                        <view class="agent-item-mid-view flexed-2">
+                            <text class="user-name-1">{{list.nickname}}</text>
+                            <text class="user-name-1" style="color:#E51C23;font-size:24rpx;"></text>
+                            <image src="https://cc.hohiw.com/xcximg/rentou.png"></image>
+                            <text class="days">{{list.persons}}</text>
+                        </view>
+                    </view>
+                </view>
+                <view class="weui-loadmore" style="display:{{more}}">
+                    <view class="weui-loading"></view>
+                    <view class="weui-loadmore__tips">正在加载</view>
+                </view>
+                <view class="weui-loadmore weui-loadmore_line" wx:if="{{listend==1}}">
+                    <view class="weui-loadmore__tips weui-loadmore__tips_in-line">我是有底线滴</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

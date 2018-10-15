@@ -1,0 +1,94 @@
+.example-text-erea {
+    height: 74rpx;
+    line-height: 74rpx;
+    font-size: 24rpx;
+    color: #b2b2b2;
+    padding: 0 25rpx;
+}
+
+.submit {
+    width: 100%;
+    height: 68rpx;
+    color: #fff;
+    font-size: 28rpx;
+}
+
+.active {
+    background-color: #ff6b01;
+    color: #333;
+}
+
+.tag-area {
+    box-sizing: border-box;
+    padding: 36rpx;
+    width: 100%;
+    margin-top: 20rpx;
+}
+
+.tag-title {
+    box-sizing: border-box;
+    padding: 0 6rpx;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tag-text {
+    color: rgb(51,51,51);
+    font-size: 36rpx;
+}
+
+.tag-name {
+    margin-top: 46rpx;
+}
+
+.tag-name text {
+    display: inline-block;
+    background-color: rgb(248,248,248);
+    width: 134rpx;
+    height: 66rpx;
+    border-radius: 37rpx;
+    font-size: 28rpx;
+    color: #333;
+    line-height: 66rpx;
+    text-align: center;
+    margin: 19rpx 23rpx;
+}
+
+.tag-name text:nth-of-type(1),.tag-name text:nth-of-type(5),.tag-name text:nth-of-type(9),.tag-name text:nth-of-type(13) {
+    margin-left: 0rpx;
+}
+
+.tag-name text:nth-of-type(4),.tag-name text:nth-of-type(8),.tag-name text:nth-of-type(12) {
+    margin-right: 0rpx;
+}
+
+.tag-name .back {
+    background: #ff6b01;
+    color: #333;
+    border-color: #fff175;
+}
+
+.creatsharebtn {
+    width: 690rpx;
+    height: 88rpx;
+    line-height: 88rpx;
+    margin: 0 auto;
+    border-radius: 46rpx;
+    background: #cecece url(http://oibl5dyji.bkt.clouddn.com/20180109110821.png) center center no-repeat;
+    background-size: 238rpx 32rpx;
+}
+
+.active {
+    background-color: #ff6b01;
+    color: #333;
+}
+
+.album_name{
+  text-align: center;
+  width: 690rpx;
+  height: 88rpx;
+  border-radius: 44rpx;
+}

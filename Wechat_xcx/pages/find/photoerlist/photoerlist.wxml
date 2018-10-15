@@ -1,0 +1,36 @@
+<view class="mydata">
+    <view>
+        <image mode="aspectFill" src="{{photolist[0].upic}}"></image>
+        <image src="http://oibl5dyji.bkt.clouddn.com/20170926202902.png"></image>
+    </view>
+    <view>
+        <text class="myname">{{photolist[0].unickname}}</text>
+        <text>我的排名：{{photolist[0].rowNo}}</text>
+    </view>
+    <view>
+        <text>{{photolist[0].cnt}}</text>
+        <image src="http://oibl5dyji.bkt.clouddn.com/20170926202903.png"></image>
+    </view>
+</view>
+<view class="photolist">
+    <view class="template" wx:if="{{index>0}}" wx:for="{{photolist}}">
+        <view class="index">
+            <image src="http://oibl5dyji.bkt.clouddn.com/20170926202900.png" wx:if="{{index==1}}"></image>
+            <image src="http://oibl5dyji.bkt.clouddn.com/20170926202904.png" wx:elif="{{index==2}}"></image>
+            <image src="http://oibl5dyji.bkt.clouddn.com/20170926202901.png" wx:elif="{{index==3}}"></image>
+            <view class="num" wx:else>
+                <text>{{index}}</text>
+            </view>
+        </view>
+        <view class="desc">
+            <view>
+                <image mode="aspectFill" src="{{item.upic}}"></image>
+                <text class="myname {{item.euserid==userid?'red':''}}">{{item.unickname}}</text>
+            </view>
+            <view>
+                <text>{{item.cnt}}</text>
+                <image src="http://oibl5dyji.bkt.clouddn.com/20170926202903.png"></image>
+            </view>
+        </view>
+    </view>
+</view>

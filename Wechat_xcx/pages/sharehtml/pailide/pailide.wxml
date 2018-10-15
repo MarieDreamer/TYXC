@@ -1,0 +1,56 @@
+<view class="pld-container">
+    <view class="main">
+        <view class="main-top">
+            <view class="top-left">
+                <image src="http://oibl5dyji.bkt.clouddn.com/20170717132826.png"></image>
+            </view>
+            <view class="top-right">
+                <image src="http://oibl5dyji.bkt.clouddn.com/20170717132821.png"></image>
+            </view>
+        </view>
+        <view class="main-img">
+            <image class="mainBigImg" mode="aspectFill" src="{{dataList.eVerifyPic?dataList.eVerifyPic:'http://oibl5dyji.bkt.clouddn.com/20170612110421.png'}}"></image>
+            <view class="positionBox">
+                <view catchtap="introAlert" class="positionText" wx:if="{{sucessState&&dataList.etext}}">
+                    <image class="ellipseImg" src="http://oibl5dyji.bkt.clouddn.com/20170717ellipse.png"></image>
+                    <image class="lgPic" src="http://oibl5dyji.bkt.clouddn.com/20170717opentext.png"></image>
+                    <text class="introText">{{dataList.etext}}</text>
+                </view>
+                <view catchtap="introAlert" class="positionLuy" wx:if="{{sucessState&&dataList.eaudio}}">
+                    <image class="ellipseImg" src="http://oibl5dyji.bkt.clouddn.com/20170717ellipse.png"></image>
+                    <image class="lgPic" src="http://oibl5dyji.bkt.clouddn.com/20170717openyuy.png"></image>
+                    <text class="introText">有一段录音</text>
+                </view>
+                <view catchtap="introAlert" class="positionPic" wx:if="{{sucessState&&dataList.picList.length>0}}">
+                    <image class="ellipseImg" src="http://oibl5dyji.bkt.clouddn.com/20170717ellipse.png"></image>
+                    <image class="lgPic" src="http://oibl5dyji.bkt.clouddn.com/20170717openpic.png"></image>
+                    <text class="introText">已添加<text>{{dataList.picList.length}}</text>张照片</text>
+                </view>
+                <view catchtap="introAlert" class="positionPack" wx:if="{{sucessState&&dataList.redEnvelopInfo}}">
+                    <image class="ellipseImg" src="http://oibl5dyji.bkt.clouddn.com/20170717ellipse.png"></image>
+                    <image class="lgPic" src="http://oibl5dyji.bkt.clouddn.com/20170717openpack.png"></image>
+                    <text class="introText">已藏入一个红包</text>
+                </view>
+            </view>
+            <image catchtap="takePic" class="takePic" src="http://oibl5dyji.bkt.clouddn.com/20170717132827.png" wx:if="{{!sucessState}}"></image>
+        </view>
+    </view>
+    <view class="funcIntro">
+        <image class="positionImg" src="http://oibl5dyji.bkt.clouddn.com/20170717132823.png"></image>
+        <view class="introContent">
+            <image src="{{sucessState?'http://oibl5dyji.bkt.clouddn.com/20170719174121.png':'http://oibl5dyji.bkt.clouddn.com/20170719174122.png'}}"></image>
+        </view>
+        <view class="introPlay">
+            <image src="{{sucessState?'http://oibl5dyji.bkt.clouddn.com/20170719174123.png':'http://oibl5dyji.bkt.clouddn.com/20170719174124.png'}}"></image>
+        </view>
+    </view>
+    <view class="downLoadYN" wx:if="{{showpuzze}}">
+        <image catchtap="showAudioModel" src="http://oibl5dyji.bkt.clouddn.com/20170717132824.png"></image>
+    </view>
+</view>
+<view class="audioModel" wx:if="{{showAudioModelBox}}">
+    <view class="audioMainBox">
+        <image class="audioIntroPic" src="http://oibl5dyji.bkt.clouddn.com/201706291327212.png"></image>
+        <image catchtap="closeAudioBox" class="closeAudioBox" src="http://oibl5dyji.bkt.clouddn.com/20170629132721.png"></image>
+    </view>
+</view>

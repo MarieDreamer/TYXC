@@ -1,0 +1,195 @@
+.help-container {
+    padding-bottom: 108rpx;
+}
+
+.onLineService {
+    width: 750rpx;
+    box-sizing: border-box;
+    padding: 16rpx 20rpx 60rpx;
+}
+
+.bgline {
+    width: 750rpx;
+    height: 16rpx;
+    background: #f0eff6;
+}
+
+.headerTitle {
+    width: 100%;
+    height: 40rpx;
+    display: flex;
+    align-items: center;
+}
+
+.headerTitle view {
+    background: #fae100;
+    width: 6rpx;
+    height: 34rpx;
+    margin-right: 16rpx;
+}
+
+.headerTitle text {
+    font-size: 28rpx;
+    color: #333;
+    font-weight: bold;
+}
+
+.textIntroduce {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 42rpx;
+}
+
+.textIntroduce text:nth-child(1) {
+    font-size: 24rpx;
+    color: #999;
+    line-height: 33rpx;
+}
+
+.textIntroduce text:nth-child(2) {
+    font-size: 28rpx;
+    color: #666;
+    line-height: 40rpx;
+    margin-top: 4rpx;
+}
+
+.contactWay {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 40rpx;
+}
+
+.itemWayBox {
+    width: 312rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.itemWayBox image {
+    width: 95rpx;
+    height: 75rpx;
+    vertical-align: bottom;
+}
+
+.itemWayBox .textName {
+    font-size: 32rpx;
+    color: #333;
+    line-height: 45rpx;
+    margin-top: 48rpx;
+    font-weight: 600;
+}
+
+.itemWayBox .textContent {
+    font-size: 32rpx;
+    color: #666;
+    line-height: 45rpx;
+    font-weight: 600;
+}
+
+.itemWayBox view {
+    width: 312rpx;
+    height: 68rpx;
+    text-align: center;
+    line-height: 68rpx;
+    color: #666;
+    font-size: 24rpx;
+    border-radius: 70rpx;
+    background: #ff6b01;
+    margin-top: 28rpx;
+}
+
+.commonProblems {
+    width: 750rpx;
+    box-sizing: border-box;
+    padding: 16rpx 20rpx 0;
+}
+
+.allProblemsBox {
+    padding: 24rpx 0 0;
+}
+
+.itemProblemBox {
+    width: 710rpx;
+    box-sizing: border-box;
+    padding: 0 20rpx;
+    border: 1rpx solid #e0e0e0;
+    border-radius: 4rpx;
+    margin-bottom: 16rpx;
+}
+
+.itemProblem {
+    position: relative;
+    width: 100%;
+    padding: 20rpx 0;
+}
+
+.itemProblem image {
+    position: absolute;
+    top: 24rpx;
+    right: 5rpx;
+    width: 32rpx;
+    height: 32rpx;
+}
+
+.problemTextBox {
+    width: 610rpx;
+    display: flex;
+}
+
+.problemTextBox text {
+    font-size: 30rpx;
+    color: #666;
+    line-height: 42rpx;
+}
+
+.itemAnswer {
+    border-top: 1rpx solid #e0e0e0;
+    display: flex;
+    padding: 20rpx 0;
+}
+
+.itemAnswer_show {
+    height: auto;
+    padding: 20rpx 0;
+}
+
+.itemAnswer text {
+    color: #333;
+    font-size: 28rpx;
+    line-height: 40rpx;
+}
+
+.isActive {
+    background: #f5f5f5;
+}
+
+.isActive .problemTextBox text {
+    color: #999;
+}
+
+.customerService {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 750rpx;
+    height: 108rpx;
+}
+
+.customerService button {
+    background: #ff6b01;
+    border-radius: 4rpx;
+    width: 710rpx;
+    height: 68rpx;
+    line-height: 68rpx;
+    font-size: 30rpx;
+    color: #333;
+}

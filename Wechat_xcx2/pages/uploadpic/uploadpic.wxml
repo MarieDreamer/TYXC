@@ -1,0 +1,43 @@
+<view class="container">
+    <view class="section">
+        <form bindsubmit="formSubmit" report-submit="true">
+            <view class="main-section" style="height:40rpx">
+                <input style="width:100%;text-align: center;" name="title" placeholder="回忆的标题" placeholderStyle="color:#999;"></input>
+            </view>
+            <view class="main-section">
+                <view class="textIcon">
+                    <image src="http://oibl5dyji.bkt.clouddn.com/20170913111425.png" style="margin-top:{{sys=='iOS'?16:0}}rpx;"></image>
+                </view>
+                <textarea name="text" placeholder="留下美好回忆" placeholderStyle="color:#999;"></textarea>
+            </view>
+            <view class="subPlace">
+                <navigator class="eplacecontainer">
+                    <icon class="icon_place"></icon>
+                    <text class="text-place">{{address}}</text>
+                    <icon class="icon_arr"></icon>
+                </navigator>
+            </view>
+            <!-- <view catchtap="toUploadSync" class="syncPic">
+                <image class="syncLogo" src="http://oibl5dyji.bkt.clouddn.com/20170913111426.png"></image>
+                <view class="picName">
+                    <text>{{nameString?nameString:'同步到其它相册'}}</text>
+                </view>
+                <image class="syncDir" src="http://oibl5dyji.bkt.clouddn.com/20170913111421.png"></image>
+            </view> -->
+            <view class="subbtn {{isIphonex?'padIphoneX':''}}">
+                <button class="{{img_url.length>0?'hasPic':''}}" formType="submit">开始上传</button>
+            </view>
+        </form>
+    </view>
+    <view class="subpic {{isIphonex?'padd_x':''}}">
+        <view catchtap="addpic" class="picitem add">
+            <view class="addicon">
+                <image src="/images/icon/add_pic.png"></image>
+            </view>
+        </view>
+        <view class="picitem" wx:for="{{img_url}}" wx:key="{{index}}">
+            <image data-src="{{item}}" mode="aspectFill" src="{{item}}"></image>
+            <icon catchtap="picpdelete" class="delete" data-index="{{index}}"></icon>
+        </view>
+    </view>
+</view>

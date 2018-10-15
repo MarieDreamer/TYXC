@@ -1,0 +1,10 @@
+<view class="container">
+    <form bindsubmit="creategroup">
+        <view class="input_section">
+            <input bindinput="setcolor" class="inputerea" name="groupname" placeholder="请输入地理位置" placeholderStyle="color:#888888"></input>
+        </view>
+        <view class="btn-area">
+            <button class="submit {{buttonactive?'active':'disabled'}}" formType="submit">确认</button>
+        </view>
+    </form>
+</view>

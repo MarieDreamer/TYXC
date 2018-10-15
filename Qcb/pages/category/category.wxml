@@ -1,0 +1,69 @@
+<view class="container">
+    <view class="page__bd">
+        <view class="weui-search-bar">
+            <view class="weui-search-bar__form">
+                <view class="weui-search-bar__box">
+                    <icon class="weui-icon-search_in-box" size="14" type="search"></icon>
+                    <input bindinput="inputTyping" class="weui-search-bar__input" focus="{{inputShowed}}" placeholder="搜索您喜欢的商品" type="text" value="{{inputVal}}"></input>
+                    <view bindtap="clearInput" class="weui-icon-clear" wx:if="{{inputVal.length>0}}">
+                        <icon size="14" type="clear"></icon>
+                    </view>
+                </view>
+                <label bindtap="showInput" class="weui-search-bar__label" hidden="{{inputShowed}}">
+                    <icon class="weui-icon-search" size="14" type="search"></icon>
+                    <view class="weui-search-bar__text">搜索您喜欢的商品</view>
+                </label>
+            </view>
+            <view bindtap="hideInput" class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}">取消</view>
+        </view>
+        <view class="weui-cells searchbar-result" style="display:none" wx:if="{{inputVal.length>0}}">
+            <navigator class="weui-cell" hoverClass="weui-cell_active" url="">
+                <view class="weui-cell__bd">
+                    <view>实时搜索文本</view>
+                </view>
+            </navigator>
+            <navigator class="weui-cell" hoverClass="weui-cell_active" url="">
+                <view class="weui-cell__bd">
+                    <view>实时搜索文本</view>
+                </view>
+            </navigator>
+            <navigator class="weui-cell" hoverClass="weui-cell_active" url="">
+                <view class="weui-cell__bd">
+                    <view>实时搜索文本</view>
+                </view>
+            </navigator>
+            <navigator class="weui-cell" hoverClass="weui-cell_active" url="">
+                <view class="weui-cell__bd">
+                    <view>实时搜索文本</view>
+                </view>
+            </navigator>
+        </view>
+    </view>
+    <view class="category-con">
+        <view class="navbar">
+            <text bindtap="GoReLaunch" class="item" data-url="/pages/goodsList/goodsList">所有商品</text>
+            <text bindtap="navbarTap" class="item {{vo.selected==1?'active':''}}" data-idx="{{index}}" wx:for="{{category}}" wx:for-item="vo" wx:key="key">{{vo.name}}</text>
+        </view>
+        <view class="category-con-lt">
+            <view class="banner" wx:for="{{adv}}" wx:for-item="ad" wx:key="key">
+                <navigator openType="{{ad.target==0?'redirect':''}}" url="{{ad.ad_link}}">
+                    <image class="banner-img" src="{{ad.ad_code}}"></image>
+                </navigator>
+            </view>
+            <view style="display:{{vo.selected==1?'':'none'}}" wx:for="{{category}}" wx:for-item="vo" wx:key="key">
+                <view class="category-con-lt-c">
+                    <view class="list" wx:for="{{vo.child}}" wx:for-item="v" wx:key="k">
+                        <navigator url="/pages/goodslist/goodslist?id={{v.id}}">
+                            <image src="{{v.image}}"></image>
+                        </navigator>
+                        <navigator url="/pages/goodslist/goodslist?id={{v.id}}">
+                            <text>{{v.name}}</text>
+                        </navigator>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<import src="/pages/template/tabbar.wxml"></import>
+<template is="tabBar" data="{{tabBar:bindData.tabBar}}"></template>

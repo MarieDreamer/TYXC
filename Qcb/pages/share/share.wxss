@@ -1,0 +1,53 @@
+page {
+    background: #fff;
+}
+
+page,.container {
+    height: 100%;
+    position: relative;
+}
+
+.beijing {
+    width: 100%;
+}
+
+.QR-code {
+    position: absolute;
+    top: 62%;
+    width: 400rpx;
+    height: 400rpx;
+}
+
+.nkn {
+    position: absolute;
+    top: 28%;
+    left: -200rpx;
+    width: 400rpx;
+    height: 80rpx;
+    color: yellow;
+    text-align: center;
+    margin-left: 50%;
+}
+
+.nkn2 {
+    position: absolute;
+    top: 365rpx;
+    left: -200rpx;
+    margin-left: 50%;
+    width: 400rpx;
+    height: 40rpx;
+    color: #fff;
+    font-size: 30rpx;
+    text-align: center;
+}
+
+.pic {
+    position: absolute;
+    top: 15%;
+    left: -75rpx;
+    margin-left: 50%;
+    width: 150rpx;
+    height: 150rpx;
+    border-radius: 50%;
+    overflow: hidden;
+}

@@ -1,0 +1,7 @@
+{
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "publish-menu": "/pages/components/publishMenu/publishMenu",
+        "menu-modal": "/pages/components/menuModal/menuModal"
+    }
+}

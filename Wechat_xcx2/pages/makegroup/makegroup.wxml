@@ -1,0 +1,17 @@
+<view class="mk-container">
+    <view animation="{{animationData}}" class="tag-area">
+        <view class="tag-title">
+            <text class="tag-text">请选择相册的类型</text>
+        </view>
+        <!-- <view class="tag-name">
+            <text catchtap="setname" class="{{item.back?'back':''}}" data-id="{{item.id}}" data-index="{{index}}" wx:for="{{tags}}" wx:key="{{index}}">{{item.tag}}</text>
+        </view> -->
+         <view class="tag-name">
+            <text catchtap="setname" class="{{item[1]?'back':''}}" wx:for="{{album_class}}" wx:key="{{index}}" data-id="{{item[2]}}">{{item[0]}}</text>
+        </view>
+        <input wx:if="{{dataId}}" bindinput="album_name" class='album_name' placeholder="请输入相册名称" auto-focus></input>
+    </view>
+</view>
+<form bindsubmit="creategroup" reportSubmit="true" >
+    <button class="submit creatsharebtn {{dataId?'active':''}}" formType="submit"></button>
+</form>

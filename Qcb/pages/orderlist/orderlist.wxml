@@ -1,0 +1,46 @@
+<view class="container">
+    <view class="category-con">
+        <view class="navbar">
+            <text bindtap="GoUrl" class="item {{type==''?'active':''}}" data-type="redirect" data-url="/pages/orderlist/orderlist">所有订单</text>
+            <text bindtap="GoUrl" class="item {{type=='WAITPAY'?'active':''}}" data-type="redirect" data-url="/pages/orderlist/orderlist?type=WAITPAY">待付款</text>
+            <text bindtap="GoUrl" class="item {{type=='WAITSEND'?'active':''}}" data-type="redirect" data-url="/pages/orderlist/orderlist?type=WAITSEND">待发货</text>
+            <text bindtap="GoUrl" class="item {{type=='WAITRECEIVE'?'active':''}}" data-type="redirect" data-url="/pages/orderlist/orderlist?type=WAITRECEIVE">待收货</text>
+            <text bindtap="GoUrl" class="item {{type=='WAITCCOMMENT'?'active':''}}" data-type="redirect" data-url="/pages/orderlist/orderlist?type=WAITCCOMMENT" wx:if="{{is_comment==1}}">待评价</text>
+        </view>
+        <view class="category-con-c">
+            <view class="list" wx:for="{{lists}}" wx:for-item="list" wx:key="key">
+                <view bindtap="GoUrl" class="list-t" data-url="/pages/orderdetail/orderdetail?id={{list.order_id}}">
+                    <text>订单号：{{list.order_sn}}</text>
+                    <label wx:if="{{list.guess_btn!=1}}">{{list.guess_status}} </label> {{list.pay_status==1&&(list.guess_btn==2||list.guess_btn==3)?'|':''}} <label>{{list.order_status_desc}}</label>
+                </view>
+                <view bindtap="GoUrl" class="list-c" data-url="/pages/orderdetail/orderdetail?id={{list.order_id}}" wx:for="{{list.goods_list}}" wx:for-item="goods" wx:key="k">
+                    <image class="pic" src="{{goods.goods_img}}"></image>
+                    <view class="list-c-rt">
+                        <text class="title">{{goods.goods_name}}</text>
+                        <text class="spec" wx:if="{{goods.spec_key_name!=''}}">{{goods.spec_key_name}}</text>
+                        <text class="price">￥{{goods.member_goods_price}}</text>
+                    </view>
+                </view>
+                <view class="list-d" wx:if="{{list.cancel_btn==1||list.pay_btn==1||list.receive_btn==1||list.comment_btn==1||list.guess_btn>0}}">
+                    <button bindtap="CancelOrder" class="btn default" data-id="{{list.order_id}}" wx:if="{{list.cancel_btn==1}}">取消订单</button>
+                    <button bindtap="GoUrl" class="btn red" data-url="/pages/guess/guess?id={{list.order_id}}" wx:if="{{list.guess_btn==1}}">去猜奖</button>
+                    <button bindtap="GoUrl" class="btn red" data-url="/pages/cue/cue?id={{list.order_id}}" wx:if="{{list.guess_btn==2}}">免单查询</button>
+                    <button bindtap="GoUrl" class="btn red" data-url="/pages/guess/guess?id={{list.order_id}}" wx:if="{{list.guess_btn==3}}">免单查询</button>
+                    <button bindtap="PayOrder" class="btn red" data-id="{{list.order_id}}" wx:if="{{list.pay_btn==1}}">去付款</button>
+                    <button bindtap="ReciveOrder" class="btn red" data-id="{{list.order_id}}" wx:if="{{list.receive_btn==1}}">确认收货</button>
+                    <button bindtap="HandleOrder" class="btn red" data-url="/pages/comment_list/comment_list?status=0&order_id={{list.order_id}}" wx:if="{{list.comment_btn==1&&is_comment==1}}">去评价</button>
+                </view>
+            </view>
+            <view class="weui-loadmore" style="display:{{more}}">
+                <view class="weui-loading"></view>
+                <view class="weui-loadmore__tips">正在加载</view>
+            </view>
+            <view class="weui-loadmore weui-loadmore_line" wx:if="{{listend==1}}">
+                <view class="weui-loadmore__tips weui-loadmore__tips_in-line">我是有底线滴</view>
+            </view>
+            <view class="occupy"></view>
+        </view>
+    </view>
+</view>
+<import src="../template/tabbar.wxml"></import>
+<template is="tabBar" data="{{tabBar:bindData.tabBar}}"></template>

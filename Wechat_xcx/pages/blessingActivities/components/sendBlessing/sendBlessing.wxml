@@ -1,0 +1,22 @@
+<view class="send_blessing" wx:if="{{show}}">
+    <view class="sb-body">
+        <view class="sb-body-close">
+            <image catchtap="close" class="sb-body-close-icon" src="{{ICON.CLOSE_L}}"></image>
+        </view>
+        <view class="sb-body-main">
+            <view class="sb-bm-title">赠送小心心</view>
+            <view class="sb-bm-desc">请编辑或选择你要对宝宝说的话</view>
+            <view class="sb-bm-enter {{selectedIndex==-2?'sb-bm-enter-selected':''}}">
+                <image class="sb-bm-input-icon" src="{{ICON.PLUS_LIGHT}}"></image>
+                <input bindfocus="onFocus" bindinput="onInput" class="sb-bm-input" maxlength="6" placeholder="点击输入你想对宝宝说的话" placeholderClass="sb-bm-input-placeholder"></input>
+                <text class="sb-bm-input-count">{{value.length}}/6</text>
+            </view>
+            <scroll-view class="sb-bm-scroll" scrollX="{{false}}" scrollY="{{true}}">
+                <view class="sb-bm-list">
+                    <view catchtap="selectBlessing" class="sb-bm-list-item {{selectedIndex===index?'sb-bm-list-item-active':''}}" data-index="{{index}}" wx:for="{{defaultBlessing}}" wx:key="{{index}}">{{item}}</view>
+                </view>
+            </scroll-view>
+            <view catchtap="_sendBlessing" class="sb-bm-btn">点击赠送小心心</view>
+        </view>
+    </view>
+</view>

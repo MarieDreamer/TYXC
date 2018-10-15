@@ -1,0 +1,17 @@
+.helpshow_con {
+    margin: 24rpx 0;
+    background: #fff;
+    padding: 24rpx;
+}
+
+.helpshow_title {
+    font-size: 30rpx;
+    line-height: 60rpx;
+    display: flex;
+    justify-content: center;
+}
+
+.helpshow_content {
+    font-size: 26rpx;
+    line-height: 52rpx;
+}

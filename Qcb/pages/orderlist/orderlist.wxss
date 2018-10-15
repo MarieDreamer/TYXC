@@ -1,0 +1,160 @@
+.weui-search-bar {
+    width: 100%;
+    border: 0;
+    background-color: #fff;
+}
+
+.weui-search-bar__form {
+    background: #efeff4;
+    border-radius: 30rpx;
+    border: 0;
+}
+
+.weui-search-bar__label {
+    background: #efeff4;
+    border-radius: 30rpx;
+    border: 0;
+}
+
+.category-con {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+    font-size: 26rpx;
+}
+
+.navbar {
+    width: 100%;
+    height: 80rpx;
+    flex: none;
+    display: flex;
+    background: #fff;
+    margin-bottom: 4rpx;
+    justify-content: space-around;
+}
+
+.navbar .item {
+    text-align: center;
+    line-height: 80rpx;
+    font-size: 26rpx;
+}
+
+.navbar .item.active {
+    color: #F23030;
+    background: #fff;
+    border-bottom: 6rpx solid #F23030;
+}
+
+.category-con-c {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.category-con-lt-c {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.list {
+    width: 100%;
+    background: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 10rpx;
+}
+
+.list-t {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20rpx;
+    font-size: 24rpx;
+    height: 70rpx;
+}
+
+.list-t label {
+    color: #F23030;
+}
+
+.list-c {
+    width: 100%;
+    height: 180rpx;
+    padding: 0 20rpx;
+    display: flex;
+    align-items: center;
+    background: #F7F7F8;
+    margin-bottom: 2rpx;
+}
+
+.list-c .pic {
+    width: 152rpx;
+    height: 166rpx;
+}
+
+.list-c-rt {
+    padding-left: 10rpx;
+    display: flex;
+    flex-wrap: wrap;
+    width: 79%;
+}
+
+.list-c-rt .title {
+    width: 100%;
+    height: 70rpx;
+    display: block;
+    font-size: 26rpx;
+    color: #333;
+}
+
+.list-c-rt .spec {
+    width: 100%;
+    display: block;
+    font-size: 22rpx;
+    color: #999;
+}
+
+.list-c-rt .price {
+    width: 100%;
+    display: block;
+    font-size: 32rpx;
+    color: #F23030;
+}
+
+.list-d {
+    width: 100%;
+    height: 100rpx;
+    padding: 0 20rpx;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.list-d button {
+    margin: 10rpx;
+    width: 140rpx;
+    height: 50rpx;
+    padding: 0;
+    font-size: 24rpx;
+    background: rgba(255,255,255,0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button::after {
+    border: none;
+}
+
+.default {
+    border: 1rpx solid #F0f0f2;
+    color: #666666;
+}
+
+.red {
+    border: 1rpx solid #F23030;
+    color: #F23030;
+}

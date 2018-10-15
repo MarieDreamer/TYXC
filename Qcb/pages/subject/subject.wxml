@@ -1,0 +1,31 @@
+<form bindsubmit="formSubmit" style="display:{{show==''?'none':''}}">
+    <view class="container">
+        <view class="list-con">
+            <view class="list">
+                <text>联  系  人 ：</text>
+                <input bindblur="KeyInput" bindinput="KeyInput" data-name="realname" value="{{formData.realname}}"></input>
+            </view>
+            <view class="list">
+                <text>手机号码：</text>
+                <input bindblur="KeyInput" bindinput="KeyInput" data-name="mobile" value="{{formData.mobile}}"></input>
+            </view>
+        </view>
+        <view class="list-d">
+            <view class="list-d-lt ">
+                <image bindtap="SelectChange" src="https://cc.hohiw.com/xcximg/xz.png" wx:if="{{formData.is_assign==1}}"></image>
+                <image bindtap="SelectChange" src="https://cc.hohiw.com/xcximg/wxz.png" wx:if="{{formData.is_assign==0}}"></image>
+                <view>我已阅读<text bindtap="showTan">《代理协议》</text>
+                </view>
+            </view>
+        </view>
+        <view class="but">
+            <button formType="submit">申请提交</button>
+        </view>
+    </view>
+</form>
+<view class="tc" style="display:{{show}}">
+    <text>代理协议</text>
+    <view class="textarea">  5·1、代理人应采取适当方式了解当地订货人的支付能力并协助制造商收回应付货款。通常的索款及协助收回应付货款的开支应由制造商负担。 　　5·2、未经同意，代理人无权也无义务以制造商的名义接受付款。 　　第六条用户意见 　　代理人有权接受用户对产品的意见和申诉，及时通知制造商并关注制造商的切身利益。 　　第七条提供信息 　　代理人应尽力向制造商提供商品的市场和竞争等方面的信息，每____个月需向制造商寄送工作报告。 　　第八条正当竞争 　　8·1、代理人不应与制造商或帮助他人与制造商竞争，代理人更不应制造代理产品或类似于代理的产品，也不应从与制造商竞争的任何企业中获利。同时，代理人不应代理或销售与代理产品相同或类似的任何产品。 　　8·2、此合约一经生效，代理人应将与其他企业签订的有约束性的协议告知制造商。不论是作为代理的或经销的，此后再签定的任何协议均应告之制造商，代理人在进行其他活动时，决不能忽视其对制造商承担的义务而影响任务的完成。 　
+  </view>
+    <button bindtap="HideTan">我已阅读并同意该协议</button>
+</view>

@@ -1,0 +1,58 @@
+<view class="container">
+    <view style="width:100%">
+        <view class="member-intro">
+            <view class="flexed team-top">
+                <view class="team-number">¥{{user.order_amount}}</view>
+                <view class="team-number-title" style="width:50%">消费总额</view>
+            </view>
+            <view class="flexed team-top">
+                <view class="team-number">¥{{user.jie_amount}}</view>
+                <view class="team-number-title">可结算金额</view>
+            </view>
+        </view>
+        <view class="flexed-3 jibie">
+            <text bindtap="onTap" class="different-identity {{onTab==index?'active':''}}" data-idx="{{index}}" wx:for="{{onbar}}">{{item}}</text>
+        </view>
+        <view class="sort-list">
+            <view class="filterList-sort-list">
+                <view style="display:flex;align-items:center">
+                    <view class="section">
+                        <picker bindchange="bindDateChange" data-name="start" mode="date" value="{{start}}">
+                            <view class="picker">{{start}}</view>
+                        </picker>
+                    </view>
+                    <text>—</text>
+                    <view class="section">
+                        <picker bindchange="bindDateChange" data-name="end" mode="date" value="{{end}}">
+                            <view class="picker">{{end}}  </view>
+                        </picker>
+                    </view>
+                </view>
+                <button bindtap="GetShai" class="sx">筛选</button>
+            </view>
+        </view>
+        <view class="">
+            <view class="order-list" wx:for="{{lists}}" wx:for-item="vo" wx:key="key">
+                <image class="user-tx" src="{{vo.head_pic}}"></image>
+                <view class="order-list-l1">
+                    <text>{{vo.nickname}}</text>
+                    <text>{{vo.order_sn}}</text>
+                    <text class="time">{{vo.pay_time}}</text>
+                </view>
+                <view class="order-list-l2">
+            金额：¥{{vo.order_amount}}
+          </view>
+                <view class="order-list-l2">
+            结算：¥{{vo.jie_amount}}
+          </view>
+            </view>
+        </view>
+        <view class="weui-loadmore" style="display:{{more}}">
+            <view class="weui-loading"></view>
+            <view class="weui-loadmore__tips">正在加载</view>
+        </view>
+        <view class="weui-loadmore weui-loadmore_line" wx:if="{{listend==1}}">
+            <view class="weui-loadmore__tips weui-loadmore__tips_in-line">我是有底线滴</view>
+        </view>
+    </view>
+</view>

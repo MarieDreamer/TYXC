@@ -1,0 +1,66 @@
+<view class="discover-bottom">
+    <block>
+        <text class="newest-tip">你相册的最新照片都在这里显示哦!</text>
+        <view class="m-container" style="height:1000rpx">
+            <view class="hotActivity">
+                <!-- <view class="activityTop">
+                    <image class="activityLogo" src="http://oibl5dyji.bkt.clouddn.com/20170918140622.png"></image>
+                    <text class="introCont">235</text>
+                </view> -->
+                <!-- <view catchtap="toHuoDong" class="swiperBox">
+                    <swiper autoplay="{{true}}" circular="{{true}}" indicatorActiveColor="#fff175" indicatorColor="#cecece" indicatorDots="{{true}}">
+                        <swiper-item>
+                            <image class="slideImg" src="{{item}}"></image>
+                        </swiper-item>
+                    </swiper>
+                </view> -->
+            </view>
+            <view class="photoStream">
+                <view class="activityTop">
+                    <image class="activityLogo" src="http://oibl5dyji.bkt.clouddn.com/20170918140622.png"></image>
+                    <text class="introCont">最新照片</text>
+                </view>
+                <view class="streamLeftAndRight">
+                    <view class="streamLeft">
+                        <view catchtap="toEventDetail" class="itemImgBox" data-id='{{item.id}}' wx:for="{{result1}}" wx:key="{{index}}">
+                            <image mode="aspectFill" src="https://photo.toyshare.cn/{{item.url_first}}"></image>
+                            <image class="videoLogo" src="https://photo.toyshare.cn/{{item.url_first}}" wx:if="{{item.eMain==4}}"></image>
+                            <text class="gnametext" wx:if="{{item.title}}">{{item.title}}</text>
+                        </view>
+                    </view>
+                    <view class="streamRight">
+                        <view catchtap="toEventDetail" class="itemImgBox" data-id='{{item.id}}' wx:for="{{result2}}" wx:key="{{index}}">
+                            <image mode="aspectFill" src="https://photo.toyshare.cn/{{item.url_first}}"></image>
+                            <image class="videoLogo" src="https://photo.toyshare.cn/{{item.url_first}}" wx:if="{{item.eMain==4}}"></image>
+                            <text class="gnametext" wx:if="{{item.title}}">{{item.title}}</text>
+                        </view>
+                    </view>
+                </view>
+                <!-- <view class="streamLeftAndRight">
+                    <image class="no-pictures" src="http://oibl5dyji.bkt.clouddn.com/nopictures.png"></image>
+                </view> -->
+                <view class="skLoading" hidden="{{!showLoadMore}}">
+                    <image src="http://oibl5dyji.bkt.clouddn.com/skloading3.gif"></image>
+                    <text>加载中...</text>
+                </view>
+            </view>
+        </view>
+    </block>
+    <!-- <view class="newest_nocontent">
+        <image class="image_nocontent" src="http://oibl5dyji.bkt.clouddn.com/discover_newest_nocontent.png"></image>
+        <text class="nocontent_text01">暂无最新照片</text>
+        <text class="nocontent_text02">展示最新上传的照片</text>
+        <text class="nocontent_text03">您的所有相册没有最新照片</text>
+        <image catchtap="addgroup" class="iamge_createbtn" src="http://oibl5dyji.bkt.clouddn.com/discover_newest_button.png"></image>
+    </view> -->
+    <!-- <view class="loadingImg" hidden="{{loadImgState}}">
+        <image src="http://oibl5dyji.bkt.clouddn.com/loading-2.gif"></image>
+        <text>{{textArr[promptText]?textArr[promptText]:'精彩内容正在赶来...'}}</text>
+    </view> -->
+</view>
+<!-- <view class="playVideoModal">
+    <view class="playVideoBox">
+        <video poster="{{discoverData[0].hPcover}}" src="{{discoverData[0].hPic}}"></video>
+    </view>
+    <image catchtap="closePlayVideoModal" class="closePlayVideoModal" src="http://oibl5dyji.bkt.clouddn.com/20171111094622.png"></image>
+</view> -->

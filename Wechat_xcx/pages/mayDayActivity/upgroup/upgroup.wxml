@@ -1,0 +1,21 @@
+<view class="upgroup-container">
+    <view class="upgroup-header">
+        <text>选择您需要打印的照片上传到你的相册。那样我们才能为您打印哦。</text>
+    </view>
+    <view catchtap="toMake" class="upgroup-make">
+        <image src="http://oibl5dyji.bkt.clouddn.com/0423_makegroup.png"></image>
+    </view>
+    <view class="upgroup-list">
+        <view catchtap="selectGroup" class="upgroup-item" data-sel="{{index}}" wx:for="{{groupList}}" wx:key="{{index}}">
+            <view class="groupName-box">
+                <text>{{item.gname?item.gname:''}}</text>
+            </view>
+            <image src="http://oibl5dyji.bkt.clouddn.com/0423_avtived.png" wx:if="{{item.isActive==1}}"></image>
+        </view>
+    </view>
+    <view class="makesure-up">
+        <form bindsubmit="uppic">
+            <button formType="submit">确定上传</button>
+        </form>
+    </view>
+</view>

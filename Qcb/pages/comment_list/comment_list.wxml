@@ -1,0 +1,49 @@
+<view class="order-page">
+    <view class="topnavbox">
+        <navigator class="topnav-list" openType="redirect" url="/pages/comment_list/comment_list?status=0">
+            <label class="{{show.type0}}">待评价</label>
+        </navigator>
+        <navigator class="topnav-list" openType="redirect" url="/pages/comment_list/comment_list?status=1">
+            <label class="{{show.type1}}">已评价</label>
+        </navigator>
+    </view>
+    <view class="order-listmain">
+        <view class="order-listbox">
+            <view class="order-prodbox">
+                <view class="order-prodlist" wx:for="{{comment_list}}" wx:for-item="list" wx:key="key">
+                    <view class="order-goods">
+                        <view class="order-prodimg">
+                            <image class="order-prodpic" mode="aspectFill" src="{{list.goods_img}}"></image>
+                        </view>
+                        <view class="order-prodrt">
+                            <view class="order-prodname">{{list.goods_name}}</view>
+                            <view class="order-prodinfo" wx:if="{{list.spec_key_name}}">{{list.spec_key_name}}</view>
+                            <view class="order-price">￥{{list.member_goods_price}}</view>
+                        </view>
+                        <navigator class="order-comment" url="/pages/comment/comment?id={{list.rec_id}}" wx:if="{{list.is_comment==0}}">
+                            <button size="mini">评价商品</button>
+                        </navigator>
+                        <navigator class="order-comment" url="/pages/orderdetail/orderdetail?id={{list.order_id}}" wx:elif="{{list.is_comment!=0}}">
+                            <button size="mini">查看订单</button>
+                        </navigator>
+                        <view class="clear"></view>
+                    </view>
+                    <view class="order-topbox2" wx:if="{{list.is_comment==1}}">
+                        <view class="order-topleft">评价：</view>
+                        <view class="order-toprt2">
+                            <label>
+                                <image class="desc-start" src="https://cc.hohiw.com/xcximg/star{{list.goods_rank}}.png"></image>
+                            </label>
+                        </view>
+                        <view class="clear plcon">{{list.content}}</view>
+                        <view class="sppj-c-i">
+                            <image mode="widthFix" src="{{vo}}" wx:for="{{list.imgs}}" wx:for-item="vo" wx:key="key"></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<import src="../template/tabbar.wxml"></import>
+<template is="tabBar" data="{{tabBar:bindData.tabBar}}"></template>

@@ -1,0 +1,11 @@
+<view class="container">
+    <view class="synchronous" wx:if="{{from=='synchronous'}}">
+        <image src="http://oibl5dyji.bkt.clouddn.com/20170921162313.jpg"></image>
+    </view>
+    <view class="security" wx:elif="{{from=='security'}}">
+        <image src="/images/icon/20170921162316.jpg"></image>
+    </view>
+    <view class="aboutYiNian" wx:elif="{{from=='about'}}">
+        <image src="/images/icon/0307-aboutyinian.png"></image>
+    </view>
+</view>

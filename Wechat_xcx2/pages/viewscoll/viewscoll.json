@@ -1,0 +1,5 @@
+{
+    "navigationBarTitleText": "童忆共享相册",
+    "enablePullDownRefresh": true,
+    "onReachBottomDistance": 1000
+}

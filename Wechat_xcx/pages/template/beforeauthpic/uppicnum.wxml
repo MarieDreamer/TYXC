@@ -1,0 +1,28 @@
+<template name="uppicnum">
+    <view class="activity-uppicnum">
+        <view class="uppicnum-box">
+            <view class="uppicnum-title">
+                <image src="http://oibl5dyji.bkt.clouddn.com/0423_selected.png"></image>
+                <text>上传成功</text>
+            </view>
+            <view class="uppicnum-text">
+                <text>{{hasUploadNumTextTimeAxis}}</text>
+            </view>
+            <view class="uppicnum-btn">
+                <view catchtap="toGetPrize" class="uppicnum-btn-item">
+                    <text wx:if="{{isShare==0&&hasPicNum<30}}">返回活动</text>
+                    <text wx:elif="{{isShare==0&&hasPicNum>=30}}">分享+30张</text>
+                    <text wx:elif="{{isShare==1&&hasPicNum<30}}">返回活动</text>
+                    <text wx:elif="{{isShare==1&&hasPicNum>=30}}">立即打印</text>
+                </view>
+                <view catchtap="{{isShare==0&&hasPicNum>=30?'toGetPrize':'goOnUpload'}}" class="uppicnum-btn-item btn-item-select">
+                    <text wx:if="{{isShare==0&&hasPicNum>=30}}">立即打印</text>
+                    <text wx:else>继续上传</text>
+                </view>
+            </view>
+            <view catchtap="closeMayDayModal" class="uppicnum-close">
+                <image src="http://oibl5dyji.bkt.clouddn.com/0423_closeImg.png"></image>
+            </view>
+        </view>
+    </view>
+</template>

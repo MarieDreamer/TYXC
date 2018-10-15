@@ -1,0 +1,84 @@
+.select_member {
+    padding-bottom: 140rpx;
+}
+
+.sm-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 24rpx 30rpx;
+    font-size: 24rpx;
+    color: #999;
+}
+
+.sm-list {
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+}
+
+.sm-list-item {
+    height: 110rpx;
+    display: flex;
+    align-items: center;
+    font-size: 28rpx;
+    color: #333;
+}
+
+.sm-li-avatar {
+    width: 72rpx;
+    height: 72rpx;
+    border-radius: 50%;
+}
+
+.sm-li-nick {
+    padding-left: 26rpx;
+    flex: auto;
+}
+
+.sm-li-role {
+}
+
+.sm-li-select {
+    padding-left: 44rpx;
+    width: 44rpx;
+    height: 44rpx;
+}
+
+.sm-loading {
+    margin-top: 20rpx;
+    width: 100%;
+    text-align: center;
+}
+
+.sm-loading-img {
+    width: 171rpx;
+    height: 88rpx;
+}
+
+.sm-confirm {
+    box-sizing: border-box;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding-right: 30rpx;
+    padding-left: 30rpx;
+    width: 100%;
+    height: 140rpx;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+}
+
+.sm-confirm-btn {
+    width: 100%;
+    height: 80rpx;
+    line-height: 80rpx;
+    font-size: 30rpx;
+    color: #333;
+    border-radius: 40rpx;
+    background-color: #ffe500;
+}
+
+.sm-confirm-btn-disabled {
+    color: #fff;
+    background-color: #cecece;
+}

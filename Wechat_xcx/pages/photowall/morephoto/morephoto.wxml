@@ -1,0 +1,17 @@
+<scroll-view scrollY bindscroll="scrollTop" bindscrolltolower="photoageitem" lowerThreshold="300" style="height:100%;" wx:if="{{!showMonthTimeData}}">
+    <view class="walltop">
+        <image src="http://oibl5dyji.bkt.clouddn.com/iocn_allpic.png"></image>
+        <text>{{date}}</text>
+    </view>
+    <block wx:if="{{photopagedata_day.length>0}}">
+        <view class="photoageitem">
+            <view catchtap="{{pic.pMain==4?'seeBigVideo':''}}" class="photopageimgbox" data-url="{{pic.poriginal}}" wx:for="{{photopagedata_day}}" wx:for-index="picindex" wx:for-item="pic" wx:key="{{item.pid}}">
+                <image catchtap="{{pic.pMain!=4?'lookbigpic':''}}" data-picindex="{{picindex}}" data-picitemindex="{{picitemindex}}" lazyload="true" src="{{pic.pMain==4?pic.pcover:pic.thumbnail}}"></image>
+                <icon wx:if="{{pic.pMain==4}}"></icon>
+            </view>
+        </view>
+        <view class="btmPrompt">
+            <image src="http://oibl5dyji.bkt.clouddn.com/20171227133021.png"></image>
+        </view>
+    </block>
+</scroll-view>

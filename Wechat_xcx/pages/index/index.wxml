@@ -1,0 +1,179 @@
+<view class="topSearch">
+    <form bindsubmit="toSearch" class="serchBox" reportSubmit="true">
+        <button class="serchBox_btn" formType="submit">
+            <image src="http://oibl5dyji.bkt.clouddn.com/20170911161121.png"></image>
+            <view>点击输入相册名称搜索</view>
+        </button>
+    </form>
+    <form bindsubmit="toMsgCenter" class="msgBox" reportSubmit="true">
+        <button class="msgBox_btn" formType="submit">
+            <image class="msgPic" src="http://oibl5dyji.bkt.clouddn.com/0408_msg.png"></image>
+            <view class="msgRed" wx:if="{{showMsg.tx==1||showMsg.jf==1||showMsg.pl==1||showMsg.dz==1}}"></view>
+        </button>
+    </form>
+</view> 
+<!-- <image binderror="ufApiError" bindload="ufApiSuccess" src="{{ufApiImgUrl}}"></image> -->
+<view class="grouplist_container">
+    <view catchtap="toActivityPage" class="activity-banner">
+        <image mode="aspectFill" src="{{activityBanner.bannerurl}}"></image>
+    </view>
+    <view class="has-album">
+        <text>共享美好瞬间</text>
+        <text>和家人、朋友、同学共同存放照片</text>
+        <text>您可以根据任意主题创建相册,</text>
+        <text>相册中的照片将以原图保存，永不过期</text>
+        <view catchtap="fasttoknow" class="fasttoknow-hasalbum"></view>
+        <view catchtap="addgroup" class="creatmyalbum"></view>
+    </view>
+    <form bindsubmit="toActivityPage" class="activity-banner" reportSubmit="true">
+        <button class="activity-banner_btn" formType="submit">
+            <image mode="aspectFill" src="{{activityBanner.bannerurl}}"></image>
+        </button>
+    </form>
+    <view catchlongpress="showDelete" class="grouplist_item" data-mydata="{{item.gcreator}},{{item.groupid}}" wx:for="{{grouplist}}" wx:key="{{item.groupid}}">
+        <view catchtap="toGroupScoll" class="navter" data-groupid="{{item.groupid}}" data-grouptype="{{item.groupNewType}}">
+            <image class="groupimg" mode="aspectFill" src="{{item.gpic+'?imageView2/1/w/702/h/320'}}"></image>
+            <view class="mengcen">
+                <view class="groupInfo">
+                    <view class="groupname">
+                        <text>{{item.gname}}</text>
+                    </view>
+                    <view class="info">
+                        <image class="member-img" src="http://oibl5dyji.bkt.clouddn.com/20171210144223.png"></image>
+                        <text class="groupdes">{{item.gnum==undefined?'0':item.gnum}}</text>
+                    </view>
+                </view>
+                <view catchtap="maketop" class="makeTopBox" data-index="{{index}}">
+                    <image catchtap="makeTop" data-index="{{index}}" src="http://oibl5dyji.bkt.clouddn.com/20171029103921.png" wx:if="{{item.isTop==1}}"></image>
+                    <image catchtap="makeTop" data-index="{{index}}" src="http://oibl5dyji.bkt.clouddn.com/20171029103922.png" wx:else></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="viewscollPageLoading">
+        <block wx:if="{{showLoadingImg}}">
+            <image src="http://oibl5dyji.bkt.clouddn.com/viewscollloading4.gif" wx:if="{{loadingImgOrText}}"></image>
+            <text wx:else>到底了，亲~</text>
+        </block>
+    </view>
+    
+    <view animation="{{animationData}}" bindtap="hiddenmodel" class="modelcontainer">
+        <view catchtap="afterReadShow" class="afterReadShow">
+            <image src="http://oibl5dyji.bkt.clouddn.com/20170730112824.png"></image>
+        </view>
+        <view class="model_top">
+            <navigator catchtap="prevent" class="hangyezhenxiang" hoverClass="none" url="/pages/smallUtilPages/hangyezhenxiang/index">
+                <image src="http://oibl5dyji.bkt.clouddn.com/20170730112821.png"></image>
+            </navigator>
+            <view class="crossLine">
+                <image src="http://oibl5dyji.bkt.clouddn.com/20170730112825.png"></image>
+            </view>
+            <view catchtap="makepingtu" class="makepingtu">
+                <image src="http://oibl5dyji.bkt.clouddn.com/20170730112822.png"></image>
+            </view>
+        </view>
+        <view catchtap="modelsession" class="model_session">
+            <button openType="contact"></button>
+        </view>
+    </view>
+    
+</view>
+<!-- <view class="loadingImg" hidden="{{loadImgState}}">
+    <image src="http://oibl5dyji.bkt.clouddn.com/loading-2.gif"></image>
+    <text>{{textArr[promptText]?textArr[promptText]:'精彩内容正在赶来...'}}</text>
+</view>  -->
+<view class="versionModel" wx:if="{{(GetActivityMsg.type==1||GetActivityMsg.type==2||GetActivityMsg.type==3)&&showVersion&&!showintroduce}}">
+    <view class="versionContentBox" wx:if="{{GetActivityMsg.type==1}}">
+        <button bindgetuserinfo="closeVersion" class="closeVersImg" openType="getUserInfo">
+            <image src="http://oibl5dyji.bkt.clouddn.com/20171111094622.png"></image>
+        </button>
+        <image class="versionLogo" src="http://oibl5dyji.bkt.clouddn.com/20171111094621.png"></image>
+        <text class="versionTitle">{{GetActivityMsg.title?GetActivityMsg.title:''}}</text>
+        <view class="versionCont">
+            <text class="contItem" wx:if="{{index<6}}" wx:for="{{GetActivityMsg.msg}}" wx:key="{{index}}">{{index+1+'. '+item}}</text>
+        </view>
+        <button bindgetuserinfo="closeVersion" class="leaveModel" openType="getUserInfo">我知道了</button>
+    </view>
+    <view class="activityContBox" wx:elif="{{GetActivityMsg.type==2}}">
+        <button bindgetuserinfo="closeVersion" class="closeVersImg" openType="getUserInfo">
+            <image src="http://oibl5dyji.bkt.clouddn.com/20171111094622.png"></image>
+        </button>
+        <image class="activityImg" mode="aspectFill" src="{{GetActivityMsg.msg}}"></image>
+        <button bindgetuserinfo="ToActivityGroup" class="ToActivityGroup" openType="getUserInfo">加入相册</button>
+    </view>
+    <view class="activityContBox" wx:elif="{{GetActivityMsg.type==3}}">
+        <button bindgetuserinfo="closeVersion" class="closeVersImg" openType="getUserInfo">
+            <image src="http://oibl5dyji.bkt.clouddn.com/20171111094622.png"></image>
+        </button>
+        <button bindgetuserinfo="toSpecailActivity" class="activityImg" openType="getUserInfo">
+            <image mode="aspectFill" src="{{GetActivityMsg.msg}}"></image>
+        </button>
+    </view>
+</view>
+<view class="introNewUser" wx:if="{{showNewUser}}">
+    <view catchtap="addgroup" class="newUserPicBox">
+        <image catchtap="closeNewUser" class="closeNewUser" src="http://oibl5dyji.bkt.clouddn.com/20171111094622.png"></image>
+        <image class="newUserPic" mode="aspectFill" src="{{newUserPic}}"></image>
+    </view>
+</view>
+<view class="fasttoknowModel" wx:if="{{showDisposeModel}}">
+    <view class="threepictop">
+        <text class="threepictext">三步了解忆年共享相册</text>
+        <button bindtap="closeModel" class="threeCloseModel" plain="true"></button>
+    </view>
+    <view class="threepicturesBox">
+        <view bindtouchend="changend" bindtouchstart="changestart" catchtouchmove="changemove" class="threepictures threeone {{classArr[0]}}">
+            <text>{{usernumber}}位用户</text>
+            <text>正在使用忆年共享相册</text>
+            <text>照片、短视频一键储存</text>
+            <text>安全保障、原图保存、永不过期</text>
+            <image class="three-picsone" mode="aspectFit" src="http://oibl5dyji.bkt.clouddn.com/firstimage.png"></image>
+            <view class="indexBlock">
+                <view class="yellowBlock"></view>
+                <view class="grayBlock"></view>
+                <view class="grayBlock"></view>
+            </view>
+            <form bindsubmit="addgroup" class="createspace" reportSubmit="true">
+                <button class="createspace_btn" formType="submit"></button>
+            </form>
+        </view>
+        <view bindtouchend="changend" bindtouchstart="changestart" catchtouchmove="changemove" class="threepictures threetwo {{classArr[1]}}">
+            <image mode="aspectFit" src="http://oibl5dyji.bkt.clouddn.com/page02text.png">
+                <text class="threetwo-text">您可以创建这些相册</text>
+            </image>
+            <image mode="aspectFit" src="http://oibl5dyji.bkt.clouddn.com/page02pic.png"></image>
+            <view class="indexBlock">
+                <view class="grayBlock"></view>
+                <view class="yellowBlock"></view>
+                <view class="grayBlock"></view>
+            </view>
+            <form bindsubmit="addgroup" class="createspace" reportSubmit="true">
+                <button class="createspace_btn" formType="submit"></button>
+            </form>
+        </view>
+        <view bindtouchend="changend" bindtouchstart="changestart" catchtouchmove="changemove" class="threepictures threethree {{classArr[2]}}">
+            <text>还有精彩礼品相送哦!</text>
+            <image mode="aspectFit" src="http://oibl5dyji.bkt.clouddn.com/page03pic.png"></image>
+            <view class="indexBlock">
+                <view class="grayBlock"></view>
+                <view class="grayBlock"></view>
+                <view class="yellowBlock"></view>
+            </view>
+            <form bindsubmit="addgroup" class="createspace" reportSubmit="true">
+                <button class="createspace_btn" formType="submit"></button>
+            </form>
+        </view>
+    </view>
+</view>
+<view class="pvModel" wx:if="{{showDelete}}">
+    <view catchtap="closeDelete" class="pvModel-box">
+        <view class="pvModel-main">
+            <view catchtap="leaveGroup" class="mainItem">
+                <text>{{isGroupCreator?'解散相册':'退出相册'}}</text>
+            </view>
+            <view class="mainItem">
+                <text>取消</text>
+            </view>
+        </view>
+    </view>
+</view>

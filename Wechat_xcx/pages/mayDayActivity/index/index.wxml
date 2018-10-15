@@ -1,0 +1,82 @@
+<view class="mayDay-comtainer" wx:if="{{contentText}}">
+    <view class="mayDay-header">
+        <image mode="aspectFill" src="{{contentText.coverUrl}}"></image>
+        <view catchtap="goHome" class="activityGoHome">
+            <text>返回首页</text>
+        </view>
+    </view>
+    <view class="mayDay-voice">
+        <image src="http://oibl5dyji.bkt.clouddn.com/0423_voice_tip.png"></image>
+        <view class="mayDay-voice-box">
+            <text>{{contentText.haveChance}}</text>
+        </view>
+    </view>
+    <view class="mayDay-title">
+        <text>{{contentText.userNumText}}</text>
+        <view class="mayDay-share">
+            <button catchtap="haveShare" openType="share">分享</button>
+            <image src="http://oibl5dyji.bkt.clouddn.com/0425_addPicNum.gif"></image>
+        </view>
+    </view>
+    <view class="mayDay-photoNum">
+        <view class="photoNums">
+            <text>{{contentText.hasUploadPercent}}</text>
+        </view>
+        <view class="num-tips">
+            <text>{{contentText.hasUploadNumText}}</text>
+        </view>
+    </view>
+    <view class="mayDay-allphotos">
+        <view class="hasPhots" wx:if="{{allPicList.length>0}}">
+            <view catchtap="toSpecialGroupList" class="photos-item">
+                <image mode="aspectFill" src="http://oibl5dyji.bkt.clouddn.com/0425_button3.png"></image>
+            </view>
+            <view class="photos-item" wx:for="{{allPicList}}" wx:key="{{index}}">
+                <image mode="aspectFill" src="{{item.thumbnail}}"></image>
+                <image catchtap="deletePic" class="item-deletePic" data-sel="{{index}}" src="http://oibl5dyji.bkt.clouddn.com/0423_close.png" wx:if="{{contentText.isReceive==0}}"></image>
+            </view>
+        </view>
+        <view catchtap="toSpecialGroupList" class="noPhotos" wx:else>
+            <image src="http://oibl5dyji.bkt.clouddn.com/0423_add.png"></image>
+            <text>立即上传</text>
+        </view>
+    </view>
+</view>
+<view class="get-rewards" wx:if="{{contentText}}">
+    <image catchtap="showPrizeIntro" src="http://oibl5dyji.bkt.clouddn.com/0425_button2.png" wx:if="{{contentText.isReceive==1}}"></image>
+    <image catchtap="showRewardsModal" src="http://oibl5dyji.bkt.clouddn.com/0426_button_shan.gif" wx:elif="{{contentText.isReceive==0&&allPicList.length>=30}}"></image>
+    <image src="http://oibl5dyji.bkt.clouddn.com/0425_button4.png" wx:else></image>
+</view>
+<view class="rewardsModalBox" wx:if="{{showRewardsModalBox}}">
+    <view class="rewardsAddrBox">
+        <image catchtap="closeRewardsModal" class="closeRewardsModal" src="http://oibl5dyji.bkt.clouddn.com/0425_closeRewards.png"></image>
+        <view class="getInfo-title">
+            <view></view>
+            <text>说明</text>
+        </view>
+        <view class="priceTitle">
+            <text wx:if="{{allPicList.length>=60}}">您可打印60张请确认</text>
+            <text wx:else>您可打印30张请确认</text>
+        </view>
+        <view class="getInfo-intro">
+      相册仅限10000本，先到先得，奖励将在活动结束后7天内寄出，如有问题请联系忆年客服微信
+      <text class="getInfo-intro-normal">yiniankefu</text>
+            <text catchtap="copytext" class="getInfo-intro-copy">一键复制</text>
+        </view>
+        <form bindsubmit="formSubmit">
+            <view class="getInfo-formgroup">
+                <text>姓名</text>
+                <input name="userName" placeholder="请输入姓名" placeholderClass="holderStyle"></input>
+            </view>
+            <view class="getInfo-formgroup">
+                <text>收货地址</text>
+                <input name="userAddr" placeholder="请输入收件地址" placeholderClass="holderStyle"></input>
+            </view>
+            <view class="getInfo-formgroup">
+                <text type="number">手机号</text>
+                <input name="userPhones" placeholder="请输入收件人电话号码" placeholderClass="holderStyle" type="number"></input>
+            </view>
+            <button class="getInfo-btn" formType="submit">确认</button>
+        </form>
+    </view>
+</view>

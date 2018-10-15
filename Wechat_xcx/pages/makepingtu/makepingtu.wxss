@@ -1,0 +1,78 @@
+.make-container {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 0 60rpx;
+}
+
+.pingtu-pic {
+    width: 626rpx;
+    height: 626rpx;
+    border: 1rpx solid #333;
+    background: url('http://oibl5dyji.bkt.clouddn.com/20170704103221.png') no-repeat;
+    background-size: cover;
+    margin-top: 62rpx;
+}
+
+.addPic {
+    width: 94rpx;
+    height: 139rpx;
+    margin-top: 270rpx;
+    margin-left: 266rpx;
+}
+
+.showPic {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+}
+
+.inputsection {
+    width: 100%;
+    margin-top: 30rpx;
+}
+
+.inputBox {
+    width: 100%;
+    height: 58rpx;
+    position: relative;
+}
+
+.inputPmt {
+    box-sizing: border-box;
+    width: 100%;
+    height: 58rpx;
+    background: #dfdfdf;
+    border-radius: 29rpx;
+    padding-left: 62rpx;
+}
+
+.writePic {
+    width: 29rpx;
+    height: 26rpx;
+    position: absolute;
+    top: 16rpx;
+    left: 21rpx;
+}
+
+.p-holder {
+    color: #999;
+    font-size: 30rpx;
+}
+
+.submit {
+    width: 182rpx;
+    height: 62rpx;
+    line-height: 62rpx;
+    text-align: center;
+    border-radius: 8rpx;
+    color: white;
+    font-size: 30rpx;
+    background: #cecece;
+    float: right;
+    margin-top: 43rpx;
+}
+
+.submit::after {
+    border: 0;
+}

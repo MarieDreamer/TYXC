@@ -1,0 +1,11 @@
+<view class="au-container">
+    <view class="au-section">
+        <image class="au-section-yinian" mode="aspectFill" src="{{startAuthPicYinian}}"></image>
+        <view class="au-section-center">
+            <view class="yellowline"></view>
+            <text class="minetext" wx:if="{{pagetype=='mine'}}">登录后查看您的积分动态，积分可兑换话费或奖品，登录查看</text>
+            <text class="minetext" wx:if="{{pagetype=='activity'}}">登录后可查看该活动,登录查看</text>
+        </view>
+        <button bindgetuserinfo="userInfoHandler" class="au-section-login" openType="getUserInfo">登录</button>
+    </view>
+</view>

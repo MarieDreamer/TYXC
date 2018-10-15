@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="applicable-device" content="mobile">
+  <title>小项目</title>
+  <link rel="stylesheet" href="../css/search.css">
+  <script src="../js/jquery2.2.4.min.js"></script>
+  <script src="../js/search.js"></script>
+</head>
+<body>
+<div class="all">
+    <!--  头部收索开始  -->
+    <header class="search-header">
+      <input type="text" placeholder="请输入关键词" id="keyword" onkeypress="if(event.keyCode==13) {SiteSearch();return false;}">
+    </header>
+    <!--  头部收索结束  -->
+
+    <!--  收索历史记录开始  -->
+    <section class="history-records">
+      <ul id="historyUl">
+      </ul>
+    </section>
+    <!--  收索历史记录结束  -->
+  </div>
+</body>
+</html>

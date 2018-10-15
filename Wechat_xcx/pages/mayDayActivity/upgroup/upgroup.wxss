@@ -1,0 +1,86 @@
+.upgroup-container {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 30rpx 158rpx;
+}
+
+text {
+    word-break: break-all;
+}
+
+.upgroup-header {
+    width: 100%;
+    display: flex;
+}
+
+.upgroup-header text {
+    color: #999;
+    font-size: 26rpx;
+    line-height: 38rpx;
+}
+
+.upgroup-make {
+    width: 100%;
+    height: 90rpx;
+    vertical-align: bottom;
+    margin-top: 30rpx;
+}
+
+.upgroup-make image {
+    width: 100%;
+    height: 100%;
+}
+
+.upgroup-list {
+    width: 100%;
+    padding-top: 30rpx;
+}
+
+.upgroup-item {
+    width: 100%;
+    height: 96rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.groupName-box {
+    width: 580rpx;
+    height: 60rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.groupName-box text {
+    color: #333;
+    font-size: 34rpx;
+}
+
+.upgroup-item image {
+    width: 51rpx;
+    height: 51rpx;
+    margin-right: 20rpx;
+}
+
+.makesure-up {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: #fff;
+    width: 750rpx;
+    height: 158rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.makesure-up button {
+    width: 690rpx;
+    height: 88rpx;
+    border-radius: 46rpx;
+    line-height: 88rpx;
+    background-color: #ffe500;
+    color: #333;
+    font-size: 34rpx;
+}

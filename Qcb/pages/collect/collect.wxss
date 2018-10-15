@@ -1,0 +1,65 @@
+.sc-list {
+    padding: 20rpx 35rpx;
+    background: #fff;
+    border-bottom: 5rpx solid #f0f0f0;
+    overflow: hidden;
+}
+
+.sc-lt {
+    width: 150rpx;
+    height: 150rpx;
+    float: left;
+    overflow: hidden;
+}
+
+.sc-lt image {
+    width: 100%;
+    height: 100%;
+}
+
+.sc-rt {
+    margin-left: 219rpx;
+}
+
+.sc-tit {
+    line-height: 40rpx;
+    color: #111;
+    font-size: 27rpx;
+    height: 100rpx;
+}
+
+.sc-price {
+    height: 50rpx;
+    line-height: 50rpx;
+    color: #fb9005;
+    font-size: 27rpx;
+    float: left;
+}
+
+.sc-coin {
+    font-size: 20rpx;
+}
+
+.edtor-iconleft {
+    width: 32rpx;
+    height: 32rpx;
+    vertical-align: top;
+    margin-right: 10rpx;
+    margin-top: 9rpx;
+}
+
+.edtor-text {
+    display: inline-block;
+    height: 50rpx;
+    line-height: 50rpx;
+    vertical-align: top;
+}
+
+.edtor-listbtn {
+    margin-left: 20rpx;
+    height: 50rpx;
+    color: #747474;
+    font-size: 25rpx;
+    vertical-align: top;
+    float: right;
+}

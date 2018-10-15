@@ -1,0 +1,12 @@
+<view class="regi-list">
+    <input bindinput="InputKey" class="regi-inpt" data-name="account_name" placeholder="账户名" placeholderStyle="color:#9e9e9e" value="{{account_name}}"></input>
+</view>
+<view class="regi-list">
+    <input bindblur="CheckBank" bindinput="InputKey" class="regi-inpt" data-name="account_bank" placeholder="银行卡号" placeholderStyle="color:#9e9e9e" value="{{account_bank}}"></input>
+</view>
+<view class="regi-list">
+    <input bindinput="InputKey" class="regi-inpt" data-name="bankname" placeholder="开户行" placeholderStyle="color:#9e9e9e" value="{{bankname}}"></input>
+</view>
+<view class="regi-bottom">
+    <button bindtap="Submit" class="regi-btn">提交</button>
+</view>

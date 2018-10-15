@@ -1,0 +1,40 @@
+<view class="container">
+    <view class="list-con">
+        <view class="list" wx:for="{{address_lists}}" wx:for-item="list" wx:key="k">
+            <view bindtap="DefaultAddr" class="list-t" data-index="{{index}}">
+                <text>{{list.consignee}}</text>
+                <text>{{list.mobile}}</text>
+            </view>
+            <view bindtap="DefaultAddr" class="list-c" data-index="{{index}}">
+                <text>{{list.p}}{{list.c}}{{list.d}} {{list.address}}</text>
+            </view>
+            <view class="list-d">
+                <view bindtap="DefaultAddr" class="list-d-lt " data-index="{{index}}">
+                    <image src="https://cc.hohiw.com/xcximg/xz.png" wx:if="{{list.is_default==1}}"></image>
+                    <image src="https://cc.hohiw.com/xcximg/wxz.png" wx:if="{{list.is_default==0}}"></image>
+                    <text>默认地址</text>
+                </view>
+                <view class="list-d-rt">
+                    <navigator url="/pages/address/address?id={{list.address_id}}&source={{source}}">
+                        <view class="list-d-rt-l">
+                            <image src="https://cc.hohiw.com/xcximg/edit.png"></image>
+                            <text>编辑</text>
+                        </view>
+                    </navigator>
+                    <view bindtap="DelAddress" class="list-d-rt-l" data-index="{{index}}">
+                        <image src="https://cc.hohiw.com/xcximg/dell.png"></image>
+                        <text>删除</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view wx:if="{{show_no_data==1}}">
+        <view class="no-data-tip">暂无收货地址</view>
+    </view>
+    <navigator class="navbut" url="/pages/address/address?source={{source}}">
+        <view class="but">
+            <button>新增地址</button>
+        </view>
+    </navigator>
+</view>

@@ -1,0 +1,7 @@
+<view class="container">
+    <image class="beijing" mode="widthFix" src="https://cc.hohiw.com/xcximg/share_bg2.jpg"></image>
+    <image bindtap="viewImg" class="QR-code" mode="scaleToFill" src="{{qrcode}}" wx:if="{{qrcode!=''}}"></image>
+    <open-data class="pic" type="userAvatarUrl"></open-data>
+    <view class="nkn">我是 <open-data type="userNickName"></open-data>
+    </view>
+</view>

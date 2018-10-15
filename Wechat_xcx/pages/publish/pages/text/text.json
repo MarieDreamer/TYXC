@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "发布文字",
+    "usingComponents": {
+        "input-text": "../../components/inputText/inputText",
+        "location": "../../components/location/location",
+        "date-and-time": "../../components/dateAndTime/dateAndTime",
+        "and-friends": "../../components/andFriends/andFriends"
+    }
+}

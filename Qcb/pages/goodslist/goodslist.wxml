@@ -1,0 +1,93 @@
+<view class="container" style="display:{{show.main}}">
+    <view class="weui-search-bar">
+        <view class="weui-search-bar__form">
+            <view class="weui-search-bar__box">
+                <icon class="weui-icon-search_in-box" size="14" type="search"></icon>
+                <input bindconfirm="SearchInput" class="weui-search-bar__input" focus="{{inputShowed}}" placeholder="搜索" type="text" value=""></input>
+                <view bindtap="clearInput" class="weui-icon-clear" wx:if="{{inputVal.length>0}}">
+                    <icon size="14" type="clear"></icon>
+                </view>
+            </view>
+            <label bindtap="showInput" class="weui-search-bar__label" hidden="{{inputShowed}}">
+                <icon class="weui-icon-search" size="14" type="search"></icon>
+                <view class="weui-search-bar__text">搜索</view>
+            </label>
+        </view>
+        <view bindtap="hideInput" class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}">取消</view>
+    </view>
+    <view class="screen">
+        <view bindtap="setSort" class="list {{sort=='goods_id'?'active':''}}" data-sort="goods_id">
+            <text>综合</text>
+        </view>
+        <view bindtap="setSort" class="list {{sort=='sales_sum'?'active':''}}" data-sort="sales_sum">
+            <text>销量</text>
+        </view>
+        <view bindtap="setSort" class="list {{sort=='shop_price'?'active':''}}" data-sort="shop_price" data-sort_asc="{{sort_asc=='asc'?'desc':'asc'}}">
+            <text>价格</text>
+            <view class="list-icon">
+                <image src="https://cc.hohiw.com/xcximg/screen2.png" wx:if="{{sort_asc=='asc'&&sort=='shop_price'}}"></image>
+                <image src="https://cc.hohiw.com/xcximg/screen1.png" wx:if="{{sort_asc=='desc'&&sort=='shop_price'}}"></image>
+                <image src="https://cc.hohiw.com/xcximg/screen.png" wx:if="{{sort!='shop_price'}}"></image>
+            </view>
+        </view>
+        <view bindtap="showCat" class="list">
+            <text>筛选</text>
+        </view>
+    </view>
+    <view class="pro-con">
+        <view class="list {{key%2==0?'lt':'rt'}}" wx:for="{{lists}}" wx:for-item="list" wx:key="key">
+            <navigator url="/pages/goods/goods?id={{list.goods_id}}">
+                <image src="{{list.goods_img}}"></image>
+            </navigator>
+            <navigator url="/pages/goods/goods?id={{list.goods_id}}">
+                <text class="list-t">{{list.goods_name}}</text>
+            </navigator>
+            <view class="list-center">
+                <navigator url="/pages/goods/goods?id={{list.goods_id}}">
+                    <text class="price">¥{{list.shop_price}}</text>
+                    <text class="fh">或</text>
+                    <text class="price">￥{{list.last_price}}</text>
+                </navigator>
+            </view>
+            <navigator url="/pages/goods/goods?id={{list.goods_id}}">
+                <view class="list-d">
+                    <text>已售{{list.sales_sum}}</text>
+                </view>
+            </navigator>
+        </view>
+    </view>
+    <view class="weui-loadmore" style="display:{{more}}">
+        <view class="weui-loading"></view>
+        <view class="weui-loadmore__tips">正在加载</view>
+    </view>
+    <view class="weui-loadmore weui-loadmore_line" wx:if="{{listend==1}}">
+        <view class="weui-loadmore__tips weui-loadmore__tips_in-line">我是有底线滴</view>
+    </view>
+    <view class="occupy"></view>
+</view>
+<view class="_next" style="display:{{show.all}};-webkit-transform-origin: 0px 0px 0px; opacity: 1; -webkit-transform: scale(1, 1); ">
+    <view>
+        <view class="new_header_2" id="filter_header">
+            <view bindtap="closeCat" class="back" href="javascript:;" id="list_filter_back">
+                <image src="https://cc.hohiw.com/xcximg/search_sprite.png" style="width:25rpx;height:38rpx;margin-top:12rpx;"></image>
+            </view>
+            <view class="sx">筛选</view>
+        </view>
+    </view>
+    <view id="filter_content">
+        <view class="filtrate_list" id="filter_category_list" style=" -webkit-transform-origin: 0px 0px 0px; opacity: 1; -webkit-transform: scale(1, 1);">
+            <view class="filtrate_list_li">
+                <view class="filtrate_list_li" wx:for="{{cateArr}}" wx:for-item="v" wx:key="index">
+                    <view bindtap="setCat" class="filtrate_list_li_a nav" data-id="{{v.id}}" style="padding-left:25px">
+                        <view>{{v.name}}</view>
+                    </view>
+                    <view class="filtrate_list_li" wx:for="{{v.sub_menu}}" wx:for-item="vv" wx:key="j">
+                        <view bindtap="setCat" class="filtrate_list_li_a nav" data-id="{{vv.id}}" style="padding-left:45px;">{{vv.name}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<import src="/pages/template/tabbar.wxml"></import>
+<template is="tabBar" data="{{tabBar:bindData.tabBar}}"></template>

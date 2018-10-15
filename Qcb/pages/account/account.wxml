@@ -1,0 +1,24 @@
+<view class="container">
+    <view class="navbar">
+        <view class="item active">奖金</view>
+        <navigator class="item" hoverClass="none" url="/pages/share/share">宣传海报</navigator>
+    </view>
+    <view style="width:100%">
+        <view class="withdraw flexed">
+            <image class="jinbi" src="https://cc.hohiw.com/xcximg/jinbi.png"></image>
+            <text class="keti">可提现金额（元）</text>
+            <navigator hoverClass="none" url="/pages/wallet/wallet">
+                <text class="keti-money">{{user_money}}</text>
+                <image class="go" src="https://cc.hohiw.com/xcximg/go.jpg"></image>
+            </navigator>
+        </view>
+        <view class="n-container">
+            <navigator class="flexed agent-item" hoverClass="none" url="/pages/orderaccount/orderaccount">
+                <text class="had-money">累计佣金（元）</text>
+                <text class="had-money-num">￥{{distribut_money}}</text>
+                <image class="go-arrow" src="https://cc.hohiw.com/xcximg/backjiantou.png"></image>
+            </navigator>
+        </view>
+        <navigator class="tixian" hoverClass="none" url="/pages/deposit/deposit">提现</navigator>
+    </view>
+</view>

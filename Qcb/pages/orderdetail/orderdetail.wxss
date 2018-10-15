@@ -1,0 +1,284 @@
+.top {
+    width: 100%;
+    height: 145rpx;
+}
+
+.top image {
+    width: 100%;
+    height: 100%;
+}
+
+.top-c {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    font-size: 28rpx;
+    height: 145rpx;
+    color: #fff;
+    width: 100%;
+    align-items: center;
+}
+
+.top-c-lt {
+    padding-left: 25rpx;
+    display: flex;
+    align-items: center;
+}
+
+.top-c-lt image {
+    width: 32rpx;
+    height: 32rpx;
+    padding-right: 10rpx;
+}
+
+.top-c-rt {
+    padding-right: 25rpx;
+}
+
+.top-d {
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    top: 8%;
+    right: 3.5%;
+    font-size: 28rpx;
+    color: #fff;
+}
+
+.jbxx {
+    width: 100%;
+    margin-top: 20rpx;
+    font-size: 28rpx;
+    background: #fff;
+}
+
+.jbxx-lst {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 25rpx;
+}
+
+.jbxx-lst .dz {
+    width: 24rpx;
+    height: 28rpx;
+    margin-right: 20rpx;
+}
+
+.lxr {
+    padding-top: 20rpx;
+}
+
+.xxdz {
+    display: flex;
+    margin-left: 64rpx;
+    padding: 20rpx 0;
+}
+
+.list {
+    margin-top: 20rpx;
+    width: 100%;
+    font-size: 28rpx;
+}
+
+.list-t {
+    background: #fff;
+    padding: 0 25rpx 20rpx 25rpx;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.list-t-lst {
+    padding-top: 15rpx;
+}
+
+.list-t-lst .address {
+    color: #999999;
+}
+
+.list-c {
+    background: #f9f9f9;
+    display: flex;
+    align-items: center;
+    padding: 25rpx;
+    border-bottom: 1px solid #fff;
+}
+
+.list-c image {
+    width: 248rpx;
+    height: 203rpx;
+    margin-right: 20rpx;
+}
+
+.list-c-rt {
+    width: 100%;
+}
+
+.list-c-rt .title {
+    line-height: 32rpx;
+    font-size: 28rpx;
+    display: block;
+    height: 62rpx;
+    overflow: hidden;
+    line-height: 30rpx;
+}
+
+.list-c-rt .describe {
+    font-size: 24rpx;
+    display: block;
+    color: #999;
+    padding: 10rpx 0;
+}
+
+.list-c-rt-d {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.list-c-rt .price {
+    font-size: 28rpx;
+    color: #fe6702;
+}
+
+.list-c-rt .num {
+    font-size: 28rpx;
+}
+
+.list-sfk {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 24rpx;
+    padding: 0 25rpx;
+    height: 70rpx;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.list-sfk .jg {
+    font-size: 30rpx;
+    color: #fe6702;
+}
+
+.list-d {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 110rpx;
+}
+
+.list-d button {
+    height: 55rpx;
+    padding: 0 20rpx;
+    margin: 0 25rpx;
+    line-height: 55rpx;
+    font-size: 28rpx;
+    color: #444444;
+    background: none;
+    border: 1px solid #444444;
+}
+
+button::after {
+    border: none;
+}
+
+.list-d .active {
+    color: #fe6702;
+    border: 1px solid #fe6702;
+}
+
+.dll {
+    width: 28rpx;
+    height: 28rpx;
+}
+
+.list-t-lt {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #999999;
+}
+
+.sline {
+    padding: 0 10rpx;
+}
+
+.list-jg {
+    font-size: 26rpx;
+    color: #808080;
+    padding: 30rpx 25rpx;
+    border-bottom: 1px solid #e5e5e5;
+    background: #fff;
+}
+
+.list-jg-lst {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dd {
+    color: #4c4c4c;
+    margin-top: 20rpx;
+}
+
+.list-xfk {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 26rpx;
+    color: #4c4c4c;
+    padding: 0 25rpx;
+    height: 60rpx;
+    background: #fff;
+}
+
+.list-xfk .jg {
+    font-size: 30rpx;
+    color: #fe6702;
+}
+
+.list-lx {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #fff;
+    width: 100%;
+    height: 118rpx;
+}
+
+.list-lx image {
+    width: 346rpx;
+    height: 66rpx;
+}
+
+.ddxx2 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    background: #fff;
+    padding: 5rpx 25rpx;
+    margin: 20rpx 0;
+}
+
+.ddxx2-con {
+    padding: 0 25rpx;
+}
+
+.ddxx2-con text {
+    display: block;
+    font-size: 24rpx;
+    color: #6f6f6f;
+    line-height: 52rpx;
+}
+
+.list-d {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    background: #fff;
+}

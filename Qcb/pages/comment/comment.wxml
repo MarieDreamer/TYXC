@@ -1,0 +1,30 @@
+<view class="container">
+    <view class="pl-t">
+        <view class="pl-t-l">
+            <image src="{{goods.goods_img}}"></image>
+            <text>{{goods.goods_name}}</text>
+        </view>
+    </view>
+    <view class="texta">
+        <textarea bindinput="ChangeArea" placeholder="注:在此输入评价内容" placeholderStyle="font-size:24rpx;"></textarea>
+    </view>
+    <view class="img">
+        <view bindtap="ViewImages" class="img-bg" data-index="{{index}}" wx:for="{{pics}}" wx:for-item="vo" wx:key="k">
+            <image src="{{vo}}"></image>
+        </view>
+        <view bindtap="ChooseImage" class="img-bg" style="display:{{show}}">
+            <image src="https://cc.hohiw.com/xcximg/xj1.png"></image>
+        </view>
+    </view>
+    <view class="ms">
+        <view class="ms-con">
+            <text>描述相符</text>
+            <view class="pj">
+                <image bindtap="ChangeStar" class="desc-start" data-index="{{index}}" src="https://cc.hohiw.com/xcximg/sppj-list-{{vo.t}}.png" wx:for="{{star}}" wx:for-item="vo" wx:key="k"></image>
+            </view>
+        </view>
+    </view>
+    <view class="foot">
+        <button bindtap="SubmitComment">发表评价</button>
+    </view>
+</view>

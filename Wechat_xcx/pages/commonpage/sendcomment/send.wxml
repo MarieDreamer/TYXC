@@ -1,0 +1,9 @@
+<view class="commentbox">
+    <form bindsubmit="sendcomment" reportSubmit="true">
+        <textarea autoFocus="true" bindinput="setcolor" class="textarea" name="content" placeholder="{{placecontent}}" placeholderStyle="color:#999;font-size:28rpx"></textarea>
+        <view class="submitbox">
+            <image class="textImg" src="http://oibl5dyji.bkt.clouddn.com/20171010104621.png"></image>
+            <button class="send {{commentLegitimate?'Legitimate':''}}" formType="submit" hoverClass="none">发表</button>
+        </view>
+    </form>
+</view>

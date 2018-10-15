@@ -1,0 +1,12 @@
+<view class="publish-option">
+    <view class="publish-list">
+        <image class="pl-icon" mode="aspectFill" src="{{ICON.CLOCK}}"></image>
+        <view class="pl-text">
+            <text catch:tap="openDatetime" class="pl-title {{datetime.result.length>0?'pl-title-disabled':''}}">{{datetime.title}}</text>
+            <text catch:tap="openDatetime" class="pl-result  text-overflow">{{datetime.result}}</text>
+            <image catch:tap="clearDatetime" class="pl-icon" mode="aspectFill" src="{{ICON.CLOSE}}" wx:if="{{datetime.result.length>0}}"></image>
+        </view>
+        <image catch:tap="openDatetime" class="pl-arrow" mode="aspectFill" src="{{ICON.ARROW}}"></image>
+    </view>
+</view>
+<datetime bindreturnResult="showDatetime" show="{{datetime.show}}"></datetime>

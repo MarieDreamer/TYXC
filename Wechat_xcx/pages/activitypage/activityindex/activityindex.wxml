@@ -1,0 +1,71 @@
+<view class="aIndex-container">
+    <view class="activity-section">
+        <view class="title" wx:if="{{false}}">
+      花式玩图
+    </view>
+        <view class="conatainer" wx:if="{{false}}">
+            <scroll-view class="scrollNav" scrollX="true">
+                <view catchtap="gotoStory" data-open="{{groItem.openUrl}}" wx:for="{{clickGroups}}" wx:for-index="idx" wx:for-item="groItem" wx:key="idx">
+                    <image src="{{groItem.imgUrl}}"></image>{{groItem.title}}</view>
+            </scroll-view>
+        </view>
+        <view class="title">
+      热门活动
+    </view>
+        <view class="special-list" wx:if="{{specialList.length>0}}">
+            <view class="special-list-item" wx:for="{{specialList}}" wx:key="{{index}}">
+                <image catchtap="toSpecailActivity" data-status="{{item.status}}" data-url="{{item.jumpUrl}}" mode="aspectFill" src="{{item.coverUrl}}"></image>
+            </view>
+        </view>
+        <view class="activity-group-list" wx:if="{{isAllGroup}}">
+            <block wx:if="{{allActivityGroup.length>0}}">
+                <view catchtap="toGroupScoll" class="activity-group-item" data-groupid="{{item.groupid}}" data-grouptype="{{item.groupNewType}}" wx:for="{{allActivityGroup}}" wx:key="{{item.groupid}}">
+                    <image class="activity-item-bgPic" mode="aspectFill" src="{{item.gpic}}"></image>
+                    <view class="activity-item-data">
+                        <view class="data-text">
+                            <text class="text-name">{{item.gname}}</text>
+                            <text class="text-date">{{item.activitiStartTime}} — {{item.activitiEndTime}}</text>
+                        </view>
+                        <image class="data-img" mode="aspectFill" src="http://oibl5dyji.bkt.clouddn.com/0309-going.png" wx:if="{{item.activitiStatus==1}}"></image>
+                        <image class="data-img" mode="aspectFill" src="http://oibl5dyji.bkt.clouddn.com/0309-end.png" wx:else></image>
+                    </view>
+                </view>
+                <view class="viewscollPageLoading">
+                    <block wx:if="{{showLoadingImg}}">
+                        <image src="http://oibl5dyji.bkt.clouddn.com/0311-activityloading.gif" wx:if="{{loadingImgOrText}}"></image>
+                        <text wx:else>到底了，亲~</text>
+                    </block>
+                </view>
+            </block>
+            <view class="avtivity-empty" wx:else>
+                <image mode="aspectFill" src="http://oibl5dyji.bkt.clouddn.com/0314-activityempty.png"></image>
+                <text>亲，还没有活动哦</text>
+            </view>
+        </view>
+        <view class="activity-group-list" wx:else>
+            <block wx:if="{{myActivityGroup.length>0}}">
+                <view catchtap="toGroupScoll" class="activity-group-item" data-groupid="{{item.groupid}}" data-grouptype="{{item.groupNewType}}" wx:for="{{myActivityGroup}}" wx:key="{{item.groupid}}">
+                    <image class="activity-item-bgPic" mode="aspectFill" src="{{item.gpic}}"></image>
+                    <view class="activity-item-data">
+                        <view class="data-text">
+                            <text class="text-name">{{item.gname}}</text>
+                            <text class="text-date">{{item.activitiStartTime}} — {{item.activitiEndTime}}</text>
+                        </view>
+                        <image class="data-img" mode="aspectFill" src="http://oibl5dyji.bkt.clouddn.com/0309-going.png" wx:if="{{item.activitiStatus==1}}"></image>
+                        <image class="data-img" mode="aspectFill" src="http://oibl5dyji.bkt.clouddn.com/0309-end.png" wx:else></image>
+                    </view>
+                </view>
+                <view class="viewscollPageLoading">
+                    <block wx:if="{{showLoadingImgMy}}">
+                        <image src="http://oibl5dyji.bkt.clouddn.com/0311-activityloading.gif" wx:if="{{loadingImgOrTextMy}}"></image>
+                        <text wx:else>到底了，亲~</text>
+                    </block>
+                </view>
+            </block>
+            <view class="avtivity-empty" wx:else>
+                <image mode="aspectFill" src="http://oibl5dyji.bkt.clouddn.com/0314-activityempty.png"></image>
+                <text>亲，你还没有参加活动哦</text>
+            </view>
+        </view>
+    </view>
+</view>

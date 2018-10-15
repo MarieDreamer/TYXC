@@ -1,0 +1,50 @@
+/* pages/photo_view/index.wxss */
+.album_user{
+  display: flex;
+  margin: 50rpx;
+}
+.album_user_title{
+  line-height: 60rpx;
+  width:160rpx;
+}
+.album_user_image{
+  width: 80rpx;
+  height:80rpx;
+  border-radius: 100%;
+}
+.album_user_image_view{
+  width:100rpx;
+  height:100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.album_over{
+  width: 550rpx;
+  margin: 100rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+  line-height: 100rpx;
+  text-align: center;
+  background-color: #eee;
+}
+.album_move{
+  width: 550rpx;
+  margin: 100rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+  line-height: 100rpx;
+  text-align: center;
+  background-color: #ff6b01;
+}
+.red_borade{
+  border:4rpx solid #ff6b01;
+}
+
+.ye_borade{
+  border:4rpx solid #ff6b01;
+  border-radius: 100%;
+}
+.kuang{
+  border: 4rpx solid #eee;
+}

@@ -1,0 +1,279 @@
+<scroll-view scrollY bindscroll="scrollTop" bindscrolltolower="{{showTimeData?'photoageitem':'photopeople'}}" lowerThreshold="300" style="height:100%;" wx:if="{{!showMonthTimeData}}">
+    <view class="walltop">
+        <image src="http://oibl5dyji.bkt.clouddn.com/iocn_allpic.png"></image>
+        <text catchtap="alertCheckData" class="walltoptext">{{date}}{{picturenumber}}</text>
+        <text class="{{showTimeData?'showtimetext':'noshowtimetext'}}">成员排序</text>
+        <switch bindchange="{{showTimeData?'lookPeopleData':'lookTimeData'}}" checked="{{!showTimeData}}" class="itemswitch" color="#ffe500" disabled="{{timeloading}}"></switch>
+    </view>
+    <block wx:if="{{showTimeData}}">
+        <block wx:if="{{photopagedata_day.length>0}}">
+            <view class="photoageitem {{picitemindex==0?'margTop':''}}" wx:for="{{photopagedata_day}}" wx:for-index="picitemindex" wx:key="{{item.euploadtime}}">
+                <view class="timetitle">
+                    <text>{{item.euploadtime}}</text>
+                </view>
+                <view catchtap="{{pic.myMain==4?'seeBigVideo':''}}" class="photopageimgbox" data-url="{{pic.poriginal}}" wx:for="{{item.picture}}" wx:for-index="picindex" wx:for-item="pic" wx:key="{{item.pid}}">
+                    <image catchtap="{{pic.myMain!=4?'lookbigpic':''}}" data-picindex="{{picindex}}" data-picitemindex="{{picitemindex}}" lazyload="true" src="{{pic.thumbnail}}"></image>
+                    <icon wx:if="{{pic.myMain==4}}"></icon>
+                </view>
+                <view catchtap="clicloadkmore" class="clickmorephoto" data-euploadtime="{{item.euploadtime}}" wx:if="{{item.num>99}}">点击加载更多</view>
+            </view>
+            <view class="newperson" style="padding-top:100rpx;">
+                <text>忆年共享相册</text>
+                <text>我们自己的相册</text>
+                <view catchtap="fasttoknow" class="fasttoknow-hasalbum"></view>
+            </view>
+            <view class="btmPrompt">
+                <image src="http://oibl5dyji.bkt.clouddn.com/20171227133021.png"></image>
+            </view>
+        </block>
+        <view class="noitempage" wx:else>
+            <image class="hidupload" src="http://oibl5dyji.bkt.clouddn.com/20170925144227.png"></image>
+        </view>
+    </block>
+    <block wx:else>
+        <block wx:if="{{photopagedata_people.length>0}}">
+            <view class="photoageitem" wx:for="{{photopagedata_people}}" wx:for-index="picitemindex" wx:key="{{item.euploadtime}}">
+                <view class="timetitle" style="padding-bottom:10rpx;padding-top:20rpx;">
+                    <image catchtap="toLookPhoto" class="peopleImg" data-groupid="{{groupid}}" data-userid="{{item.userid}}" src="{{item.upic}}"></image>
+                    <text>{{item.uploadtime}}</text>
+                </view>
+                <view catchtap="{{pic.myMain==4?'seeBigVideo':''}}" class="photopageimgbox" data-url="{{pic.poriginal}}" wx:for="{{item.picList}}" wx:for-index="picindex" wx:for-item="pic" wx:key="{{picindex}}">
+                    <image catchtap="{{pic.myMain!=4?'lookbigpic':''}}" data-picindex="{{picindex}}" data-picitemindex="{{picitemindex}}" lazyload="true" src="{{pic.thumbnail}}"></image>
+                    <icon wx:if="{{pic.myMain==4}}"></icon>
+                    <view catchtap="toLookPhoto" class="imgMengCen" data-groupid="{{groupid}}" data-userid="{{item.userid}}" wx:if="{{picindex==8&&item.num>9}}">
+                        <text class="{{item.num>99?'bai':''}}">{{item.num}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class="newperson" style="padding-top:100rpx;">
+                <text>忆年共享相册</text>
+                <text>我们自己的相册</text>
+                <view catchtap="fasttoknow" class="fasttoknow-hasalbum"></view>
+            </view>
+            <view class="btmPrompt">
+                <image src="http://oibl5dyji.bkt.clouddn.com/20171227133021.png"></image>
+            </view>
+        </block>
+        <view class="noitempage" wx:else>
+            <image class="hidupload" src="http://oibl5dyji.bkt.clouddn.com/20170925144227.png"></image>
+        </view>
+    </block>
+</scroll-view>
+<scroll-view scrollY bindscroll="scrollTop" bindscrolltolower="{{showTimeData?'photoageitemBymonth':'photopeopleBymonth'}}" lowerThreshold="300" style="height:100%;" wx:else>
+    <view class="walltop">
+        <image src="http://oibl5dyji.bkt.clouddn.com/iocn_allpic.png"></image>
+        <text catchtap="alertCheckData" class="walltoptext">{{date}}{{picturenumber}}</text>
+        <text class="{{showTimeData?'showtimetext':'noshowtimetext'}}">成员排序</text>
+        <switch bindchange="{{showTimeData?'photopeopleBymonthFirst':'getphotoWallDataByMonth'}}" checked="{{!showTimeData}}" class="itemswitch" color="#ffe500" disabled="{{timeloading}}"></switch>
+    </view>
+    <block wx:if="{{showTimeData}}">
+        <block wx:if="{{photopagedata_day.length>0}}">
+            <view class="photoageitem {{picitemindex==0?'margTop':''}}" wx:for="{{photopagedata_day}}" wx:for-index="picitemindex" wx:key="{{item.euploadtime}}">
+                <view class="timetitle">
+                    <image src="http://oibl5dyji.bkt.clouddn.com/20170926200021.png"></image>
+                    <text>{{item.euploadtime}}</text>
+                </view>
+                <view catchtap="{{pic.myMain==4?'seeBigVideo':''}}" class="photopageimgbox" data-url="{{pic.poriginal}}" wx:for="{{item.picture}}" wx:for-index="picindex" wx:for-item="pic" wx:key="{{item.pid}}">
+                    <image catchtap="{{pic.myMain!=4?'lookbigpic':''}}" data-picindex="{{picindex}}" data-picitemindex="{{picitemindex}}" lazyload="true" src="{{pic.thumbnail}}"></image>
+                    <icon wx:if="{{pic.myMain==4}}"></icon>
+                </view>
+                <view catchtap="clicloadkmore" class="clickmorephoto" data-euploadtime="{{item.euploadtime}}" wx:if="{{item.num>99}}">点击加载更多</view>
+            </view>
+            <view class="newperson" style="padding-top:100rpx;">
+                <text>忆年共享相册</text>
+                <text>我们自己的相册</text>
+                <view catchtap="fasttoknow" class="fasttoknow-hasalbum"></view>
+            </view>
+            <view class="btmPrompt">
+                <image src="http://oibl5dyji.bkt.clouddn.com/20171227133021.png"></image>
+            </view>
+        </block>
+        <view class="noitempage" wx:else>
+            <image class="hidupload" src="http://oibl5dyji.bkt.clouddn.com/20170925144227.png"></image>
+        </view>
+    </block>
+    <block wx:else>
+        <block wx:if="{{photopagedata_people.length>0}}">
+            <view class="photoageitem" wx:for="{{photopagedata_people}}" wx:for-index="picitemindex" wx:key="{{picitemindex}}">
+                <view class="timetitle" style="padding-bottom:10rpx;padding-top:20rpx;">
+                    <image catchtap="toLookPhoto" class="peopleImg" data-groupid="{{groupid}}" data-userid="{{item.userid}}" src="{{item.upic}}"></image>
+                    <text>{{item.uploadtime}}</text>
+                </view>
+                <view catchtap="{{pic.myMain==4?'seeBigVideo':''}}" class="photopageimgbox" data-url="{{pic.poriginal}}" wx:for="{{item.picList}}" wx:for-index="picindex" wx:for-item="pic" wx:key="{{picindex}}">
+                    <image catchtap="{{pic.myMain!=4?'lookbigpic':''}}" data-picindex="{{picindex}}" data-picitemindex="{{picitemindex}}" lazyload="true" src="{{pic.thumbnail}}"></image>
+                    <icon wx:if="{{pic.myMain==4}}"></icon>
+                    <view catchtap="toLookPhoto" class="imgMengCen" data-groupid="{{groupid}}" data-userid="{{item.userid}}" wx:if="{{picindex==8&&item.num>9}}">
+                        <text class="{{item.num>99?'bai':''}}">{{item.num}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class="newperson" style="padding-top:100rpx;">
+                <text>忆年共享相册</text>
+                <text>我们自己的相册</text>
+                <view catchtap="fasttoknow" class="fasttoknow-hasalbum"></view>
+            </view>
+            <view class="btmPrompt">
+                <image src="http://oibl5dyji.bkt.clouddn.com/20171227133021.png"></image>
+            </view>
+        </block>
+        <view class="noitempage" wx:else>
+            <image class="hidupload" src="http://oibl5dyji.bkt.clouddn.com/20170925144227.png"></image>
+        </view>
+    </block>
+</scroll-view>
+<view class="activity-rules-modal" hidden="{{showActivityRules}}">
+    <view class="activity-rules">
+        <view class="rule-title">
+            <text>{{ablumInfo.arTitle?ablumInfo.arTitle:'活动规则'}}</text>
+        </view>
+        <view class="rule-list">
+            <text wx:for="{{ablumInfo.arValue}}" wx:key="{{index}}">{{item}}</text>
+        </view>
+        <image catchtap="closeActivityRules" class="close-rules" src="http://oibl5dyji.bkt.clouddn.com/0129_close.png"></image>
+    </view>
+</view>
+<view class="showModel" wx:if="{{showModelHidden}}">
+    <view class="modelBox">
+        <image class="modelBoxImg" src="http://oibl5dyji.bkt.clouddn.com/20170606093444.png"></image>
+        <view class="boxMiddle">
+            <view class="boxMiddleLeft">
+                <image class="modelBoxImg1" src="http://oibl5dyji.bkt.clouddn.com/20170608134133.png"></image>
+                <image class="modelBoxImg2" src="http://oibl5dyji.bkt.clouddn.com/20170608134135.png"></image>
+                <image class="modelBoxImg3" src="http://oibl5dyji.bkt.clouddn.com/20170608134137.png"></image>
+            </view>
+            <view class="boxMiddleRight">
+                <image class="modelBoxImg4" src="http://oibl5dyji.bkt.clouddn.com/20170608134134.png"></image>
+                <image class="modelBoxImg5" src="http://oibl5dyji.bkt.clouddn.com/20170608134136.png"></image>
+            </view>
+        </view>
+        <view class="boxImg">
+            <view class="boxImgLeft">
+                <image src="http://oibl5dyji.bkt.clouddn.com/20170608134138.png"></image>
+            </view>
+            <view class="boxImgRight">
+                <image src="http://oibl5dyji.bkt.clouddn.com/20170608134139.png"></image>
+            </view>
+        </view>
+        <view class="shiyong"></view>
+        <image catchtap="returnhome" class="modelBoxImg6" src="http://oibl5dyji.bkt.clouddn.com/20170606093448.png"></image>
+        <image catchtap="closeModel" class="closeModel" src="http://oibl5dyji.bkt.clouddn.com/20170606104539.png"></image>
+    </view>
+</view>
+<view catchtap="prevent" class="lianxikefu" wx:if="{{ablumInfo.dialogShow==1}}">
+    <button openType="contact"></button>
+</view>
+<view class="pvModel" wx:if="{{pvShowModel}}">
+    <view catchtap="closepvModel" class="pvModel-box">
+        <view class="pvModel-main">
+            <view catchtap="uploadpic" class="mainItem" data-pic="pai">
+                <text>拍照片</text>
+            </view>
+            <view catchtap="uploadpic" class="mainItem" data-pic="phone" style="margin-bottom:16rpx;">
+                <text>相册照片</text>
+            </view>
+            <view catchtap="uploadvideo" class="mainItem" data-video="pai">
+                <text>拍视频</text>
+            </view>
+            <view catchtap="uploadvideo" class="mainItem" data-video="phone" style="margin-bottom:16rpx;">
+                <text>相册视频</text>
+            </view>
+            <view class="mainItem">
+                <image src="http://oibl5dyji.bkt.clouddn.com/20170927152721.png"></image>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="upModel" wx:if="{{showProgress}}">
+    <view class="progressModelBox" wx:if="{{upSteps==1}}">
+        <view class="progressText">
+            <text>正在上传{{progress?progress:0}}%</text>
+            <text class="shareText">上传中请勿退出</text>
+        </view>
+        <view class="progressBox">
+            <progress activeColor="#66cc00" backgroundColor="#d7d7d7" percent="{{progress}}"></progress>
+        </view>
+    </view>
+    <view class="successModelBox" wx:elif="{{upSteps==2}}">
+        <image catchtap="closeProgress" class="closeProgress" src="http://oibl5dyji.bkt.clouddn.com/20171201101323.png"></image>
+        <view class="successText">
+            <image src="http://oibl5dyji.bkt.clouddn.com/20171201101321.png"></image>
+            <text wx:if="{{upViderOrPic=='pic'}}">成功上传{{totalnum}}张照片</text>
+            <text wx:else>视频上传成功</text>
+        </view>
+    </view>
+    <view class="failModelBox" wx:elif="{{upSteps==3}}">
+        <image catchtap="closeProgress" class="closeProgress" src="http://oibl5dyji.bkt.clouddn.com/20171201101323.png"></image>
+        <image class="upFailImg" src="http://oibl5dyji.bkt.clouddn.com/20171201101322.png"></image>
+        <text class="upFailText">亲~{{upViderOrPic=='pic'?'照片':'视频'}}上传失败！</text>
+        <view catchtap="uploadAgain" class="upAgain">重新上传</view>
+    </view>
+    <view class="filterModelBox" wx:elif="{{upSteps==4}}">
+        <image catchtap="closeProgress" class="closeProgress" src="http://oibl5dyji.bkt.clouddn.com/20171121170422.png"></image>
+        <image class="filterImg" src="http://oibl5dyji.bkt.clouddn.com/20171201101322.png"></image>
+        <view class="filterText">
+            <block wx:if="{{upViderOrPic=='pic'}}">
+                <text wx:if="{{sucImgNum==0}}">上传{{fitImgNum}}张照片可能涉及不健康信息或因GIF格式被过滤！</text>
+                <text wx:else>成功上传{{sucImgNum}}张照片，其中{{fitImgNum}}张照片可能涉及不健康信息或因GIF格式被过滤！</text>
+            </block>
+            <text wx:else>上传的视频可能涉及不健康信息或非法内容被过滤！</text>
+        </view>
+    </view>
+</view>
+<view class="fasttoknowModel" wx:if="{{showDisposeModel}}">
+    <view class="threepictop">
+        <text class="threepictext">三步了解忆年共享相册</text>
+        <button bindtap="closeModel" class="threeCloseModel" plain="true"></button>
+    </view>
+    <view class="threepicturesBox">
+        <view bindtouchend="changend" bindtouchstart="changestart" catchtouchmove="changemove" class="threepictures threeone {{classArr[0]}}">
+            <text>{{usernumber}}位用户</text>
+            <text>正在使用忆年共享相册</text>
+            <text>照片、短视频一键储存</text>
+            <text>安全保障、原图保存、永不过期</text>
+            <image class="three-picsone" mode="aspectFit" src="http://oibl5dyji.bkt.clouddn.com/firstimage.png"></image>
+            <view class="indexBlock">
+                <view class="yellowBlock"></view>
+                <view class="grayBlock"></view>
+                <view class="grayBlock"></view>
+            </view>
+            <view catchtap="addgroup" class="creatmyalbum"></view>
+        </view>
+        <view bindtouchend="changend" bindtouchstart="changestart" catchtouchmove="changemove" class="threepictures threetwo {{classArr[1]}}">
+            <image mode="aspectFit" src="http://oibl5dyji.bkt.clouddn.com/page02text.png">
+                <text class="threetwo-text">您可以创建这些相册</text>
+            </image>
+            <image mode="aspectFit" src="http://oibl5dyji.bkt.clouddn.com/page02pic.png"></image>
+            <view class="indexBlock">
+                <view class="grayBlock"></view>
+                <view class="yellowBlock"></view>
+                <view class="grayBlock"></view>
+            </view>
+            <view catchtap="addgroup" class="creatmyalbum"></view>
+        </view>
+        <view bindtouchend="changend" bindtouchstart="changestart" catchtouchmove="changemove" class="threepictures threethree {{classArr[2]}}">
+            <text>还有精彩礼品相送哦!</text>
+            <image mode="aspectFit" src="http://oibl5dyji.bkt.clouddn.com/page03pic.png"></image>
+            <view class="indexBlock">
+                <view class="grayBlock"></view>
+                <view class="grayBlock"></view>
+                <view class="yellowBlock"></view>
+            </view>
+            <view catchtap="addgroup" class="creatmyalbum"></view>
+        </view>
+    </view>
+</view>
+<view catchtap="cancelCheck" class="checkFeatures" wx:if="{{checkFeatures}}">
+    <view catchtap="cancelCheck" class="checkBox">
+        <view catchtap="lookTimeData" class="allpictext">
+            <image class="allpicimg" src="http://oibl5dyji.bkt.clouddn.com/20171108112233.png"></image>
+        </view>
+        <view>
+            <picker bindchange="bindDateChange" fields="month" mode="date" value="{{firstdate}}">
+                <image class="checkimg" src="http://oibl5dyji.bkt.clouddn.com/20171108112317.png"></image>
+            </picker>
+        </view>
+        <view class="checkCancel">
+            <image class="checkcancelimg" src="http://oibl5dyji.bkt.clouddn.com/20171108112300.png"></image>
+        </view>
+    </view>
+</view>

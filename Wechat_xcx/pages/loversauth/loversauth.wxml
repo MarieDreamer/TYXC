@@ -1,0 +1,8 @@
+<view class="loveAu-container">
+    <view class="loveAu-section">
+        <button bindgetuserinfo="startauth" class="loveAu-section-btn" openType="getUserInfo">
+            <image mode="aspectFill" src="{{startAuthPic}}"></image>
+        </button>
+        <image catchtap="closeAuth" class="closeAuth" src="http://oibl5dyji.bkt.clouddn.com/0411_close.png"></image>
+    </view>
+</view>

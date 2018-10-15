@@ -1,0 +1,161 @@
+.withdraw {
+    padding: 50rpx 0 50rpx;
+    background: #fff;
+    flex-direction: column;
+}
+
+.keti-money {
+    font-size: 96rpx;
+    color: #E51C23;
+}
+
+.order-detail-title {
+    padding: 20rpx 25rpx;
+    font-size: 32rpx;
+    background: #fbfbfb;
+    margin-top: 20rpx;
+}
+
+.n-container {
+    background: #fff;
+}
+
+.menber-item {
+    padding: 20rpx 0;
+    margin: 0 26rpx;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.daili {
+    -webkit-box-flex: 1;
+    flex: 1;
+}
+
+.subordinate {
+    margin-bottom: 10rpx;
+}
+
+.time {
+    color: #999;
+}
+
+.money {
+    width: 160rpx;
+    color: #E51C23;
+    font-size: 32rpx;
+    text-align: right;
+}
+
+.go-arrow {
+    width: 12rpx;
+    height: 24rpx;
+    margin-left: 20rpx;
+}
+
+.flexed {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: space-between;
+    -ms-flex-pack: space-between;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.flexed-2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: flex-start;
+    -ms-flex-pack: flex-start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.flexed-3 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.f1 {
+    color: #666;
+}
+
+.f2 {
+    color: #999;
+}
+
+.f3 {
+    color: #fff;
+}
+
+.f4 {
+    color: #e51c23;
+}
+
+.f12 {
+    font-size: 24rpx;
+}
+
+.f16 {
+    font-size: 26rpx;
+}
+
+.f14 {
+    font-size: 28rpx;
+}
+
+.f16 {
+    font-size: 32rpx;
+}
+
+.bk {
+    display: block;
+}
+
+.center {
+    text-align: center;
+}
+
+image {
+    vertical-align: middle;
+}
+
+.no-border-b {
+    border-bottom: none!important;
+}
+
+.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.flex-item {
+    -webkit-box-flex: 1;
+    flex: 1;
+}

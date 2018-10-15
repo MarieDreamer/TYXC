@@ -1,0 +1,65 @@
+<view class="mem-container">
+    <view class="greater" wx:if="{{gnum>100}}">
+        <view class="s-header">
+            <view class="serchBox">
+                <image class="searchImg" src="http://oibl5dyji.bkt.clouddn.com/20170806134522.png"></image>
+                <input bindconfirm="searchList" class="Search" confirmType="search" name="searchText" placeholder="点击输入相册名称搜索" placeholderStyle="color:rgb(153,153,153);" value="{{value}}"></input>
+                <image catchtap="closeReset" class="close" src="http://oibl5dyji.bkt.clouddn.com/20170911175731.png" wx:if="{{start}}"></image>
+            </view>
+        </view>
+        <view class="searchBox">
+            <view catchtap="addRest" class="groupItem" data-add="{{index}}" wx:for="{{searchList}}" wx:key="{{index}}">
+                <image class="listUpic" mode="aspectFill" src="{{item.upic}}"></image>
+                <text>{{item.unickname}}</text>
+                <image src="http://oibl5dyji.bkt.clouddn.com/20170916215933ed.png" wx:if="{{item.select}}"></image>
+                <image src="http://oibl5dyji.bkt.clouddn.com/20170916215933.png" wx:else></image>
+            </view>
+        </view>
+        <view class="kongBg"></view>
+        <view class="confirmMember">
+            <view catchtap="changeRestList" class="groupItem" data-rest="{{index}}" wx:for="{{restList}}" wx:key="{{index}}">
+                <image class="listUpic" mode="aspectFill" src="{{item.upic}}"></image>
+                <text>{{item.unickname}}</text>
+                <image src="http://oibl5dyji.bkt.clouddn.com/20170916215933ed.png" wx:if="{{item.select}}"></image>
+                <image src="http://oibl5dyji.bkt.clouddn.com/20170916215933.png" wx:else></image>
+            </view>
+            <view class="groupItem" wx:for="{{createList}}" wx:key="{{index}}">
+                <image class="listUpic" mode="aspectFill" src="{{item.upic}}"></image>
+                <text>{{item.unickname}}</text>
+                <image src="http://oibl5dyji.bkt.clouddn.com/20170916215933ed.png" wx:if="{{item.select}}"></image>
+                <image src="http://oibl5dyji.bkt.clouddn.com/20170916215933.png" wx:else></image>
+            </view>
+            <view catchtap="changeSelList" class="groupItem" data-sel="{{index}}" wx:for="{{selectList}}" wx:key="{{index}}">
+                <image class="listUpic" mode="aspectFill" src="{{item.upic}}"></image>
+                <text>{{item.unickname}}</text>
+                <image src="http://oibl5dyji.bkt.clouddn.com/20170916215933ed.png" wx:if="{{item.select}}"></image>
+                <image src="http://oibl5dyji.bkt.clouddn.com/20170916215933.png" wx:else></image>
+            </view>
+        </view>
+    </view>
+    <view class="less" wx:else>
+        <view class="lessList">
+            <view class="groupItem" wx:for="{{createList}}" wx:key="{{index}}">
+                <image class="listUpic" mode="aspectFill" src="{{item.upic}}"></image>
+                <text>{{item.unickname}}</text>
+                <image src="http://oibl5dyji.bkt.clouddn.com/20170916215933ed.png" wx:if="{{item.select}}"></image>
+                <image src="http://oibl5dyji.bkt.clouddn.com/20170916215933.png" wx:else></image>
+            </view>
+            <view catchtap="changeSelList" class="groupItem" data-sel="{{index}}" wx:for="{{selectList}}" wx:key="{{index}}">
+                <image class="listUpic" mode="aspectFill" src="{{item.upic}}"></image>
+                <text>{{item.unickname}}</text>
+                <image src="http://oibl5dyji.bkt.clouddn.com/20170916215933ed.png" wx:if="{{item.select}}"></image>
+                <image src="http://oibl5dyji.bkt.clouddn.com/20170916215933.png" wx:else></image>
+            </view>
+            <view catchtap="changeRestList" class="groupItem" data-rest="{{index}}" wx:for="{{restList}}" wx:key="{{index}}">
+                <image class="listUpic" mode="aspectFill" src="{{item.upic}}"></image>
+                <text>{{item.unickname}}</text>
+                <image src="http://oibl5dyji.bkt.clouddn.com/20170916215933ed.png" wx:if="{{item.select}}"></image>
+                <image src="http://oibl5dyji.bkt.clouddn.com/20170916215933.png" wx:else></image>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="confirmBtn">
+    <view catchtap="release">确认</view>
+</view>

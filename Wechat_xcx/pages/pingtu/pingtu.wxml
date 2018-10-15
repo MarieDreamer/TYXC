@@ -1,0 +1,92 @@
+<view class="container">
+    <view bindtouchend="end" bindtouchmove="move" catchtouchstart="startmove" class="pingtu" style="{{'width:'+picwid*3+'px;height:'+picwid*3+'px'}}">
+        <view class="item {{blur?'blur':''}}  {{index==dargindex?'move':'stop'}}" data-index="{{index}}" style="{{'top:'+item[0]+'px; left:'+item[1]+'px;'+'width:'+picwid+'px;height:'+picwid+'px;background-image:url('+img+');background-size:'+3*picwid+'px '+3*picwid+'px;background-position:-'+bgarr[index][1]+'px -'+bgarr[index][0]+'px'}}" wx:for="{{posArr}}" wx:key="{{index}}">
+            <icon class="good" hidden="{{!state[index]}}"></icon>
+        </view>
+        <view catchtouchend="hiddenpic" catchtouchmove="none" catchtouchstart="showpic" class="showlongtapcover" hidden="{{!showlongtapcover}}" style="width:{{picwid*3}}px;height:{{picwid*3}}px">
+            <text>长按显示图片</text>
+        </view>
+        <view catchtouchend="none" catchtouchmove="none" catchtouchstart="none" class="cover" style="{{'width:'+picwid*3+1+'px;height:'+picwid*3+1+'px'}}" wx:if="{{showcover}}">
+            <view class="startplay" wx:if="{{showstartbtn}}">
+                <view class="oneline"></view>
+                <view class="twoline"></view>
+                <view class="threeline"></view>
+                <view catchtouchstart="start" class="startbtn">
+                    <text>开始拼图</text>
+                </view>
+            </view>
+            <view class="playresult" wx:if="{{showresult}}">
+                <view class="resultbox">
+                    <text class="alltime">{{alltime}}</text>
+                    <text class="longdes">拼完总用了{{alltime}}秒</text>
+                    <icon catchtouchstart="closeresult" class="closeresult"></icon>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="imputsection">
+        <view class="infosection">
+            <text style="color:{{content=='你的好友没有留下任何提示哦！'?'#999':''}}">{{content}}</text>
+        </view>
+        <view class="sharePinTu">
+            <text>点击分享拼图邀请好友一起来玩</text>
+            <button class="sharePtBtn" openType="share" wx:if="{{canIUse}}"></button>
+            <image catchtap="showIntro" class="sharePtImg" src="http://oibl5dyji.bkt.clouddn.com/20170704103237.png" wx:else></image>
+        </view>
+        <view class="seePic">
+            <view class="modelPic">
+                <image src="http://oibl5dyji.bkt.clouddn.com/20170704103238.png"></image>
+            </view>
+            <image catchtap="openModel" class="picBtn" src="http://oibl5dyji.bkt.clouddn.com/20170606093441.png"></image>
+        </view>
+        <view class="paihang">
+            <view class="titleLine"></view>
+            <text class="paihangtitle">排行榜</text>
+            <view class="paihang-item" wx:for="{{joiner}}" wx:key="{{item.userid}}">
+                <text class="paihang-index">{{index+1}}.</text>
+                <view class="headerpic-box">
+                    <icon class="cat {{index==0?'first':''}} {{index==1?'second':''}} {{index==2?'three':''}}"></icon>
+                    <image src="{{item.upic}}"></image>
+                </view>
+                <view class="timebox">
+                    <text class="username">{{item.unickname}}</text>
+                    <text class="time">{{item.joinTime}}</text>
+                </view>
+                <text class="paihang-time" style="{{index==0?'font-size:30rpx;color:#333;':''}} {{index==1?'color:#666;':''}}">{{item.joinScore}}秒</text>
+            </view>
+            <view class="nopeople" wx:if="{{joiner.length==0}}"></view>
+        </view>
+        <view class="makebtn">
+            <button catchtap="makepuzzle" class="makepintu"></button>
+        </view>
+    </view>
+    <view class="showModel" wx:if="{{showModelHidden}}">
+        <view class="modelBox">
+            <image class="modelBoxImg" src="http://oibl5dyji.bkt.clouddn.com/20170606093444.png"></image>
+            <view class="boxMiddle">
+                <view class="boxMiddleLeft">
+                    <image class="modelBoxImg1" src="http://oibl5dyji.bkt.clouddn.com/20170608134133.png"></image>
+                    <image class="modelBoxImg2" src="http://oibl5dyji.bkt.clouddn.com/20170608134135.png"></image>
+                    <image class="modelBoxImg3" src="http://oibl5dyji.bkt.clouddn.com/20170608134137.png"></image>
+                </view>
+                <view class="boxMiddleRight">
+                    <image class="modelBoxImg4" src="http://oibl5dyji.bkt.clouddn.com/20170608134134.png"></image>
+                    <image class="modelBoxImg5" src="http://oibl5dyji.bkt.clouddn.com/20170608134136.png"></image>
+                </view>
+            </view>
+            <view class="boxImg">
+                <view class="boxImgLeft">
+                    <image src="http://oibl5dyji.bkt.clouddn.com/20170608134138.png"></image>
+                </view>
+                <view class="boxImgRight">
+                    <image src="http://oibl5dyji.bkt.clouddn.com/20170608134139.png"></image>
+                </view>
+            </view>
+            <view class="shiyong"></view>
+            <image catchtap="returnhome" class="modelBoxImg6" src="http://oibl5dyji.bkt.clouddn.com/20170606093448.png"></image>
+            <image catchtap="closeModel" class="closeModel" src="http://oibl5dyji.bkt.clouddn.com/20170606104539.png"></image>
+        </view>
+    </view>
+    <audio hidden id="myAudio" src="http://oibl5dyji.bkt.clouddn.com/nos.mp3"></audio>
+    <audio hidden id="myAudio_good" src="http://oibl5dyji.bkt.clouddn.com/zhenque455455454.mp3"></audio>
+</view>

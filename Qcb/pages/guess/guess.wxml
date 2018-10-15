@@ -1,0 +1,56 @@
+<view class="container">
+    <view class="myguess-con" style="background:url(\"https://cc.hohiw.com/xcximg/myguess-bg.jpg\");-webkit-background-size:cover;">
+        <view class="con-top">
+            <image animation="{{animationData}}" class="lb lf" src="https://cc.hohiw.com/xcximg/yanhua_1.png"></image>
+            <image animation="{{animationData}}" class="lb rf" src="https://cc.hohiw.com/xcximg/yanhua_2.png"></image>
+            <image animation="{{animationData}}" class="bt" src="https://cc.hohiw.com/xcximg/biaoti.png"></image>
+            <image class="money1" src="https://cc.hohiw.com/xcximg/qian_1.png"></image>
+            <image class="money2" src="https://cc.hohiw.com/xcximg/qian_2.png"></image>
+            <image class="money3" src="https://cc.hohiw.com/xcximg/qian_3.png"></image>
+            <image class="bg" src="https://cc.hohiw.com/xcximg/renwu.png"></image>
+            <navigator class="rule wq" url="/pages/query/query">
+                <image src="https://cc.hohiw.com/xcximg/wangqijilv2.png"></image>
+            </navigator>
+        </view>
+        <view class="con-c">
+            <view class="opentime" style="background:url(\"https://cc.hohiw.com/xcximg/daojishi_bg.png\");-webkit-background-size:cover;">
+                <image class="ddkj" src="https://cc.hohiw.com/xcximg/waiting.gif"></image>
+            </view>
+            <view class="phase">
+                <view class="phase-t {{isIphoneX?'fix-iphonex-phase-t':''}}">
+                    <text>开奖期【{{expect}}】期</text>
+                </view>
+                <view class="phase-c" style="background:url(\"https://cc.hohiw.com/xcximg/kuang.png\");-webkit-background-size:cover;">
+                    <view class="single">
+                        <image bindtap="{{ActChoose}}" data-index="one" src="https://cc.hohiw.com/xcximg/act.png" wx:if="{{guess.one.selected==1}}"></image>
+                        <image bindtap="{{ActChoose}}" data-index="one" src="https://cc.hohiw.com/xcximg/dan.png" wx:if="{{guess.one.selected==0}}"></image>
+                    </view>
+                    <view class="double">
+                        <image bindtap="{{ActChoose}}" data-index="two" src="https://cc.hohiw.com/xcximg/act.png" wx:if="{{guess.two.selected==1}}"></image>
+                        <image bindtap="{{ActChoose}}" data-index="two" src="https://cc.hohiw.com/xcximg/shuang.png" wx:if="{{guess.two.selected==0}}"></image>
+                    </view>
+                </view>
+                <view class="ts {{isIphoneX?'fix-iphonex-ts':''}}">
+                    <view class="ts-con" style="display:{{ActChoose==''?'none':''}}">
+                        <radio bindtap="ChangeCheck" checked="{{checked}}"></radio>我已阅读并同意 <navigator url="/pages/page/page?id=2">《猜奖活动规则》</navigator>
+                    </view>
+                    <view class="ts-con dd" style="display:{{ActChoose==''?'':'none'}}">
+                        <navigator url="/pages/index/index">
+                            <image src="https://cc.hohiw.com/xcximg/zgg.png"></image>
+                        </navigator>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="tc" style="background:url(\"https://cc.hohiw.com/xcximg/tc-bg.png\");-webkit-background-size:cover;display:{{Tshow}}">
+            <view class="con">
+                <form bindsubmit="{{Action}}" catchsubmit="{{Action}}" class="con" reportSubmit="true">
+                    <image bindtap="CloseTan" class="close" src="https://cc.hohiw.com/xcximg/tc-close.png"></image>
+                    <image class="cj-ts" src="https://cc.hohiw.com/xcximg/tc-hb.png" wx:if="{{guess.one.selected==1}}"></image>
+                    <image class="cj-ts" src="https://cc.hohiw.com/xcximg/tc-hb2.png" wx:if="{{guess.two.selected==1}}"></image>
+                    <button class="btn" formType="submit" style="background:url(\"https://cc.hohiw.com/xcximg/anniu.png\");-webkit-background-size:cover;"></button>
+                </form>
+            </view>
+        </view>
+    </view>
+</view>

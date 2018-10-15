@@ -1,0 +1,142 @@
+<view class="my_self">
+    <view class="ms-userinfo">
+        <view class="ms-userinfo-item">
+            <image catchtap="changeAvatarPic" class="ms-userinfo-avatar" mode="aspectFill" src="{{userInfo.avatar}}"></image>
+            <view class="ms-userinfo-base">
+                <text class="ms-userinfo-text ms-userinfo-nick">{{userInfo.nick}}</text>
+                <view class="ms-userinfo-text ms-userinfo-integral">
+                    <text>积分</text>
+                    <text class="ms-userinfo-integral-value">{{userInfo.integral}}</text>
+                    <navigator hoverClass="none" url="../integral/pages/mine/mine">
+                        <text class="ms-userinfo-earn">赚积分</text>
+                    </navigator>
+                </view>
+                <text class="ms-userinfo-text ms-userinfo-used_space">已使用容量{{userInfo.usedSpace}}</text>
+            </view>
+        </view>
+        <view class="ms-userinfo-item ms-userinfo-signin">
+            <!-- <form bindsubmit="signIn" class="ms-userinfo-signin-btn {{userInfo.isSignIn||userInfo.loadSignIn===-1?'ms-userinfo-signin-disabled':''}}" reportSubmit="true">
+                <button class="ms-userinfo-signin-btn_btn" formType="submit">
+                    <text>{{signText}}</text>
+                </button>
+            </form> -->
+        </view>
+    </view>
+     <view class="ms-links">
+        <form catchtap="toTenSeconds" class="ms-links-item">
+            <button class="ms-links-item_btn" formType="submit">
+                <image class="ms-links-item-icon" mode="aspectFill" src="http://oibl5dyji.bkt.clouddn.com/myself_tenSeconds.png"></image>
+                <view class="ms-links-item-content">
+                    <text class="ms-links-item-name">拾秒音乐相册</text>
+                    <text class="ms-links-item-desc">创作精美音乐相册</text>
+                </view>
+            </button>
+        </form>
+        <form class="ms-links-item">
+            <button catchtap="toCalc" class="ms-links-item_btn" formType="submit">
+                <image class="ms-links-item-icon" mode="aspectFill" src="http://oibl5dyji.bkt.clouddn.com/0403_calc.png"></image>
+                <view class="ms-links-item-content">
+                    <text class="ms-links-item-name">懂你计算器</text>
+                    <text class="ms-links-item-desc">懂你想要的</text>
+                </view>
+            </button>
+        </form>
+     </view>  
+    <view class="ms-temp_tip" wx:if="{{false}}">
+        <view class="ms-tt-image">
+            <image mode="aspectFit" src="http://oibl5dyji.bkt.clouddn.com/myself_warn@2x.png"></image>
+        </view>
+        <view class="ms-tt-text">
+      原有奖励模式已改为积分奖励，针对部分未兑换礼品的用户，已为您补发积分奖励，如有疑问请联系微信客服：yiniankefu
+    </view>
+    </view>
+    <view class="ms-nav">
+        <navigator hoverClass="none" url="/package/center/welfare/welfare" wx:if="{{userInfo.showSign==0}}">
+            <view class="ms-nav-item">
+                <image class="ms-ni-icon" src="http://oibl5dyji.bkt.clouddn.com/0226icon_kuorong.png"></image>
+                <view class="ms-ni-main">
+                    <text class="ms-ni-name">扩容奖励</text>
+                </view>
+                <view class="ms-ni-option">
+                    <image class="ms-ni-more" src="http://oibl5dyji.bkt.clouddn.com/myself_more@2x.png"></image>
+                </view>
+            </view>
+        </navigator>
+        <!-- <navigator data-navname="shop" hoverClass="none" url="../integral/pages/mine/mine?pageName=integralShop">
+            <view class="ms-nav-item">
+                <image class="ms-ni-icon" src="http://oibl5dyji.bkt.clouddn.com/myself_integral@2x.png"></image>
+                <view class="ms-ni-main">
+                    <text class="ms-ni-name">积分商城</text>
+                    <text class="ms-ni-new">new</text>
+                </view>
+                <view class="ms-ni-option">
+                    <image class="ms-ni-more" src="http://oibl5dyji.bkt.clouddn.com/myself_more@2x.png"></image>
+                </view>
+            </view>
+        </navigator> -->
+        <navigator catchtap="changeLoadUsrInfo" hoverClass="none" url="{{'/pages/mymemory/mymemory?from=myself&userid='+userId}}">
+            <view class="ms-nav-item ms-nav-item-divide">
+                <image class="ms-ni-icon" src="http://oibl5dyji.bkt.clouddn.com/0226icon_myactive.png"></image>
+                <view class="ms-ni-main">
+                    <text class="ms-ni-name">我的动态</text>
+                </view>
+                <view class="ms-ni-option">
+                    <image class="ms-ni-more" src="http://oibl5dyji.bkt.clouddn.com/myself_more@2x.png"></image>
+                </view>
+            </view>
+        </navigator>
+        <view class="ms-nav-item">
+            <image class="ms-ni-icon" src="http://oibl5dyji.bkt.clouddn.com/myself_lock@2x.png"></image>
+            <view class="ms-ni-main">
+                <text class="ms-ni-name">相册密码锁</text>
+            </view>
+            <view class="ms-ni-option">
+                <switch bindchange="switchChange" checked="{{switchState}}" color="#fae100" type="switch"></switch>
+            </view>
+        </view>
+        <navigator catchtap="changeLoadUserInfo" hoverClass="none" url="/package/center/aboutyinian/aboutyinian?from=synchronous">
+            <view class="ms-nav-item">
+                <image class="ms-ni-icon" src="http://oibl5dyji.bkt.clouddn.com/myself_sync@2x.png"></image>
+                <view class="ms-ni-main">
+                    <text class="ms-ni-name">电脑端同步</text>
+                </view>
+                <view class="ms-ni-option">
+                    <image class="ms-ni-more" src="http://oibl5dyji.bkt.clouddn.com/myself_more@2x.png"></image>
+                </view>
+            </view>
+        </navigator>
+        <navigator catchtap="changeLoadUserInfo" hoverClass="none" url="/package/center/aboutyinian/aboutyinian?from=security">
+            <view class="ms-nav-item">
+                <image class="ms-ni-icon" src="http://oibl5dyji.bkt.clouddn.com/myself_safe@2x.png"></image>
+                <view class="ms-ni-main">
+                    <text class="ms-ni-name">安全保障</text>
+                </view>
+                <view class="ms-ni-option">
+                    <image class="ms-ni-more" src="http://oibl5dyji.bkt.clouddn.com/myself_more@2x.png"></image>
+                </view>
+            </view>
+        </navigator>
+        <navigator catchtap="changeLoadUserInfo" hoverClass="none" url="/package/center/aboutyinian/aboutyinian?from=about">
+            <view class="ms-nav-item">
+                <image class="ms-ni-icon" src="http://oibl5dyji.bkt.clouddn.com/myself_about@2x.png"></image>
+                <view class="ms-ni-main">
+                    <text class="ms-ni-name">关于忆年</text>
+                </view>
+                <view class="ms-ni-option">
+                    <image class="ms-ni-more" src="http://oibl5dyji.bkt.clouddn.com/myself_more@2x.png"></image>
+                </view>
+            </view>
+        </navigator>
+        <navigator catchtap="changeLoadUserInfo" hoverClass="none" url="/package/center/helpcenter/helpcenter">
+            <view class="ms-nav-item">
+                <image class="ms-ni-icon" src="http://oibl5dyji.bkt.clouddn.com/myself_feedback@2x.png"></image>
+                <view class="ms-ni-main">
+                    <text class="ms-ni-name">用户反馈</text>
+                </view>
+                <view class="ms-ni-option">
+                    <image class="ms-ni-more" src="http://oibl5dyji.bkt.clouddn.com/myself_more@2x.png"></image>
+                </view>
+            </view>
+        </navigator>
+    </view>
+</view>

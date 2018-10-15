@@ -1,0 +1,52 @@
+<view class="container">
+    <view class="gwc" wx:if="{{cartList}}">
+        <view class="gwc-list" wx:for="{{cartList}}" wx:for-item="v" wx:key="k">
+            <view class="gwc-lt">
+                <radio checked bindtap="SelectChange" data-index="{{index}}" wx:if="{{v.selected==1}}"></radio>
+                <radio bindtap="SelectChange" data-index="{{index}}" wx:else></radio>
+                <navigator openType="redirect" url="/pages/goods/goods?id={{v.goods_id}}">
+                    <image src="{{v.goods_img}}"></image>
+                </navigator>
+            </view>
+            <view class="gwc-rt">
+                <navigator openType="redirect" url="/pages/goods/goods?id={{v.goods_id}}">
+                    <view class="gwc-rt-t">
+                        <text class="tt">{{v.goods_name}}</text>
+                    </view>
+                    <view class="gwc-rt-c">
+                        <text>{{v.spec_key_name}}</text>
+                    </view>
+                </navigator>
+                <view class="gwc-rt-d">
+                    <text class="jg">￥{{v.member_goods_price}}</text>
+                    <image bindtap="DelCartGoods" class="del" data-id="{{v.id}}" src="https://cc.hohiw.com/xcximg/del2.png"></image>
+                </view>
+            </view>
+        </view>
+        <view class="hj">
+            <view class="hj-lt"></view>
+            <view class="hj-rt">
+                <view class="hj-rt-num">
+                    <text>合计</text>
+                    <text class="money">¥{{total_price.total_fee}}</text>
+                </view>
+                <view bindtap="SelCartSubmit" class="hj-rt-qjs">
+                    <text>去结算</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="gwc-k" wx:else>
+        <view>
+            <image src="https://cc.hohiw.com/xcximg/gwc_k.jpg"></image>
+        </view>
+        <view class="ts">
+            <text>您的购物车是空的哟～</text>
+            <navigator url="/pages/index/index">
+                <button>去首页逛逛</button>
+            </navigator>
+        </view>
+    </view>
+</view>
+<import src="/pages/template/tabbar.wxml"></import>
+<template is="tabBar" data="{{tabBar:bindData.tabBar}}"></template>

@@ -1,0 +1,9 @@
+<view class="help_con">
+    <navigator url="/pages/helpshow/helpshow?id={{item.article_id}}" wx:for="{{lists}}" wx:key="key">
+        <view class="help_list">{{item.title}}</view>
+    </navigator>
+</view>
+<view class="occupy"></view>
+<view class="button-group {{isIphoneX?'fix-iphonex-button':''}}"></view>
+<import src="/pages/template/tabbar.wxml"></import>
+<template is="tabBar" data="{{tabBar:bindData.tabBar}}"></template>

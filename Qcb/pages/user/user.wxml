@@ -1,0 +1,165 @@
+<view class="container">
+    <view class="user-info">
+        <view class="user-info-con">
+            <view class="user-info-left">
+                <image class="user-tx" src="{{user.head_pic}}"></image>
+                <view class="info">
+                    <text class="name">{{user.nickname}}</text>
+                    <text class="label">{{user.is_distribut==1?'个人合伙人':''}}{{user.is_agent==1?user.agent_level:''}} {{user.is_agent==0&&user.is_distribut==0?'普通会员':''}}</text>
+                </view>
+            </view>
+            <navigator url="/pages/setting/setting">
+                <view class="user-info-right">
+                    <image src="https://cc.hohiw.com/xcximg/user-list1.png"></image>
+                    <text>账户设置</text>
+                </view>
+            </navigator>
+        </view>
+    </view>
+    <view class="user-order">
+        <view class="user-order-t">
+            <view class="user-order-t-c">
+                <navigator class="weui-cell weui-cell_access" hoverClass="weui-cell_active" openType="redirect" url="/pages/orderlist/orderlist">
+                    <view class="weui-cell__bd">我的订单</view>
+                    <view class="weui-cell__ft weui-cell__ft_in-access">全部订单</view>
+                </navigator>
+            </view>
+        </view>
+        <view class="user-order-con">
+            <navigator openType="redirect" url="/pages/orderlist/orderlist?type=WAITPAY">
+                <view class="list">
+                    <image src="https://cc.hohiw.com/xcximg/user-order1.png"></image>
+                    <text>待付款</text>
+                    <view class="number2" wx:if="{{count_sundry_status.waitpay>0}}">{{count_sundry_status.waitpay}}</view>
+                </view>
+            </navigator>
+            <navigator openType="redirect" url="/pages/orderlist/orderlist?type=WAITSEND">
+                <view class="list">
+                    <image src="https://cc.hohiw.com/xcximg/user-order3.png"></image>
+                    <text>待发货</text>
+                    <view class="number2" wx:if="{{count_sundry_status.waitsend>0}}">{{count_sundry_status.waitsend}}</view>
+                </view>
+            </navigator>
+            <navigator openType="redirect" url="/pages/orderlist/orderlist?type=WAITRECEIVE">
+                <view class="list">
+                    <image src="https://cc.hohiw.com/xcximg/user-order2.png"></image>
+                    <text>待收货</text>
+                    <view class="number2" wx:if="{{count_sundry_status.waitreceive>0}}">{{count_sundry_status.waitreceive}}</view>
+                </view>
+            </navigator>
+            <navigator openType="redirect" url="/pages/orderlist/orderlist?type=WAITCCOMMENT" wx:if="{{is_comment==1}}">
+                <view class="list">
+                    <image src="https://cc.hohiw.com/xcximg/user-order4.png"></image>
+                    <text>待评价</text>
+                    <view class="number2" wx:if="{{count_sundry_status.waitcomment>0}}">{{count_sundry_status.waitcomment}}</view>
+                </view>
+            </navigator>
+        </view>
+    </view>
+    <view class="user-list">
+        <view class="weui-cells weui-cells_after-title">
+            <navigator class="weui-cell weui-cell_access" hoverClass="weui-cell_active" url="/pages/wallet/wallet">
+                <view class="weui-cell__hd">
+                    <image src="https://cc.hohiw.com/xcximg/new_ico2.png"></image>
+                </view>
+                <view class="weui-cell__bd">我的钱包</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+            <navigator class="weui-cell weui-cell_access" hoverClass="weui-cell_active" url="/pages/distribut/distribut">
+                <view class="weui-cell__hd">
+                    <image src="https://cc.hohiw.com/xcximg/new_ico3.png"></image>
+                </view>
+                <view class="weui-cell__bd">我的团队</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+            <navigator class="weui-cell weui-cell_access" hoverClass="weui-cell_active" url="/pages/orderaccount/orderaccount" wx:if="{{user.is_distribut}}">
+                <view class="weui-cell__hd">
+                    <image src="https://cc.hohiw.com/xcximg/new_ico4.png"></image>
+                </view>
+                <view class="weui-cell__bd">我的业绩</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+            <navigator class="weui-cell weui-cell_access" hoverClass="weui-cell_active" url="/pages/subject/subject" wx:if="{{is_ok==1}}">
+                <view class="weui-cell__hd">
+                    <image src="https://cc.hohiw.com/xcximg/new_ico5.png"></image>
+                </view>
+                <view class="weui-cell__bd">申请个人代理</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+            <navigator class="weui-cell weui-cell_access" hoverClass="weui-cell_active" url="/pages/agent/agent" wx:if="{{user.is_agent==1}}">
+                <view class="weui-cell__hd">
+                    <image src="https://cc.hohiw.com/xcximg/user-list6.png"></image>
+                </view>
+                <view class="weui-cell__bd">区域代理</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+            <navigator class="weui-cell weui-cell_access" hoverClass="weui-cell_active" url="/pages/share/share">
+                <view class="weui-cell__hd">
+                    <image src="https://cc.hohiw.com/xcximg/new_ico5.png"></image>
+                </view>
+                <view class="weui-cell__bd">我的名片</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+            <navigator class="weui-cell weui-cell_access" hoverClass="weui-cell_active" url="/pages/coupon/coupon">
+                <view class="weui-cell__hd">
+                    <image src="https://cc.hohiw.com/xcximg/new_ico6.png"></image>
+                </view>
+                <view class="weui-cell__bd">我的消费券</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+            <navigator class="weui-cell weui-cell_access" hoverClass="weui-cell_active" url="/pages/comment_list/comment_list?status=1" wx:if="{{is_comment==1}}">
+                <view class="weui-cell__hd">
+                    <image src="https://cc.hohiw.com/xcximg/user-list4.png"></image>
+                </view>
+                <view class="weui-cell__bd">我的评论</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+            <navigator class="weui-cell weui-cell_access" hoverClass="weui-cell_active" url="/pages/collect/collect">
+                <view class="weui-cell__hd">
+                    <image src="https://cc.hohiw.com/xcximg/new_ico7.png"></image>
+                </view>
+                <view class="weui-cell__bd">我的收藏</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+            <navigator class="weui-cell weui-cell_access" hoverClass="weui-cell_active" url="/pages/myquery/myquery">
+                <view class="weui-cell__hd">
+                    <image src="https://cc.hohiw.com/xcximg/new_ico8.png"></image>
+                </view>
+                <view class="weui-cell__bd">我的免单</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+            <navigator class="weui-cell weui-cell_access" hoverClass="weui-cell_active" url="/pages/addresslist/addresslist">
+                <view class="weui-cell__hd">
+                    <image src="https://cc.hohiw.com/xcximg/new_ico9.png"></image>
+                </view>
+                <view class="weui-cell__bd">收货地址</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+            <navigator class="weui-cell weui-cell_access" hoverClass="weui-cell_active" url="/pages/query/query">
+                <view class="weui-cell__hd">
+                    <image src="https://cc.hohiw.com/xcximg/new_ico10.png"></image>
+                </view>
+                <view class="weui-cell__bd">免单查询</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+            <navigator class="weui-cell weui-cell_access" hoverClass="weui-cell_active" url="/pages/help/help">
+                <view class="weui-cell__hd">
+                    <image src="https://cc.hohiw.com/xcximg/new_ico1.png"></image>
+                </view>
+                <view class="weui-cell__bd">帮助中心</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+            <button class="weui-cell weui-cell_access btn_contact" hoverClass="weui-cell_active" openType="contact">
+                <view class="weui-cell__hd">
+                    <image src="https://cc.hohiw.com/xcximg/new_ico12.png"></image>
+                </view>
+                <view class="weui-cell__bd">客服</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access font-color-blue">在线时间 am9:00-pm18：00</view>
+            </button>
+        </view>
+    </view>
+    <view class="occupy"></view>
+    <view class="button-group {{isIphoneX?'fix-iphonex-button':''}}"></view>
+</view>
+<import src="/pages/template/tabbar.wxml"></import>
+<template is="tabBar" data="{{tabBar:bindData.tabBar}}"></template>

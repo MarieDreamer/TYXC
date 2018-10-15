@@ -1,0 +1,87 @@
+<view class="bless-detail">
+    <view class="bd-content">
+        <view class="bd-content-placeholder">
+            <image class="bd-content-img" mode="widthFix" src="{{ICON.EDGE}}" wx:if="{{detail.pictureRecords.length>1}}"></image>
+        </view>
+        <view class="bd-content-img">
+            <image catchtap="openImagePreview" mode="widthFix" src="{{detail.pictureRecords[0].midThumbnail}}" style="width:100%"></image>
+            <view catchtap="openImagePreview" class="bd-content-img-more" wx:if="{{false}}">点击查看所有照片</view>
+            <view class="bd-content-img-number" wx:if="{{detail.pictureRecords.length>0}}">{{detail.pictureRecords.length}}</view>
+            <view class="bd-content-img-tag">
+                <image class="bd-cit-img" src="{{ICON.TAG}}" wx:if="{{detail.pictureRecords.length>0}}"></image>
+                <view class="bd-cit-text">
+                    <text class="bd-cit-text-name text-overflow">{{detail.unickname}}</text>
+                    <text class="bd-cit-text-greetings">祝大家六一快乐</text>
+                </view>
+            </view>
+        </view>
+        <view class="bd-content-info">
+            <view class="bd-ci-item">
+                <image class="bd-ci-like" src="{{ICON.LOVE}}"></image>
+                <text>{{myBlessingNumber}}人祝福</text>
+            </view>
+            <view class="bd-ci-item">
+                <image catchtap="openDeleteEvent" class="bd-ci-like" src="{{ICON.DELETE}}" wx:if="{{false}}"></image>
+                <text class="bd-ci-time">{{detail.eventTime}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="bd-greetings" wx:if="{{myBlessing.length>0}}">
+        <view class="bd-greetings-title">朋友祝福</view>
+        <view class="bd-greetings-content text-overflow">
+            <text class="bd-gc-item" wx:for="{{myBlessing}}" wx:key="{{key}}">{{item}}</text>
+        </view>
+    </view>
+    <view class="bd-comments">
+        <view class="bd-comments-item {{index==0?'bd-comments-item-bt':''}}" wx:if="{{commentsList.length>0}}" wx:for="{{commentsList}}">
+            <view class="bd-ci-info">
+                <view class="bd-ci-info-name">{{item.commentNickName}}
+          <text class="bd-ci-info-reply" wx:if="{{item.ceduserid!=10}}">回复</text>
+                    <text wx:if="{{item.ceduserid!=10}}">{{item.beCommentNickName}}</text> :</view>
+                <text class="bd-ci-info-datetime">{{item.ctime}}</text>
+            </view>
+            <view class="bd-ci-content">
+        {{item.ccontent}}
+      </view>
+        </view>
+    </view>
+    <view class="bd-footer">
+        <view class="bd-footer-left">
+            <view catchtap="toAlbum" class="bd-fl-item">
+                <image class="bd-icon" src="{{ICON.HOUSE}}"></image>
+                <text class="bd-fl-item-name">活动首页</text>
+            </view>
+            <view catchtap="switchCommentBox" class="bd-fl-item" data-status="{{true}}">
+                <image class="bd-icon" src="{{ICON.WRITE}}"></image>
+                <text class="bd-fl-item-name">评论</text>
+            </view>
+        </view>
+        <view class="bd-footer-right">
+            <view catchtap="toAlbum" class="bd-fr-item bd-fr-jion">
+                <image class="bd-icon" src="{{ICON.BLADE}}"></image>
+                <text class="bd-fr-item-name">我也要参与</text>
+            </view>
+            <button class="bd-fr-item bd-fr-invite" openType="share" wx:if="{{loginUserId==userId}}">
+                <image class="bd-icon" src="{{ICON.LOVE_ADD}}"></image>
+                <text class="bd-fr-item-name">邀请集心心</text>
+            </button>
+            <button catchtap="openSendBlessingModal" class="bd-fr-item bd-fr-invite " wx:if="{{loginUserId!=userId&&iLike==0}}">
+                <image class="bd-icon" src="{{ICON.LOVE_ADD}}"></image>
+                <text class="bd-fr-item-name">送他小心心</text>
+            </button>
+            <button catchtap="blessingTip" class="bd-fr-item bd-fr-invite bd-fr-invite-disabled" wx:if="{{loginUserId!=userId&&iLike==1}}">
+                <image class="bd-icon" src="{{ICON.LOVE_GRAY}}"></image>
+                <text class="bd-fr-item-name">已赞</text>
+            </button>
+        </view>
+    </view>
+    <view catchtap="switchCommentBox" class="comment_box" data-status="{{false}}" wx:if="{{commentBox}}">
+        <view catchtap="preventEvent" class="comment_box-main">
+            <form bindsubmit="sendComment" reportSubmit="true">
+                <input focus class="comment_box-input" cursorSpacing="8" name="content" placeholderClass="comment_box-input"></input>
+                <button class="comment_box-submit comment_box-submit-active" formType="submit">发送</button>
+            </form>
+        </view>
+    </view>
+    <send-blessing bindclose="blessingModalClose" bindreturnResult="_getDetail" eventId="{{blessingModal.eventId}}" groupId="{{groupId}}" scene="{{scene}}" selectedIndex="{{blessingModal.selectedIndex}}" show="{{blessingModal.show}}" userId="{{blessingModal.userId}}">></send-blessing>
+</view>

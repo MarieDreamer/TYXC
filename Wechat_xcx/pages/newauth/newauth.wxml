@@ -1,0 +1,7 @@
+<view class="au-container">
+    <view class="au-section">
+        <button bindgetuserinfo="startauth" class="au-section-btn" openType="getUserInfo">
+            <image id="reStart" mode="aspectFill" src="{{startAuthPic}}"></image>
+        </button>
+    </view>
+</view>

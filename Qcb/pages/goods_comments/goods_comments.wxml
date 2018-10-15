@@ -1,0 +1,23 @@
+<view class="container">
+    <view class="pl-con">
+        <view class="sppj-c" wx:for="{{commentlist}}" wx:for-item="v" wx:key="k">
+            <view class="sppj-c-t">
+                <image class="sppj-c-t-img" mode="widthFix" src="{{v.head_pic}}"></image>
+                <text>{{v.nickname}}</text>
+                <view class="pj">
+                    <image src="https://cc.hohiw.com/xcximg/star{{v.goods_rank}}.png"></image>
+                </view>
+            </view>
+            <view class="sppj-c-c">
+                <text>{{v.content}}</text>
+            </view>
+            <view class="sppj-c-i">
+                <image mode="widthFix" src="{{vo}}" wx:for="{{v.img}}" wx:for-item="vo" wx:key="key"></image>
+            </view>
+            <view class="sppj-c-d">
+                <text>{{v.add_time}} </text>
+            </view>
+        </view>
+    </view>
+    <text class="hdjz">{{down}}</text>
+</view>

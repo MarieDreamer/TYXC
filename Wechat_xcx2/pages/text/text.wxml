@@ -1,0 +1,74 @@
+<view class='ttle'>三步了解童忆共享相册</view>
+<!-- <view class='ttle'>三步了解童忆共享相册</view> -->
+<scroll-view scroll-x="true" class='scroll-view'>
+<view class="vw">
+  <view class='vw_1' style="float:left">
+    <view class='vw_top'>
+      <text>1067743位用户\n</text>
+      <text>正在使用忆年共享相册\n</text>
+      <text>照片、短视频一键储存\n</text>
+      <text>安全保障、原图保存、永不过期\n</text>
+    </view>
+    <view class='vw_image'>
+      <image class="three-picsone" mode="aspectFit" src="http://oibl5dyji.bkt.clouddn.com/firstimage.png"></image>
+      <view class="indexBlock">
+          <view class="yellowBlock"></view>
+          <view class="grayBlock"></view>
+          <view class="grayBlock"></view>
+      </view>
+
+      <view class='vw_btn'>
+        <button catchtap="addgroup" class='add_photo'>创建我的相册</button>
+      </view>
+
+      <!-- <view catchtap="addgroup" class='add_album' wx:if="{{btn_show==1}}">
+            <view>
+            创建相册
+            </view>
+        </view> -->
+      
+    </view>
+   
+  </view>
+</view>
+<view class="vw">
+  <view class='vw_2' style="float:left;">
+        <view class='c2_img' style="">
+            <view style='height:50rpx'></view>
+            <text class="threetwo-text">您可以创建这些相册</text> 
+        </view>
+    
+    <view class='vw_image'>
+          <image  mode="aspectFit"  src="http://oibl5dyji.bkt.clouddn.com/page02pic.png"></image>
+          <view class="indexBlock">
+              <view class="grayBlock"></view>
+              <view class="yellowBlock"></view>
+              <view class="grayBlock"></view>
+          </view>
+          <view class='vw_btn'>
+            <button catchtap="addgroup" class='add_photo'>创建我的相册</button>
+          </view>
+    </view>
+  </view>
+</view>
+<view class="vw">
+   <view class='vw_3' style="float:right">
+      <view class='vw_top'>
+      <text>还有精彩礼品相送哦!\n</text>
+      </view>
+    <view class='vw_image'>
+      <image class="three-picsone" mode="aspectFit" src="http://oibl5dyji.bkt.clouddn.com/page03pic.png"></image>
+      <view class="indexBlock">
+          <view class="grayBlock"></view>
+          <view class="grayBlock"></view>
+          <view class="yellowBlock"></view>
+      </view>
+
+      <view class='vw_btn'>
+        <button catchtap="addgroup" class='add_photo'>创建我的相册</button>
+      </view>
+      
+    </view>
+  </view>
+</view> 
+</scroll-view>

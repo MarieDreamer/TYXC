@@ -1,0 +1,32 @@
+<view class="container">
+    <view class="info">
+        <view class="flex-row">
+            <view class="flex-grow-1">
+                <view class="info-1">
+                    <view class="flex-row">
+                        <view class="flex-grow-1 flex-x-center">账户余额(元)</view>
+                    </view>
+                </view>
+                <view class="info-2 flex-x-center">¥{{user.user_money}}</view>
+                <view class="info-3 flex-x-center">
+                    <navigator hoverClass="none" url="/pages/deposit/deposit">
+                        <view class="info-btn flex-x-center flex-y-center">退款</view>
+                    </navigator>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="record">
+        <view class="record-list">
+            <view class="record-one flex-row" wx:for="{{account_log}}" wx:for-item="vo" wx:key="k">
+                <view class="flex-grow-1">
+                    <view>
+                        <view class="record-1">{{vo.desc}} {{vo.order_sn!=null?vo.order_sn:''}}</view>
+                        <view class="record-2">{{vo.time}}</view>
+                    </view>
+                </view>
+                <view class="flex-grow-0 flex-y-center {{vo.act=='zhi'?'record-3':'record-4'}}">{{vo.user_money}}</view>
+            </view>
+        </view>
+    </view>
+</view>

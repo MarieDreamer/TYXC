@@ -1,0 +1,139 @@
+<import src="../../js/wxParse/wxParse.wxml"></import>
+<view class="container bg">
+    <view class="banner">
+        <swiper autoplay="true" class="swiper" duration="500" indicatorDots="true" interval="3000" style="height:{{swiper_Height}}px">
+            <swiper-item class="swiper-list" wx:for="{{goods_images_list}}" wx:key="k">
+                <image bindtap="previewImage" data-idx="{{index}}" mode="widthFix" src="{{item.image_url}}"></image>
+            </swiper-item>
+        </swiper>
+    </view>
+    <view class="pro-c">
+        <view class="pro-c-t">
+            <text class="good-name">{{goods.goods_name}}</text>
+            <view class="pro-c-t-rt">
+                <button openType="share" plain="true" style="background-image:url(https://cc.hohiw.com/xcximg/fx2.png);"></button>
+                <text>分享</text>
+            </view>
+        </view>
+        <view class="pro-c-st">
+            <text>{{goods.goods_remark}}</text>
+        </view>
+        <view class="pro-c-d">
+            <view class="pro-c-d-l">
+                <view class="je">¥{{goods.shop_price}}<text class="fh">或</text>¥{{goods.last_price}}</view>
+            </view>
+            <view class="pro-c-d-r">已售{{goods.sales_sum}}</view>
+        </view>
+        <view class="pro-c-d bq">
+            <view class="pro-list">
+                <image src="https://cc.hohiw.com/xcximg/icon-bq.png"></image>
+                <text>全场包邮</text>
+            </view>
+            <view class="pro-list">
+                <image src="https://cc.hohiw.com/xcximg/icon-bq.png"></image>
+                <text>正品保障</text>
+            </view>
+            <view class="pro-list">
+                <image src="https://cc.hohiw.com/xcximg/icon-bq.png"></image>
+                <text>假一罚十</text>
+            </view>
+        </view>
+    </view>
+    <view class="sppj" wx:if="{{commentlist}}">
+        <view class="sppj-t" wx:if="{{is_comment==1}}">
+            <view class="sppj-t-lt">
+                <image class="sppj-t-lt-icon" src="https://cc.hohiw.com/xcximg/sppj.png"></image>
+                <text>商品评价</text>
+            </view>
+            <view class="sppj-t-rt">
+                <navigator url="/pages/goods_comments/goods_comments?id={{goods_id}}">
+                    <text>查看更多</text>
+                    <image class="sppj-t-rt-icon" src="https://cc.hohiw.com/xcximg/jt2.png"></image>
+                </navigator>
+            </view>
+        </view>
+        <view class="sppj-c" wx:if="v.is_show==1" wx:for="{{commentlist}}" wx:for-item="v" wx:key="k">
+            <view class="sppj-c-t">
+                <image class="sppj-c-t-img" mode="widthFix" src="{{v.head_pic}}"></image>
+                <text>{{v.nickname}}</text>
+                <view class="pj">
+                    <image src="https://cc.hohiw.com/xcximg/star{{v.goods_rank}}.png"></image>
+                </view>
+            </view>
+            <view class="sppj-c-c">
+                <text>{{v.content}}</text>
+            </view>
+            <view class="sppj-c-i" wx:if="{{v.img}}">
+                <image mode="widthFix" src="{{img}}" wx:for="{{v.img}}" wx:for-item="img" wx:key="key"></image>
+            </view>
+            <view class="sppj-c-d">
+                <text>{{v.add_time}} </text>
+            </view>
+        </view>
+    </view>
+    <view class="spxq">
+        <view class="spxq-t">
+            <view class="spxq-t-lt">
+                <text>商品详情</text>
+            </view>
+        </view>
+        <view class="spxq-c">
+            <template is="wxParse" data="{{wxParseData:goods.content.nodes}}"></template>
+        </view>
+    </view>
+    <text class="occupy"></text>
+    <view class="foot">
+        <view bindtap="GoUrl" class="foot-list lt" data-url="/pages/index/index">
+            <view class="foot-list lt-con">
+                <image src="https://cc.hohiw.com/xcximg/foot-1-2.png"></image>
+                <text>首页</text>
+            </view>
+        </view>
+        <view class="foot-list lt">
+            <view bindtap="Collect" class="foot-list lt-con">
+                <image src="https://cc.hohiw.com/xcximg/{{collectImg}}"></image>
+                <text>收藏</text>
+            </view>
+        </view>
+        <view class="foot-list lt">
+            <view bindtap="GoUrl" class="foot-list lt-con" data-url="/pages/cart/cart">
+                <image src="https://cc.hohiw.com/xcximg/gwc.png"></image>
+                <text>购物车</text>
+            </view>
+        </view>
+        <view bindtap="SpecChange" class="foot-list rt red" data-type="add_cart">
+            <text>加入购物车</text>
+        </view>
+        <view bindtap="SpecChange" class="foot-list rt org" data-type="quick_cart">
+            <text>立即购买</text>
+        </view>
+    </view>
+    <view class="tc-bg" style="display:{{show.selshow}}">
+        <view class="tc">
+            <view bindtap="CloseSpec" class="close">
+                <image src="https://cc.hohiw.com/xcximg/close.png"></image>
+            </view>
+            <view class="tc-t">
+                <image mode="widthFix" src="{{goods.goods_img}}"></image>
+                <view class="tc-t-rt">
+                    <text class="jg">¥{{goods.shop_price}}</text>
+                    <text class="kc">库存{{goods.store_count}}件</text>
+                    <text class="kw" wx:if="{{filter_spec!=''}}">请选择规格</text>
+                </view>
+            </view>
+            <view class="tc-c" wx:for="{{filter_spec}}" wx:for-item="spec" wx:key="key">
+                <text class="tc-c-t">{{index}}</text>
+                <button bindtap="switch_Sepc" class="{{v2.selected}}" data-index="{{j}}" data-key="{{v2.item_id}}" data-name="{{index}}" wx:for="{{spec}}" wx:for-index="j" wx:for-item="v2" wx:key="k2">{{v2.item}}</button>
+            </view>
+            <view class="tc-c2" style="display:none">
+                <text class="gmsl">购买数量</text>
+                <view class="stepper">
+                    <text bindtap="goods_cut" class="{{minusStatus}}">-</text>
+                    <input bindchange="InputNumber" type="number" value="{{goodsNumber}}"></input>
+                    <text bindtap="goods_add" class="normal">+</text>
+                </view>
+            </view>
+            <button bindtap="{{CartBtn}}" class="submit">确定</button>
+        </view>
+    </view>
+</view>

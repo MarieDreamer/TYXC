@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "忆年共享相册",
+    "enablePullDownRefresh": true,
+    "onReachBottomDistance": 1000,
+    "usingComponents": {
+        "publish-menu": "/pages/components/publishMenu/publishMenu",
+        "menu-modal": "/pages/components/menuModal/menuModal"
+    }
+}

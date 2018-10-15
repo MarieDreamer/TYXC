@@ -1,0 +1,323 @@
+.notification {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.notification-albums {
+    width: 100%;
+    margin-top: 25rpx;
+    padding-bottom: 120rpx;
+}
+
+.listitem {
+    width: 100%;
+    box-sizing: border-box;
+    height: 230rpx;
+    padding: 0 30rpx;
+}
+
+.notify_comment {
+    width: 490rpx;
+    height: 100%;
+    float: left;
+}
+
+.comment_top {
+    margin-top: 22rpx;
+    line-height: 42rpx;
+    display: flex;
+    align-items: center;
+}
+
+.listitem-left {
+    width: 90rpx;
+    height: 90rpx;
+    float: left;
+    margin-top: 60rpx;
+}
+
+.listitem-center {
+    width: 370rpx;
+    height: 100%;
+    float: left;
+    margin-left: 30rpx;
+}
+
+.content-top {
+    margin-top: 34rpx;
+    width: 100%;
+    height: 40rpx;
+    font-size: 28rpx;
+}
+
+.content-center {
+    margin-top: 10rpx;
+    width: 100%;
+    height: 72rpx;
+    font-size: 24rpx;
+    color: #999;
+    line-height: 36rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.content-bottom {
+    margin-top: 20rpx;
+    width: 100%;
+    height: 40rpx;
+    font-size: 24rpx;
+    color: #999;
+}
+
+.listitem-right {
+    width: 200rpx;
+    height: 100%;
+    float: right;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.wenziPic {
+    width: 100rpx;
+    height: 100rpx;
+    margin-top: 40rpx;
+}
+
+.shipingPic {
+    width: 100rpx;
+    height: 100rpx;
+    margin-top: 40rpx;
+}
+
+.yuyinPic {
+    width: 49rpx;
+    height: 73rpx;
+    margin-top: 53rpx;
+    margin-bottom: 14rpx;
+}
+
+.icon_commit {
+    width: 100rpx;
+    height: 70rpx;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon_commit image {
+    width: 44rpx;
+    height: 44rpx;
+}
+
+.right_efirstpic {
+    width: 100rpx;
+    height: 100rpx;
+    margin-top: 40rpx;
+}
+
+.bottom_function {
+    width: 100%;
+    height: 70rpx;
+    margin-top: 18rpx;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 16rpx;
+}
+
+.bottom_function button {
+    width: 70rpx;
+    height: 70rpx;
+    background: url(http://oibl5dyji.bkt.clouddn.com/20180521noliked.png) no-repeat center;
+    background-size: 44rpx 44rpx;
+    padding: 0;
+    border-radius: 0;
+}
+
+.likeImg {
+    width: 70rpx;
+    height: 70rpx;
+    display: flex;
+}
+
+.likeImg image {
+    width: 44rpx;
+    height: 44rpx;
+    margin-top: 10rpx;
+    margin-left: 18rpx;
+}
+
+.join_btn {
+    width: 120rpx;
+    height: 48rpx;
+    background-color: #ffe500;
+    border-radius: 24rpx;
+    font-size: 24rpx;
+    color: #000;
+    line-height: 48rpx;
+}
+
+.invite_btn {
+    width: 120rpx;
+    height: 48rpx;
+    background-color: #ffe500;
+    border-radius: 24rpx;
+    font-size: 24rpx;
+    color: #000;
+    line-height: 48rpx;
+}
+
+.notify_people {
+    font-size: 28rpx;
+    color: #000;
+    display: inline-block;
+    max-width: 90rpx;
+    vertical-align: bottom;
+    white-space: nowrap;
+    text-overflow: clip;
+    overflow: hidden;
+    word-wrap: break-word;
+}
+
+.notify_people_event {
+    max-width: 218rpx;
+}
+
+.notify_people_like {
+    max-width: 247rpx;
+}
+
+.notify_people_comment {
+    max-width: 247rpx;
+}
+
+.notify_people_ete {
+    max-width: 300rpx;
+}
+
+.notify_people_invite {
+    max-width: 164rpx;
+}
+
+.notify_people_join {
+    max-width: 164rpx;
+}
+
+.normal_text {
+    font-size: 28rpx;
+    color: #666666;
+    vertical-align: bottom;
+}
+
+.notifygname_album {
+    vertical-align: bottom;
+}
+
+.notifygname_text {
+    display: inline-block;
+    color: #666;
+    max-width: 240rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    vertical-align: bottom;
+}
+
+.notify_time {
+    vertical-align: bottom;
+    float: right;
+    margin-right: 10rpx;
+}
+
+.toalbum_btn {
+    border: 1rpx solid #fee500;
+    border-radius: 63rpx;
+    width: 170rpx;
+    height: 62rpx;
+    float: right;
+    margin-top: 31rpx;
+    font-size: 28rpx;
+    color: #000000;
+    text-align: center;
+    line-height: 62rpx;
+}
+
+.space_line {
+    width: 550rpx;
+    height: 2rpx;
+    background-color: #eee;
+    margin-left: 150rpx;
+}
+
+.viewscollPageLoading_up {
+    width: 170rpx;
+    height: 88rpx;
+    margin-left: 290rpx;
+}
+
+.loadnore_btn {
+    width: 156rpx;
+    height: 30rpx;
+    margin: 0 auto;
+    line-height: 30rpx;
+}
+
+.loadnore_btn>text {
+    font-size: 22rpx;
+    color: #999999;
+    margin-right: 4rpx;
+}
+
+.loadnore_btn>image {
+    width: 16rpx;
+    height: 9rpx;
+}
+
+.viewscollPageLoading {
+    width: 100%;
+    padding-top: 14rpx;
+    height: 88rpx;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.viewscollPageLoading image {
+    width: 170rpx;
+    height: 88rpx;
+}
+
+.viewscollPageLoading text {
+    color: #999;
+    font-size: 24rpx;
+}
+
+.backtoIndex {
+    width: 100%;
+    height: 120rpx;
+    position: fixed;
+    bottom: 0;
+    z-index: 999;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.backtoIndex_btn {
+    width: 556rpx;
+    height: 80rpx;
+    border-radius: 40rpx;
+    background-color: #ffe500;
+    color: #333;
+    font-size: 32rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

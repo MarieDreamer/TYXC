@@ -1,0 +1,216 @@
+page {
+    background: #f9f9f9;
+    position: absolute;
+    top: -1rpx;
+}
+
+.user-info {
+    width: 100%;
+    background: #ed6d00;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.user-info-con {
+    width: 100%;
+    padding: 0 5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.user-info-left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 75%;
+}
+
+.user-info-right {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 24rpx;
+    color: #fff;
+    height: 220rpx;
+}
+
+.user-info-right image {
+    width: 33rpx;
+    height: 30rpx;
+    margin-right: 10rpx;
+}
+
+.user-tx {
+    width: 130rpx;
+    height: 130rpx;
+    border-radius: 50%;
+    border: 2rpx solid #fff;
+    display: block;
+}
+
+.info {
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding-left: 5%;
+}
+
+.info .name {
+    width: 100%;
+    display: flex;
+    font-size: 32rpx;
+    color: #fff;
+}
+
+.info .label {
+    width: 100%;
+    display: flex;
+    font-size: 24rpx;
+    color: #fff;
+}
+
+.user-info-down {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 26rpx;
+}
+
+.user-info-down text {
+    border-right: 1px solid #F7F7F7;
+    width: 33%;
+    text-align: center;
+    color: #fff;
+}
+
+.user-info-down text:last-child {
+    border: 0;
+}
+
+.user-order {
+    margin: 10rpx 0;
+    width: 100%;
+    height: 234rpx;
+    background: #fff;
+}
+
+.user-order-t {
+    display: flex;
+    justify-content: space-between;
+    height: 90rpx;
+    align-items: center;
+    border-bottom: 1px solid #F7F7F7;
+}
+
+.user-order-t-c {
+    width: 100%;
+}
+
+.weui-cell {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+
+.weui-cell__ft {
+    font-size: 26rpx;
+    display: flex;
+    align-items: center;
+}
+
+.user-order-t-rt image {
+    width: 26rpx;
+    height: 26rpx;
+}
+
+.user-order-con {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 150rpx;
+}
+
+.list {
+    font-size: 24rpx;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+}
+
+.list image {
+    width: 60rpx;
+    height: 60rpx;
+}
+
+.list text {
+    width: 100%;
+    text-align: center;
+}
+
+.number2 {
+    position: absolute;
+    top: 0%;
+    right: 14%;
+    background: #fe6702;
+    color: #fff;
+    border-radius: 50%;
+    width: 25rpx;
+    height: 25rpx;
+    font-size: 16rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-list {
+    width: 100%;
+    margin-bottom: 10rpx;
+}
+
+.weui-cells {
+    position: static;
+}
+
+.weui-cell__bd {
+    font-size: 28rpx;
+}
+
+.weui-cell__hd {
+    display: flex;
+    align-items: center;
+}
+
+.weui-cell__hd image {
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 20rpx;
+}
+
+.font-color-blue {
+    color: #ed6d00;
+}
+
+.support {
+    width: 100%;
+    height: 60rpx;
+    color: #999;
+    font-size: 24rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn_contact::after {
+    border: 0;
+}
+
+.btn_contact {
+    background: #fff;
+    line-height: 39rpx;
+    text-align: left;
+}

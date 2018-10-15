@@ -1,0 +1,55 @@
+.add-container {
+    width: 750rpx;
+    background: #efeff5;
+    border-top: 1rpx solid transparent;
+}
+
+.addAll {
+    background: #fff;
+    margin-top: 16rpx;
+    width: 710rpx;
+    height: 80rpx;
+    padding: 0 20rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1rpx solid #cecece;
+}
+
+.addAll text {
+    color: #333;
+    font-size: 28rpx;
+}
+
+.addAll image {
+    width: 32rpx;
+    height: 32rpx;
+}
+
+.addAll .addmember {
+    width: 14rpx;
+    height: 24rpx;
+}
+
+.confirmBtn {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 108rpx;
+    background: rgba(255,255,255,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.confirmBtn view {
+    width: 710rpx;
+    height: 68rpx;
+    border-radius: 8rpx;
+    line-height: 68rpx;
+    text-align: center;
+    font-size: 28rpx;
+    background: #fff175;
+    color: #333;
+}

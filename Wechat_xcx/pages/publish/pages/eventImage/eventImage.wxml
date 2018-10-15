@@ -1,0 +1,37 @@
+<view class="publish">
+    <view class="publish-section">
+        <view class="publish-section-title" wx:if="{{false}}">
+            <view class="publish-list">
+                <image class="pl-icon" mode="aspectFill" src="{{ICON.PAGE}}"></image>
+                <view class="pl-text">
+                    <text class="pl-title">输入标题（必填）</text>
+                </view>
+            </view>
+        </view>
+        <view class="publish-section-content">
+            <input bindblur="inputTitle" class="publish-input" maxlength="16" placeholder="输入标题（必填）" placeholderClass="publish-placeholder">
+                <image class="publish-input-icon" mode="aspectFit" src="{{ICON.PAGE_GRAY}}"></image>
+                <text class="publish-input-count">{{title.length}}/16</text>
+            </input>
+        </view>
+    </view>
+    <input-text bindreturnResult="getInputText" placeholder="描述事件..."></input-text>
+    <location bindreturnResult="getLocation"></location>
+    <and-friends bindreturnResult="getAndFriends" groupId="{{groupId}}" selectedFriends="{{selectedFriends}}" wx:if="{{jurisdiction.andFriends}}"></and-friends>
+    <date-and-time bindreturnResult="getDatetime" wx:if="{{jurisdiction.publishedTime}}"></date-and-time>
+    <view class="publish-line"></view>
+    <view class="publish-select">
+        <view class="ps-item" wx:if="{{images.length<27}}">
+            <image catch:tap="selectImages" class="ps-item-img" mode="aspectFill" src="{{ICON.ADD_PHOTO}}"></image>
+        </view>
+        <view class="ps-item {{index%3===0?'ps-item-gap':''}}" wx:for="{{images}}" wx:key="key">
+            <image class="ps-item-img" mode="aspectFill" src="{{item}}"></image>
+            <image catchtap="deleteImage" class="ps-close" data-index="{{index}}" mode="aspectFill" src="{{ICON.CLOSE_SOLID}}"></image>
+        </view>
+    </view>
+    <view class="publish-submit">
+        <form bindsubmit="formSubmit" class="publish-submit-form" reportSubmit="{{true}}">
+            <button class="publish-btn  {{images.length===0?'publish-btn-disabled':''}}" formType="submit">立即上传</button>
+        </form>
+    </view>
+</view>

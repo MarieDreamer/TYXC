@@ -1,0 +1,17 @@
+<template name="tabBar">
+    <view class="tabBar">
+        <view class="tabBar-item" wx:for="{{tabBar}}" wx:key="tabBar">
+            <navigator hoverClass="none" openType="reLaunch" url="{{item.pagePath}}">
+                <view class="icon">
+                    <image src="{{item.iconPath}}"></image>
+                </view>
+                <view class="{{item.current==1?'tabBartext':''}}">{{item.text}}</view>
+            </navigator>
+        </view>
+    </view>
+    <view class="fixedleft" style="display:none">
+        <navigator url="/pages/query/query">
+            <image src="https://cc.hohiw.com/xcximg/jiang.png"></image>
+        </navigator>
+    </view>
+</template>

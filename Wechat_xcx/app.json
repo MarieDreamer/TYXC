@@ -1,0 +1,98 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/activitypage/activityindex/activityindex",
+        "pages/myself/myself",
+        "pages/moment/moment",
+        "pages/timelinelogin/timelinelogin",
+        "pages/newauth/newauth",
+        "pages/loversauth/loversauth",
+        "pages/loverscloseauth/loverscloseauth",
+        "pages/authorization/authorization",
+        "pages/sharehtml/pailide/pailide",
+        "pages/viewscoll/bigvideo/bigvideo",
+        "pages/detail/invited/invited",
+        "pages/uploadpic/uploadpic",
+        "pages/uploadvideo/uploadvideo",
+        "pages/detail/invitation/invitation",
+        "pages/detail/photodetail/photodetail",
+        "pages/detail/sign/sign",
+        "pages/pingtu/pingtu",
+        "pages/viewscoll/viewscoll",
+        "pages/grouptypescoll/grouptypescoll",
+        "pages/photowall/photowall",
+        "pages/photowall/morephoto/morephoto",
+        "pages/makegroup/makegroup",
+        "pages/setting/setting",
+        "pages/setting/addset/addset",
+        "pages/setting/addmember/addmember",
+        "pages/eventdetail/eventdetail",
+        "pages/eventdetail2/eventdetail2",
+        "pages/selectplace/selectplace",
+        "pages/editplace/editplace",
+        "pages/mymemory/mymemory",
+        "pages/makepingtu/makepingtu",
+        "pages/commonpage/sendcomment/send",
+        "pages/find/likelist/likelist",
+        "pages/find/photoerlist/photoerlist",
+        "pages/find/findindex/findindex",
+        "pages/personalPage/personalPage",
+        "pages/publish/pages/image/image",
+        "pages/publish/pages/selectMember/selectMember",
+        "pages/publish/pages/text/text",
+        "pages/publish/pages/video/video",
+        "pages/publish/pages/audio/audio",
+        "pages/notification/notification",
+        "pages/mayDayActivity/index/index",
+        "pages/mayDayActivity/upgroup/upgroup",
+        "pages/blessingActivities/pages/album/album",
+        "pages/blessingActivities/pages/detail/detail",
+        "pages/creatlogin/creatlogin",
+        "pages/minelogin/minelogin",
+        "pages/activitypage/login/home",
+        "pages/familyAlbum/index/index",
+        "pages/familyAlbum/eventAxis/eventAxis",
+        "pages/downloadApp/downloadApp",
+        "pages/components/publishMenu/publishMenu",
+        "pages/publish/pages/eventImage/eventImage"
+    ],
+    "window": {
+        "backgroundTextStyle": "dark",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "忆年",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "相册",
+                "iconPath": "images/20170911home.png",
+                "selectedIconPath": "images/20170911homed.png"
+            },
+            {
+                "pagePath": "pages/moment/moment",
+                "text": "时刻",
+                "iconPath": "images/20170911time.png",
+                "selectedIconPath": "images/20170911timed.png"
+            },
+            {
+                "pagePath": "pages/activitypage/activityindex/activityindex",
+                "text": "活动",
+                "iconPath": "images/0315-activity.png",
+                "selectedIconPath": "images/0315-activityed.png"
+            },
+            {
+                "pagePath": "pages/myself/myself",
+                "text": "我的",
+                "iconPath": "images/20170911myself.png",
+                "selectedIconPath": "images/20170911myselfed.png"
+            }
+        ],
+        "borderStyle": "white",
+        "color": "#999999",
+        "selectedColor": "#333333",
+        "backgroundColor": "#ffffff"
+    },
+    "debug": false
+}

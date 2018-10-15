@@ -1,0 +1,151 @@
+<view class="notification">
+    <view class="notification-albums">
+        <block wx:for="{{notifyAlbums}}" wx:for-index="Aindex" wx:key="{{Aindex}}">
+            <view catchtap="gotoactive" class="listitem" data-eid="{{item.eid}}" data-groupid="{{item.groupid}}" data-groupnewtype="{{item.groupNewType}}">
+                <view class="notify_comment">
+                    <block wx:if="{{type=='Event'}}">
+                        <image class="listitem-left" src="{{item.upic}}"></image>
+                        <view class="listitem-center">
+                            <view class="content-top">
+                                <text class="notify_people notify_people_event">{{item.name}}</text>
+                                <text class="normal_text">发表了动态</text>
+                            </view>
+                            <view class="content-center">
+                                <text>{{item.name}}发表了动态，快去看看吧</text>
+                            </view>
+                            <view class="content-bottom">
+                                <text class="notifygname_album">相册</text>
+                                <text class="notifygname_text">《{{item.gname}}》</text>
+                                <text class="notify_time">{{item.time}}</text>
+                            </view>
+                        </view>
+                    </block>
+                    <block wx:elif="{{type=='Like'}}">
+                        <image class="listitem-left" src="{{item.upic}}"></image>
+                        <view class="listitem-center">
+                            <view class="content-top">
+                                <text class="notify_people notify_people_like">{{item.name}}</text>
+                                <text class="normal_text">点赞了你</text>
+                            </view>
+                            <view class="content-center">
+                                <text>{{item.name}}等{{item.sum}}人已点赞，快去看看吧</text>
+                            </view>
+                            <view class="content-bottom">
+                                <text class="notifygname_album">相册</text>
+                                <text class="notifygname_text">《{{item.gname}}》</text>
+                                <text class="notify_time">{{item.time}}</text>
+                            </view>
+                        </view>
+                    </block>
+                    <block wx:elif="{{type=='Comment'}}">
+                        <image class="listitem-left" src="{{item.upic}}"></image>
+                        <view class="listitem-center">
+                            <view class="content-top">
+                                <text class="notify_people notify_people_comment">{{item.name}}</text>
+                                <text class="normal_text">评论了你</text>
+                            </view>
+                            <view class="content-center">
+                                <text>{{item.ccontent}}</text>
+                            </view>
+                            <view class="content-bottom">
+                                <text class="notifygname_album">相册</text>
+                                <text class="notifygname_text">《{{item.gname}}》</text>
+                                <text class="notify_time">{{item.time}}</text>
+                            </view>
+                        </view>
+                    </block>
+                    <block wx:elif="{{type=='@'}}">
+                        <image class="listitem-left" src="{{item.upic}}"></image>
+                        <view class="listitem-center">
+                            <view class="content-top">
+                                <text class="notify_people notify_people_ete">{{item.name}}</text>
+                                <text class="normal_text">@了你</text>
+                            </view>
+                            <view class="content-center">
+                                <text>{{item.ccontent}}</text>
+                            </view>
+                            <view class="content-bottom">
+                                <text class="notifygname_album">相册</text>
+                                <text class="notifygname_text">《{{item.gname}}》</text>
+                                <text class="notify_time">{{item.time}}</text>
+                            </view>
+                        </view>
+                    </block>
+                    <block wx:elif="{{type=='Invite'}}">
+                        <image class="listitem-left" src="{{item.upic}}"></image>
+                        <view class="listitem-center">
+                            <view class="content-top">
+                                <text class="notify_people notify_people_invite">{{item.name}}</text>
+                                <text class="normal_text">邀请你加入相册</text>
+                            </view>
+                            <view class="content-center">
+                                <text>{{item.name}}邀请你加入相册，快去看看吧</text>
+                            </view>
+                            <view class="content-bottom">
+                                <text class="notifygname_album">相册</text>
+                                <text class="notifygname_text">《{{item.gname}}》</text>
+                                <text class="notify_time">{{item.time}}</text>
+                            </view>
+                        </view>
+                    </block>
+                    <block wx:else>
+                        <image class="listitem-left" src="{{item.upic}}"></image>
+                        <view class="listitem-center">
+                            <view class="content-top">
+                                <text class="notify_people notify_people_join">{{item.name}}</text>
+                                <text class="normal_text">加入了你的相册</text>
+                            </view>
+                            <view class="content-center">
+                                <text>{{item.name}}加入了你的相册，快去看看吧</text>
+                            </view>
+                            <view class="content-bottom">
+                                <text class="notifygname_album">相册</text>
+                                <text class="notifygname_text">《{{item.gname}}》</text>
+                                <text class="notify_time">{{item.time}}</text>
+                            </view>
+                        </view>
+                    </block>
+                </view>
+                <view class="listitem-right">
+                    <button catchtap="gotoalbum" class="join_btn" data-groupid="{{item.groupid}}" data-groupnewtype="{{item.groupNewType}}" wx:if="{{type=='Join'}}">进入</button>
+                    <button catchtap="gotoalbum" class="invite_btn" data-groupid="{{item.groupid}}" data-groupnewtype="{{item.groupNewType}}" wx:elif="{{type=='Invite'}}">加入</button>
+                    <block wx:else>
+                        <image class="right_efirstpic" mode="aspectFill" src="{{item.efirstpic}}" wx:if="{{item.eMain==0}}"></image>
+                        <image class="wenziPic" mode="aspectFill" src="http://oibl5dyji.bkt.clouddn.com/0521_wenzi.png" wx:elif="{{item.eMain==1}}"></image>
+                        <image class="yuyinPic" mode="aspectFill" src="http://oibl5dyji.bkt.clouddn.com/0521_yuyin.png" wx:elif="{{item.eMain==2}}"></image>
+                        <image class="shipingPic" mode="aspectFill" src="http://oibl5dyji.bkt.clouddn.com/0521_shiping.png" wx:elif="{{item.eMain==4}}"></image>
+                        <block wx:else></block>
+                        <view catchtap="stop" class="bottom_function">
+                            <view catchtap="stop" class="likeImg" wx:if="{{item.likeStatus==1}}">
+                                <image mode="aspectFill" src="http://oibl5dyji.bkt.clouddn.com/20180521liked.png"></image>
+                            </view>
+                            <form bindsubmit="like" catchtap="stop" data-eid="{{item.eid}}" data-eidIndex="{{Aindex}}" data-likecatagry="like" reportSubmit="true" wx:else>
+                                <button formType="submit"></button>
+                            </form>
+                            <view catchtap="comment" class="icon_commit" data-eid="{{item.eid}}">
+                                <image src="http://oibl5dyji.bkt.clouddn.com/0504_commit_pic.png"></image>
+                            </view>
+                        </view>
+                    </block>
+                </view>
+            </view>
+            <view class="space_line" wx:if="{{Aindex!=notifyAlbums.length-1}}"></view>
+        </block>
+        <image class="viewscollPageLoading_up" mode="aspectFill" src="http://oibl5dyji.bkt.clouddn.com/viewscollloading4.gif" wx:if="{{loadingImgOrText}}"></image>
+        <view catchtap="loadNotification" class="loadnore_btn" wx:if="{{!hasloadall}}">
+            <text>{{tipText}}</text>
+            <image src="http://oibl5dyji.bkt.clouddn.com/0418_pulldown.png"></image>
+        </view>
+    </view>
+</view>
+<view catchtap="hiddenWrite" class="commentInputModelBox_timeLine" wx:if="{{showComInput}}">
+    <view catchtap="stop" class="commentInputBox_timeLine">
+        <form bindsubmit="sendcomment" reportSubmit="true">
+            <input bindinput="checkchange" class="commentinput_timeLine" cursorSpacing="8" focus="{{inputfocus}}" name="content" placeholder="{{placehold}}" placeholderClass="holderIpt_timeLine" value="{{value}}"></input>
+            <button class="sub_timeLine {{contentCurrent?'subActive_timeLine':''}}" formType="submit">发送</button>
+        </form>
+    </view>
+</view>
+<view catchtap="backtohome" class="backtoIndex">
+    <view class="backtoIndex_btn">去忆年首页</view>
+</view>

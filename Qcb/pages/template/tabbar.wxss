@@ -1,0 +1,44 @@
+.icon image {
+    width: 60rpx;
+    height: 60rpx;
+}
+
+.tabBar {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    padding: 10rpx 0;
+    background: #fff;
+    font-size: 26rpx;
+    color: #8A8A8A;
+    box-shadow: 6rpx 6rpx 6rpx 6rpx #aaa;
+}
+
+.tabBar-item {
+    float: left;
+    width: 25%;
+    text-align: center;
+    overflow: hidden;
+    line-height: 26rpx;
+}
+
+.tabBartext {
+    color: #ed6d00;
+}
+
+.fixedleft {
+    position: fixed;
+    bottom: 250rpx;
+    width: 80rpx;
+    height: 80rpx;
+    right: 4rpx;
+}
+
+.fixedleft image {
+    width: 100%;
+    height: 100%;
+}
+
+.fixedleft navigator {
+    display: unset;
+}

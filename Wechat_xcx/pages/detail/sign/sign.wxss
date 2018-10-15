@@ -1,0 +1,271 @@
+.sign-container {
+    width: 100%;
+    background: #efeff5;
+}
+
+.signDay {
+    width: 100%;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.signDay-day {
+    font-size: 38rpx;
+    color: #333;
+    margin-top: 33rpx;
+}
+
+.signDay-day text {
+    box-sizing: border-box;
+    padding: 36rpx 0 0 0;
+    display: inline-block;
+    vertical-align: bottom;
+    position: relative;
+    top: 8rpx;
+    margin: 0 13rpx 0 13rpx;
+    width: 106rpx;
+    height: 111rpx;
+    background: url('http://oibl5dyji.bkt.clouddn.com/20170611105836.png') no-repeat;
+    background-size: 106rpx 111rpx;
+    font-size: 55rpx;
+    text-align: center;
+}
+
+.signDay-kongjian {
+    margin-top: 65rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.signDay-kongjian view {
+    width: 9rpx;
+    height: 39rpx;
+    margin-right: 15rpx;
+    background: #d2d2d2;
+}
+
+.signDay-kongjian text {
+    font-size: 30rpx;
+    color: #999;
+}
+
+.signDay-rest {
+    font-size: 30rpx;
+    color: #999;
+}
+
+.signDay-rest text {
+    font-size: 60rpx;
+    color: #333;
+    line-height: 50rpx;
+}
+
+.signDay-price {
+    width: 228rpx;
+    height: 224rpx;
+    margin-top: 56rpx;
+}
+
+.signDay-bottom {
+    width: 610rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 82rpx;
+    margin-bottom: 25rpx;
+}
+
+.signDay-bottom view {
+    width: 190rpx;
+    height: 2rpx;
+    background: #999;
+}
+
+.signDay-bottom text {
+    font-size: 31rpx;
+    color: #999;
+}
+
+.prize-detail {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.detail-left {
+    box-sizing: border-box;
+    padding-right: 42rpx;
+    width: 150rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.detail-left view image {
+    width: 26rpx;
+    height: 290rpx;
+    vertical-align: bottom;
+}
+
+.left-pic1 {
+    margin-top: 156rpx;
+}
+
+.left-pic2 {
+    margin-top: 17rpx;
+}
+
+.left-pic3 {
+    margin-top: 17rpx;
+}
+
+.left-pic4 {
+    margin-top: 17rpx;
+}
+
+.huidian {
+    width: 26rpx;
+    height: 26rpx;
+    margin-top: 17rpx;
+}
+
+.detail-right {
+    width: 550rpx;
+}
+
+.prize-seven,.prize-fourteen,.prize-month,.prize-hundred,.prize-year {
+    width: 100%;
+    display: flex;
+    border-bottom: 1rpx solid #cecece;
+}
+
+.prize-pic {
+    width: 272rpx;
+    text-align: center;
+}
+
+.prize-pic image {
+    vertical-align: bottom;
+}
+
+.prize-dynamic {
+    width: 153rpx;
+    height: 167rpx;
+}
+
+.prize-seven .prize-pic {
+    margin: 21rpx 0 47rpx 15rpx;
+}
+
+.prize-seven .prize-pic image {
+    width: 272rpx;
+    height: 266rpx;
+}
+
+.prize-seven .prize-dynamic {
+    margin: 88rpx 0 0 75rpx;
+}
+
+.prize-fourteen .prize-pic {
+    margin: 37rpx 0 41rpx 15rpx;
+}
+
+.prize-fourteen .prize-pic image {
+    width: 209rpx;
+    height: 248rpx;
+}
+
+.prize-fourteen .prize-dynamic {
+    margin: 91rpx 0 0 75rpx;
+}
+
+.prize-month .prize-pic {
+    margin: 44rpx 0 34rpx 15rpx;
+}
+
+.prize-month .prize-pic image {
+    width: 228rpx;
+    height: 224rpx;
+}
+
+.prize-month .prize-dynamic {
+    margin: 74rpx 0 0 75rpx;
+}
+
+.prize-hundred .prize-pic {
+    margin: 30rpx 0 36rpx 15rpx;
+}
+
+.prize-hundred .prize-pic image {
+    width: 248rpx;
+    height: 224rpx;
+}
+
+.prize-hundred .prize-dynamic {
+    margin: 62rpx 0 0 75rpx;
+}
+
+.prize-year {
+    border: 0;
+}
+
+.prize-year .prize-pic {
+    margin: 27rpx 0 48rpx 15rpx;
+}
+
+.prize-year .prize-pic image {
+    width: 225rpx;
+    height: 244rpx;
+}
+
+.prize-year .prize-dynamic {
+    margin: 67rpx 0 0 75rpx;
+}
+
+.prize-pic-right {
+    width: 250rpx;
+    text-align: center;
+    padding-top: 68rpx;
+    float: right;
+}
+
+.left-top {
+    display: block;
+    font-size: 30rpx;
+    color: #666;
+    letter-spacing: 1rpx;
+}
+
+.left-center-day {
+    font-size: 55rpx;
+    color: #666;
+    text-align: center;
+    margin-top: 24rpx;
+}
+
+.left-center-daytext {
+    font-size: 30rpx;
+    color: #666;
+}
+
+.gettypebtn {
+    font-size: 28rpx;
+    color: #666;
+    width: 151rpx;
+    height: 45rpx;
+    line-height: 45rpx;
+    border: 1px solid #666;
+    border-radius: 10rpx;
+    margin-top: 16rpx;
+}
+
+.btn_level00 {
+    background-color: #ffe500!important;
+    border-color: #ffe500!important;
+}

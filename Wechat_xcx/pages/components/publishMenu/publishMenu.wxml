@@ -1,0 +1,17 @@
+<view catchtouchmove="prevent" class="publish_menu {{backgroundOn?'publish_menu-on':''}}" wx:if="{{on}}">
+    <view class="pm-main {{mainOn?'pm-main-on':''}}">
+        <view class="pm-main-header">
+            <text class="pm-mh-title">发布动态</text>
+            <text class="pm-mh-desc">点击选择要发布的动态类型</text>
+        </view>
+        <view class="pm-main-body {{menus.length===2?'pm-main-body-double':''}}">
+            <view catchtap="selectedOperation" class="pm-mb-item" data-menu_name="{{item.name}}" wx:for="{{menus}}">
+                <image class="icon" src="{{item.icon}}"></image>
+                <text class="pm-mb-item-name">{{item.desc}}</text>
+            </view>
+        </view>
+        <view class="pm-main-footer">
+            <image catchtap="close" class="icon" src="{{ICON.CLOSE}}"></image>
+        </view>
+    </view>
+</view>

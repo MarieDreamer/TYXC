@@ -1,0 +1,72 @@
+.commentbox {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-top: 74rpx;
+}
+
+.textarea {
+    box-sizing: border-box;
+    margin-left: 20rpx;
+    width: 710rpx;
+    background: #efeff5;
+    border-radius: 4rpx;
+    font-size: 28rpx;
+    line-height: 36rpx;
+    color: #333;
+    padding-left: 18rpx;
+    padding-top: 15rpx;
+}
+
+.submitbox {
+    position: fixed;
+    top: 1rpx;
+    z-index: 1000;
+    left: 0;
+    height: 74rpx;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+
+.textImg {
+    width: 25rpx;
+    height: 25rpx;
+    margin-top: 33rpx;
+    margin-left: 37rpx;
+}
+
+.send,.cancel {
+    font-size: 30rpx;
+    line-height: 58rpx;
+}
+
+.send {
+    height: 58rpx;
+    color: #fff;
+    border: none;
+    width: 132rpx;
+    border-radius: 4rpx;
+    background: #cecece;
+    padding: 0;
+    margin-right: 20rpx;
+}
+
+.Legitimate {
+    color: #333;
+    background: #fff27f;
+}
+
+button::after {
+    content: '';
+    width: 0;
+    height: 0;
+}
+
+.cancel {
+    color: #888;
+    padding: 0 46rpx;
+}

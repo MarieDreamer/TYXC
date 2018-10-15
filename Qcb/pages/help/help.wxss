@@ -1,0 +1,17 @@
+.help_con {
+    background: #fff;
+    margin: 24rpx 0;
+}
+
+.help_list {
+    font-size: 24rpx;
+    height: 80rpx;
+    display: flex;
+    align-items: center;
+    border-bottom: 1rpx solid #e5e5e5;
+    padding: 0 12px;
+}
+
+.last {
+    border-bottom: none;
+}

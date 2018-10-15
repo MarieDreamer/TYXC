@@ -1,0 +1,26 @@
+<view class="container">
+    <view class="withdraw-container">
+        <view class="flexed account">
+            <text>提现账户</text>
+            <text bindtap="GoUrl" class="account-name" data-url="/pages/bankinfo/bankinfo" wx:if="{{bankinfo==0}}">设置提现账户</text>
+            <text bindtap="GoUrl" class="account-name" data-url="/pages/bankinfo/bankinfo" wx:if="{{bankinfo!=0}}">{{bankinfo.bankname}}（尾数{{bankinfo.account_bank}}）</text>
+        </view>
+        <text class="account-money">提现金额</text>
+        <view class="withdraw-number flexed">
+            <text class="symbol">￥</text>
+            <input autoFocus="true" bindblur="InputBlur" bindfocus="InputFocus" bindinput="InputKey" class="input-money" type="text" value="{{money}}"></input>
+            <image class="question-mark" src="https://cc.hohiw.com/xcximg/wenhao.png"></image>
+        </view>
+        <view class="all-withdraw-number flexed-2" wx:if="{{money==''||money==0}}">
+            <text class="all-money">可提现金额￥{{user.user_money}}</text>
+            <view bindtap="setAll" class="all-ti">全部提现</view>
+        </view>
+        <view class="all-withdraw-number flexed-2" wx:if="{{money!=''&&money!=0}}">
+            <text class="all-money">额外扣除￥{{sxf_money}}</text>
+        </view>
+    </view>
+    <view class="withdraw-intro">最小提现金额为{{min_money}}元，10的倍数可提现，提现手续费为{{sxf}}%</view>
+    <form bindsubmit="DoSubmit" catchsubmit="DoSubmit" reportSubmit="true">
+        <button class="tixian" formType="submit">立即提现</button>
+    </form>
+</view>

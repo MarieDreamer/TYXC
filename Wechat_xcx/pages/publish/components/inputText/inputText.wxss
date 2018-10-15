@@ -1,0 +1,5 @@
+@import "../andFriends/andFriends.wxss";
+
+.ioshack {
+    top: 36rpx!important;
+}

@@ -1,0 +1,131 @@
+.send_blessing {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.8);
+    z-index: 200;
+}
+
+.sb-body {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.sb-body-close {
+    padding-bottom: 50rpx;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.sb-body-close-icon {
+    width: 77rpx;
+    height: 77rpx;
+    border-radius: 50%;
+}
+
+.sb-body-main {
+    box-sizing: border-box;
+    padding: 80rpx 58rpx 46rpx;
+    width: 100%;
+    border-radius: 40rpx 40rpx 0 0;
+    background-color: #fff;
+}
+
+.sb-bm-title {
+    font-size: 48rpx;
+    font-weight: bolder;
+    color: #333;
+}
+
+.sb-bm-desc {
+    padding-top: 26rpx;
+    font-size: 28rpx;
+    color: #999;
+}
+
+.sb-bm-enter {
+    display: flex;
+    align-items: center;
+    margin-top: 52rpx;
+    box-sizing: border-box;
+    width: 478rpx;
+    height: 66rpx;
+    font-size: 26rpx;
+    border-radius: 33rpx;
+    color: #333;
+    background-color: #f1f1f1;
+}
+
+.sb-bm-enter-selected {
+    background-color: #ffe500;
+}
+
+.sb-bm-input {
+    flex: auto;
+}
+
+.sb-bm-input-placeholder {
+    color: #999;
+}
+
+.sb-bm-input-icon {
+    padding-left: 24rpx;
+    padding-right: 14rpx;
+    width: 24rpx;
+    height: 24rpx;
+}
+
+.sb-bm-input-count {
+    color: rgba(0,0,0,.4);
+    padding-right: 26rpx;
+}
+
+.sb-bm-scroll {
+    margin-top: 28rpx;
+    width: 100%;
+    height: 440rpx;
+    border-top: 1px solid #eee;
+}
+
+.sb-bm-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.sb-bm-list-item {
+    display: flex;
+    align-items: center;
+    margin-top: 28rpx;
+    margin-bottom: 10rpx;
+    margin-right: 30rpx;
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+    height: 66rpx;
+    font-size: 26rpx;
+    color: #333;
+    border-radius: 33rpx;
+    background-color: #f1f1f1;
+}
+
+.sb-bm-list-item-active {
+    background-color: #ffe500;
+}
+
+.sb-bm-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 28rpx;
+    width: 100%;
+    height: 80rpx;
+    font-size: 30rpx;
+    color: #333;
+    border-radius: 40rpx;
+    background-color: #ffe500;
+}
